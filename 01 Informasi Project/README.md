@@ -13,7 +13,8 @@ Workspace strategi digital marketing untuk dua brand di bawah supervisi Ko Jerem
 
 ```
 ├── 01 Informasi Project/
-│   └── README.md                       # Overview brand, fokus produk, & strategi
+│   ├── README.md                       # Overview brand, fokus produk, & strategi
+│   └── BRAND_DNA_DAN_GUIDELINE.md      # Identitas resmi, target market, tone of voice & IG guidelines
 ├── 02 Tim dan Workflow/
 │   ├── README.md                       # Peta navigasi tim & ringkasan operasional
 │   ├── STRUKTUR_DAN_PERAN.md           # Deskripsi peran 5 anggota & Matriks RACI
