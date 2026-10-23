@@ -56,23 +56,18 @@
 
 ---
 
-## 📝 Caption Singkat Siap Pakai (Wajib Dipakai Widipu)
+## 📝 Caption Singkat & Anti-Banned (Wajib Dipakai Widipu)
+
+> 🛡️ **Catatan Keamanan (Anti-Banned / ToS Safe)**:  
+> Jangan tulis list hadiah dan langkah follow di teks caption agar **tidak terkena filter *engagement bait* atau pelanggaran ToS jual-beli akun** oleh bot TikTok/IG. Semua detail sudah tersampaikan di video dan poster.
 
 ```markdown
-GIVEAWAY AKUN SULTAN VALORANT! 🥶🔥
+Drop skin impian mabar kalian di bawah sekarang! 👀🔥
 
-Hadiah:
-🏅 1 Akun Sultan Full Skin
-🎁 2 Free Sewa Akun Kode S (24 Jam)
+Detail & syarat lengkap wajib tonton di video ya. Pengumuman 24 Okt jam 16.00 WIB di live TikTok gua! 🎯
 
-Cara Ikutan:
-1. Follow TikTok Widipu & @valmart.id
-2. Follow IG @valomart_id & @martforum.id
-3. Komen skin impian lu + tag 3 temen mabar!
-
-🔊 Diumumin 24 Okt, jam 16.00 WIB di TikTok Widipu. Gas komen! 🎯
-
-#ValorantIndonesia #GiveawayValorant #Valmart #Martforum #Widipu
+cc: @valmart.id @martforum.id
+#Valorant #ValorantIndonesia #MabarValorant
 ```
 
 ---
