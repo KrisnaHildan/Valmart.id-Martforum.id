@@ -4,7 +4,7 @@
 **Campaign**: Flash Mega Giveaway Akun Valorant Sultan  
 **Deliverables Talent**:
 1. **1x Video TikTok Utama (Giveaway Announcement)** — Posting: Segera (22/23 Okt 2026)
-2. **1x Video / Live Pengumuman Pemenang di TikTok Widipu** — Jadwal: **Sabtu, 24 Oktober 2026, Pukul 16.00 WIB (4 Sore)**
+2. **1x Video / Live Pengumuman Pemenang di TikTok Widipu** — Jadwal: **Minggu, 1 November 2026, Pukul 16.00 WIB (4 Sore)**
 3. **1x Story Reminder (TikTok Story / IG Story)** — H-4 Jam sebelum pengundian
 
 ---
@@ -43,7 +43,7 @@
 > 3. Tulis skin impian lu di kolom komentar dan tag 3 temen mabar lu!"*
 >  
 > **[00:23 – 00:30] Call to Action & Deadline**  
-> *"Pemenangnya bakal gua umumin live di TikTok gua tanggal 24 Oktober besok jam 4 sore. Buruan drop komen sekarang sebelum ditutup!"*
+> *"Pemenangnya bakal gua umumin live di TikTok gua tanggal 1 November jam 4 sore. Buruan drop komen sekarang sebelum ditutup!"*
 
 ---
 
@@ -52,7 +52,7 @@
 * **Detik 13–22**: Muncul animasi teks/pop-up 4 akun yang wajib di-follow:
   * 📱 TikTok: **Widipu** & **@valmart.id**
   * 📸 Instagram: **@martforum.id** & **@valomart_id**
-* **Detik 23–30**: Text besar: **PENGUMUMAN 24 OKT JAM 4 SORE DI TIKTOK WIDIPU!**
+* **Detik 23–30**: Text besar: **PENGUMUMAN 1 NOV JAM 4 SORE DI TIKTOK WIDIPU!**
 
 ---
 
@@ -64,7 +64,7 @@
 ```markdown
 Drop skin impian mabar kalian di bawah sekarang! 👀🔥
 
-Detail & syarat lengkap wajib tonton di video ya. Pengumuman 24 Okt jam 16.00 WIB di live TikTok gua! 🎯
+Detail & syarat lengkap wajib tonton di video ya. Pengumuman 1 Nov jam 16.00 WIB di live TikTok gua! 🎯
 
 cc: @valmart.id @martforum.id
 #Valorant #ValorantIndonesia #MabarValorant
@@ -72,9 +72,9 @@ cc: @valmart.id @martforum.id
 
 ---
 
-## 🔊 SOP Pengundian & Pengumuman Pemenang (24 Okt, 16.00 WIB)
+## 🔊 SOP Pengundian & Pengumuman Pemenang (1 Nov, 16.00 WIB)
 
-1. **Waktu**: Sabtu, 24 Oktober 2026 tepat jam 16.00 WIB (Bisa lewat TikTok Live streaming atau video upload pengumuman).
+1. **Waktu**: Minggu, 1 November 2026 tepat jam 16.00 WIB (Bisa lewat TikTok Live streaming atau video upload pengumuman).
 2. **Cara Memilih Pemenang**:
    * Gunakan tools random comment picker dari postingan giveaway di TikTok Widipu.
    * **Wajib Cross-Check**: Cek apakah akun yang terpilih sudah benar-benar mem-follow:

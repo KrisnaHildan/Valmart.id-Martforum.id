@@ -20,12 +20,12 @@
 3. **Kolaborasi Widipu x Valmart x Martforum — FLASH MEGA GIVEAWAY (🚨 URGENT)**:
    * Target: Mendongkrak awareness & followers masif via KOL Widipu, dengan hadiah 1 Akun Valorant Sultan (Full Skin Impian) + 2 pemenang Free Sewa Akun Kode S 24 Jam.
    * Format: Video heboh TikTok/Reels + Single Post Feeds + Instagram Stories sequence.
-   * Periode Giveaway: 22/23 – 24 Oktober 2026.
-   * **Pengumuman Pemenang**: 🔊 **Sabtu, 24 Oktober 2026 jam 16.00 WIB (4 Sore) di TikTok Widipu**.
+   * Periode Giveaway: 23 Oktober – 1 November 2026.
+   * **Pengumuman Pemenang**: 🔊 **Minggu, 1 November 2026 jam 16.00 WIB (4 Sore) di TikTok Widipu**.
 
 ---
 
-## 📅 Jadwal Posting Terpadu (20 – 31 Oktober 2026)
+## 📅 Jadwal Posting Terpadu (20 Oktober – 1 November 2026)
 
 | Tanggal | Hari | Brand & Penanggung Jawab | Format & Topik Konten | Dokumen Brief |
 | :---: | :---: | :--- | :--- | :--- |
@@ -35,9 +35,8 @@
 | **23 Okt** | Jumat | 🔥 **KOLABORASI** (Widipu & Tim) | **LAUNCHING FLASH GIVEAWAY**: Video & Poster Feeds | [Brief Giveaway](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Oktober%202026/BRIEF_KONTEN_GIVEAWAY.md) |
 | **23 Okt** | Jumat | 🎬 **Valmart** (Helmy) | Video #3: Sensasi Finisher Vandal Kuronami | [Brief Helmy](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Oktober%202026/BRIEF_VALMART_HELMY.md#video-3) |
 | **23 Okt** | Jumat | 🎙️ **Martforum** (Jonathan) | VO #2: Bedah Leak Bundle Baru & Trik Pecahan VP | [Brief Jonathan](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Oktober%202026/BRIEF_MARTFORUM_JONATHAN.md#konten-vo-2) |
-| **24 Okt** | Sabtu | 🏆 **WIDIPU TIKTOK** (16.00 WIB) | 🔊 **PENGUMUMAN PEMENANG GIVEAWAY DI TIKTOK WIDIPU** | [Brief Giveaway](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Oktober%202026/BRIEF_KONTEN_GIVEAWAY.md) |
 | **24 Okt** | Sabtu | 🎬 **Valmart** (Helmy) | Video #4: Drama Mabar Nodong Skin + **Live TikTok Malam** | [Brief Helmy](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Oktober%202026/BRIEF_VALMART_HELMY.md#video-4) |
-| **25 Okt** | Minggu | 📱 **Story Engagement** | Rekap Pemenang Giveaway & Review Testimoni Sewa | [Brief Giveaway](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Oktober%202026/BRIEF_KONTEN_GIVEAWAY.md#aset-4-instagram--tiktok-stories-flash-sequence) |
+| **25 Okt** | Minggu | 📱 **Story Engagement** | Q&A Pendaftaran Valmart & Reminder Giveaway | [Brief Giveaway](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Oktober%202026/BRIEF_KONTEN_GIVEAWAY.md#aset-4-instagram--tiktok-stories-flash-sequence) |
 | **26 Okt** | Senin | 🎙️ **Martforum** (Jonathan) | VO #3: Admin WA Jam 2 Pagi vs Sistem QRIS Detik | [Brief Jonathan](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Oktober%202026/BRIEF_MARTFORUM_JONATHAN.md#konten-vo-3) |
 | **27 Okt** | Selasa | 🎬 **Valmart** (Helmy) | Video #5: Cashout Pensiun (15 Menit Cair Saldo) | [Brief Helmy](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Oktober%202026/BRIEF_VALMART_HELMY.md#video-5) |
 | **28 Okt** | Rabu | 🎙️ **Martforum** (Jonathan) | VO #4: Investigasi Kasus VP Minus & Ban Riot | [Brief Jonathan](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Oktober%202026/BRIEF_MARTFORUM_JONATHAN.md#konten-vo-4) |
@@ -45,7 +44,7 @@
 | **30 Okt** | Jumat | 🎬 **Valmart** (Helmy) | Video #7: Mabar Malam Sabtu Bareng Gebetan (Whiff) | [Brief Helmy](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Oktober%202026/BRIEF_VALMART_HELMY.md#video-7) |
 | **30 Okt** | Jumat | 🎙️ **Martforum** (Jonathan) | VO #5: Mitos Night Market & Flash Sale Weekend | [Brief Jonathan](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Oktober%202026/BRIEF_MARTFORUM_JONATHAN.md#konten-vo-5) |
 | **31 Okt** | Sabtu | 🎬 **Valmart** (Helmy) | Video #8: Rekap Akun Rental Ready Weekend | [Brief Helmy](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Oktober%202026/BRIEF_VALMART_HELMY.md#video-8) |
-| **31 Okt** | Sabtu | 🏆 **LIVE TIKTOK** (19.30 WIB) | **Pengundian Pemenang Mega Giveaway Secara Live** | [Brief Giveaway](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Oktober%202026/BRIEF_KONTEN_GIVEAWAY.md) |
+| **1 Nov** | Minggu | 🏆 **WIDIPU TIKTOK** (16.00 WIB) | 🔊 **PENGUMUMAN PEMENANG GIVEAWAY DI TIKTOK WIDIPU** | [Brief Giveaway](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Oktober%202026/BRIEF_KONTEN_GIVEAWAY.md) |
 
 ---
 
