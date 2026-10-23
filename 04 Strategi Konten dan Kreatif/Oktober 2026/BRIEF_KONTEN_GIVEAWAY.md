@@ -56,27 +56,23 @@
 
 ---
 
-## 📝 Caption Siap Copy-Paste (Wajib Dipakai Widipu)
+## 📝 Caption Singkat Siap Pakai (Wajib Dipakai Widipu)
 
 ```markdown
-GAK USAH MIMPI NENTENG AKUN SULTAN, KITA KASIH GRATIS BUAT LU! 🥶🔥
+GIVEAWAY AKUN SULTAN VALORANT! 🥶🔥
 
-Gua bareng @valmart.id x @martforum.id lagi bagi-bagi hadiah buat kalian para pejuang rank!
+Hadiah:
+🏅 1 Akun Sultan Full Skin
+🎁 2 Free Sewa Akun Kode S (24 Jam)
 
-🏅 1 AKUN VALORANT SULTAN (FULL SKIN) untuk 1 orang pemenang utama!
-🎁 FREE SEWA AKUN KODE S 24 JAM untuk 2 orang pemenang lainnya!
+Cara Ikutan:
+1. Follow TikTok Widipu & @valmart.id
+2. Follow IG @valomart_id & @martforum.id
+3. Komen skin impian lu + tag 3 temen mabar!
 
-Gimana cara ikutannya min? Gampang banget, cuma follow doang:
-❓ FOLLOW TIKTOK WIDIPU & @valmart.id
-❓ FOLLOW KEDUA AKUN INSTAGRAM KITA @martforum.id & @valomart_id
-❓ Tulis di komen: Skin impian lu + Tag 3 temen mabar lu!
+🔊 Diumumin 24 Okt, jam 16.00 WIB di TikTok Widipu. Gas komen! 🎯
 
-Pemenangnya diumumin di mana dan kapan min?
-🔊 PEMENANG DIUMUMKAN DI TIKTOK WIDIPU, 24 OKT 2026 JAM 4 SORE!
-
-Jangan sampai kelewatan, drop komentar kalian sekarang juga! 🎯
-
-#ValorantIndonesia #Valmart #Martforum #GiveawayValorant #Widipu
+#ValorantIndonesia #GiveawayValorant #Valmart #Martforum #Widipu
 ```
 
 ---
