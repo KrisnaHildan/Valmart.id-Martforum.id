@@ -10,31 +10,31 @@
 ---
 
 ## 🎯 Key Message & Vibe Video
-* **Vibe**: Heboh, energik, khas gaya santai Widipu ngobrol sama followers gamer/mabar.
-* **Inti Pesan**: Widipu bareng Valmart & Martforum mau bagi-bagi **Akun Valorant seharga JUTAAN RUPIAH** gratis buat 1 orang beruntung, plus **Free Sewa Akun Kode S (Sultan) 24 Jam** untuk 2 pemenang lainnya. Syaratnya gampang banget, cuma follow 4 akun dan komen skin impian.
-* **Pantangan**: Jangan baca naskah kayak orang lagi hafalan/iklan kaku. Bawain senatural mungkin dengan gaya khas Widipu!
+* **Vibe**: Santai, energik, khas gaya nongkrong Widipu dengan followers/komunitas gaming-nya.
+* **Inti Pesan**: Widipu bareng Valmart & Martforum mau bagi-bagi **1 Akun Valorant Sultan Full Skin (Skin Idaman Lengkap)** gratis buat 1 orang beruntung, plus **Free Sewa Akun Kode S (Sultan) 24 Jam** untuk 2 pemenang lainnya. Syaratnya super simpel: cukup follow 4 akun dan sebutin skin impian di kolom komentar.
+* **Catatan Penting**: **Hindari repetisi kata *"JUTAAN / JUTAAN RUPIAH"* yang terlalu bombastis/norak**. Fokuskan value-nya pada **skin sultan impian (Kuronami, Champions, knife langka)** agar terlihat otentik, prestisius, dan tidak terkesan clickbait murahan.
 
 ---
 
-## 🎁 Detail Hadiah (Wajib Di-mention)
-1. 🏅 **1 Orang Pemenang Utama**: **1 AKUN VALORANT SEHARGA JUTAAN RUPIAH** (Full skin sultan, jadi hak milik permanen).
-2. 🎁 **2 Orang Pemenang Lainnya**: **FREE SEWA AKUN KODE S 24 JAM** di [valmart.id](http://valmart.id/) (Bebas mabar seharian pake akun tier sultan).
+## 🎁 Detail Hadiah Resmi
+1. 🏅 **1 Orang Pemenang Utama**: **1 AKUN VALORANT SULTAN (FULL SKIN IMPIAN)** (Akun sultan siap pakai dengan skin tier atas, jadi hak milik permanen).
+2. 🎁 **2 Orang Pemenang Lainnya**: **FREE SEWA AKUN KODE S 24 JAM** di [valmart.id](http://valmart.id/) (Akses mabar seharian bebas nenteng akun tier Kode S / Sultan).
 
 ---
 
 ## 🎬 Panduan Pembuatan Video Utama (TikTok)
 
-* **Durasi Video**: 25 – 35 detik (Fast-paced, no intro bertele-tele).
+* **Durasi Video**: 25 – 35 detik (Fast-paced, engaging, to-the-point).
 * **Format**: 9:16 Vertical Video (High Quality).
 
 ### 1. Pilihan Naskah (Word-by-Word Script)
-*(Boleh disesuaikan dengan bahasa/slang khas Widipu, asalkan poin hadiah & syarat tersampaikan utuh)*:
+*(Disesuaikan agar lebih luwes dan tidak terlalu mengumbar kata "jutaan")*:
 
-> **[00:00 – 00:04] Hook (Ekspresi heboh, langsung to the point)**  
-> *"Stop scroll dulu! Siapa di sini yang dari kemarin ngidam pengen punya akun Valorant sultan? Nih, akun seharga JUTAAN RUPIAH ini bakal gua kasih ke salah satu dari kalian secara GRATIS!"*
+> **[00:00 – 00:04] Hook (Tampang antusias, langsung tunjuk akun)**  
+> *"Stop scroll dulu! Siapa di sini yang dari kemarin ngidam pengen nenteng akun Valorant sultan bertabur skin? Nih, akun sultan full skin ini bakal gua kasih ke salah satu dari kalian secara GRATIS!"*
 >  
 > **[00:05 – 00:12] Detail Hadiah**  
-> *"Gua bareng Valmart dan Martforum lagi ngadain flash giveaway. Pemenang utamanya dapet akun jutaan rupiah ini, dan bakal ada 2 pemenang lainnya yang dapet FREE sewa akun Kode S selama 24 jam penuh di Valmart!"*
+> *"Gua bareng Valmart dan Martforum lagi ngadain flash giveaway. Pemenang utamanya langsung dapet akun sultan impian ini, dan bakal ada 2 pemenang lainnya yang dapet FREE sewa akun Kode S selama 24 jam penuh di Valmart!"*
 >  
 > **[00:13 – 00:22] Syarat Ikutan (Tunjuk Text on Screen)**  
 > *"Cara ikutannya gampang banget, gak pake ribet:  
@@ -48,7 +48,7 @@
 ---
 
 ### 2. Panduan Visual di Layar (Visual Direction)
-* **Detik 0–4**: Widipu di depan kamera sambil tunjukin layar PC/HP yang nampilin inventory akun Valorant bergelimang skin mahal (Kuronami, Champions, Knife, dll).
+* **Detik 0–4**: Widipu di depan kamera sambil memperlihatkan layar PC/HP yang membuka inventory akun: inspect Vandal Kuronami, Champions, atau knife mahal.
 * **Detik 13–22**: Muncul animasi teks/pop-up 4 akun yang wajib di-follow:
   * 📱 TikTok: **Widipu** & **@valmart.id**
   * 📸 Instagram: **@martforum.id** & **@valomart_id**
@@ -63,7 +63,7 @@ GAK USAH MIMPI NENTENG AKUN SULTAN, KITA KASIH GRATIS BUAT LU! 🥶🔥
 
 Gua bareng @valmart.id x @martforum.id lagi bagi-bagi hadiah buat kalian para pejuang rank!
 
-🏅 AKUN SEHARGA JUTAAN untuk 1 orang pemenang utama!
+🏅 1 AKUN VALORANT SULTAN (FULL SKIN) untuk 1 orang pemenang utama!
 🎁 FREE SEWA AKUN KODE S 24 JAM untuk 2 orang pemenang lainnya!
 
 Gimana cara ikutannya min? Gampang banget, cuma follow doang:

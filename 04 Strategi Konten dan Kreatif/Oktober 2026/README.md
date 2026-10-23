@@ -18,7 +18,7 @@
    * PIC: **Jonathan** (Target 3x posting VO seminggu).
 
 3. **Kolaborasi Widipu x Valmart x Martforum — FLASH MEGA GIVEAWAY (🚨 URGENT)**:
-   * Target: Mendongkrak awareness & followers masif via KOL Widipu, dengan hadiah 1 Akun Sultan seharga jutaan + 2 pemenang Free Sewa Akun Kode S 24 Jam.
+   * Target: Mendongkrak awareness & followers masif via KOL Widipu, dengan hadiah 1 Akun Valorant Sultan (Full Skin Impian) + 2 pemenang Free Sewa Akun Kode S 24 Jam.
    * Format: Video heboh TikTok/Reels + Single Post Feeds + Instagram Stories sequence.
    * Periode Giveaway: 22/23 – 24 Oktober 2026.
    * **Pengumuman Pemenang**: 🔊 **Sabtu, 24 Oktober 2026 jam 16.00 WIB (4 Sore) di TikTok Widipu**.
