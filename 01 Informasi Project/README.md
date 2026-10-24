@@ -23,12 +23,17 @@ Workspace strategi digital marketing untuk dua brand di bawah supervisi Ko Jerem
 │   ├── DAFTAR_KOMPETITOR.md            # Database & mapping 7 kompetitor utama
 │   ├── SCRAPING_SOSMED_KOMPETITOR.md   # Hasil audit & scraping channel medsos kompetitor
 │   └── INSIGHT_DAN_IMPLEMENTASI.md     # Rekomendasi aksi strategis, hook konten, & sinergi cross-funnel
-└── 04 Strategi Konten dan Kreatif/
-    ├── README.md                       # Peta modul konten & arsip sprint bulanan
-    └── Oktober 2026/
-        ├── README.md                   # Jadwal posting harian 20-31 Oktober 2026
-        ├── BRIEF_VALMART_HELMY.md      # 8 Brief video singkat Valmart (Helmy)
-        └── BRIEF_MARTFORUM_JONATHAN.md # 5 Brief naskah Voice Over Martforum (Jonathan)
+├── 04 Strategi Konten dan Kreatif/
+│   ├── README.md                       # Peta modul konten & arsip sprint bulanan
+│   ├── REFERENSI_KONTEN_NYELENEH.md    # Playbook konten komedi unhinged tapi jualan
+│   └── Oktober 2026/
+│       ├── README.md                   # Jadwal posting harian 20-31 Oktober 2026
+│       ├── BRIEF_KONTEN_GIVEAWAY.md    # Brief KOL Widipu Giveaway
+│       ├── BRIEF_VALMART_HELMY.md      # 8 Brief video singkat Valmart (Helmy)
+│       └── BRIEF_MARTFORUM_JONATHAN.md # 5 Brief naskah Voice Over Martforum (Jonathan)
+└── 05 Event dan Campaign/
+    ├── README.md                       # Peta navigasi event & program promosi
+    └── EVENT_STREAMER_NOVEMBER_2026.md # 3 Opsi event streamer November (Paid Rp 500rb & Free)
 ```
 
 ---
