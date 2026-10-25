@@ -10,5 +10,3 @@ Folder ini berisi rancangan program promosi, event komunitas, turnamen, dan kamp
 
 * 📄 **[EVENT_STREAMER_NOVEMBER_2026.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/EVENT_STREAMER_NOVEMBER_2026.md)**  
   *Rancangan Final 2 Campaign Streamer November 2026: 1 Paid (Affiliate Sprint Rp 500rb) & 1 Free (One Agent Showmatch).*
-* 📝 **[NOTULENSI_MEET_25_OKT_2026.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/NOTULENSI_MEET_25_OKT_2026.md)**  
-  *Notulensi meeting evaluasi bottleneck campaign streamer dan keputusan pembagian 1 paid + 1 free (Campaign 3 dihapus).*
