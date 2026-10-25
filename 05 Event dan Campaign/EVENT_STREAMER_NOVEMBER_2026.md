@@ -1,124 +1,92 @@
-# 🎯 Pilihan Strategi Event & Campaign Streamer Partner
-## Valmart.id — Periode November 2026
-**Project**: Valmart.id (Supervisi Ko Jeremy)  
-**Koordinator**: Hildan  
-**Alokasi Budget**: **Maksimal Rp 500.000 (Strict Cap)**  
-**Target Partisipan**: 15–18 Streamer Partner Aktif (Berdasarkan [Database Google Sheets Streamer](https://docs.google.com/spreadsheets/d/1MF_XVBgMU2bHA7jq6LS-99Kln7Pg4E8lIw9DHvhKX2g/edit?gid=384078252#gid=384078252))
+# 🎯 Rencana Final Event & Campaign Streamer Partner
+## Valmart.id & Martforum.id — Periode November 2026
+**Hasil Review & Notulensi Meeting**: 25 Oktober 2026  
+**Koordinator**: Hildan | **Supervisi**: Ko Jeremy  
+**Keputusan Strategis**: Menjalankan **1 Campaign Paid** dan **1 Campaign Free** (Campaign 3 resmi dihapus).
 
 ---
 
-## 📌 1. Latar Belakang & Analisis Database Streamer
+## 📌 Ringkasan Keputusan Meeting (25 Okt 2026)
 
-Berdasarkan database streamer partner Valmart, saat ini terdapat ~15–18 streamer aktif (mulai dari Syahran 11k followers, Widipu, Brayen, Aim, Leo, hingga streamer cewek seperti Thaliza & Maichi). Semua streamer sudah memiliki **Kode Referral Unik** masing-masing (`VALMART...`).
-
-* **Problem Utama**: Selama ini kemitraan streamer sering terjebak dalam *"Overlay Trap"* (streamer hanya memasang logo banner statis di OBS tanpa ada interaksi), sehingga konversi ke transaksi sewa akun sangat minim.
-* **Tujuan Campaign November**: Mengaktifkan para streamer menjadi motor penggerak transaksi sewa akun secara interaktif dan seru, dengan batas budget hadiah maksimal **Rp 500.000**.
-
----
-
-## 🚀 2. Tiga Pilihan Format Event (1 Paid & 2 Free)
-
-Berikut 3 alternatif format yang siap dipilih dan dieksekusi:
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ 💰 OPSI 1 [PAID - Rp 500.000]: Affiliate Sprint (Lomba Referral Berhadiah) │
-│ 🆓 OPSI 2 [FREE #1 - Rp 0]   : Sultan Clash (Showmatch 5v5 Hukuman Konyol)  │
-│ 🆓 OPSI 3 [FREE #2 - Rp 0]   : Sultan Mabar Pass (Viewer Bayar Sewa Akun)   │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
+| Program | Tipe | Status | Catatan & Perubahan Penting |
+| :--- | :---: | :---: | :--- |
+| **Campaign 1: Affiliate Sprint** | 💰 PAID | **AMAN (JALAN)** | Budget tetap terkunci maksimal **Rp 500.000** dengan *safety net* minimal 20 transaksi sewa per streamer. |
+| **Campaign 2: Sultan Showmatch** | 🆓 FREE | **DIREVISI & JALAN** | Mengatasi bottleneck tier akun dengan mekanik **"One Agent Challenge"** (semua 10 player pick agent yang sama). Hadiah: **Free Sewa Akun Tier S + Diskon Top Up 1%**. |
+| **Campaign 3: Mabar Pass** | 🆓 FREE | **DIHAPUS** | Dihapus dari rencana agar fokus tim tidak terbagi. |
 
 ---
 
-### 💰 OPSI 1: [PAID] "Valmart Affiliate Sprint (Battle of Referrals)"
-> **Fokus**: Mengubah streamer menjadi *sales force* aktif yang berlomba-lomba menghasilkan transaksi sewa akun dengan sistem komisi/hadiah tunai terkontrol.
+## 🚀 1. CAMPAIGN 1 [PAID]: "Valmart Streamer Affiliate Sprint"
 
-#### A. Mekanisme & Alur
-1. Kompetisi berlangsung selama bulan November (1 – 30 November 2026).
-2. Setiap streamer wajib mempromosikan kode referral uniknya di live stream TikTok/YouTube dan bio profil.
-3. Transaksi dihitung dari setiap pemakaian kode referral untuk sewa akun di website `valmart.id`.
-4. Klasemen mingguan (Leaderboard) dipublikasikan secara transparan di grup WhatsApp streamer & Instagram Story official.
+> **Fokus**: Mengubah 15+ streamer partner menjadi *sales force* aktif yang berlomba-lomba menghasilkan transaksi sewa akun dengan sistem hadiah tunai terkontrol.
 
-#### B. Skema Hadiah (Budget Pas Rp 500.000)
+### A. Alur & Mekanisme
+1. Periode kompetisi: **1 – 30 November 2026**.
+2. Setiap streamer wajib mempromosikan kode referral unik masing-masing (`VALMART...`) di bio, live stream, dan konten media sosial mereka.
+3. Transaksi dihitung dari pemakaian kode referral untuk sewa akun di website `valmart.id`.
+4. Klasemen sementara (Leaderboard) dipublikasikan secara transparan setiap minggu di grup WhatsApp streamer & IG Story.
+
+### B. Alokasi Hadiah (Budget Pas Rp 500.000)
 * 🥇 **Juara 1**: **Rp 300.000 Cash** + Gelar *"Streamer of the Month"* (Foto & link channel dipajang di Banner Website `valmart.id` selama 1 bulan) + Prioritas perpanjangan kontrak.
 * 🥈 **Juara 2**: **Rp 150.000 Cash** + Free Sewa Akun Sultan Kode S (3 Hari).
 * 🥉 **Juara 3**: **Rp 50.000 Cash** + Free Sewa Akun Sultan Kode S (1 Hari).
 
-#### C. Kunci Pengaman Bisnis (*Safety Net* Anti-Rugi)
-* Hadiah uang tunai **hanya cair jika streamer mencapai ambang batas minimal (threshold) 20 transaksi sewa akun**.
+### C. Kunci Pengaman Bisnis (*Safety Net* Anti-Rugi)
+* Hadiah uang tunai **hanya cair jika streamer mencapai ambang batas minimal 20 transaksi sewa akun**.
 * *Kalkulasi ROI*:
   * 1 transaksi sewa akun rata-rata = Rp 15.000.
   * 20 transaksi sewa = **Rp 300.000 omset masuk per streamer**.
-  * Jika ada 5 streamer aktif yang mencapai target, Valmart mengantongi **Rp 1.500.000+ omset kotor** hanya dengan modal hadiah Rp 500.000 (**ROI 300%**).
+  * Jika ada 5 streamer saja yang mencapai target, Valmart mengantongi **Rp 1.500.000+ omset kotor** hanya dengan modal hadiah Rp 500.000 (**ROI 300%**).
 
 ---
 
-### 🆓 OPSI 2: [FREE #1] "Valmart Sultan Clash (Punishment Showmatch 5v5)"
-> **Fokus**: Menghasilkan eksposur puluhan ribu views organik dan bahan video klip komedi viral antar-streamer tanpa keluar uang sepeser pun (**Rp 0 Kas**).
+## 🎮 2. CAMPAIGN 2 [FREE]: "Valmart Clone Clash (One Agent Showmatch 5v5)"
 
-#### A. Mekanisme & Alur
-1. Turnamen mini 5v5 seru-seruan (Showmatch) berdurasi 1 hari di akhir pekan (Sabtu/Minggu).
-2. Membentuk 4 Tim yang dipimpin kapten streamer populer:
-   * **Tim 1**: Syahran
-   * **Tim 2**: Widipu
-   * **Tim 3**: Brayen
-   * **Tim 4**: Aim
-3. Anggota tim diisi campuran streamer partner lainnya + penonton aktif dari Discord.
-4. **Fasilitas Valmart (Rp 0 Modal Kas)**: Valmart meminjamkan **Akun Sultan Full Skin** (Kuronami, Champions, Arcane) secara gratis untuk seluruh 20 pemain selama showmatch.
+> **Fokus**: Hiburan masif, viralitas clips, dan eksposur puluhan ribu views antar-streamer tanpa keluar uang tunai, dengan format tontonan yang adil dan seru.
 
-#### B. Skema Hadiah & Hukuman (Rp 0)
-* ❌ *Tidak ada uang tunai sama sekali.*
-* 🏆 **Tim Pemenang**: Mendapatkan *Bragging Rights* + Gelar *"Raja Mabar Valmart Q4"* + Highlight profil di web.
-* 🤡 **Hukuman Tim Kalah (Bahan Konten Viral)**:
-  * Streamer di tim yang kalah **wajib membuat 1 video TikTok komedi nyeleneh/jomok** bertema: *"Kalah mabar gara-gara aim whiff, tobat sewa Kuronami di Valmart"* dan wajib mention akun `@valmart.id`.
+### A. Bottleneck & Solusi Desain Match
+* **Bottleneck Awal**: Ketersediaan akun rental di Valmart belum merata tier-nya (ada akun Tier S, A, dan B), sehingga ada kekhawatiran peserta merasa tidak adil jika mendapat tier akun yang berbeda.
+* **Solusi Meeting 25/10/26**:
+  * Dalam setiap match, **seluruh 10 peserta wajib menggunakan Agent yang sama (One Agent Challenge / Mirror Clone Match)**.
+  * *Contoh Line-up Match*:
+    * **Round 1**: 10 Jett Clash (Adu dash & knives).
+    * **Round 2**: 10 Reyna Chaos (Adu leer & dismiss).
+    * **Round 3**: 10 Omen Mystery (Adu teleport & smoke).
+  * *Dampak*:
+    1. **Level Playing Field**: Tidak ada tim yang diuntungkan komposisi agent atau tier skin senjata, murni adu skill mikro dan mekanik konyol.
+    2. **Tontonan Sangat Lucu & Menghibur**: Sangat disukai viewer gamer, memicu klip-klip viral di TikTok.
 
-#### C. Keuntungan Bisnis
-* Cross-traffic masif antar komunitas streamer (penonton saling tonton channel kapten lain).
-* Menghasilkan puluhan video klip seru dan drama lucu secara gratis pasca-event.
+### B. Format & Peserta
+* Showmatch diadakan 1 hari di akhir pekan (Sabtu/Minggu pertengahan atau akhir November).
+* 4 Tim dipimpin kapten streamer populer (Syahran, Widipu, Brayen, Aim), diisi streamer partner lain + penonton Discord.
+* Valmart meminjamkan akun sewa selama match berlangsung.
 
----
-
-### 🆓 OPSI 3: [FREE #2] "Sultan Mabar Pass (Community Night)"
-> **Fokus**: Mengubah fans streamer menjadi pembeli aktif harian di mana penonton yang mendanai transaksi sewa akun (**Rp 0 Biaya, Justru Masuk Cuan Langsung**).
-
-#### A. Mekanisme & Alur
-1. Dijalankan rutin 1–2x seminggu saat jadwal live stream para streamer (terutama streamer cewek/high-engagement seperti **Widipu**, **Thaliza**, **Maichi**, atau **Syahran**).
-2. Streamer membuka room party (Unrated / Custom Match) khusus bersama penonton live stream.
-3. **Syarat Masuk Party**:
-   * Penonton yang ingin diajak mabar dan masuk Discord streamer **wajib menyewa akun di `valmart.id` menggunakan kode referral streamer tersebut** (cukup paket mabar hemat Rp 5.000 – Rp 15.000).
-   * Streamer memverifikasi username sewa akun di layar live sebelum memberi invite room.
-4. Di dalam match, streamer membuat tema seru: *"Match Khusus User Vandal Kuronami"* atau *"Party Skin Sultan Melawan Streamer"*.
-
-#### B. Skema Hadiah (Rp 0)
-* Tidak ada hadiah uang. Hadiah terbesar bagi penonton adalah **kebanggaan bisa mabar dan masuk konten live stream bersama streamer idolanya**.
-* Streamer hanya diberikan fasilitas pinjam akun sultan gratis dari Valmart untuk dipakai saat live streaming.
-
-#### C. Keuntungan Bisnis
-* Langsung mencetak transaksi sewa akun riil setiap kali streamer live.
-* Alur pendaftaran web `valmart.id` (cukup KTP + nama sekolah/kantor) langsung dipraktikkan oleh penonton baru.
+### C. Skema Hadiah Resmi (Non-Tunai / In-Kind)
+* 🎁 **Free Sewa Akun Tier S** dari [valmart.id](http://valmart.id/) untuk tim pemenang.
+* 🏷️ **Voucher Diskon Top Up 1%** dari [martforum.id](http://martforum.id/) untuk seluruh partisipan & penonton setia di live chat.
+* 🤡 **Hukuman Tim Kalah (Bahan Konten Viral)**: Streamer tim yang kalah wajib membuat 1 video komedi TikTok bertema kekalahan mereka dan mempromosikan Valmart.
 
 ---
 
-## 💡 3. Rekomendasi Formula Hybrid (Paling Optimal & Realistis)
+## 📊 3. Matriks Perbandingan 2 Campaign November 2026
 
-Strategi paling tajam adalah **menggabungkan Opsi 1 (Paid Rp 500rb) dan Opsi 3 (Mabar Pass)**:
-
-1. **Jadikan Opsi 1 sebagai Hadiah Akhir Bulan**: Sediakan hadiah **Rp 500.000** (Juara 1: 300rb, Juara 2: 150rb, Juara 3: 50rb) dengan syarat minimal 20 transaksi sewa.
-2. **Jadikan Opsi 3 sebagai Cara Streamer Mengumpulkan Transaksi**: Beri instruksi ke streamer bahwa cara paling gampang mengumpulkan transaksi referral adalah dengan **membuka sesi Mabar Berbayar Sewa** bersama penonton live mereka.
-
-Dengan formula ini:
-* Streamer punya target jelas untuk mengejar hadiah Rp 500.000.
-* Penonton terdorong menyewa akun demi mabar bareng streamer.
-* Valmart mendapatkan lonjakan omset sewa akun yang nilainya jauh melampaui modal Rp 500.000.
+| Parameter | Campaign 1: Affiliate Sprint [PAID] | Campaign 2: One Agent Showmatch [FREE] |
+| :--- | :--- | :--- |
+| **Tipe & Sifat** | Berbayar (Hadiah Tunai Terkontrol) | Gratis (Hadiah In-Kind & Entertainment) |
+| **Budget Hadiah** | **Rp 500.000 (Strict Cap)** | **Rp 0 Uang Kas** |
+| **Hadiah Pemenang** | Cash Rp 300rb, Rp 150rb, Rp 50rb | Free Sewa Akun Tier S + Diskon Top Up 1% Martforum |
+| **Fokus Output** | **Omset Transaksi Sewa Akun** | **Views Organik, Branding, & Klip Viral** |
+| **Mekanik Unik** | Minimal 20 transaksi sewa untuk cair | 10 Player Wajib Pakai Agent yang Sama |
+| **Durasi** | 1 Bulan Penuh (1–30 November 2026) | 1 Hari Weekend (Event Climax) |
 
 ---
 
-## 📊 4. Matriks Perbandingan 3 Pilihan
+## 📅 4. Roadmap Eksekusi November 2026
 
-| Parameter | Opsi 1: Affiliate Sprint [PAID] | Opsi 2: Sultan Clash [FREE #1] | Opsi 3: Mabar Pass [FREE #2] |
-| :--- | :--- | :--- | :--- |
-| **Budget Hadiah** | **Rp 500.000 (Strict Cap)** | **Rp 0** | **Rp 0 (Malah Cuan Masuk)** |
-| **Output Utama** | Omset transaksi sewa akun meroket | Views masif & video klip viral | Transaksi sewa harian stabil |
-| **Tingkat Kerumitan** | Rendah (Pantau data kode referral) | Sedang (Koordinasi jadwal 20 player) | Sangat Rendah (Ikut jadwal live streamer) |
-| **Durasi** | 1 Bulan Penuh (1–30 Nov 2026) | 1 Hari Weekend (Akhir Nov 2026) | Mingguan (1-2x seminggu per streamer) |
-| **Safety Net** | Minimal 20 transaksi sewa | Hukuman wajib bikin konten TikTok | Verifikasi order sebelum invite party |
+```
+[1 Nov]       : Kickoff Affiliate Sprint (Campaign 1) pasca pengumuman Giveaway Widipu.
+[1 - 20 Nov]  : Streamer aktif streaming harian mempromosikan kode referral masing-masing.
+[21 Nov]      : Technical Meeting & Drawing Tim One Agent Showmatch (Campaign 2).
+[28/29 Nov]   : MAIN EVENT — Valmart Clone Clash (Showmatch 10 Jett / 10 Reyna).
+[30 Nov]      : Penutupan Affiliate Sprint & Penyerahan Hadiah Rp 500.000 untuk Top 3 Streamer.
+```
