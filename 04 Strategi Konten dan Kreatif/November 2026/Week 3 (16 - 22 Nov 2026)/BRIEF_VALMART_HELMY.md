@@ -3,9 +3,31 @@
 
 **Target Akun**: `@valmart.id` (TikTok) & `@valomart._id` (Instagram Reels)  
 **Talent / Editor**: Helmy  
-**Total Konten**: 4 Video Singkat (Selasa, Rabu, Kamis, Jumat)  
+**Total Konten**: 4 Video Reguler (Selasa, Rabu, Kamis, Jumat) + 1 Video Khusus Evaluasi Sayembara ACE Bounty (Senin)  
 
 ---
+
+## 🎬 Bagian Khusus: Video Pendukung Kampanye ACE Bounty
+
+### 🎬 Video Update — Senin, 16 Nov 2026 [📢 ACE BOUNTY MID-MONTH REACTION & REMINDER]
+* **Format**: Reaction Video Submission Komunitas + Call to Action Sayembara Rp 200k.
+* **Durasi**: 25 – 35 detik.
+* **Angle**: Helmy me-react beberapa klip submission gameplay terlucu dan ter-clutch yang masuk via tagar `#ValmartAceBounty`. Mengingatkan audiens bahwa siapa saja bisa ikut tanpa harus sewa akun, dan klip paling kece berhak atas uang tunai Rp 200.000!
+* **Visual**:
+  * 0–6s: Helmy nonton klip gameplay kiriman netizen: satu klip clutch 1v4 gokil dan satu klip blunder konyol jatuh dari tali tebing.
+  * 6–18s: Helmy ngasih reaction heboh: *"Ini yang clutch gila banget timing-nya, tapi yang jatuh dari tebing tolong jangan bikin emosi!"*.
+  * 18–28s: Grafis pengumuman Sayembara ACE Bounty: Total hadiah **Rp 200.000 CASH** buat klip ter-kece. Tanpa syarat sewa akun, bebas pake akun apa aja!
+* **Text on Screen (TOS)**:
+  * "Reaksi Klip #ValmartAceBounty Paruh Bulan! 💀🔥"
+  * "Klip ter-kece dapet Rp 200.000 CASH! Ikutan sekarang tanpa syarat sewa akun!"
+* **Audio / Script (Helmy)**:
+  > *"Gua udah mantau puluhan video gameplay yang masuk pake tagar #ValmartAceBounty, dan jujur kalian gokil banget! Ada yang clutching-nya berasa pro player turnamen, tapi ada juga yang mati konyol gara-gara jatuh dari jurang. Inget ya bro, sayembara ini masih buka sampai akhir bulan November! Konten yang paling kece dan paling menghibur bakal langsung gua transfer uang tunai dua ratus ribu rupiah tunai tanpa ribet! Lu gak perlu sewa akun di Valmart, bebas pake akun pribadi lu sendiri. Upload sekarang, tag @valmart.id dan pasang tagar #ValmartAceBounty! Cek info di bio!"*
+* **Sound / SFX**: Sound tawa reaction $\rightarrow$ Sound kaching cuan Rp 200k $\rightarrow$ Upbeat lofi.
+* **Caption**: *"Klip mana yang paling layak dapet 200 ribu tunai? Gas upload gameplay ter-kece lu pake tagar #ValmartAceBounty sekarang! Tanpa syarat sewa akun bro!"*
+
+---
+
+## 🎬 Bagian Reguler: Video Mingguan Valmart
 
 ### 🎬 Video 9 — Selasa, 17 Nov 2026 [🎭 MEME 1: SIMULASI 10 OMEN CHAOS MATCH]
 * **Format**: Komedi In-Game Custom Match Chaos.
@@ -17,11 +39,11 @@
   * 14–22s: Helmy keluar dari smoke sambil ketawa: *"Ini pertandingan Valorant atau simulasi uji nyali dunia lain?!"*.
 * **Text on Screen (TOS)**:
   * "POV: Lobi Valorant kalau isinya 10 Omen semua 💀"
-  * "Nantikan: Valmart Clone Clash akhir bulan ini!"
+  * "Nantikan: Valmart Sultan Showmatch akhir bulan ini!"
 * **Audio / Script (Helmy)**:
-  > *"Kalian pernah ngebayangin gak apa jadinya kalau satu lobi isinya 10 Omen semua? Map-nya gelap gulita ketutup smoke ungu, suara teleport bersahutan dari kanan kiri, pas smoke ilang tiba-tiba 10 orang udah pada pelukan di lorong! Nah, kegilaan ini bakal beneran kejadian di Showmatch Valmart Clone Clash akhir bulan nanti bareng streamer favorit kalian! Kira-kira agent apa lagi yang paling seru diadu kembar? Tulis di komen, dan jangan lupa booking akun rental lu di link bio!"*
+  > *"Kalian pernah ngebayangin gak apa jadinya kalau satu lobi isinya sepuluh Omen semua? Map-nya gelap gulita ketutup smoke ungu, suara teleport bersahutan dari kanan kiri, pas smoke ilang tiba-tiba sepuluh orang udah pada pelukan di lorong! Nah, kegilaan ini bakal beneran kejadian di Valmart Sultan Showmatch akhir bulan nanti bareng streamer favorit kalian! Kira-kira agent apa lagi yang paling seru diadu kembar? Tulis di komen, dan jangan lupa booking akun rental lu di link bio!"*
 * **Sound / SFX**: Suara skill Omen bertumpuk-tumpuk $\rightarrow$ Vine boom $\rightarrow$ Sound ketawa ngakak sound effect.
-* **Caption**: *"Gelap banget woy gak keliatan apa-apa 🗿 Siap-siap nonton kegilaan Valmart Clone Clash akhir bulan ini! Link di bio."*
+* **Caption**: *"Gelap banget woy gak keliatan apa-apa 🗿 Siap-siap nonton kegilaan Valmart Sultan Showmatch akhir bulan ini! Link di bio."*
 
 ---
 
@@ -77,4 +99,3 @@
   > *"Di tongkrongan lu pasti ada tiga kubu ini kan? Pertama, sekte Kuronami yang jari jempolnya gak bisa diem muter pisau. Kedua, sekte Reaver yang kecanduan suara lonceng kematian. Dan ketiga, sekte Primordium yang tembakannya berasa barbar banget! Daripada kalian ribut adu gengsi di Discord, di Valmart kalian bisa cobain ketiga skin ini bergantian tiap malam modal belasan ribu doang. Lu sendiri masuk sekte yang mana? Komen di bawah dan sewa skin lu di link bio!"*
 * **Sound / SFX**: Suara petir $\rightarrow$ Suara lonceng $\rightarrow$ Suara raungan lava $\rightarrow$ Phonk bass boost.
 * **Caption**: *"Kalian tim sekte mana nih? Tulis di kolom komentar! Sewa skin impian lu sekarang di link bio!"*
-

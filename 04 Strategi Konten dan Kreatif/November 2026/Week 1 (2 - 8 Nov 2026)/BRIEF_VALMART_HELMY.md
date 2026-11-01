@@ -20,9 +20,9 @@
   * "Aim: Bot Recruit baru install game 🗿"
 * **Audio / Script (Helmy)**:
   > *(Nada bisik-bisik datar nahan malu)*  
-  > *"Gak ada yang lebih malu selain nenteng Vandal Kuronami... tapi pas ketemu musuh yang lagi nunduk defuse, peluru lu malah bikin lukisan abstrak di tembok. Tapi ya udahlah ya bro, yang penting gaya nomor satu, skill bisa dipelajari nanti malam. Daripada boncos beli bundle ratusan ribu tapi aim tetep whiff, mending lu sewa aja di valmart.id mulai 15 ribuan. Plus sekarang lagi ada challenge Valmart ACE Bounty: kalau lu dapet ACE pas sewa akun ini, biaya sewa lu kita balikin 100%! Cek syaratnya di link bio!"*
+  > *"Gak ada yang lebih malu selain nenteng Vandal Kuronami... tapi pas ketemu musuh yang lagi nunduk defuse, peluru lu malah bikin lukisan abstrak di tembok. Tapi ya udahlah ya bro, yang penting gaya nomor satu, skill bisa dipelajari nanti malam. Daripada boncos beli bundle ratusan ribu tapi aim tetep whiff, mending lu sewa aja di valmart.id mulai 15 ribuan. Oiya, Valmart lagi ngadain Sayembara ACE Bounty: upload video gameplay ter-kece lu pake hashtag #ValmartAceBounty, video paling kece langsung dapet Rp 200.000 cash tanpa syarat sewa akun! Detailnya cek di bio!"*
 * **Sound / SFX**: Suara spray Vandal bocor $\rightarrow$ Vine boom keras $\rightarrow$ Sound hening jangkrik krik-krik $\rightarrow$ Phonk beat santai.
-* **Caption**: *"Skill boleh silver, yang penting skin wajib sekelas VCT Champions 🥶 Kalau dapet ACE pas sewa, biaya sewa dibalikin 100%! Cek info #ValmartAceBounty di link bio!"*
+* **Caption**: *"Skill boleh silver, yang penting skin wajib sekelas VCT Champions 🥶 Upload video gameplay ter-kece lu pake hashtag #ValmartAceBounty, menangkan 200rb cash! Cek link bio."*
 
 ---
 

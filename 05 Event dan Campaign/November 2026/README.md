@@ -2,38 +2,34 @@
 **Brand**: Valmart.id & Martforum.id  
 **Periode**: 1 – 30 November 2026  
 **Supervisi**: Ko Jeremy | **Koordinator**: Hildan  
-**Fokus**: Kombinasi Penjualan (Affiliate & 11.11), Viralitas UGC (Ace Bounty), & Hiburan Komunitas (Clone Clash).
+**Hasil Review Meeting**: Pembagian 4 berkas kampanye mandiri, kedua event streamer berstatus PAID, live showmatch di akun masing-masing streamer, diskon 1% dirahasiakan, dan promo 11.11 Martforum hadir dengan skema "Tebus Murah 125 VP Rp 11.000".
 
 ---
 
-## 🎯 4 Pilar Event & Campaign November 2026
+## 🎯 4 Dokumen Event & Campaign Resmi (November 2026)
 
-| No | Inisiatif Event / Campaign | Tipe & Sifat | Periode Pelaksanaan | Target Output Utama | Dokumen Panduan Rinci |
-| :---: | :--- | :---: | :---: | :--- | :--- |
-| 1 | **Valmart Streamer Affiliate Sprint** | 💰 PAID (Rp 500k) | 1 – 30 Nov 2026 | **Omset Transaksi** (Min. 15 pesanan sah per streamer eligible) | [Panduan Streamer](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/EVENT_STREAMER_NOVEMBER_2026.md#1-campaign-1-paid-valmart-streamer-affiliate-sprint) |
-| 2 | **Valmart ACE Bounty** | 🎬 UGC VIRAL (Free) | 2 – 30 Nov 2026 | **Banjir Video TikTok** (Customer pamer ACE pakai akun sewa) | [SOP Ace Bounty](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/PROGRAM_ACE_BOUNTY.md) |
-| 3 | **Mega Sale 11.11 (Harbolnas)** | ⚡ FLASH SALE (Web) | 11 – 13 Nov 2026 | **Lonjakan Checkout Web** (Sewa Rp 11k & Diskon 11% VP) | [Rencana Mega Sale 11.11](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/EVENT_MEGA_SALE_1111.md) |
-| 4 | **Valmart Clone Clash (Showmatch)** | 🎮 COMMUNITY (Free) | 28 – 29 Nov 2026 | **Distribusi Klip Viral Masif** (10 Agent Sama pasca match) | [Panduan Showmatch](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/EVENT_STREAMER_NOVEMBER_2026.md#2-campaign-2-free-valmart-clone-clash-one-agent-showmatch-5v5) |
+| No | Inisiatif Event / Campaign | Tipe & Sifat | Periode | Output Bisnis yang Ditargetkan | Berkas Dokumen Rinci |
+| :---: | :--- | :--- | :---: | :--- | :--- |
+| 1 | **Valmart Streamer Affiliate Sprint** | 💰 **PAID** (Rp 500k Cash) | 1 – 30 Nov 2026 | **Omset Penjualan Riil**: 15+ Streamer adu referral dengan syarat ambang batas minimal 15 pesanan sah. | 📄 **[EVENT_AFFILIATE_SPRINT.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/EVENT_AFFILIATE_SPRINT.md)** |
+| 2 | **Valmart Sultan Showmatch (Clone Clash)** | 💰 **PAID** (Rp 250k Juara 1) | 28 – 29 Nov 2026 | **Ledakan Reach Multi-Channel**: Format 10 Agent Sama, live streaming di channel masing-masing streamer + clipping masif. *(Diskon 1% tidak diumumkan)*. | 📄 **[EVENT_SULTAN_SHOWMATCH.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/EVENT_SULTAN_SHOWMATCH.md)** |
+| 3 | **Valmart ACE Bounty** | 🎁 **UGC CASH** (Rp 200k) | 2 – 30 Nov 2026 | **Banjir Konten TikTok Bebas Sewa**: Terbuka untuk umum tanpa syarat sewa akun. Konten gameplay ter-kece berhadiah Rp 200.000 tunai. | 📄 **[PROGRAM_ACE_BOUNTY.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/PROGRAM_ACE_BOUNTY.md)** |
+| 4 | **Mega Sale 11.11 (Valmart x Martforum)** | ⚡ **FLASH SALE** (Web) | 11 – 13 Nov 2026 | **Lonjakan Checkout 72 Jam**: Valmart Flash Rent serba **Rp 11.000 / hari** & Martforum Flash Drop Saldo Nanggung **125 VP Cuma Rp 11.000**. | 📄 **[EVENT_MEGA_SALE_1111.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/EVENT_MEGA_SALE_1111.md)** |
 
 ---
 
-## 🗓️ Roadmap Integrasi Kalender Bulanan
+## 📅 Roadmap Integrasi & Jadwal Distribusi Materi Promosi (Aturan H-14)
 
 ```
-[1 Nov]       : 🚀 KICKOFF Streamer Affiliate Sprint (Push link referral VALMART...)
-[2 Nov]       : 🎬 LAUNCHING Valmart ACE Bounty (Syarat: Dapet ACE sewa gratis 100%)
-[9 - 10 Nov]  : 🎨 Teaser & Pasang Banner Harbolnas 11.11 di Website
-[11 - 13 Nov] : ⚡ MEGA SALE 11.11 (Flash Rent Rp 11.000 & Kupon MART1111 72 Jam)
-[21 Nov]      : 📋 Technical Meeting Clone Clash bareng Audrey & Kapten Streamer
-[28/29 Nov]   : 🏆 MAIN EVENT Valmart Clone Clash (10 Jett, 10 Reyna, 10 Omen)
-[29 - 30 Nov] : 🎬 Sesi Clipping TikTok serentak 15+ Streamer Partner
-[30 Nov]      : 🥇 Penutupan Sprint, Validasi 15 Pesanan Sah, & Penyerahan Hadiah Rp 500k
+[1 Nov]       : 🚀 KICKOFF Streamer Affiliate Sprint (Pembagian kode referral & panduan ke 15+ streamer).
+[2 Nov]       : 📢 LAUNCHING Valmart ACE Bounty (Poster feed rilis: Konten ter-kece dapet Rp 200k cash).
+[4 Nov]       : 🎨 H-7 Teaser Harbolnas: Jonathan rilis teaser awal Flash Rent Valmart & Flash Drop Martforum serba Rp 11.000.
+[9 Nov]       : ⚡ H-2 Pasang Hero Banner 11.11 di website valmart.id & martforum.id + hitung mundur Story.
+[11 - 13 Nov] : 💥 11.11 MEGA DROP AKTIF (Valmart Sewa Akun Rp 11k & Martforum 125 VP Cuma Rp 11k selama 72 jam).
+[14 Nov]      : 📣 H-14 SULTAN SHOWMATCH: Rilis teaser poster resmi turnamen 10 Agent Sama (2 minggu sebelum match).
+[21 Nov]      : 📋 H-7 SULTAN SHOWMATCH: Rilis poster resmi Tournament Bracket & Roster 4 Kapten Streamer.
+[25 Nov]      : 🎬 H-3 SULTAN SHOWMATCH: Rilis video skit komedi / countdown menuju matchday.
+[27 Nov]      : 📢 H-1 SULTAN SHOWMATCH: Rilis Poster Matchday & Panduan Nonton Multi-Stream di channel masing-masing.
+[28/29 Nov]   : 🏆 MAIN EVENT VALMART SULTAN SHOWMATCH (Multi-stream di channel masing-masing streamer).
+[29 - 30 Nov] : 🎬 Sesi Clipping TikTok serentak oleh seluruh streamer partner.
+[30 Nov]      : 🥇 Penyerahan Hadiah Juara Showmatch (Rp 250k), Affiliate Sprint (Rp 500k), & Ace Bounty (Rp 200k).
 ```
-
----
-
-## 📂 Link File Panduan Lengkap
-* 💰 **[EVENT_STREAMER_NOVEMBER_2026.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/EVENT_STREAMER_NOVEMBER_2026.md)** — Mekanisme Affiliate Sprint (Threshold 15 pesanan) & Showmatch Clone Clash 10 Agent Sama.
-* 🎬 **[PROGRAM_ACE_BOUNTY.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/PROGRAM_ACE_BOUNTY.md)** — SOP verifikasi klaim refund ACE Bounty, syarat video TikTok, hashtag resmi, dan pengaman anti-boncos.
-* ⚡ **[EVENT_MEGA_SALE_1111.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/EVENT_MEGA_SALE_1111.md)** — Detail teknis Flash Rent Rp 11k, kode kupon Martforum `MART1111`, dan brief banner visual Jonathan.
-

@@ -3,7 +3,21 @@
 
 **Target Akun**: `@martforum.id` (Instagram & TikTok)  
 **Talent / VO**: Jonathan  
-**Total Konten**: 3 Konten Voice Over (Senin, Rabu, Jumat)  
+**Total Konten**: 3 Konten Voice Over (Senin, Rabu, Jumat) + 2 Desain Poster Event  
+
+---
+
+## 🎨 ASET DESAIN POSTER EVENT (JONATHAN — WEEK 1)
+
+### 📢 Poster 1: Launching Sayembara Valmart ACE Bounty (Senin, 2 Nov 2026)
+* **Penempatan**: Single Post Feed Instagram `@valomart._id`, TikTok Carousel, & Instagram Story.
+* **Headline**: *"SAYEMBARA VALMART ACE BOUNTY: UPLOAD GAMEPLAY TER-KECE, DAPET RP 200.000 CASH!"*
+* **Visual**: Vandal Kuronami berpetir, teks tebal bernuansa neon gaming, syarat simpel: Open for all (tanpa syarat sewa akun), upload dengan tagar `#ValmartAceBounty`.
+
+### ⚡ Poster 2: Teaser H-7 Mega Sale 11.11 Valmart x Martforum (Rabu, 4 Nov 2026)
+* **Penempatan**: Feed IG Carousel & Instagram Story `@valomart._id` & `@martforum.id`.
+* **Headline**: *"11.11 IS COMING: FLASH RENT VALMART & TEBUS 125 VP MARTFORUM SERBA RP 11.000!"*
+* **Visual**: Teaser siluet Vandal Reaver & ikon Valorant Points dengan label harga kembar Rp 11.000 dan countdown tanggal 11 November.
 
 ---
 

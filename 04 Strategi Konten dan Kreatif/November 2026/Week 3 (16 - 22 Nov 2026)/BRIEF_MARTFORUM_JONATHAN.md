@@ -1,27 +1,51 @@
-# Brief Konten Voice Over (VO) Martforum — Jonathan
+# Brief Konten Voice Over (VO) & Desain Grafis — Jonathan
 ## Minggu 3: 16 – 22 November 2026
 
-**Target Akun**: `@martforum.id` (Instagram & TikTok)  
-**Talent / VO**: Jonathan  
-**Total Konten**: 3 Konten Voice Over (Senin, Rabu, Jumat)  
+**Target Akun**: `@martforum.id` & `@valmart.id` (Instagram & TikTok)  
+**Talent & Desainer**: Jonathan  
+**Total Output**: 3 Konten Voice Over (Senin, Rabu, Jumat) + 1 Aset Desain Utama (Poster Bracket & Roster H-7)  
 
 ---
 
-### <a id="konten-vo-7"></a>🎙️ Konten VO 7 — Senin, 16 Nov 2026 [🔥 HYPE & EVENT: TEASER CLONE CLASH]
+## 🎨 Bagian 1: Deliverables Desain Grafis Pendukung Event
+
+### 📢 POSTER OFFICIAL H-7 TOURNAMENT BRACKET & ROSTER KAPTEN [Sebar 1 Minggu Sebelumnya]
+* **Jadwal Publikasi**: Sabtu, 21 November 2026 (Upload di feeds/story dan disebar ke WhatsApp/Discord 15+ Streamer Partner).
+* **Ukuran / Format**: 1080 x 1350 px (Feed Poster) & 1080 x 1920 px (Story Template & Overlay Streamer).
+* **Isi Konten & Komposisi Poster**:
+  1. **Headline**: *"OFFICIAL TOURNAMENT BRACKET: VALMART SULTAN SHOWMATCH (ONE AGENT CLONE CLASH)"*.
+  2. **Bagan Pertandingan**:
+     * Match 1: Tim Syahran (10 Jett Mirror Match di Haven).
+     * Match 2: Tim Widipu (10 Reyna Chaos Match di Ascent).
+     * Match 3: Tim Brayen (10 Omen Mystery Match di Bind).
+     * Grand Final: Tim Pemenang vs Tim Aim (Map Penentuan).
+  3. **Prize Pool Highlight**:
+     * 🥇 **JUARA 1**: **Rp 250.000 CASH** + Free Sewa Akun Sultan Tier S (1 Hari) + Diskon Pembelian Akun 7%!
+     * 🥈 **JUARA 2 & 3**: Hadiah Eksklusif Valmart Partner & Privilese Komunitas.
+     * *(ATURAN MUTLAK: Voucher diskon top up 1% TIDAK BOLEH DICANTUMKAN di desain maupun caption agar tidak merusak wibawa brand. Reward ini hanya didistribusikan privat lewat DM/Discord)*.
+  4. **Broadcast Information**:
+     * *"Tonton langsung di CHANNEL MASING-MASING STREAMER (YouTube / TikTok / Twitch)"*.
+     * *"Sabtu & Minggu, 28 – 29 November 2026 | Mulai Pukul 19.30 WIB"*.
+
+---
+
+## 🎙️ Bagian 2: Naskah Voice Over (VO) Martforum
+
+### <a id="konten-vo-7"></a>🎙️ Konten VO 7 — Senin, 16 Nov 2026 [🔥 HYPE & EVENT: TEASER CLONE CLASH & ROSTER]
 * **Format**: Teaser Cinematic + Storytelling Hype.
 * **Durasi**: 25 – 32 detik.
-* **Angle**: Pengumuman resmi turnamen komunitas showmatch paling nyeleneh: 10 Agent yang sama diadu dalam satu map (One Agent Showmatch).
+* **Angle**: Pengumuman resmi turnamen komunitas showmatch paling nyeleneh: 10 Agent yang sama diadu dalam satu map (One Agent Showmatch), memperebutkan hadiah cash Rp 250.000 untuk Juara 1 dan live di channel masing-masing streamer.
 * **Visual**:
-  * 0–6s: Animasi teaser visual poster: **VALMART CLONE CLASH**. Teks: *"10 Jett. 10 Reyna. 10 Omen. No Other Agents Allowed"*.
+  * 0–6s: Animasi teaser visual poster: **VALMART SULTAN SHOWMATCH: CLONE CLASH**. Teks: *"10 Jett. 10 Reyna. 10 Omen. No Other Agents Allowed"*.
   * 6–18s: Cuplikan streamer partner Valorant yang bakal mimpin tim (Syahran, Widipu, Brayen, Aim).
-  * 18–28s: Jonathan bocorkan hadiah penonton: kode promo top up VP 1% khusus live chat Martforum.
+  * 18–28s: Jonathan infokan bahwa penonton bisa nonton langsung di channel streamer masing-masing dan ada kode voucher belanja spesial pas live matchday.
 * **Text on Screen (TOS)**:
-  * "VALMART CLONE CLASH RESMI DIUMUMKAN! 🔥"
-  * "Showmatch 10 Agent Sama + Banjir Voucher Top Up di Martforum"
+  * "VALMART SULTAN SHOWMATCH RESMI DIUMUMKAN! 🔥"
+  * "10 Agent Sama di Satu Map! Nonton Langsung di Channel Streamer Favorit Lu"
 * **Naskah Voice Over (Jonathan)**:
-  > *"Pernah gak kalian nonton turnamen Valorant tapi 10 playernya dipaksa pick agent yang sama persis? Akhir bulan ini, Valmart bareng Martforum bakal bikin gebrakan baru: Valmart Clone Clash! Empat tim streamer favorit kalian bakal diadu di match 10 Jett, 10 Reyna, dan 10 Omen yang super kacau! Dan buat kalian para penonton setia, bakal ada kode voucher diskon top up khusus di martforum.id yang dibagikan pas live streaming nanti. Pantengin terus infonya di medsos kita dan siapin mental kalian buat tontonan paling gila bulan ini!"*
+  > *"Pernah gak kalian nonton turnamen Valorant tapi sepuluh playernya dipaksa pick agent yang sama persis? Akhir bulan ini, Valmart bareng Martforum bakal bikin gebrakan baru: Valmart Sultan Showmatch! Empat tim streamer favorit kalian bakal diadu di match sepuluh Jett, sepuluh Reyna, dan sepuluh Omen yang super kacau! Juara satu bakal bawa pulang hadiah uang tunai dua ratus lima puluh ribu rupiah plus akun rental Sultan. Pertandingan ini bakal disiarkan live di channel masing-masing streamer partner kita. Pantengin terus infonya di medsos kita dan siapin diri buat tontonan paling gila bulan ini!"*
 * **Sound / SFX**: Sound beat trailer sinematik $\rightarrow$ Sound bass drop menggelegar.
-* **Caption**: *"Kebayang gak seberapa kacaunya 10 Jett adu dash barengan? Catat tanggalnya dan pantengin live-nya bareng martforum.id!"*
+* **Caption**: *"Kebayang gak seberapa rusuhnya 10 Jett adu dash barengan? Catat tanggalnya 28-29 Nov dan tonton langsung di channel streamer kesayangan kalian! Link di bio."*
 
 ---
 
@@ -50,11 +74,11 @@
 * **Visual**:
   * 0–5s: Grafis countdown menuju Technical Meeting Showmatch akhir pekan.
   * 5–15s: Penawaran pecahan VP favorit (1.120 VP & 2.400 VP) dengan rate termurah.
-  * 15–22s: Ajakan tonton live streaming besok malam.
+  * 15–22s: Ajakan amankan amunisi VP sebelum match weekend.
 * **Text on Screen (TOS)**:
-  * "Road to Clone Clash: Flash Sale VP Akhir Pekan!"
-  * "Sambut Technical Meeting Showmatch bareng martforum.id"
+  * "Road to Showmatch: Flash Sale VP Akhir Pekan!"
+  * "Amankan amunisi game lu di martforum.id"
 * **Naskah Voice Over (Jonathan)**:
-  > *"Menyambut Technical Meeting Valmart Clone Clash besok malam, Martforum ngadain Flash Sale weekend khusus buat kalian semua bro! Buat yang mau upgrade senjata atau siap-siap mabar malam minggu, sekarang saat paling pas buat serbu VP dengan harga terbaik. Proses instan via QRIS dan dijamin 100% legal anti-banned. Checkout sekarang di link bio sebelum promo flash sale-nya berakhir!"*
+  > *"Menyambut Technical Meeting Valmart Sultan Showmatch besok malam, Martforum ngadain Flash Sale weekend khusus buat kalian semua bro! Buat yang mau upgrade senjata atau siap-siap mabar malam minggu bareng temen tongkrongan, sekarang saat paling pas buat serbu VP dengan harga terbaik. Proses instan via QRIS dan dijamin 100% legal anti-banned. Checkout sekarang di link bio sebelum promo flash sale-nya berakhir!"*
 * **Sound / SFX**: Upbeat future bass ceria.
-* **Caption**: *"Flash sale weekend sudah dibuka! Amankan amunisi VP lu sekarang di martforum.id dan saksikan TM Clone Clash besok malam! Link di bio."*
+* **Caption**: *"Flash sale weekend sudah dibuka! Amankan amunisi VP lu sekarang di martforum.id dan nantikan keseruan Showmatch minggu depan! Link di bio."*
