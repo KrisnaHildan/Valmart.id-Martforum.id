@@ -47,28 +47,27 @@ flowchart TD
 * 🎙️ **Jonathan (Martforum - Konten VO #3)**: Upload promo weekend flash sale top up VP.
 * Jonathan: Memastikan banner promo weekend di homepage Martforum sudah aktif.
 
-### Sabtu: Peak Mabar & Live Streaming
-* 🎬 **Helmy (Valmart - Video Singkat #4)**: Upload video drama mabar / testimoni rental.
-* **Helmy**: Live TikTok Valmart (durasi 1 - 2 jam) fokus pada display akun rental yang siap dipakai mabar malam minggu.
-* **Audrey**: Mengawal pelaksanaan matchday mini tournament / showmatch streamer.
+### Sabtu: Review Performa & Community Care
+* **Helmy & Jonathan**: Memantau interaksi komentar di TikTok & Instagram, menjawab pertanyaan seputar rental/top up, dan mengarahkan ke link bio.
+* **Audrey**: Menjaga komunikasi dengan streamer partner dan komunitas Discord.
 
 ### Minggu: Rest & Reporting
-* Tim produksi istirahat dari syuting aktif (tetap memantau interaksi komentar penting).
+* Tim produksi istirahat dari syuting aktif (recharge ide konten).
 * Hildan merekap data performa (views, likes, link clicks, sales) ke dalam log evaluasi mingguan.
 
 ---
 
-## 3. Matriks Jadwal Posting Mingguan (Arahan Ko Jeremy)
+## 3. Matriks Jadwal Posting Mingguan (Formula 4:3 Valmart & Martforum)
 
 | Hari | Valmart (`@valmart.id`) — Helmy (4x/minggu) | Martforum (`@martforum.id`) — Jonathan (3x/minggu VO) |
 | :---: | :--- | :--- |
-| **Senin** | *(Fase Produksi / Edit)* | 🎙️ **POST 1**: Konten VO Update Game / Skin |
-| **Selasa** | 🎬 **POST 1**: Video POV Sewa Akun Sultan 15rb | *(Fase Desain Web)* |
-| **Rabu** | *(Fase Produksi / Live Asset)* | 🎙️ **POST 2**: Konten VO Review Top Up Cepat QRIS |
-| **Kamis** | 🎬 **POST 2**: Video Edukasi Anti-HB & FMail | *(Fase Produksi Konten Weekend)* |
-| **Jumat** | 🎬 **POST 3**: Video Finisher Skin & Call to Rent | 🎙️ **POST 3**: Konten VO Weekend Promo Flash Sale |
-| **Sabtu** | 🎬 **POST 4**: Video Drama Mabar + **Live TikTok** | *(Monitoring Promo Web)* |
-| **Minggu** | *(Off / Monitoring Komentar)* | *(Off / Monitoring Komentar)* |
+| **Senin** | *(Fase Produksi / Riset Footage)* | 🎙️ **POST 1**: Konten VO Update Game / Leak Bundle / Reset Toko |
+| **Selasa** | 🎬 **POST 1**: Video POV Sewa Akun Sultan 15rb | *(Fase Desain UI / Banner Web)* |
+| **Rabu** | 🎬 **POST 2**: Video Edukasi Anti-HB & FMail Asli | 🎙️ **POST 2**: Konten VO Kecepatan QRIS 3 Detik / Trust |
+| **Kamis** | 🎬 **POST 3**: Video Debat Skin / Cashout Pensiun | *(Fase Desain Aset Promo Weekend)* |
+| **Jumat** | 🎬 **POST 4**: Video Sensasi Finisher & Call to Rent | 🎙️ **POST 3**: Konten VO Weekend Promo Flash Sale & Bundle |
+| **Sabtu** | *(Monitoring Performa Video & Community Care)* | *(Monitoring Performa Promo Web & Community Care)* |
+| **Minggu** | *(Off / Monitoring Komentar & Evaluasi Data)* | *(Off / Monitoring Komentar & Evaluasi Data)* |
 
 ---
 

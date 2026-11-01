@@ -101,3 +101,4 @@ Salah satu output utama dari Showmatch ini adalah produksi aset konten pendek (S
 [29 - 30 Nov] : Sesi Clipping: Rilis serentak klip-klip viral showmatch di TikTok seluruh streamer.
 [30 Nov]      : Verifikasi 15 Pesanan Sah & Penyerahan Hadiah Rp 500.000 untuk Juara Affiliate Sprint.
 ```
+
