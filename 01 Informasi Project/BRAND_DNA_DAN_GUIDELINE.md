@@ -25,17 +25,17 @@ Valmart adalah brand yang berfokus pada **jual-beli dan penyewaan (rental) akun 
 
 ### D. Target Market
 * **Rentang Usia:** 13 – 25 tahun (Gen Z, pelajar SMP/SMA, mahasiswa, first-jobber gamer).
-* **Penyewa Akun (Rental):** Kalangan ekonomi menengah ke bawah / pelajar. Punya budget receh (Rp 10.000 – Rp 25.000) tapi ingin tampil gaya dan flex skin mahal saat mabar semalam atau pas push rank akhir pekan.
+* **Penyewa Akun (Rental):** Kalangan ekonomi menengah ke bawah / pelajar. Punya budget receh mulai dari **Rp 5.000 (goceng)** sampai Rp 25.000 tapi ingin tampil gaya dan flex skin mahal saat mabar semalam atau pas push rank akhir pekan.
 * **Pembeli Akun:** Kalangan ekonomi menengah. Mencari akun siap pakai dengan skin lengkap dan reputasi aman.
 * **Penjual Akun (Cash Out):** Seluruh kalangan pemain yang ingin pensiun atau butuh uang cepat tanpa takut ditipu *middleman* palsu.
 
 ### E. Bottleneck & Customer Pain Points
 * **Bottleneck Saat Ini:** Postingan media sosial sudah ramai di area meme/relatable, **tetapi belum benar-benar mengonversi penonton menjadi penyewa/pembeli akun**.
-  * *Solusi Jembatan Konversi (Conversion Bridge)*: Setiap konten meme wajib memiliki jembatan CTA friksi terendah: sewa murah modal ceban, pendaftaran super gampang tanpa ribet, dan garansi uang kembali.
+  * *Solusi Jembatan Konversi (Conversion Bridge)*: Setiap konten meme wajib memiliki jembatan CTA friksi terendah: sewa murah modal goceng (mulai Rp 5.000), pendaftaran super gampang tanpa ribet, dan garansi uang kembali.
 * **Customer Pain Points:** Takut tertipu, takut akun kena *Hackback (HB)* / ditarik pemilik lama, dan malas dengan birokrasi pendaftaran yang ribet.
 
 ### F. Unique Selling Point (USP) Resmi
-1. **Sewa Akun dan Jubel dengan Harga Murah:** Akses skin tier tinggi mulai modal belasan ribu.
+1. **Sewa Akun dan Jubel dengan Harga Termurah:** Akses skin tier tinggi mulai modal Rp 5.000 (goceng) saja!
 2. **Sistem Pendaftaran Lebih Mudah:** Cukup unggah KTP, lalu isi nama sekolah (pelajar) atau alamat kantor (pekerja) tanpa verifikasi berbelit-belit.
 3. **Sistem Pembelian 24 Jam Tanpa Admin:** Transaksi otomatis di website `valmart.id`, bayar QRIS langsung dapat akun detik itu juga tanpa perlu nunggu admin WA bangun.
 4. **Garansi HB Uang Kembali 100%:** Jaminan perlindungan total; jika akun terbukti kena hackback, uang customer dikembalikan utuh 100%.
@@ -50,7 +50,7 @@ Valmart adalah brand yang berfokus pada **jual-beli dan penyewaan (rental) akun 
 | **Highlights** | • **Jual**: Alur & syarat cashout akun.<br>• **Beli**: Cara beli & katalog unggulan.<br>• **Sewa**: Cara sewa & paket durasi rental.<br>• **How to Order**: Step-by-step pemesanan via web.<br>• **Testi & Legit**: Bukti chat pembeli puas & bukti akun aman anti-HB.<br>• **List Ready**: Update skin/akun yang lagi *available*. | Membangun trust instan dan memudahkan navigasi pembeli baru. |
 | **Pinned Posts** | 1. **Informasi Customer Service & Jam Operasional** (Peringatan akun resmi agar tidak kena impersonator/penipu).<br>2. **Panduan Sewa Akun Murah** (Infografis simpel alur sewa akun).<br>3. **Standar Keamanan Anti-HB** (Edukasi komitmen keamanan Valmart). | Filter pertama yang dilihat pengunjung profil IG. |
 | **Feeds** | • Daily news seputar Valorant (patch note, bundle baru, esports VCT).<br>• Carousel meme relatable dunia mabar (minimal 1-2x seminggu).<br>• Infografis edukasi (FMail vs suntikan, tips push rank). | Menjaga engagement harian dan estetika feed yang hidup. |
-| **Reels / TikTok** | • **POV Rental**: *"Mabar modal 15rb pake Kuronami depan gebetan"*, *"Sensasi finisher pas clutch"*, drama mabar.<br>• Skit komedi & meme gaming Gen Z (termasuk hook jomok/absurd tipis). | Pintu masuk penarik views organik dan viralitas. |
+| **Reels / TikTok** | • **POV Rental**: *"Mabar modal goceng pake Kuronami depan gebetan"*, *"Sensasi finisher pas clutch"*, drama mabar.<br>• Skit komedi & meme gaming Gen Z (termasuk hook jomok/absurd tipis). | Pintu masuk penarik views organik dan viralitas. |
 
 ---
 

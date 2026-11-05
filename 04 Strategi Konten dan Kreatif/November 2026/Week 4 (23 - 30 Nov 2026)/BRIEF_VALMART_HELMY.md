@@ -37,9 +37,9 @@
   * "Kondisi dompet: Tinggal 20 ribu lecek 💀"
   * "Kondisi akun pas mabar: Full Skin Champions & Kuronami ✨"
 * **Audio / Script (Helmy)**:
-  > *"Tanggal tua bukan alasan buat lu mabar pake skin default abu-abu bro! Meskipun dompet lu lagi kritis sisa recehan dua puluh ribu lecek, di Valmart lu tetep bisa bergaya jadi sultan semalam suntuk. Cukup modal ceban lu udah bisa nenteng Vandal Champions sama pisau Kuronami pas mabar malam ini. Dompet boleh sekarat, tapi gengsi depan temen Discord tetap terjaga! Buktiin sendiri murahnya di link bio sekarang!"*
+  > *"Tanggal tua bukan alasan buat lu mabar pake skin default abu-abu bro! Meskipun dompet lu lagi kritis sisa recehan dua puluh ribu lecek, di Valmart lu tetep bisa bergaya jadi sultan semalam suntuk. Cukup modal goceng lima ribu doang lu udah bisa nenteng Vandal Champions sama pisau Kuronami pas mabar malam ini. Dompet boleh sekarat, tapi gengsi depan temen Discord tetap terjaga! Buktiin sendiri murahnya di link bio sekarang!"*
 * **Sound / SFX**: Suara lofi hening dramatis $\rightarrow$ Sound kasir kaching sukses $\rightarrow$ Beat phonk santai.
-* **Caption**: *"Solusi cerdas anak tongkrongan pas tanggal tua 🗿 Sewa akun sultan modal ceban di link bio!"*
+* **Caption**: *"Solusi cerdas anak tongkrongan pas tanggal tua 🗿 Sewa akun sultan modal goceng di link bio!"*
 
 ---
 
@@ -53,9 +53,9 @@
   * 18–28s: Tunjukkan katalog website `valmart.id`: Akun-akun ini berstatus ready dan bisa disewa kapan saja oleh publik.
 * **Text on Screen (TOS)**:
   * "Akun yang dipake para streamer di Sultan Showmatch! 🔥"
-  * "Kalian juga bisa sewa akun yang sama di valmart.id mulai 15rb-an!"
+  * "Kalian juga bisa sewa akun yang sama di valmart.id mulai goceng (Rp 5.000)!"
 * **Audio / Script (Helmy)**:
-  > *"H-2 menuju Valmart Sultan Showmatch! Buat kalian yang penasaran streamer favorit kalian bakal pake akun apa pas tanding nanti, nih gua kasih liat akun-akun Sultan yang udah disiapin Valmart. Semuanya udah full upgrade skin impian, dari Kuronami, Champions, sampai Arcane! Dan kabar baiknya, akun-akun sekeren ini bukan cuma buat streamer doang, tapi kalian juga bisa sewa langsung di valmart.id mulai modal belasan ribu. Mau nyobain rasanya nenteng akun pro player? Cek katalognya di link bio!"*
+  > *"H-2 menuju Valmart Sultan Showmatch! Buat kalian yang penasaran streamer favorit kalian bakal pake akun apa pas tanding nanti, nih gua kasih liat akun-akun Sultan yang udah disiapin Valmart. Semuanya udah full upgrade skin impian, dari Kuronami, Champions, sampai Arcane! Dan kabar baiknya, akun-akun sekeren ini bukan cuma buat streamer doang, tapi kalian juga bisa sewa langsung di valmart.id mulai modal goceng lima ribu doang. Mau nyobain rasanya nenteng akun pro player? Cek katalognya di link bio!"*
 * **Sound / SFX**: Suara inspect senjata beruntun renyah $\rightarrow$ Upbeat future bass.
 * **Caption**: *"Akun sultan yang dipake para streamer siap nemenin mabar kalian juga! Booking akun impian lu di link bio sekarang!"*
 

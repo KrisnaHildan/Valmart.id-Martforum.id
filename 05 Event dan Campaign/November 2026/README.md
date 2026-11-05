@@ -12,7 +12,7 @@
 | :---: | :--- | :--- | :---: | :--- | :--- |
 | 1 | **Valmart Streamer Affiliate Sprint** | 💰 **PAID** (Rp 500k Cash) | 1 – 30 Nov 2026 | **Omset Penjualan Riil**: 15+ Streamer adu referral dengan syarat ambang batas minimal 15 pesanan sah. | 📄 **[EVENT_AFFILIATE_SPRINT.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/EVENT_AFFILIATE_SPRINT.md)** |
 | 2 | **Valmart Sultan Showmatch (Clone Clash)** | 💰 **PAID** (Rp 250k Juara 1) | 28 – 29 Nov 2026 | **Ledakan Reach Multi-Channel**: Format 10 Agent Sama, live streaming di channel masing-masing streamer + clipping masif. *(Diskon 1% tidak diumumkan)*. | 📄 **[EVENT_SULTAN_SHOWMATCH.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/EVENT_SULTAN_SHOWMATCH.md)** |
-| 3 | **Valmart ACE Bounty** | 🎁 **UGC CASH** (Rp 200k) | 2 – 30 Nov 2026 | **Banjir Konten TikTok Bebas Sewa**: Terbuka untuk umum tanpa syarat sewa akun. Konten gameplay ter-kece berhadiah Rp 200.000 tunai. | 📄 **[PROGRAM_ACE_BOUNTY.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/PROGRAM_ACE_BOUNTY.md)** |
+| 3 | **Valmart ACE Bounty** | 🎁 **UGC CASH** | 2 – 30 Nov 2026 | **Banjir Konten TikTok Bebas Sewa**: Terbuka untuk umum tanpa syarat sewa akun. Konten gameplay ter-kece berhadiah Cash Reward Tunai *(Aman dari sensor platform)*. | 📄 **[PROGRAM_ACE_BOUNTY.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/PROGRAM_ACE_BOUNTY.md)** |
 | 4 | **Mega Sale 11.11 (Valmart x Martforum)** | ⚡ **FLASH SALE** (Web) | 11 – 13 Nov 2026 | **Lonjakan Checkout 72 Jam**: Valmart Flash Rent serba **Rp 11.000 / hari** & Martforum Flash Drop Saldo Nanggung **125 VP Cuma Rp 11.000**. | 📄 **[EVENT_MEGA_SALE_1111.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/EVENT_MEGA_SALE_1111.md)** |
 
 ---
@@ -21,7 +21,7 @@
 
 ```
 [1 Nov]       : 🚀 KICKOFF Streamer Affiliate Sprint (Pembagian kode referral & panduan ke 15+ streamer).
-[2 Nov]       : 📢 LAUNCHING Valmart ACE Bounty (Poster feed rilis: Konten ter-kece dapet Rp 200k cash).
+[2 Nov]       : 📢 LAUNCHING Valmart ACE Bounty (Poster feed rilis: Konten ter-kece dapet Cash Reward Tunai).
 [4 Nov]       : 🎨 H-7 Teaser Harbolnas: Jonathan rilis teaser awal Flash Rent Valmart & Flash Drop Martforum serba Rp 11.000.
 [9 Nov]       : ⚡ H-2 Pasang Hero Banner 11.11 di website valmart.id & martforum.id + hitung mundur Story.
 [11 - 13 Nov] : 💥 11.11 MEGA DROP AKTIF (Valmart Sewa Akun Rp 11k & Martforum 125 VP Cuma Rp 11k selama 72 jam).

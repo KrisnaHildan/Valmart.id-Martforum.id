@@ -39,7 +39,7 @@ Workspace strategi digital marketing untuk dua brand di bawah supervisi Ko Jerem
 ---
 
 ## 🎯 Fokus & Rencana Strategis
-- **Pintu Masuk Terendah (Hook TikTok)**: Memaksimalkan fitur sewa akun Valorant di Valmart sebagai konten hook POV & flex skin sultan (modal murah Rp 10rb - Rp 25rb).
+- **Pintu Masuk Terendah (Hook TikTok)**: Memaksimalkan fitur sewa akun Valorant di Valmart sebagai konten hook POV & flex skin sultan (harga termurah mulai Rp 5.000 / goceng).
 - **Pemisahan Akun Traffic vs Katalog**: Menjaga akun media sosial tetap aman dari risiko shadowban/report ToS dengan melempar display katalog ke web.
 - **Trust & Edukasi Anti-HB**: Edukasi perbedaan First Mail vs suntikan untuk membangun reputasi aman.
-- **Sinergi Cross-Selling**: Voucher silang antara sewa/beli akun Valmart dengan top up VP di Martforum.
+- **Sinergi Cross-Selling**: Sinergi ekosistem antara sewa akun Valmart dengan top up VP di Martforum.

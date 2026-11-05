@@ -10,20 +10,20 @@
 ## 🎬 Bagian Khusus: Video Pendukung Kampanye ACE Bounty
 
 ### 🎬 Video Update — Senin, 16 Nov 2026 [📢 ACE BOUNTY MID-MONTH REACTION & REMINDER]
-* **Format**: Reaction Video Submission Komunitas + Call to Action Sayembara Rp 200k.
+* **Format**: Reaction Video Submission Komunitas + Call to Action Sayembara.
 * **Durasi**: 25 – 35 detik.
-* **Angle**: Helmy me-react beberapa klip submission gameplay terlucu dan ter-clutch yang masuk via tagar `#ValmartAceBounty`. Mengingatkan audiens bahwa siapa saja bisa ikut tanpa harus sewa akun, dan klip paling kece berhak atas uang tunai Rp 200.000!
+* **Angle**: Helmy me-react beberapa klip submission gameplay terlucu dan ter-clutch yang masuk via tagar `#ValmartAceBounty`. Mengingatkan audiens bahwa siapa saja bisa ikut tanpa harus sewa akun, dan klip paling kece berhak atas hadiah uang tunai!
 * **Visual**:
   * 0–6s: Helmy nonton klip gameplay kiriman netizen: satu klip clutch 1v4 gokil dan satu klip blunder konyol jatuh dari tali tebing.
   * 6–18s: Helmy ngasih reaction heboh: *"Ini yang clutch gila banget timing-nya, tapi yang jatuh dari tebing tolong jangan bikin emosi!"*.
-  * 18–28s: Grafis pengumuman Sayembara ACE Bounty: Total hadiah **Rp 200.000 CASH** buat klip ter-kece. Tanpa syarat sewa akun, bebas pake akun apa aja!
+  * 18–28s: Grafis pengumuman Sayembara ACE Bounty: Total hadiah **Cash Reward Uang Tunai** buat klip ter-kece. Tanpa syarat sewa akun, bebas pake akun apa aja!
 * **Text on Screen (TOS)**:
   * "Reaksi Klip #ValmartAceBounty Paruh Bulan! 💀🔥"
-  * "Klip ter-kece dapet Rp 200.000 CASH! Ikutan sekarang tanpa syarat sewa akun!"
+  * "Klip ter-kece dapet Cash Reward Uang Tunai! Ikutan sekarang tanpa syarat sewa akun!"
 * **Audio / Script (Helmy)**:
-  > *"Gua udah mantau puluhan video gameplay yang masuk pake tagar #ValmartAceBounty, dan jujur kalian gokil banget! Ada yang clutching-nya berasa pro player turnamen, tapi ada juga yang mati konyol gara-gara jatuh dari jurang. Inget ya bro, sayembara ini masih buka sampai akhir bulan November! Konten yang paling kece dan paling menghibur bakal langsung gua transfer uang tunai dua ratus ribu rupiah tunai tanpa ribet! Lu gak perlu sewa akun di Valmart, bebas pake akun pribadi lu sendiri. Upload sekarang, tag @valmart.id dan pasang tagar #ValmartAceBounty! Cek info di bio!"*
-* **Sound / SFX**: Sound tawa reaction $\rightarrow$ Sound kaching cuan Rp 200k $\rightarrow$ Upbeat lofi.
-* **Caption**: *"Klip mana yang paling layak dapet 200 ribu tunai? Gas upload gameplay ter-kece lu pake tagar #ValmartAceBounty sekarang! Tanpa syarat sewa akun bro!"*
+  > *"Gua udah mantau puluhan video gameplay yang masuk pake tagar #ValmartAceBounty, dan jujur kalian gokil banget! Ada yang clutching-nya berasa pro player turnamen, tapi ada juga yang mati konyol gara-gara jatuh dari jurang. Inget ya bro, sayembara ini masih buka sampai akhir bulan November! Konten yang paling kece dan paling menghibur bakal langsung ditransfer uang tunai tanpa ribet! Lu gak perlu sewa akun di Valmart, bebas pake akun pribadi lu sendiri. Upload sekarang, tag @valmart.id dan pasang tagar #ValmartAceBounty! Cek info di bio!"*
+* **Sound / SFX**: Sound tawa reaction $\rightarrow$ Sound kaching cuan $\rightarrow$ Upbeat lofi.
+* **Caption**: *"Klip mana yang paling layak dapet Cash Reward? Gas upload gameplay ter-kece lu pake tagar #ValmartAceBounty sekarang! Tanpa syarat sewa akun bro!"*
 
 ---
 
@@ -94,8 +94,8 @@
   * 18–24s: Helmy senyum nenteng ketiganya di akun Valmart: *"Ngapain debat kalau semuanya bisa lu sewa bergantian tiap malam di Valmart?"*.
 * **Text on Screen (TOS)**:
   * "Sekte Kuronami ⚡ vs Sekte Reaver 🔔 vs Sekte Primordium 🔥"
-  * "Di Valmart lu bisa cobain semuanya mulai 15 ribuan!"
+  * "Di Valmart lu bisa cobain semuanya mulai goceng (Rp 5.000)!"
 * **Audio / Script (Helmy)**:
-  > *"Di tongkrongan lu pasti ada tiga kubu ini kan? Pertama, sekte Kuronami yang jari jempolnya gak bisa diem muter pisau. Kedua, sekte Reaver yang kecanduan suara lonceng kematian. Dan ketiga, sekte Primordium yang tembakannya berasa barbar banget! Daripada kalian ribut adu gengsi di Discord, di Valmart kalian bisa cobain ketiga skin ini bergantian tiap malam modal belasan ribu doang. Lu sendiri masuk sekte yang mana? Komen di bawah dan sewa skin lu di link bio!"*
+  > *"Di tongkrongan lu pasti ada tiga kubu ini kan? Pertama, sekte Kuronami yang jari jempolnya gak bisa diem muter pisau. Kedua, sekte Reaver yang kecanduan suara lonceng kematian. Dan ketiga, sekte Primordium yang tembakannya berasa barbar banget! Daripada kalian ribut adu gengsi di Discord, di Valmart kalian bisa cobain ketiga skin ini bergantian tiap malam modal goceng doang. Lu sendiri masuk sekte yang mana? Komen di bawah dan sewa skin lu di link bio!"*
 * **Sound / SFX**: Suara petir $\rightarrow$ Suara lonceng $\rightarrow$ Suara raungan lava $\rightarrow$ Phonk bass boost.
 * **Caption**: *"Kalian tim sekte mana nih? Tulis di kolom komentar! Sewa skin impian lu sekarang di link bio!"*

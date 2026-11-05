@@ -9,10 +9,15 @@
 
 ## 📌 1. Deskripsi & Format Pertandingan
 Turnamen eksibisi komunitas dan streamer partner dengan format unik: **"One Agent Challenge (5v5)"**. Di setiap map, **seluruh 10 pemain (kedua tim) diwajibkan menggunakan Agent yang sama persis** untuk menguji skill murni dalam situasi komedi yang seru dan kacau:
+* **Pembentukan Tim**: Setiap kapten streamer partner mencari dan menyusun timnya sendiri bersama roster komunitas mereka.
 * **Map 1 (Haven)**: 10 Jett Mirror Match (Adu lincah dash, updraft, & blade storm).
 * **Map 2 (Ascent)**: 10 Reyna Chaos Match (Adu leer & dismiss).
 * **Map 3 (Bind)**: 10 Omen Mystery Match (Adu smoke & teleport).
 * **Inventaris Akun**: Seluruh pemain dipinjamkan akun rental Sultan Tier S dari [valmart.id](http://valmart.id) selama turnamen berlangsung.
+
+> [!TIP]
+> **Strategi Hook Promosi (Arahan Ko Jeremy)**:
+> Promosi di media sosial **TIDAK PERLU FOKUS PADA BESARAN PRIZE POOL**. Fokuskan seluruh hook promosi pada **keseruan, kekacauan format 10 Agent sama, dan adu gengsi antar streamer favorit audiens**. Hal ini jauh lebih viral, organik, dan aman dari pembatasan platform.
 
 ---
 

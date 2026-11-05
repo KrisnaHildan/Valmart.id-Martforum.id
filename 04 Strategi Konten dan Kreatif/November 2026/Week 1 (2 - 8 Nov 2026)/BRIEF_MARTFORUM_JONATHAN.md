@@ -11,8 +11,8 @@
 
 ### 📢 Poster 1: Launching Sayembara Valmart ACE Bounty (Senin, 2 Nov 2026)
 * **Penempatan**: Single Post Feed Instagram `@valomart._id`, TikTok Carousel, & Instagram Story.
-* **Headline**: *"SAYEMBARA VALMART ACE BOUNTY: UPLOAD GAMEPLAY TER-KECE, DAPET RP 200.000 CASH!"*
-* **Visual**: Vandal Kuronami berpetir, teks tebal bernuansa neon gaming, syarat simpel: Open for all (tanpa syarat sewa akun), upload dengan tagar `#ValmartAceBounty`.
+* **Headline**: *"SAYEMBARA VALMART ACE BOUNTY: UPLOAD GAMEPLAY TER-KECE, MENANGKAN TOTAL HADIAH UANG TUNAI!"*
+* **Visual**: Vandal Kuronami berpetir, teks tebal bernuansa neon gaming, syarat simpel: Open for all (tanpa syarat sewa akun), upload dengan tagar `#ValmartAceBounty`. *(Catatan: Nominal angka jangan ditaruh besar di cover poster feed TikTok agar tidak kena takedown algoritma)*.
 
 ### ⚡ Poster 2: Teaser H-7 Mega Sale 11.11 Valmart x Martforum (Rabu, 4 Nov 2026)
 * **Penempatan**: Feed IG Carousel & Instagram Story `@valomart._id` & `@martforum.id`.

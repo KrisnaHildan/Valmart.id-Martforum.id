@@ -11,9 +11,9 @@
 
 | Tanggal | Hari | Brand & PIC | Tipe | Topik, Format, & Aset Event | Status Meme |
 | :---: | :---: | :--- | :---: | :--- | :---: |
-| **2 Nov** | Senin | 🎨 **Valmart** (Jonathan) | **POSTER** | **Poster Launching Sayembara ACE Bounty**: Konten Gameplay Ter-Kece Berhadiah Rp 200.000 Cash *(Tanpa syarat sewa akun)* | 📢 Event Poster |
+| **2 Nov** | Senin | 🎨 **Valmart** (Jonathan) | **POSTER** | **Poster Launching Sayembara ACE Bounty**: Konten Gameplay Ter-Kece Berhadiah Total Uang Tunai *(Tanpa syarat sewa akun)* | 📢 Event Poster |
 | **2 Nov** | Senin | 🎙️ **Martforum** (Jonathan) | VO | **Meme Toko Kutukan**: Ekspektasi Daily Store vs Realita (Smite & Convex) | 🎭 **MEME #1** |
-| **3 Nov** | Selasa | 🎬 **Valmart** (Helmy) | Video | **Meme Aim vs Skin + Launching Ace Bounty**: Nenteng Kuronami Tapi Aim Recoil Tembus Langit & Call to Action Sayembara Rp 200k | 🎭 **MEME #2** |
+| **3 Nov** | Selasa | 🎬 **Valmart** (Helmy) | Video | **Meme Aim vs Skin + Launching Ace Bounty**: Nenteng Kuronami Tapi Aim Whiff & Call to Action Sayembara Uang Tunai | 🎭 **MEME #2** |
 | **4 Nov** | Rabu | 🎨 **Dual Brand** (Jonathan) | **POSTER** | **Teaser Poster H-7 Mega Sale 11.11**: Pemanasan Valmart Flash Rent & Martforum Tebus 125 VP serba Rp 11.000 | ⚡ Event Teaser |
 | **4 Nov** | Rabu | 🎬 **Valmart** (Helmy) | Video | **Satir Anti-HB**: Beli Akun FB Murah Berujung Password "Bapaklu" | 🛡️ Trust / Satir |
 | **4 Nov** | Rabu | 🎙️ **Martforum** (Jonathan) | VO | **Kecepatan Transaksi**: Top Up Jam 2 Pagi Toko Sebelah vs QRIS 3 Detik | ⚡ Value / Speed |

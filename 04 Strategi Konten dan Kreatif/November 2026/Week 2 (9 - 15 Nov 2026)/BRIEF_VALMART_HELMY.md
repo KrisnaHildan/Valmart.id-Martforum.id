@@ -74,7 +74,7 @@
   * "Nembaknya panik sambil merem (Run and Gun) ❌"
   * "Finisher Reaver meledak berasa pro player Radiant ✅"
 * **Audio / Script (Helmy)**:
-  > *"Peduli setan tadi lu nembaknya panik sambil merem atau peluru hoki nyasar, begitu suara lonceng Reaver bunyi dan musuh ditarik ke dasar tanah, satu lobi langsung mengira lu pro player titisan asgard! Itulah alasannya kenapa Reaver ini skin wajib punya buat mabar malam minggu. Gak usah keluar duit ratusan ribu, sewa aja 24 jam di Valmart modal belasan ribu doang. Bikin lobi lu gemeteran malam ini di link bio!"*
+  > *"Peduli setan tadi lu nembaknya panik sambil merem atau peluru hoki nyasar, begitu suara lonceng Reaver bunyi dan musuh ditarik ke dasar tanah, satu lobi langsung mengira lu pro player titisan asgard! Itulah alasannya kenapa Reaver ini skin wajib punya buat mabar malam minggu. Gak usah keluar duit ratusan ribu, sewa aja 24 jam di Valmart modal goceng lima ribu doang. Bikin lobi lu gemeteran malam ini di link bio!"*
 * **Sound / SFX**: Suara lonceng Reaver keras menggema $\rightarrow$ Phonk bass boost di akhir.
 * **Caption**: *"Suara lonceng Reaver emang candu banget gak ada obat 🥶 Sewa akun full skin Reaver di link bio sekarang!"*
 

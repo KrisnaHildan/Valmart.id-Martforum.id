@@ -16,13 +16,13 @@
   * 3–12s: Round mulai. Helmy ketemu musuh yang lagi bengong/nunduk defuse spike. Helmy spray 1 magazine penuh... semua peluru meleset nabrak tembok keliling musuh. Musuh noleh pelan-pelan, satu tap kepala Helmy. Helmy mati konyol.
   * 12–20s: Transisi muka datar Helmy $\rightarrow$ Buka HP tampilan `valmart.id`.
 * **Text on Screen (TOS)**:
-  * "Skin: Kuronami 1 Juta (Sewa di Valmart 15rb) ✨"
+  * "Skin: Kuronami 1 Juta (Sewa di Valmart mulai goceng) ✨"
   * "Aim: Bot Recruit baru install game 🗿"
 * **Audio / Script (Helmy)**:
   > *(Nada bisik-bisik datar nahan malu)*  
-  > *"Gak ada yang lebih malu selain nenteng Vandal Kuronami... tapi pas ketemu musuh yang lagi nunduk defuse, peluru lu malah bikin lukisan abstrak di tembok. Tapi ya udahlah ya bro, yang penting gaya nomor satu, skill bisa dipelajari nanti malam. Daripada boncos beli bundle ratusan ribu tapi aim tetep whiff, mending lu sewa aja di valmart.id mulai 15 ribuan. Oiya, Valmart lagi ngadain Sayembara ACE Bounty: upload video gameplay ter-kece lu pake hashtag #ValmartAceBounty, video paling kece langsung dapet Rp 200.000 cash tanpa syarat sewa akun! Detailnya cek di bio!"*
+  > *"Gak ada yang lebih malu selain nenteng Vandal Kuronami... tapi pas ketemu musuh yang lagi nunduk defuse, peluru lu malah bikin lukisan abstrak di tembok. Tapi ya udahlah ya bro, yang penting gaya nomor satu, skill bisa dipelajari nanti malam. Daripada boncos beli bundle ratusan ribu tapi aim tetep whiff, mending lu sewa aja di valmart.id mulai goceng (lima ribu rupiah doang). Oiya, Valmart lagi ngadain Sayembara ACE Bounty: upload video gameplay ter-kece lu pake hashtag #ValmartAceBounty, video paling kece langsung bawa pulang hadiah uang tunai tanpa syarat sewa akun! Detailnya cek di bio!"*
 * **Sound / SFX**: Suara spray Vandal bocor $\rightarrow$ Vine boom keras $\rightarrow$ Sound hening jangkrik krik-krik $\rightarrow$ Phonk beat santai.
-* **Caption**: *"Skill boleh silver, yang penting skin wajib sekelas VCT Champions 🥶 Upload video gameplay ter-kece lu pake hashtag #ValmartAceBounty, menangkan 200rb cash! Cek link bio."*
+* **Caption**: *"Skill boleh silver, yang penting skin wajib sekelas VCT Champions 🥶 Upload video gameplay ter-kece lu pake hashtag #ValmartAceBounty, menangkan hadiah uang tunai! Cek link bio."*
 
 ---
 
@@ -57,9 +57,9 @@
   * "Temen lobi: 'Drop Kuronami bang, gua gendong sumpah' 🗿"
   * "*Mati detik ke-5 pas ronde baru mulai*"
 * **Audio / Script (Helmy)**:
-  > *"Pasti di tongkrongan lu ada satu temen yang tiap buy phase selalu jongkok-jongkok minta drop skin Kuronami, janjinya mau ngegendong... eh pas ronde mulai, detik kelima udah jadi mayat dan skin lu dijarah musuh! Daripada temen lu jadi pengemis skin tiap ronde, suruh dia sewa sendiri di valmart.id bro. Modal ceban doang udah bisa pegang akun sultan seharian. Tag temen lu yang kerjanya nodong skin di bawah!"*
+  > *"Pasti di tongkrongan lu ada satu temen yang tiap buy phase selalu jongkok-jongkok minta drop skin Kuronami, janjinya mau ngegendong... eh pas ronde mulai, detik kelima udah jadi mayat dan skin lu dijarah musuh! Daripada temen lu jadi pengemis skin tiap ronde, suruh dia sewa sendiri di valmart.id bro. Modal goceng lima ribu doang udah bisa pegang akun sultan seharian. Tag temen lu yang kerjanya nodong skin di bawah!"*
 * **Sound / SFX**: Suara tembakan Operator "BOOM" keras $\rightarrow$ Sound hening meme awkward $\rightarrow$ Lofi beat.
-* **Caption**: *"Tag temen lu yang hobinya nodong skin Kuronami tapi mati paling pertama 💀 Sewa akun sultan mulai ceban di link bio!"*
+* **Caption**: *"Tag temen lu yang hobinya nodong skin Kuronami tapi mati paling pertama 💀 Sewa akun sultan mulai goceng di link bio!"*
 
 ---
 

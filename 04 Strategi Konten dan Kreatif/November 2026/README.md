@@ -13,7 +13,7 @@ Sesuai arahan meeting terbaru, seluruh materi promosi event besar **wajib disiap
 
 | Timeline | Nama Event | Format Aset | PIC | Detail Koordinasi & Publikasi |
 | :---: | :--- | :--- | :---: | :--- |
-| **2 Nov** | **Valmart ACE Bounty** | **Poster Feed IG/TikTok** | Jonathan | Launching sayembara: Buat konten gameplay ter-kece, menangkan Rp 200.000 cash (bebas tanpa syarat sewa akun). |
+| **2 Nov** | **Valmart ACE Bounty** | **Poster Feed IG/TikTok** | Jonathan | Launching sayembara: Buat konten gameplay ter-kece, menangkan Total Hadiah Uang Tunai (Aman dari sensor platform, bebas tanpa syarat sewa akun). |
 | **3 Nov** | **Valmart ACE Bounty** | **Video Singkat TikTok** | Helmy | Video pengumuman sayembara #ValmartAceBounty + demo clutch. |
 | **4 Nov** | **Mega Sale 11.11** | **Poster Feed Teaser H-7** | Jonathan | Pemanasan promo Harbolnas: Flash Rent Valmart Rp 11k & Tebus Murah 125 VP Martforum Rp 11k. |
 | **9 Nov** | **Mega Sale 11.11** | **Hero Banner Web & Story H-2** | Jonathan | Pemasangan hero banner countdown di website `valmart.id` & pop-up banner `martforum.id`. |
@@ -33,13 +33,13 @@ Sesuai arahan meeting terbaru, seluruh materi promosi event besar **wajib disiap
 Seluruh kalender dan naskah brief telah dikelompokkan ke dalam folder mingguan masing-masing (7 konten per minggu: 4 Valmart + 3 Martforum):
 
 ### 1. 🚀 [Week 1 (2 – 8 Nov 2026)](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%201%20(2%20-%208%20Nov%202026)/README.md)
-* **Fokus**: Kickoff Sprint November, Momen Awal Bulan (Gajian/Uang Saku), & Launching ACE Bounty Rp 200k.
+* **Fokus**: Kickoff Sprint November, Momen Awal Bulan (Gajian/Uang Saku), & Launching ACE Bounty Uang Tunai.
 * **Meme Terpilih (3 dari 7 Konten = 42.8%)**: 
   - Martforum (Senin): *Meme Kutukan Daily Store (Ekspektasi Kuronami vs Realita Smite Knife)*.
   - Valmart (Selasa): *Meme Aim Bot Recruit vs Skin Kuronami 1 Juta*.
   - Valmart (Kamis): *Meme Temen Discord Minta Drop Skin Tapi Mati Detik 5*.
 * **Aset Event Khusus**:
-  - 🎨 *Poster Launching Ace Bounty Rp 200k* (Jonathan - Senin, 2 Nov).
+  - 🎨 *Poster Launching Ace Bounty Hadiah Tunai* (Jonathan - Senin, 2 Nov).
   - 🎨 *Poster Teaser H-7 Flash Rent 11.11* (Jonathan - Rabu, 4 Nov).
 * **Dokumen Rinci**:
   - 📋 [Master Jadwal Week 1](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%201%20(2%20-%208%20Nov%202026)/README.md)
