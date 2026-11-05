@@ -128,3 +128,4 @@ Jika Ko Jeremy menyetujui anggaran hingga Rp 10 Juta untuk menggandeng nama besa
 - [ ] Implementasi revisi harga rental termurah Rp 5.000 di seluruh naskah dan deskripsi web.
 - [ ] Penggantian seluruh teks nominal vulgar pada kampanye Ace Bounty untuk mencegah *banned/takedown*.
 - [ ] Presentasi proposal influencer dan konsep live stream pada meeting malam ini pukul 20.00 WIB.
+

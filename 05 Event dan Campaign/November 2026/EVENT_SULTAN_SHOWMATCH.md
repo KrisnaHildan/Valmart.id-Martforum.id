@@ -1,14 +1,18 @@
-# 🎮 EVENT 2 [PAID]: Valmart Sultan Showmatch (Clone Clash)
-**Brand**: Valmart.id & Martforum.id  
+# 🎮 EVENT 2 [PAID]: Martforum Sultan Showmatch feat. Valmart (Clone Clash)
+**Main Event Host**: Martforum (`@martforum.id`)  
+**Official Rental Partner**: Valmart (`@valmart.id`)  
 **Periode Match**: 28 – 29 November 2026 (Akhir Pekan)  
 **Supervisi**: Ko Jeremy | **Koordinator**: Hildan | **KOL Manager**: Audrey  
+**Desainer & Asset Lead**: Jonathan (Martforum)  
 **Sifat Campaign**: 💰 **PAID CAMPAIGN**  
 **Total Hadiah Cash**: **Rp 250.000 Cash** (Juara 1) + Free Sewa Tier S  
 
 ---
 
 ## 📌 1. Deskripsi & Format Pertandingan
-Turnamen eksibisi komunitas dan streamer partner dengan format unik: **"One Agent Challenge (5v5)"**. Di setiap map, **seluruh 10 pemain (kedua tim) diwajibkan menggunakan Agent yang sama persis** untuk menguji skill murni dalam situasi komedi yang seru dan kacau:
+Sesuai arahan terbaru Ko Jeremy, **seluruh event turnamen kini dipusatkan di Martforum (`martforum.id`)** sebagai host utama dan sentral interaksi komunitas gaming, dengan Valmart bertindak sebagai partner resmi penyedia akun Sultan dan katalog rental.
+
+Turnamen eksibisi komunitas dan streamer partner ini menggunakan format unik: **"One Agent Challenge (5v5)"**. Di setiap map, **seluruh 10 pemain (kedua tim) diwajibkan menggunakan Agent yang sama persis** untuk menguji skill murni dalam situasi komedi yang seru dan kacau:
 * **Pembentukan Tim**: Setiap kapten streamer partner mencari dan menyusun timnya sendiri bersama roster komunitas mereka.
 * **Map 1 (Haven)**: 10 Jett Mirror Match (Adu lincah dash, updraft, & blade storm).
 * **Map 2 (Ascent)**: 10 Reyna Chaos Match (Adu leer & dismiss).
