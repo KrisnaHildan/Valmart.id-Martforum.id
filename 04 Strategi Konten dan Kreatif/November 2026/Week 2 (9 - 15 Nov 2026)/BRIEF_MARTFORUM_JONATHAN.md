@@ -31,12 +31,33 @@
 ### 4. 📢 POSTER TEASER RESMI H-14 SULTAN SHOWMATCH [Sebar 2 Minggu Sebelumnya]
 * **Jadwal Distribusi**: Sabtu, 14 November 2026 (Sebar ke 15+ Streamer Partner & Komunitas Valorant).
 * **Ukuran / Format**: 1080 x 1350 px (Feed Poster) & 1080 x 1920 px (Story Kit Streamer).
-* **Headline / Copy**:
+* **Headline / Copy Desain**:
   * *"VALMART SULTAN SHOWMATCH: ONE AGENT CLONE CLASH"*
   * *"Ketika 10 Jett, 10 Reyna, dan 10 Omen Beradu di Satu Server! Siapa Kapten Terkuat?"*
   * *"Featuring 15+ Creator & Pro-Streamer Valorant Indonesia"*
   * *"SAVE THE DATE: 28 – 29 NOVEMBER 2026 | Live di Channel Masing-Masing Streamer"*
   * *(Catatan Sakral: Diskon 1% TIDAK BOLEH dicantumkan sama sekali di poster publik)*.
+* **Caption Postingan Resmi (`@valmart.id` & `@martforum.id`)**:
+  > *"SOMETHING CHAOTIC IS COMING! 🌪️👁️*  
+  > *Apa jadinya kalau 1 server isinya 10 Jett saling terbang, 10 Reyna adu Leer sampai buta se-map, atau 10 Omen teleport gak jelas?*  
+  >  
+  > *VALMART SULTAN SHOWMATCH: CLONE CLASH! 🔥*  
+  > *Pertarungan paling gak masuk akal di skena Valorant, mempertemukan 4 Tim Kapten Streamer favorit kalian buat nentuin siapa yang beneran jago kalau agent-nya dipaksa sama persis!*  
+  >  
+  > *🗓️ 28 – 29 November 2026*  
+  > *📺 Live di channel masing-masing streamer partner!*  
+  >  
+  > *Kira-kira siapa kapten yang bakal angkat piala dan siapa yang bakal jadi badut server? 👀 Tulis tebakan lu di kolom komentar!*  
+  >  
+  > *#ValmartSultanShowmatch #ValmartCloneClash #ValorantIndo #Valmart #Martforum"*
+* **Kit Copywriting Streamer Partner (Siap Copas Story / Feed Streamer)**:
+  > *"Gue bakal mimpin pasukan di VALMART SULTAN SHOWMATCH (Clone Clash)! 🔥*  
+  > *Formatnya gila: 10 Jett, 10 Reyna, 10 Omen diadu di satu map pake akun Sultan full skin dari @valmart.id & didukung @martforum.id.*  
+  >  
+  > *Catat tanggalnya: 28–29 November 2026!*  
+  > *Live langsung di channel gue. Jangan lupa tonton, awas aja lu liat gue whiff 💀*  
+  >  
+  > *#ValmartSultanShowmatch #CloneClash"*
 
 ---
 

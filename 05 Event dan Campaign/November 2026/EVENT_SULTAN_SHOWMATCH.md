@@ -58,3 +58,37 @@ Sesuai arahan standar operasional, seluruh poster dan materi promosi turnamen **
 | **28–29 Nov** | **Match Day** | **Multi-Streamer Live + Sesi Clipping TikTok** | Seluruh Tim & Streamer | Helmy & streamer memotong klip-klip momen lucu/clutch untuk di-upload serentak ke TikTok/Reels. |
 | **30 Nov** | **Aftermovie** | **Poster Rekap Juara & Video Kompilasi Whiff/Clutch** | Jonathan & Helmy | Penyerahan hadiah Rp 250.000 kepada Tim Juara 1 & penutupan event. |
 
+---
+
+## 📝 5. Copywriting & Caption Kit Promosi H-14 (Rilis 14 Nov 2026)
+
+### A. Caption Resmi Akun Brand (`@valmart.id` & `@martforum.id`)
+```text
+SOMETHING CHAOTIC IS COMING! 🌪️👁️
+
+Apa jadinya kalau 1 server isinya 10 Jett saling terbang, 10 Reyna adu Leer sampai buta se-map, atau 10 Omen teleport gak jelas? 
+
+VALMART SULTAN SHOWMATCH: CLONE CLASH! 🔥
+Pertarungan paling gak masuk akal di skena Valorant, mempertemukan 4 Tim Kapten Streamer favorit kalian buat nentuin siapa yang beneran jago kalau agent-nya dipaksa sama persis!
+
+🗓️ 28 – 29 November 2026
+📺 Live di channel masing-masing streamer partner!
+
+Kira-kira siapa kapten yang bakal angkat piala dan siapa yang bakal jadi badut server? 👀
+Tulis tebakan lu di kolom komentar!
+
+#ValmartSultanShowmatch #ValmartCloneClash #ValorantIndo #Valmart #Martforum
+```
+
+### B. Copy Kit Streamer Partner (Siap Copas Story / Feed Streamer)
+```text
+Gue bakal mimpin pasukan di VALMART SULTAN SHOWMATCH (Clone Clash)! 🔥
+
+Formatnya gila: 10 Jett, 10 Reyna, 10 Omen diadu di satu map pake akun Sultan full skin dari @valmart.id & didukung @martforum.id.
+
+Catat tanggalnya: 28–29 November 2026!
+Live langsung di channel gue. Jangan lupa tonton, awas aja lu liat gue whiff 💀
+
+#ValmartSultanShowmatch #CloneClash
+```
+
