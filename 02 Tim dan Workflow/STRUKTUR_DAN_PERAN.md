@@ -47,6 +47,12 @@
   * Mengelola akun Instagram Martforum dan mengeksekusi strategi peluncuran akun TikTok Martforum yang baru.
   * Mengomunikasikan keunggulan Martforum: proses QRIS otomatis instan hitungan detik, harga bersaing, dan anti-ribet tanpa login.
 
+> [!NOTE]
+> **Status Cuti & Pengganti Ad Interim (Mid Nov – Akhir Des 2026)**:
+> Jonathan mengambil cuti sementara selama 1,5 bulan. Tanggung jawab operasional diserahterimakan secara ad interim:
+> - **Dika (`@Jamor anyar Moklet`)**: Video Editor & Desain Grafis (Poster/Feeds).
+> - **Audrey**: Pengisi Suara / Talent Voice Over (VO) Martforum.
+
 ---
 
 ### 5. Audrey — KOL Manager & Event Manager

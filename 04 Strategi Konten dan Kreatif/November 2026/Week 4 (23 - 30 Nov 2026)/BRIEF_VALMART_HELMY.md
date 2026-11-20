@@ -3,25 +3,25 @@
 
 **Target Akun**: `@valmart.id` (TikTok) & `@valomart._id` (Instagram Reels)  
 **Talent / Editor**: Helmy  
-**Total Konten**: 4 Video Singkat (Selasa, Rabu, Kamis, Jumat) + Sesi Koordinasi Clipping Video Showmatch  
+**Total Konten**: 4 Video Singkat (Selasa, Rabu, Kamis, Jumat) + Koordinasi Penutupan Sayembara #ValmartAceBounty
 
 ---
 
-### 🎬 Video 13 — Selasa, 24 Nov 2026 [🎭 MEME 1: KEHANCURAN MATCH 10 REYNA]
-* **Format**: Komedi In-Game Blunder & Reaksi Chaos.
-* **Durasi**: 20 – 26 detik.
-* **Meme Angle**: Kegilaan match 10 Reyna: Langit penuh bola mata ungu (Leer), musuh dan kawan sama-sama buta, dan pas ada 1 player mati, 5 Reyna langsung berebut ngisep Soul Orb yang sama.
+### 🎬 Video 13 — Selasa, 24 Nov 2026 [💡 SMART BUYER: NGETES SKIN SEBELUM BONCOS]
+* **Format**: POV Gaming Smart Buyer / Life Hack.
+* **Durasi**: 22 – 28 detik.
+* **Angle**: Mengedukasi pemain Valorant agar tidak impulsif beli skin ratusan ribu rupiah di game sebelum yakin cocok sama suara peluru dan feeling recoil-nya. Solusi cerdas: sewa akun rental goceng di Valmart dulu buat ngetes seharian.
 * **Visual**:
-  * 0–4s: Map Haven A-long. Dilempar 4 mata Leer ungu sekaligus dari kedua tim. Layar ungu gelap buta total.
-  * 4–14s: Satu pemain mati... langsung terdengar suara hisap soul orb bersahut-sahutan 3 kali: *"Sluuurrrp!"*. Helmy yang lagi dismiss gak sengaja tabrakan sama Reyna musuh yang juga lagi tembus pandang (invisible). Dua-duanya bengong pas skill abis.
-  * 14–22s: Helmy geleng-geleng kepala: *"Ini match ter-toxic dan paling rusuh seumur hidup gua!"*.
+  * 0–5s: Helmy natap Daily Shop Valorant dengan ekspresi galau megang jidat: *"Skin Kuronami rilis di toko, harganya 300 ribuan... beli gak ya?"*.
+  * 5–15s: Helmy buka HP, masuk ke `valmart.id`: *"Daripada gua langsung boncos tiga ratus ribu terus nyesel gara-gara gak cocok animasinya, mending gua sewa akunnya dulu di Valmart modal goceng (Rp 5.000)!"*.
+  * 15–24s: Helmy masuk match, nyobain inspect, nembak musuh, ngerasain finisher: *"Nah gini kan enak, puas nyobain seharian tanpa bikin kantong bolong!"*.
 * **Text on Screen (TOS)**:
-  * "POV: Main match 10 Reyna bareng streamer 💀"
-  * "Siap-siap tonton kekacauan Valmart Sultan Showmatch weekend ini!"
+  * "Tips gamer cerdas: Jangan langsung boncos beli skin! 🧠"
+  * "Tes dulu sepuasnya di valmart.id mulai Rp 5.000 (goceng)!"
 * **Audio / Script (Helmy)**:
-  > *"Lu kebayang gak apa jadinya kalau satu map isinya sepuluh Reyna semua? Baru ronde satu udah dilempar lima mata ungu, mata lu buta permanen! Terus pas ada satu orang mati, tiga orang lainnya langsung histeris rebutan ngisep soul orb yang sama kayak orang kelaparan! Kegilaan ini cuma ada di Main Event Valmart Sultan Showmatch weekend ini bareng streamer jagoan kalian! Siapin camilan dan jangan lupa mampir ke link bio kalau mau ngerasain nenteng akun sultan kayak streamer!"*
-* **Sound / SFX**: Suara hisap soul orb Reyna "Slurp" di-loop $\rightarrow$ Vine boom $\rightarrow$ Sound ketawa ngakak.
-* **Caption**: *"Buta permanen woy matanya kebanyakan 😭 Siap-siap tonton kegilaan Valmart Sultan Showmatch weekend ini! Link di bio."*
+  > *"Pernah gak sih kalian nafsu banget beli skin mahal di Daily Shop, tapi pas udah kebeli malah nyesel gara-gara gak cocok sama sound efeknya? Nih gua kasih tahu trik gamer cerdas: jangan langsung keluar duit ratusan ribu bro! Lu bisa sewa akun yang udah punya skin incaran lu di valmart.id cuma modal goceng lima ribu rupiah doang! Lu bisa tes nembak, tes inspect, dan tes recoil sepuasnya di ranked match seharian. Kalau udah yakin cocok, baru deh lu beli. Lebih hemat, anti-boncos! Cobain sekarang di link bio!"*
+* **Sound / SFX**: Suara detak jam galau $\rightarrow$ Sound klik sat-set $\rightarrow$ Sound kaching cuan $\rightarrow$ Upbeat lofi.
+* **Caption**: *"Gamer cerdas pasti ngetes dulu sebelum boncos 🗿 Sewa akun sultan mulai goceng di valmart.id (link di bio)!"*
 
 ---
 
@@ -31,8 +31,8 @@
 * **Meme Angle**: Tanggal 25 dompet tinggal recehan sisa kembalian indomaret, tapi pas mabar di Discord gengsi tetap tinggi karena bisa nenteng skin sultan hasil sewa di Valmart.
 * **Visual**:
   * 0–5s: Helmy buka dompet kusam: ada uang kertas dua puluh ribu lecek sama bon minimarket.
-  * 5–15s: Helmy buka `valmart.id`, sewa akun rental Kode S 24 jam seharga 15 ribu.
-  * 15–24s: Masuk ke lobi Discord, temen-temennya pada teriak: *"Wedeh Helmy tanggal tua tetep nenteng Champions 2024!"*. Helmy senyum bangga sambil minum air putih.
+  * 5–15s: Helmy buka `valmart.id`, sewa akun rental 24 jam seharga goceng (Rp 5.000).
+  * 15–24s: Masuk ke lobi Discord, temen-temennya pada heboh: *"Wedeh Helmy tanggal tua tetep nenteng Champions 2024!"*. Helmy senyum bangga sambil minum air putih.
 * **Text on Screen (TOS)**:
   * "Kondisi dompet: Tinggal 20 ribu lecek 💀"
   * "Kondisi akun pas mabar: Full Skin Champions & Kuronami ✨"
@@ -43,51 +43,46 @@
 
 ---
 
-### 🎬 Video 15 — Kamis, 26 Nov 2026 [🚀 CONVERSION: PAMERAN AKUN SHOWMATCH]
+### 🎬 Video 15 — Kamis, 26 Nov 2026 [🛡️ TRUST: EDUKASI FIRST MAIL & ANTI-HB 100%]
+* **Format**: Edukasi Keamanan Akun & Trust Building.
+* **Durasi**: 24 – 30 detik.
+* **Angle**: Mengupas tuntas kekhawatiran terbesar pembeli akun Valorant: takut akun di-Hack Back (HB) oleh pemilik lama. Menjelaskan garansi 100% uang kembali dan sertifikasi First Mail di Valmart.
+* **Visual**:
+  * 0–5s: Helmy pasang muka serius: *"Beli akun game second tapi takut kena HB? Wajar, banyak toko nakal di luar sana!"*.
+  * 5–15s: Tampilkan visual sertifikasi keamanan Valmart: Logo Anti-HB, bukti First Mail (email pertama pembuat akun), dan surat garansi resmi.
+  * 15–24s: Helmy jelaskan: *"Di Valmart semua akun wajib lolos kurasi ketat. Ada garansi 100% uang kembali kalau sampai ada masalah!"*.
+* **Text on Screen (TOS)**:
+  * "Beli Akun Takut Kena Hack Back (HB)? 🛑"
+  * "Valmart: Garansi Anti-HB 100% Uang Kembali!"
+  * "Lengkap dengan First Mail & Data Aman"
+* **Audio / Script (Helmy)**:
+  > *"Beli akun game tapi tiap malam gak tenang takut di-hack back pemilik lama? Itu tandanya lu belinya di toko abal-abal bro! Di Valmart, keamanan pembeli adalah prioritas nomor satu. Semua akun yang kita jual wajib lolos verifikasi First Mail atau email pertama pembuat akun, data identitas jelas, dan yang paling penting: ada garansi Anti-HB seratus persen uang kembali tanpa ribet! Mau beli akun sultan buat akun utama atau akun smurf, cuma di Valmart yang berani kasih jaminan seaman ini. Cek katalog terpercaya di link bio!"*
+* **Sound / SFX**: Suara peringatan sirine $\rightarrow$ Sound shield perlindungan $\rightarrow$ Upbeat future bass mantap.
+* **Caption**: *"Belanja akun game wajib yang ada garansi Anti-HB 100%! Cek katalog resmi & terpercaya di valmart.id (link di bio)!"*
+
+---
+
+### 🎬 Video 16 — Jumat, 27 Nov 2026 [🚀 CONVERSION: SHOWCASE KATALOG SULTAN WEEKEND]
 * **Format**: Showcase Katalog Unggulan Valmart.
-* **Durasi**: 25 – 32 detik.
-* **Angle**: Menunjukkan akun-akun Sultan yang disiapkan Valmart untuk dipinjamkan ke 4 tim streamer, dan semuanya bisa disewa umum oleh penonton.
+* **Durasi**: 22 – 28 detik.
+* **Angle**: Menampilkan barisan akun Sultan siap sewa menyambut malam minggu mabar bareng temen tongkrongan.
 * **Visual**:
   * 0–6s: Layar inventory akun Valmart: Berderet Vandal Kuronami, Phantom Recon, Melee Karambit Champions, Araxys, Glitchpop.
-  * 6–18s: Helmy inspect skin satu-satu dengan transisi renyah: *"Nih akun yang bakal dipake Syahran, yang ini dipake Widipu, yang ini dipake Brayen dan Aim"*.
-  * 18–28s: Tunjukkan katalog website `valmart.id`: Akun-akun ini berstatus ready dan bisa disewa kapan saja oleh publik.
+  * 6–16s: Helmy inspect skin satu per satu dengan transisi renyah dan suara finisher yang memuaskan telinga.
+  * 16–24s: Tunjukkan katalog website `valmart.id`: Akun-akun ini berstatus ready dan bisa disewa kapan saja oleh publik mulai goceng (Rp 5.000).
 * **Text on Screen (TOS)**:
-  * "Akun yang dipake para streamer di Sultan Showmatch! 🔥"
-  * "Kalian juga bisa sewa akun yang sama di valmart.id mulai goceng (Rp 5.000)!"
+  * "Katalog Akun Sultan Weekend Ready Sewa! 🔥"
+  * "Mulai Rp 5.000 (goceng) langsung gas mabar di valmart.id"
 * **Audio / Script (Helmy)**:
-  > *"H-2 menuju Valmart Sultan Showmatch! Buat kalian yang penasaran streamer favorit kalian bakal pake akun apa pas tanding nanti, nih gua kasih liat akun-akun Sultan yang udah disiapin Valmart. Semuanya udah full upgrade skin impian, dari Kuronami, Champions, sampai Arcane! Dan kabar baiknya, akun-akun sekeren ini bukan cuma buat streamer doang, tapi kalian juga bisa sewa langsung di valmart.id mulai modal goceng lima ribu doang. Mau nyobain rasanya nenteng akun pro player? Cek katalognya di link bio!"*
-* **Sound / SFX**: Suara inspect senjata beruntun renyah $\rightarrow$ Upbeat future bass.
-* **Caption**: *"Akun sultan yang dipake para streamer siap nemenin mabar kalian juga! Booking akun impian lu di link bio sekarang!"*
+  > *"Malam minggu udah di depan mata, lobi mabar lu udah siap belum? Buat kalian yang bosen mabar pake skin standar, nih deretan akun Sultan Valmart yang siap nemenin malam minggu kalian! Ada Kuronami full varian, Karambit Champions, sampai skin Arcane langka yang udah gak bisa dibeli lagi. Semuanya berstatus ready dan bisa lu sewa otomatis via QRIS mulai modal goceng lima ribu rupiah doang. Langsung amankan akun impian lu sebelum keduluan orang lain di link bio sekarang!"*
+* **Sound / SFX**: Suara inspect senjata beruntun renyah $\rightarrow$ Upbeat future bass enerjik.
+* **Caption**: *"Sambut malam minggu dengan skin paling wangi di lobi! Booking akun impian lu di link bio sekarang!"*
 
 ---
 
-### 🎬 Video 16 — Jumat, 27 Nov 2026 [🔥 HYPE & TEASER: H-1 MAIN EVENT & MULTI-STREAM]
-* **Format**: Cinematic Trailer Matchday Hype.
-* **Durasi**: 22 – 28 detik.
-* **Angle**: Hitung mundur terakhir menuju pertandingan akbar Sabtu/Minggu, panduan nonton live streaming di channel masing-masing streamer, dan perebutan hadiah Rp 250.000 Cash untuk Juara 1!
-* **Visual**:
-  * 0–5s: Teaser cuplikan 10 Jett dash barengan di Ascent heaven.
-  * 5–15s: Matchup kapten: Tim Syahran vs Tim Widipu, Tim Brayen vs Tim Aim. Teks overlay: *"Nonton live di channel masing-masing streamer!"*.
-  * 15–24s: Highlight hadiah Juara 1: Rp 250.000 Cash + Free Sewa S + Diskon 7%. Teks: *"Sabtu & Minggu mulai 19.30 WIB"*.
-* **Text on Screen (TOS)**:
-  * "BESOK! VALMART SULTAN SHOWMATCH (CLONE CLASH) 🏆"
-  * "Live di Channel Streamer Masing-Masing! Rebutan Rp 250.000 Cash Juara 1!"
-* **Audio / Script (Helmy)**:
-  > *"Besok adalah hari penentuan! Empat kapten streamer bakal memimpin pasukannya di pertarungan paling gak masuk akal di skena Valorant: Valmart Sultan Showmatch! Format One Agent Challenge, memperebutkan hadiah uang tunai dua ratus lima puluh ribu rupiah buat juara satu! Nah, biar kalian bisa leluasa nonton pov kapten favorit kalian, live streaming-nya disiarkan langsung di akun channel masing-masing streamer: Syahran, Widipu, Brayen, dan Aim! Pasang alarm kalian buat besok jam setengah delapan malam. Info jadwal lengkapnya langsung klik link bio!"*
-* **Sound / SFX**: Sound beat trailer sinematik tegang $\rightarrow$ Bass drop mantap.
-* **Caption**: *"Pertarungan akbar 10 agent kembar dimulai besok! Tonton langsung di channel masing-masing streamer mulai 19.30 WIB. Cek bio!"*
-
----
-
-### 🎮 Panduan Main Event & Sesi Clipping Serentak — Sabtu & Minggu (28 – 29 Nov 2026)
-1. **Multi-Channel Streaming (Reach Maksimal)**:
-   * Setiap streamer melakukan siaran langsung di channel pribadi masing-masing (YouTube / TikTok / Twitch).
-   * Menampilkan overlay resmi Valmart & Martforum di pojok layar.
-   * Format Match:
-     - Map 1: 10 Jett Mirror Match (Haven).
-     - Map 2: 10 Reyna Chaos Match (Ascent).
-     - Map 3: 10 Omen Mystery Match (Bind).
-2. **Sesi Clipping TikTok Masif (Distribusi Serentak)**:
-   * Helmy memantau multi-stream dan memotong momen-momen emas: clutch 1v4, whiff konyol, atau duel pisau antar kapten.
-   * 15+ streamer partner diwajibkan upload minimal 1 video clipping match ke akun TikTok/Reels mereka dengan mention `@valmart.id` dan menyertakan link referral masing-masing.
-   * Efek viralitas serentak membanjiri FYP TikTok gaming Indonesia di akhir bulan.
+### 📢 Panduan Penutupan Sayembara #ValmartAceBounty (28 – 30 Nov 2026)
+1. **Weekend Reminder (28–29 Nov)**:
+   * Helmy memposting reminder di Instagram Story & TikTok story: *"H-2 penutupan sayembara #ValmartAceBounty, pastikan klip terbaik kalian sudah terupload!"*.
+2. **Kurasi Pemenang (30 Nov)**:
+   * Helmy bersama tim internal menyeleksi 1 klip paling menghibur / paling clutch dari tagar `#ValmartAceBounty`.
+   * Pemenang diumumkan resmi via Poster Instagram yang didesain oleh Dika Moklet dengan hadiah cash Rp 200.000 langsung ditransfer.
