@@ -2,15 +2,15 @@
  * =========================================================================
  * VALMART.ID & MARTFORUM.ID — CREATIVE CONTENT ENGINE & TRACKER
  * =========================================================================
- * Integrasi Dua Arah:
- * 1. GitHub Repository: Sebagai Library Naskah & Dokumen Detail
- * 2. Google Sheets: Sebagai Dashboard Visual & Tracker Kalender Harian
- *
- * Dikembangkan untuk: Tim Kreatif Ko Jeremy (Hildan, Helmy, Audrey, Dika)
+ * 3 Tab Terpadu:
+ * 1. 📊 Dashboard: Ringkasan KPI, Pacing Talent (Sparkline), & Antrean Review
+ * 2. 📅 Kalender Visual: Grid Kalender Bulanan (Senin–Minggu) + Card Status
+ * 3. 📝 Database Konten: Master Data 10 Kolom dengan Link Naskah GitHub
  * =========================================================================
  */
 
 const CONFIG = {
+  SHEET_DASHBOARD: "📊 Dashboard",
   SHEET_CALENDAR: "📅 Kalender Visual",
   SHEET_DATABASE: "📝 Database Konten",
   REPO_BASE_URL: "https://github.com/KrisnaHildan/Valmart.id-Martforum.id/blob/main/",
@@ -59,15 +59,16 @@ const CONFIG = {
 function onOpen() {
   const ui = SpreadsheetApp.getUi();
   ui.createMenu("⚡ Valmart & Martforum")
+    .addItem("📊 Format Ulang Dashboard", "setupDashboard")
     .addItem("📅 Render / Refresh Kalender Visual", "renderCalendar")
     .addSeparator()
     .addItem("📥 Sinkronisasi Naskah dari GitHub (Nov 2026)", "syncNovemberSchedule")
-    .addItem("🛠️ Setup Ulang Lembar Kerja (Format Cantik)", "setupTracker")
+    .addItem("🛠️ Setup Ulang Semua Tab (3 Tab Lengkap)", "setupTracker")
     .addToUi();
 }
 
 /**
- * Setup Tab Database & Tab Kalender dengan Desain Modern
+ * Setup Lengkap 3 Tab: Dashboard, Kalender, Database
  */
 function setupTracker() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -82,21 +83,253 @@ function setupTracker() {
   // 2. Setup Tab Kalender Visual
   let calSheet = ss.getSheetByName(CONFIG.SHEET_CALENDAR);
   if (!calSheet) {
-    calSheet = ss.insertSheet(CONFIG.SHEET_CALENDAR, 0);
+    calSheet = ss.insertSheet(CONFIG.SHEET_CALENDAR);
   }
-  
   renderCalendar();
 
+  // 3. Setup Tab Dashboard (Diletakkan di Urutan Pertama)
+  let dashSheet = ss.getSheetByName(CONFIG.SHEET_DASHBOARD);
+  if (!dashSheet) {
+    dashSheet = ss.insertSheet(CONFIG.SHEET_DASHBOARD, 0);
+  }
+  setupDashboard();
+
   SpreadsheetApp.getUi().alert(
-    "✅ Sistem Berhasil Dibuat!",
-    "Format lembar kerja siap dipakai.\n\n" +
-    "Klik menu [⚡ Valmart & Martforum] -> [📥 Sinkronisasi Naskah dari GitHub] untuk mengisi jadwal konten aktif.",
+    "✅ 3 Tab Berhasil Dibuat!",
+    "Sistem Tracker & Dashboard berhasil disetup:\n" +
+    "1. 📊 Dashboard (KPI & Antrean Review)\n" +
+    "2. 📅 Kalender Visual (Grid Bulanan)\n" +
+    "3. 📝 Database Konten (Master Data)\n\n" +
+    "Klik menu [⚡ Valmart & Martforum] -> [📥 Sinkronisasi Naskah dari GitHub] untuk mengisi data.",
     SpreadsheetApp.getUi().ButtonSet.OK
   );
 }
 
 /**
- * Format Tab Database dengan Desain Tabel Modern
+ * 1. PEMBUATAN TAB DASHBOARD (LEAN & REALTIME)
+ */
+function setupDashboard() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sheet = ss.getSheetByName(CONFIG.SHEET_DASHBOARD);
+  if (!sheet) {
+    sheet = ss.insertSheet(CONFIG.SHEET_DASHBOARD, 0);
+  }
+
+  sheet.clear();
+  sheet.setTabColor("#10B981"); // Emerald Tab Color
+
+  // Column widths
+  sheet.setColumnWidth(1, 20);  // A Spacing
+  sheet.setColumnWidth(2, 130); // B
+  sheet.setColumnWidth(3, 100); // C
+  sheet.setColumnWidth(4, 110); // D
+  sheet.setColumnWidth(5, 140); // E
+  sheet.setColumnWidth(6, 25);  // F Spacer
+  sheet.setColumnWidth(7, 100); // G
+  sheet.setColumnWidth(8, 100); // H
+  sheet.setColumnWidth(9, 130); // I
+  sheet.setColumnWidth(10, 240);// J
+  sheet.setColumnWidth(11, 120);// K
+
+  // Header Banner
+  sheet.getRange("B2:K2").merge()
+    .setValue("📊 CREATIVE DASHBOARD — VALMART.ID & MARTFORUM.ID")
+    .setFontFamily(CONFIG.FONT_FAMILY)
+    .setFontSize(13)
+    .setFontWeight("bold")
+    .setBackground(CONFIG.COLORS.HEADER_BG)
+    .setFontColor(CONFIG.COLORS.HEADER_TEXT)
+    .setHorizontalAlignment("center")
+    .setVerticalAlignment("middle");
+  sheet.setRowHeight(2, 38);
+
+  sheet.getRange("B3:K3").merge()
+    .setValue("💡 Dashboard Realtime: Metrik otomatis terupdate saat status diubah di tab '📝 Database Konten'.")
+    .setFontFamily(CONFIG.FONT_FAMILY)
+    .setFontSize(9)
+    .setFontColor("#64748B")
+    .setBackground("#F8FAFC")
+    .setHorizontalAlignment("center");
+  sheet.setRowHeight(3, 22);
+
+  // -------------------------------------------------------------------------
+  // 4 KPI SCORECARDS (Row 5 - 7)
+  // -------------------------------------------------------------------------
+  sheet.setRowHeight(4, 10); // Spacer
+  sheet.setRowHeight(5, 20); // Label Card
+  sheet.setRowHeight(6, 40); // Big Number
+  sheet.setRowHeight(7, 20); // Subtext / Badge
+
+  // Card 1: Total Konten (B5:C7)
+  createScoreCard(sheet, "B5:C5", "B6:C6", "B7:C7", 
+    "🎯 TOTAL TERJADWAL", 
+    "=COUNTA('📝 Database Konten'!C5:C100)", 
+    "Bulan Berjalan", 
+    "#F8FAFC", "#0F172A", "#CBD5E1");
+
+  // Card 2: Siap Tayang / Published (D5:E7)
+  createScoreCard(sheet, "D5:E5", "D6:E6", "D7:E7", 
+    "🚀 APPROVED / PUBLISHED", 
+    "=COUNTIF('📝 Database Konten'!J5:J100, \"*Approved*\") + COUNTIF('📝 Database Konten'!J5:J100, \"*Published*\")", 
+    "=IF(B6>0, TEXT((D6/B6),\"0% Selesai\"), \"0%\")", 
+    "#F0FDF4", "#166534", "#86EFAC");
+
+  // Card 3: Butuh Review (G5:H7)
+  createScoreCard(sheet, "G5:H5", "G6:H6", "G7:H7", 
+    "⚠️ ANTREAN REVIEW", 
+    "=COUNTIF('📝 Database Konten'!J5:J100, \"*In Review*\") + COUNTIF('📝 Database Konten'!J5:J100, \"*Revision*\")", 
+    "Perlu Dicek Hari Ini", 
+    "#FFF7ED", "#C2410C", "#FDBA74");
+
+  // Card 4: Dalam Pengerjaan (J5:K7)
+  createScoreCard(sheet, "J5:K5", "J6:K6", "J7:K7", 
+    "⏳ DALAM PENGERJAAN", 
+    "=COUNTIF('📝 Database Konten'!J5:J100, \"*Draft*\") + COUNTIF('📝 Database Konten'!J5:J100, \"*In Progress*\")", 
+    "On Track Talent", 
+    "#FEFCE8", "#A16207", "#FDE047");
+
+  sheet.setRowHeight(8, 15); // Spacer
+
+  // -------------------------------------------------------------------------
+  // SECTION KIRI (B9:E19): WORKLOAD & PACING TALENT
+  // -------------------------------------------------------------------------
+  sheet.getRange("B9:E9").merge()
+    .setValue("👥 TARGET MINGGUAN & PACING TALENT")
+    .setFontFamily(CONFIG.FONT_FAMILY)
+    .setFontSize(10)
+    .setFontWeight("bold")
+    .setBackground(CONFIG.COLORS.DAY_HEADER_BG)
+    .setFontColor(CONFIG.COLORS.DAY_HEADER_TEXT)
+    .setHorizontalAlignment("center")
+    .setVerticalAlignment("middle");
+  sheet.setRowHeight(9, 28);
+
+  const talentHeaders = ["Nama Talent / Role", "Target", "Selesai", "Visual Progress Bar"];
+  sheet.getRange("B10:E10").setValues([talentHeaders])
+    .setFontFamily(CONFIG.FONT_FAMILY)
+    .setFontSize(9)
+    .setFontWeight("bold")
+    .setBackground("#F1F5F9")
+    .setFontColor("#475569")
+    .setHorizontalAlignment("center")
+    .setBorder(true, true, true, true, null, null, CONFIG.COLORS.GRID_BORDER, SpreadsheetApp.BorderStyle.SOLID);
+  sheet.setRowHeight(10, 24);
+
+  // Baris Helmy (Row 11)
+  sheet.getRange("B11").setValue("🎬 Helmy (Valmart)").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold");
+  sheet.getRange("C11").setValue("4 Video/Mgg").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setHorizontalAlignment("center");
+  sheet.getRange("D11").setFormula("=COUNTIFS('📝 Database Konten'!F5:F100, \"*Helmy*\", '📝 Database Konten'!J5:J100, \"*Approved*\") + COUNTIFS('📝 Database Konten'!F5:F100, \"*Helmy*\", '📝 Database Konten'!J5:J100, \"*Published*\")").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold").setHorizontalAlignment("center");
+  sheet.getRange("E11").setFormula("=SPARKLINE(D11, {\"charttype\", \"bar\"; \"max\", 8; \"color1\", \"#4F46E5\"; \"color2\", \"#E2E8F0\"})");
+  sheet.setRowHeight(11, 26);
+
+  // Baris Audrey (Row 12)
+  sheet.getRange("B12").setValue("🎙️ Audrey (Martforum)").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold");
+  sheet.getRange("C12").setValue("3 VO/Mgg").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setHorizontalAlignment("center");
+  sheet.getRange("D12").setFormula("=COUNTIFS('📝 Database Konten'!F5:F100, \"*Audrey*\", '📝 Database Konten'!J5:J100, \"*Approved*\") + COUNTIFS('📝 Database Konten'!F5:F100, \"*Audrey*\", '📝 Database Konten'!J5:J100, \"*Published*\")").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold").setHorizontalAlignment("center");
+  sheet.getRange("E12").setFormula("=SPARKLINE(D12, {\"charttype\", \"bar\"; \"max\", 6; \"color1\", \"#0284C7\"; \"color2\", \"#E2E8F0\"})");
+  sheet.setRowHeight(12, 26);
+
+  // Baris Dika (Row 13)
+  sheet.getRange("B13").setValue("🎨 Dika (Editor/Desain)").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold");
+  sheet.getRange("C13").setValue("Support Aset").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setHorizontalAlignment("center");
+  sheet.getRange("D13").setFormula("=COUNTIFS('📝 Database Konten'!F5:F100, \"*Dika*\", '📝 Database Konten'!J5:J100, \"*Approved*\") + COUNTIFS('📝 Database Konten'!F5:F100, \"*Dika*\", '📝 Database Konten'!J5:J100, \"*Published*\")").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold").setHorizontalAlignment("center");
+  sheet.getRange("E13").setFormula("=SPARKLINE(D13, {\"charttype\", \"bar\"; \"max\", 4; \"color1\", \"#10B981\"; \"color2\", \"#E2E8F0\"})");
+  sheet.setRowHeight(13, 26);
+
+  sheet.getRange("B11:E13").setBorder(true, true, true, true, true, true, CONFIG.COLORS.GRID_BORDER, SpreadsheetApp.BorderStyle.SOLID);
+
+  // Keseimbangan Brand (Row 15 - 18)
+  sheet.getRange("B15:E15").merge()
+    .setValue("⚖️ DISTRIBUSI KONTEN BRAND")
+    .setFontFamily(CONFIG.FONT_FAMILY)
+    .setFontSize(10)
+    .setFontWeight("bold")
+    .setBackground("#334155")
+    .setFontColor("#FFFFFF")
+    .setHorizontalAlignment("center");
+  sheet.setRowHeight(15, 26);
+
+  sheet.getRange("B16:C16").merge().setValue("🟣 Valmart.id").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold");
+  sheet.getRange("D16:E16").merge().setFormula("=COUNTIF('📝 Database Konten'!E5:E100, \"Valmart\") & \" Konten\"").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setHorizontalAlignment("center");
+  sheet.setRowHeight(16, 24);
+
+  sheet.getRange("B17:C17").merge().setValue("🔵 Martforum.id").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold");
+  sheet.getRange("D17:E17").merge().setFormula("=COUNTIF('📝 Database Konten'!E5:E100, \"Martforum\") & \" Konten\"").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setHorizontalAlignment("center");
+  sheet.setRowHeight(17, 24);
+
+  sheet.getRange("B18:E18").merge().setFormula("=SPARKLINE({COUNTIF('📝 Database Konten'!E5:E100, \"Valmart\"), COUNTIF('📝 Database Konten'!E5:E100, \"Martforum\")}, {\"charttype\", \"bar\"; \"color1\", \"#4F46E5\"; \"color2\", \"#0284C7\"})");
+  sheet.setRowHeight(18, 20);
+  sheet.getRange("B15:E18").setBorder(true, true, true, true, true, true, CONFIG.COLORS.GRID_BORDER, SpreadsheetApp.BorderStyle.SOLID);
+
+  // -------------------------------------------------------------------------
+  // SECTION KANAN (G9:K18): ANTREAN REVIEW / ACTION NEEDED
+  // -------------------------------------------------------------------------
+  sheet.getRange("G9:K9").merge()
+    .setValue("🚨 ANTREAN REVIEW (KLIK LINK DRAFT UNTUK APPROVAL)")
+    .setFontFamily(CONFIG.FONT_FAMILY)
+    .setFontSize(10)
+    .setFontWeight("bold")
+    .setBackground(CONFIG.COLORS.DAY_HEADER_BG)
+    .setFontColor(CONFIG.COLORS.DAY_HEADER_TEXT)
+    .setHorizontalAlignment("center")
+    .setVerticalAlignment("middle");
+
+  const reviewHeaders = ["Tanggal", "Brand", "PIC", "Topik Konten", "Status"];
+  sheet.getRange("G10:K10").setValues([reviewHeaders])
+    .setFontFamily(CONFIG.FONT_FAMILY)
+    .setFontSize(9)
+    .setFontWeight("bold")
+    .setBackground("#F1F5F9")
+    .setFontColor("#475569")
+    .setHorizontalAlignment("center")
+    .setBorder(true, true, true, true, null, null, CONFIG.COLORS.GRID_BORDER, SpreadsheetApp.BorderStyle.SOLID);
+
+  // Filter dinamis otomatis menampilkan baris yang "In Review" atau "Revision"
+  sheet.getRange("G11").setFormula(
+    "=IFERROR(FILTER({'📝 Database Konten'!C5:C100, '📝 Database Konten'!E5:E100, '📝 Database Konten'!F5:F100, '📝 Database Konten'!G5:G100, '📝 Database Konten'!J5:J100}, ('📝 Database Konten'!J5:J100 = \"🟠 In Review\") + ('📝 Database Konten'!J5:J100 = \"🔴 Revision\")), {\"-\", \"-\", \"-\", \"✅ Tidak ada antrean review saat ini! Semuanya aman.\", \"-\"})"
+  );
+  sheet.getRange("G11:K18").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setVerticalAlignment("middle");
+  sheet.getRange("G11:K18").setBorder(true, true, true, true, true, true, CONFIG.COLORS.GRID_BORDER, SpreadsheetApp.BorderStyle.SOLID);
+}
+
+function createScoreCard(sheet, labelRange, numRange, tagRange, label, formula, tagFormula, bg, textColor, borderColor) {
+  sheet.getRange(labelRange).merge()
+    .setValue(label)
+    .setFontFamily(CONFIG.FONT_FAMILY)
+    .setFontSize(8.5)
+    .setFontWeight("bold")
+    .setFontColor(textColor)
+    .setBackground(bg)
+    .setHorizontalAlignment("center")
+    .setVerticalAlignment("bottom");
+
+  sheet.getRange(numRange).merge()
+    .setFormula(formula)
+    .setFontFamily(CONFIG.FONT_FAMILY)
+    .setFontSize(20)
+    .setFontWeight("bold")
+    .setFontColor(textColor)
+    .setBackground(bg)
+    .setHorizontalAlignment("center")
+    .setVerticalAlignment("middle");
+
+  sheet.getRange(tagRange).merge()
+    .setValue(tagFormula)
+    .setFontFamily(CONFIG.FONT_FAMILY)
+    .setFontSize(8)
+    .setFontColor("#64748B")
+    .setBackground(bg)
+    .setHorizontalAlignment("center")
+    .setVerticalAlignment("top");
+
+  // Border outline kartu
+  const startCol = sheet.getRange(labelRange).getColumn();
+  const startRow = sheet.getRange(labelRange).getRow();
+  sheet.getRange(startRow, startCol, 3, 2).setBorder(true, true, true, true, null, null, borderColor, SpreadsheetApp.BorderStyle.SOLID_MEDIUM);
+}
+
+/**
+ * 2. FORMAT DATABASE KONTEN
  */
 function formatDatabaseSheet(sheet) {
   sheet.clear();
@@ -114,7 +347,6 @@ function formatDatabaseSheet(sheet) {
     .setVerticalAlignment("middle");
   sheet.setRowHeight(2, 40);
 
-  // Subtitle info
   sheet.getRange("B3:K3").merge()
     .setValue("💡 Info: Kolom 'Link Naskah GitHub' langsung mengarah ke naskah detail per detik di repository. Editor cukup drop link draft di kolom 'Link Draft Preview'.")
     .setFontFamily(CONFIG.FONT_FAMILY)
@@ -124,7 +356,6 @@ function formatDatabaseSheet(sheet) {
     .setHorizontalAlignment("center");
   sheet.setRowHeight(3, 24);
 
-  // 10 Kolom Rapi
   const headers = [
     "No",
     "Tanggal Tayang",
@@ -138,8 +369,7 @@ function formatDatabaseSheet(sheet) {
     "Catatan Review / Feedback"
   ];
 
-  const headerRange = sheet.getRange("B4:K4");
-  headerRange.setValues([headers])
+  sheet.getRange("B4:K4").setValues([headers])
     .setFontFamily(CONFIG.FONT_FAMILY)
     .setFontSize(10)
     .setFontWeight("bold")
@@ -149,49 +379,33 @@ function formatDatabaseSheet(sheet) {
     .setVerticalAlignment("middle");
   sheet.setRowHeight(4, 34);
 
-  // Column Widths
-  sheet.setColumnWidth(1, 20);   // Spacing A
-  sheet.setColumnWidth(2, 45);   // No (B)
-  sheet.setColumnWidth(3, 115);  // Tanggal (C)
-  sheet.setColumnWidth(4, 85);   // Hari (D)
-  sheet.setColumnWidth(5, 110);  // Brand (E)
-  sheet.setColumnWidth(6, 160);  // PIC (F)
-  sheet.setColumnWidth(7, 300);  // Topik (G)
-  sheet.setColumnWidth(8, 200);  // Link Naskah GitHub (H)
-  sheet.setColumnWidth(9, 190);  // Link Draft (I)
-  sheet.setColumnWidth(10, 130); // Status (J)
-  sheet.setColumnWidth(11, 240); // Feedback (K)
+  sheet.setColumnWidth(1, 20);
+  sheet.setColumnWidth(2, 45);
+  sheet.setColumnWidth(3, 115);
+  sheet.setColumnWidth(4, 85);
+  sheet.setColumnWidth(5, 110);
+  sheet.setColumnWidth(6, 160);
+  sheet.setColumnWidth(7, 300);
+  sheet.setColumnWidth(8, 200);
+  sheet.setColumnWidth(9, 190);
+  sheet.setColumnWidth(10, 130);
+  sheet.setColumnWidth(11, 240);
 
   const maxRows = 100;
 
-  // Dropdown Brand (E5:E100)
-  const brandRule = SpreadsheetApp.newDataValidation()
-    .requireValueInList(CONFIG.BRAND_LIST, true)
-    .setAllowInvalid(false)
-    .build();
+  const brandRule = SpreadsheetApp.newDataValidation().requireValueInList(CONFIG.BRAND_LIST, true).setAllowInvalid(false).build();
   sheet.getRange(5, 5, maxRows, 1).setDataValidation(brandRule);
 
-  // Dropdown PIC (F5:F100)
-  const picRule = SpreadsheetApp.newDataValidation()
-    .requireValueInList(CONFIG.PIC_LIST, true)
-    .setAllowInvalid(false)
-    .build();
+  const picRule = SpreadsheetApp.newDataValidation().requireValueInList(CONFIG.PIC_LIST, true).setAllowInvalid(false).build();
   sheet.getRange(5, 6, maxRows, 1).setDataValidation(picRule);
 
-  // Dropdown Status (J5:J100)
-  const statusRule = SpreadsheetApp.newDataValidation()
-    .requireValueInList(CONFIG.STATUS_LIST, true)
-    .setAllowInvalid(false)
-    .build();
+  const statusRule = SpreadsheetApp.newDataValidation().requireValueInList(CONFIG.STATUS_LIST, true).setAllowInvalid(false).build();
   sheet.getRange(5, 10, maxRows, 1).setDataValidation(statusRule);
 
-  // Date format C5:C100
   sheet.getRange(5, 3, maxRows, 1).setNumberFormat("yyyy-mm-dd");
 
-  // Conditional Formatting Status Colors
   const rules = [];
   const statusRange = sheet.getRange("J5:J100");
-
   const colorMap = [
     { text: "⚪ Draft", bg: CONFIG.COLORS.STATUS.DRAFT.bg, color: CONFIG.COLORS.STATUS.DRAFT.text },
     { text: "🟡 In Progress", bg: CONFIG.COLORS.STATUS.PROGRESS.bg, color: CONFIG.COLORS.STATUS.PROGRESS.text },
@@ -213,24 +427,22 @@ function formatDatabaseSheet(sheet) {
     );
   });
   sheet.setConditionalFormatRules(rules);
-
   sheet.setFrozenRows(4);
 }
 
 /**
- * Render Grid Kalender Visual (Senin s/d Minggu)
+ * 3. RENDER KALENDER VISUAL
  */
 function renderCalendar() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   let calSheet = ss.getSheetByName(CONFIG.SHEET_CALENDAR);
   if (!calSheet) {
-    calSheet = ss.insertSheet(CONFIG.SHEET_CALENDAR, 0);
+    calSheet = ss.insertSheet(CONFIG.SHEET_CALENDAR);
   }
 
   const dbSheet = ss.getSheetByName(CONFIG.SHEET_DATABASE);
   if (!dbSheet) return;
 
-  // Baca pilihan bulan & tahun dari sel C2 & E2
   let targetMonth = calSheet.getRange("C2").getValue();
   let targetYear = calSheet.getRange("E2").getValue();
 
@@ -242,31 +454,25 @@ function renderCalendar() {
     targetYear = now.getFullYear();
   }
 
-  // Clear area kalender lama dari baris 5 ke bawah
+  // Clear area kalender lama dengan aman
   const maxRows = calSheet.getMaxRows();
   if (maxRows >= 5) {
     calSheet.getRange(5, 1, maxRows - 4, calSheet.getMaxColumns()).clear();
   }
   calSheet.setTabColor("#4F46E5");
 
-  // Setup Top Controls
   setupCalendarControls(calSheet, targetMonth, targetYear);
-
-  // Ambil data konten dari tab Database
   const contentMap = loadContentFromDatabase(dbSheet, targetMonth, targetYear);
-
-  // Render Grid
   drawCalendarGrid(calSheet, targetMonth, targetYear, contentMap);
 }
 
 function setupCalendarControls(sheet, month, year) {
-  sheet.setColumnWidth(1, 20); // Spacing A
+  sheet.setColumnWidth(1, 20);
 
   for (let c = 2; c <= 8; c++) {
     sheet.setColumnWidth(c, 180);
   }
 
-  // Baris Kontrol Bulan/Tahun
   sheet.getRange("B2").setValue("🗓️ BULAN:").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(11).setFontWeight("bold").setFontColor("#1E293B");
   sheet.getRange("C2").setValue(month).setNumberFormat("0").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(11).setFontWeight("bold").setHorizontalAlignment("center").setBackground("#EEF2FF");
   sheet.getRange("D2").setValue("TAHUN:").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(11).setFontWeight("bold").setFontColor("#1E293B");
@@ -274,7 +480,7 @@ function setupCalendarControls(sheet, month, year) {
 
   const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
   sheet.getRange("F2:H2").merge()
-    .setValue("📅 " + monthNames[month - 1] + " " + year + " (Ganti sel C2/E2 lalu klik menu Refresh)")
+    .setValue("📅 " + monthNames[month - 1] + " " + year + " (Ganti C2/E2 lalu klik Refresh)")
     .setFontFamily(CONFIG.FONT_FAMILY)
     .setFontSize(10)
     .setFontWeight("bold")
@@ -282,7 +488,6 @@ function setupCalendarControls(sheet, month, year) {
     .setHorizontalAlignment("right");
   sheet.setRowHeight(2, 32);
 
-  // Nama Hari
   const days = ["SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU", "MINGGU"];
   sheet.getRange("B4:H4").setValues([days])
     .setFontFamily(CONFIG.FONT_FAMILY)
@@ -303,7 +508,7 @@ function loadContentFromDatabase(dbSheet, targetMonth, targetYear) {
   const data = dbSheet.getRange(5, 2, lastRow - 4, 10).getValues();
 
   for (let i = 0; i < data.length; i++) {
-    const rawDate = data[i][1]; // Tanggal (Col C)
+    const rawDate = data[i][1];
     if (!rawDate) continue;
 
     const d = new Date(rawDate);
@@ -318,13 +523,13 @@ function loadContentFromDatabase(dbSheet, targetMonth, targetYear) {
         map[dateNum] = [];
       }
       map[dateNum].push({
-        brand: data[i][3],       // Col E
-        pic: data[i][4],         // Col F
-        topik: data[i][5],       // Col G
-        scriptUrl: data[i][6],   // Col H (Link GitHub)
-        draftUrl: data[i][7],    // Col I (Link Draft)
-        status: data[i][8],      // Col J (Status)
-        feedback: data[i][9]     // Col K (Notes)
+        brand: data[i][3],
+        pic: data[i][4],
+        topik: data[i][5],
+        scriptUrl: data[i][6],
+        draftUrl: data[i][7],
+        status: data[i][8],
+        feedback: data[i][9]
       });
     }
   }
@@ -339,7 +544,7 @@ function drawCalendarGrid(sheet, month, year, contentMap) {
   const todayDate = today.getDate();
 
   let startCol = firstDay.getDay(); 
-  startCol = (startCol === 0) ? 6 : startCol - 1; // Senin = 0
+  startCol = (startCol === 0) ? 6 : startCol - 1;
 
   let currentDay = 1;
   let currentRow = 5;
@@ -362,7 +567,6 @@ function drawCalendarGrid(sheet, month, year, contentMap) {
       } else {
         const isToday = isCurrentMonth && (currentDay === todayDate);
 
-        // Header Tanggal
         cellDateHeader
           .setValue(currentDay + (isToday ? "  📍 HARI INI" : ""))
           .setFontFamily(CONFIG.FONT_FAMILY)
@@ -374,7 +578,6 @@ function drawCalendarGrid(sheet, month, year, contentMap) {
           .setFontColor(isToday ? "#FFFFFF" : "#334155")
           .setBorder(true, true, true, true, null, null, CONFIG.COLORS.GRID_BORDER, SpreadsheetApp.BorderStyle.SOLID);
 
-        // Konten Kartu
         const items = contentMap[currentDay] || [];
         if (items.length > 0) {
           let cardText = "";
@@ -407,7 +610,6 @@ function drawCalendarGrid(sheet, month, year, contentMap) {
             .setBackground(isToday ? CONFIG.COLORS.TODAY_BG : "#FFFFFF")
             .setBorder(true, true, true, true, null, null, isToday ? CONFIG.COLORS.TODAY_ACCENT : CONFIG.COLORS.GRID_BORDER, isToday ? SpreadsheetApp.BorderStyle.SOLID_MEDIUM : SpreadsheetApp.BorderStyle.SOLID);
         }
-
         currentDay++;
       }
     }
@@ -416,7 +618,7 @@ function drawCalendarGrid(sheet, month, year, contentMap) {
 }
 
 /**
- * Sinkronisasi Naskah dari GitHub: Memasukkan Jadwal Aktif dengan Link Langsung ke Repo
+ * 4. SINKRONISASI JADWAL NOVEMBER 2026 DARI GITHUB
  */
 function syncNovemberSchedule() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -457,11 +659,12 @@ function syncNovemberSchedule() {
 
   dbSheet.getRange(5, 2, schedule.length, 10).setValues(schedule);
   renderCalendar();
+  setupDashboard(); // Otomatis refresh dashboard
 
   SpreadsheetApp.getUi().alert(
     "📥 Sinkronisasi Berhasil!",
-    "Seluruh jadwal aktif November 2026 berhasil disinkronkan langsung dengan tautan naskah di GitHub.\n" +
-    "Kalender visual otomatis ter-refresh.",
+    "Seluruh jadwal aktif November 2026 berhasil disinkronkan.\n" +
+    "Dashboard dan Kalender Visual otomatis ter-update realtime.",
     SpreadsheetApp.getUi().ButtonSet.OK
   );
 }
