@@ -37,7 +37,7 @@ const CONFIG = {
   PIC_LIST: [
     "Helmy (Video)",
     "Audrey (VO)",
-    "Dika (Editor/Desain)"
+    "Dika / Jonathan (Editor & Desain)"
   ],
   BRAND_LIST: [
     "Valmart",
@@ -229,10 +229,10 @@ function setupDashboard() {
   sheet.getRange("E12").setFormula("=SPARKLINE(D12, {\"charttype\", \"bar\"; \"max\", 6; \"color1\", \"#0284C7\"; \"color2\", \"#E2E8F0\"})");
   sheet.setRowHeight(12, 26);
 
-  // Baris Dika (Row 13)
-  sheet.getRange("B13").setValue("🎨 Dika (Editor/Desain)").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold");
+  // Baris Dika / Jonathan (Row 13)
+  sheet.getRange("B13").setValue("🎨 Dika / Jonathan (Desain)").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold");
   sheet.getRange("C13").setValue("Support Aset").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setHorizontalAlignment("center");
-  sheet.getRange("D13").setFormula("=COUNTIFS('📝 Database Konten'!F5:F100, \"*Dika*\", '📝 Database Konten'!J5:J100, \"*Approved*\") + COUNTIFS('📝 Database Konten'!F5:F100, \"*Dika*\", '📝 Database Konten'!J5:J100, \"*Published*\")").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold").setHorizontalAlignment("center");
+  sheet.getRange("D13").setFormula("=COUNTIFS('📝 Database Konten'!F5:F100, \"*Dika*\", '📝 Database Konten'!J5:J100, \"*Approved*\") + COUNTIFS('📝 Database Konten'!F5:F100, \"*Dika*\", '📝 Database Konten'!J5:J100, \"*Published*\") + COUNTIFS('📝 Database Konten'!F5:F100, \"*Jonathan*\", '📝 Database Konten'!J5:J100, \"*Approved*\") + COUNTIFS('📝 Database Konten'!F5:F100, \"*Jonathan*\", '📝 Database Konten'!J5:J100, \"*Published*\")").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold").setHorizontalAlignment("center");
   sheet.getRange("E13").setFormula("=SPARKLINE(D13, {\"charttype\", \"bar\"; \"max\", 4; \"color1\", \"#10B981\"; \"color2\", \"#E2E8F0\"})");
   sheet.setRowHeight(13, 26);
 
@@ -584,8 +584,9 @@ function drawCalendarGrid(sheet, month, year, contentMap) {
           items.forEach((item, idx) => {
             const brandTag = (item.brand === "Valmart") ? "[VAL]" : "[MART]";
             const statusTag = item.status ? item.status : "⚪ Draft";
+            const picShort = (item.pic.includes("Dika") || item.pic.includes("Jonathan")) ? "Dika/Jhona" : item.pic.split(" ")[0];
             cardText += (idx > 0 ? "\n───\n" : "") +
-              brandTag + " " + item.pic.split(" ")[0] + "\n" +
+              brandTag + " " + picShort + "\n" +
               "📌 " + item.topik + "\n" +
               statusTag;
           });
@@ -643,7 +644,7 @@ function syncNovemberSchedule() {
     [6, "2026-11-19", "=TEXT(C10,\"dddd\")", "Valmart", "Helmy (Video)", "Anti-Scam Awareness: Bedain Akun Resmi vs Fake", baseW3Val, "", "🟣 Published", "Tayang Kamis W3"],
     [7, "2026-11-20", "=TEXT(C11,\"dddd\")", "Valmart", "Helmy (Video)", "Meme Sekte Skin: Kuronami vs Reaver vs Primordium", baseW3Val, "", "🟣 Published", "Tayang Jumat W3"],
     [8, "2026-11-20", "=TEXT(C12,\"dddd\")", "Martforum", "Audrey (VO)", "Weekend Mabar: Anti-Phishing Cukup Riot ID", baseW3Mart, "", "🟢 Approved", "Naskah Baru Audrey"],
-    [9, "2026-11-21", "=TEXT(C13,\"dddd\")", "Valmart", "Dika (Editor/Desain)", "Infografis: Panduan Sewa Goceng 1 Menit Anti-Ribet", baseW3Mart, "", "🟢 Approved", "Desain Carousel Dika"],
+    [9, "2026-11-21", "=TEXT(C13,\"dddd\")", "Valmart", "Dika / Jonathan (Editor & Desain)", "Infografis: Panduan Sewa Goceng 1 Menit Anti-Ribet", baseW3Mart, "", "🟢 Approved", "Desain Carousel Dika"],
     [10, "2026-11-22", "=TEXT(C14,\"dddd\")", "Valmart", "Helmy (Video)", "Reminder Sayembara #ValmartAceBounty (Tersisa 8 Hari)", baseW3Val, "", "🟢 Approved", "Story & Feed Push"],
 
     // Week 4 (Minggu Ini)
@@ -654,7 +655,7 @@ function syncNovemberSchedule() {
     [15, "2026-11-26", "=TEXT(C19,\"dddd\")", "Valmart", "Helmy (Video)", "Edukasi Anti-HB: Rahasia First Mail & Garansi 100%", baseW4Val, "", "⚪ Draft", "Jadwal Kamis W4"],
     [16, "2026-11-27", "=TEXT(C20,\"dddd\")", "Martforum", "Audrey (VO)", "PAYDAY FLASH SALE: Amankan VP Akhir Bulan QRIS 3 Detik", baseW4Mart, "", "⚪ Draft", "Jadwal Jumat Payday"],
     [17, "2026-11-27", "=TEXT(C21,\"dddd\")", "Valmart", "Helmy (Video)", "Showcase Katalog Akun Sultan Weekend Ready Sewa", baseW4Val, "", "⚪ Draft", "Jadwal Jumat W4"],
-    [18, "2026-11-30", "=TEXT(C22,\"dddd\")", "Valmart", "Dika (Editor/Desain)", "Poster Pemenang Sayembara ACE Bounty (Rp 200k Cash)", baseW4Mart, "", "⚪ Draft", "Closing November"]
+    [18, "2026-11-30", "=TEXT(C22,\"dddd\")", "Valmart", "Dika / Jonathan (Editor & Desain)", "Poster Pemenang Sayembara ACE Bounty (Rp 200k Cash)", baseW4Mart, "", "⚪ Draft", "Closing November"]
   ];
 
   dbSheet.getRange(5, 2, schedule.length, 10).setValues(schedule);

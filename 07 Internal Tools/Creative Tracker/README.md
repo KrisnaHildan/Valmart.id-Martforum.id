@@ -24,7 +24,7 @@
 * **👥 Target Mingguan & Pacing Talent**:
   * **Helmy (Valmart)**: Target 4 Video/Mgg + Visual Progress Bar (Sparkline).
   * **Audrey (Martforum)**: Target 3 VO/Mgg + Visual Progress Bar (Sparkline).
-  * **Dika (Editor/Desain)**: Support Aset Desain + Visual Progress Bar (Sparkline).
+  * **Dika / Jonathan (Editor/Desain)**: Support Aset Desain + Visual Progress Bar (Sparkline).
 * **⚖️ Keseimbangan Brand**:
   * Rasio volume konten Valmart vs Martforum (menjaga sinergi cross-selling).
 * **🚨 Antrean Review Otomatis (Action Needed)**:
