@@ -100,7 +100,6 @@ function setupTracker() {
  */
 function formatDatabaseSheet(sheet) {
   sheet.clear();
-  sheet.clearFormats();
   sheet.setTabColor("#6366F1");
 
   // Title Banner
@@ -243,8 +242,11 @@ function renderCalendar() {
     targetYear = now.getFullYear();
   }
 
-  // Clear area kalender lama
-  calSheet.getRange("A5:H60").clear().clearFormats();
+  // Clear area kalender lama dari baris 5 ke bawah
+  const maxRows = calSheet.getMaxRows();
+  if (maxRows >= 5) {
+    calSheet.getRange(5, 1, maxRows - 4, calSheet.getMaxColumns()).clear();
+  }
   calSheet.setTabColor("#4F46E5");
 
   // Setup Top Controls
