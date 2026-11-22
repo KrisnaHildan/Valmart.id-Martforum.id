@@ -1,69 +1,76 @@
-# ⚡ Valmart & Martforum Creative Tracker (Lean & High-Aesthetic)
-**Sistem**: Google Sheets + Google Apps Script (Sheet-as-a-SaaS)  
-**Tujuan**: Tracker terpadu konten harian tim kreatif (Helmy, Audrey, Dika, Hildan, Ko Jeremy) dengan **tampilan kalender visual modern** tanpa over-engineering.
+# ⚡ Valmart & Martforum Creative Engine & Tracker
+**Integrasi**: GitHub Repository (Dapur/Naskah) $\longleftrightarrow$ Google Sheets (Dashboard/Kalender)  
+**Dikembangkan untuk**: Tim Digital Marketing & Kreatif Valmart.id & Martforum.id (Ko Jeremy, Hildan, Helmy, Audrey, Dika).
 
 ---
 
-## 🎨 Mengapa Tracker Ini Dibuat Lean & Cantik?
+## 🏗️ Blueprint Arsitektur Sistem
 
-Banyak tracker tim konten mangkrak karena terlalu rumit (kolom kebanyakan) dan desainnya kaku seperti Excel 1990-an. Sistem ini dirancang dengan prinsip:
-1. **Visual Kalender Modern (Bukan Sekadar Baris Tabel)**: Tampilan grid kalender bulanan (Senin–Minggu) dengan kartu konten berjarak lega, status warna lembut (pastel modern), dan pin penanda otomatis **📍 HARI INI**.
-2. **Lean & Minim Beban Input**: Editor hanya perlu memilih Tanggal, Brand, PIC, judul singkat, drop link preview, dan pilih Status.
-3. **No Bloatware**: Tanpa bot WhatsApp bayar langganan yang ribet, tanpa sinkronisasi Google Calendar yang rawan error auth. Semua data dan tampilan hidup di dalam 1 Google Spreadsheet yang ringan.
-
----
-
-## 📐 Arsitektur Spreadsheet (Hanya 2 Tab)
-
-```
-┌────────────────────────────────────────────────────────┐
-│              SISTEM TRACKER KREATIF LEAN               │
-├──────────────────────────┬─────────────────────────────┤
-│ TAB 1: 📅 KALENDER VISUAL │ TAB 2: 📝 DATABASE KONTEN   │
-│ (Grid Kalender Otomatis) │ (Tabel Input 7 Kolom Utama) │
-└──────────────────────────┴─────────────────────────────┘
-```
-
-### 1. Tab `📅 Kalender Visual`
-* **Selector Bulan & Tahun**: Cukup ketik angka bulan (1–12) di sel `C2` dan tahun di sel `E2`, lalu klik **Render / Refresh Kalender**.
-* **Kotak Tanggal**:
-  * Header tanggal abu-abu slate bersih (atau ungu menyala jika bertepatan dengan **📍 HARI INI**).
-  * Kartu konten berisi: `[VAL]` atau `[MART]`, nama PIC, judul hook, dan status badge warna (`🟢 Approved`, `🟡 In Progress`, dll).
-
-### 2. Tab `📝 Database Konten`
-* Tabel modern dengan dropdown otomatis:
-  * **Brand**: `Valmart` / `Martforum`
-  * **PIC**: `Helmy (Video)`, `Audrey (VO)`, `Dika (Editor/Desain)`
-  * **Status**: `⚪ Draft`, `🟡 In Progress`, `🟠 In Review`, `🔴 Revision`, `🟢 Approved`, `🟣 Published`
-
----
-
-## 🚀 Panduan Setup Cepat (Kurang dari 2 Menit)
-
-1. Buka [Google Sheets](https://sheets.new) baru di browser Anda. Beri judul misal: **`Valmart & Martforum — Creative Tracker 2026`**.
-2. Di menu atas Google Sheets, klik **Extensions (Ekstensi)** $\rightarrow$ **Apps Script**.
-3. Hapus semua teks yang ada di editor Apps Script, lalu copy-paste seluruh isi file [Code.gs](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/07%20Internal%20Tools/Creative%20Tracker/apps_script/Code.gs).
-4. Klik tombol **Save (Ikon Disket)** atau tekan `Ctrl + S`.
-5. Di dropdown fungsi bagian atas editor, pilih fungsi **`setupTracker`**, lalu klik tombol **Run (Jalankan)**.
-   *(Saat pertama kali dijalankan, Google akan meminta izin otorisasi standar akun Google Anda. Klik Review Permissions $\rightarrow$ pilih akun $\rightarrow$ Advanced $\rightarrow$ Go to Untitled (unsafe) $\rightarrow$ Allow)*.
-6. Kembali ke tab Google Sheet Anda:
-   * Tab **`📅 Kalender Visual`** dan **`📝 Database Konten`** sudah terbuat rapi secara otomatis!
-   * Menu custom **`⚡ Valmart & Martforum`** akan muncul di toolbar atas.
-7. Klik menu **`⚡ Valmart & Martforum`** $\rightarrow$ **`🌱 Muat Jadwal Aktif November 2026`** untuk langsung mengimpor seluruh naskah dan jadwal Week 3 & Week 4 November 2026 yang aktif saat ini.
-
----
-
-## 💡 Alur Kerja Harian Tim (Workflow)
+Sistem ini memisahkan secara tegas antara **tempat berpikir & naskah detail (GitHub)** dengan **tempat memantau deadline & status (Google Sheets)**:
 
 ```mermaid
-flowchart LR
-    A["Hildan / Ko Jeje: Jadwalkan Konten di Database"] --> B["Talent (Helmy/Audrey/Dika): Buka Link Brief & Edit"]
-    B --> C["Drop Link Drive & Ubah Status: 'In Review'"]
-    C --> D["Reviewer Approve: Ubah Status 'Approved'"]
-    D --> E["Buka Kalender Visual: Sekali lirik jadwal terupdate rapi!"]
+flowchart TD
+    subgraph GITHUB ["🐙 GITHUB REPOSITORY (DAPUR NASKAH & MEMORI AI)"]
+        A["Naskah Video Helmy (Detik per Detik)"]
+        B["Naskah VO Audrey & Brief Poster Dika"]
+        C["Dokumen Brand DNA & Strategi Mingguan"]
+    end
+
+    subgraph ENGINE ["⚙️ APPS SCRIPT ENGINE (Code.gs)"]
+        D["1-Click Sinkronisasi Jadwal"]
+        E["Render Grid Kalender Visual Otomatis"]
+        F["Highlight Otomatis: 📍 HARI INI"]
+    end
+
+    subgraph SHEETS ["📊 GOOGLE SHEETS DASHBOARD (ETALASE TIM)"]
+        G["Tab 1: 📅 KALENDER VISUAL (Grid Kotak Bulanan)"]
+        H["Tab 2: 📝 DATABASE KONTEN (Tabel 10 Kolom)"]
+        I["Kolom Link Langsung Buka Naskah di GitHub"]
+    end
+
+    GITHUB -->|Link Naskah Resmi| ENGINE
+    ENGINE -->|Otomatisasi Tampilan| SHEETS
+    SHEETS -->|Editor Drop Link Draft & Ubah Status| G
 ```
 
-1. **Jadwalkan**: Masukkan tanggal, nama PIC, topik, dan link brief di tab `📝 Database Konten`.
-2. **Produksi**: Helmy / Audrey / Dika mengerjakan konten. Saat selesai edit, masukkan link preview (Google Drive / CapCut) di kolom link dan ubah status ke `🟠 In Review`.
-3. **Approval**: Reviewer mengecek draft. Jika sudah aman, ganti status ke `🟢 Approved`.
-4. **Pantau Jadwal**: Klik menu **`[⚡ Valmart & Martforum] -> [📅 Render / Refresh Kalender Visual]`** kapan saja untuk melihat update terkini dalam format kalender visual.
+---
+
+## 🎨 Keunggulan Desain Visual (Anti-Kaku)
+
+1. **Kalender Visual Grid (Bukan Sekadar Baris Excel)**:
+   * Menampilkan kalender bulanan 7 kolom (Senin s/d Minggu).
+   * Kotak tanggal hari ini otomatis di-highlight dengan latar ungu lembut dan lencana **`📍 HARI INI`**.
+   * Di dalam kotak tanggal, muncul kartu konten ringkas:
+     * Tag Brand: `[VAL]` (Valmart) atau `[MART]` (Martforum)
+     * Nama Talent/PIC: `Helmy`, `Audrey`, atau `Dika`
+     * Topik / Hook: Judul konten singkat
+     * Status Badge: `🟢 Approved`, `🟡 In Progress`, `🟠 In Review`, `🟣 Published`
+2. **Koneksi Langsung ke Naskah GitHub**:
+   * Di tab `📝 Database Konten`, ada kolom **`📖 Link Naskah (GitHub)`**.
+   * Helmy, Audrey, atau Dika cukup klik link tersebut untuk langsung membaca naskah rekaman detik per detik, sound effect, dan draf caption di browser/HP mereka!
+3. **Editor Drop Link Praktis**:
+   * Editor hanya perlu memasukkan link preview video/desain (Google Drive / CapCut) di kolom **`🎬 Link Draft Preview`** dan mengganti status ke `🟠 In Review`.
+
+---
+
+## 🚀 Panduan Pasang & Jalankan (Kurang dari 2 Menit)
+
+1. Buka spreadsheet baru di [sheets.new](https://sheets.new). Beri nama misal: **`Valmart & Martforum — Content Engine 2026`**.
+2. Klik menu **Extensions (Ekstensi)** $\rightarrow$ **Apps Script**.
+3. Hapus kode bawaan, lalu copy-paste seluruh isi file [Code.gs](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/07%20Internal%20Tools/Creative%20Tracker/apps_script/Code.gs).
+4. Tekan **Save (`Ctrl + S`)**.
+5. Di bagian atas editor, pilih fungsi **`setupTracker`**, lalu klik tombol **Run**.
+   *(Beri izin otorisasi standar Google saat pertama kali muncul prompt keamanan)*.
+6. Kembali ke tab Google Sheets:
+   * Format kedua tab (`📅 Kalender Visual` & `📝 Database Konten`) otomatis selesai ditata rapi.
+   * Muncul menu baru di toolbar: **`⚡ Valmart & Martforum`**.
+7. Klik **`⚡ Valmart & Martforum`** $\rightarrow$ **`📥 Sinkronisasi Naskah dari GitHub`**:
+   * Seluruh 18 baris jadwal aktif (Week 3 & Week 4 November 2026) langsung terisi lengkap dengan link naskah GitHub, dan kalender visual otomatis menampilkan jadwal bulan berjalan!
+
+---
+
+## 🔄 Cara Kerja Kolaborasi Harian (Hildan & AI)
+
+1. **Rencana Baru**: Hildan minta ke AI: *"Buatin jadwal dan naskah Week 1 Desember dong"*.
+2. **AI Eksekusi**: AI menyusun naskah detail di folder GitHub, mengupdate matriks di `Code.gs`, lalu melakukan commit & push.
+3. **Hildan QC & Sync**: Hildan cukup buka Google Sheets, klik menu **`⚡ Valmart & Martforum`** $\rightarrow$ **`📥 Sinkronisasi Naskah dari GitHub`**. Selesai dalam 5 detik!

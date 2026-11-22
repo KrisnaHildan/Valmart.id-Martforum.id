@@ -1,14 +1,19 @@
 /**
- * VALMART.ID & MARTFORUM.ID — CREATIVE CONTENT TRACKER
- * Lean, High-Aesthetic & Automated Content Pipeline + Calendar Grid
+ * =========================================================================
+ * VALMART.ID & MARTFORUM.ID — CREATIVE CONTENT ENGINE & TRACKER
+ * =========================================================================
+ * Integrasi Dua Arah:
+ * 1. GitHub Repository: Sebagai Library Naskah & Dokumen Detail
+ * 2. Google Sheets: Sebagai Dashboard Visual & Tracker Kalender Harian
  *
  * Dikembangkan untuk: Tim Kreatif Ko Jeremy (Hildan, Helmy, Audrey, Dika)
+ * =========================================================================
  */
 
 const CONFIG = {
   SHEET_CALENDAR: "📅 Kalender Visual",
   SHEET_DATABASE: "📝 Database Konten",
-  SHEET_CONFIG: "⚙️ Konfigurasi",
+  REPO_BASE_URL: "https://github.com/KrisnaHildan/Valmart.id-Martforum.id/blob/main/",
   FONT_FAMILY: "Google Sans",
   COLORS: {
     HEADER_BG: "#0F172A",       // Deep Slate / Navy
@@ -19,14 +24,14 @@ const CONFIG = {
     TODAY_ACCENT: "#6366F1",    // Indigo 500
     TODAY_BG: "#EEF2FF",        // Indigo 50
     VALMART: "#4F46E5",         // Indigo
-    MARTFORUM: "#0284C7",       // Sky / Cyan
+    MARTFORUM: "#0284C7",       // Sky Blue
     STATUS: {
-      DRAFT: { bg: "#F1F5F9", text: "#475569" },       // Slate
-      PROGRESS: { bg: "#FEF3C7", text: "#92400E" },    // Amber
-      REVIEW: { bg: "#FFEDD5", text: "#9A3412" },      // Orange
-      REVISION: { bg: "#FEE2E2", text: "#991B1B" },    // Red
-      APPROVED: { bg: "#DCFCE7", text: "#166534" },    // Green
-      PUBLISHED: { bg: "#EDE9FE", text: "#5B21B6" }    // Purple
+      DRAFT: { bg: "#F1F5F9", text: "#475569" },
+      PROGRESS: { bg: "#FEF3C7", text: "#92400E" },
+      REVIEW: { bg: "#FFEDD5", text: "#9A3412" },
+      REVISION: { bg: "#FEE2E2", text: "#991B1B" },
+      APPROVED: { bg: "#DCFCE7", text: "#166534" },
+      PUBLISHED: { bg: "#EDE9FE", text: "#5B21B6" }
     }
   },
   PIC_LIST: [
@@ -49,25 +54,25 @@ const CONFIG = {
 };
 
 /**
- * Trigger saat spreadsheet dibuka: Buat custom menu
+ * Menu Kustom di Toolbar Google Sheets
  */
 function onOpen() {
   const ui = SpreadsheetApp.getUi();
   ui.createMenu("⚡ Valmart & Martforum")
     .addItem("📅 Render / Refresh Kalender Visual", "renderCalendar")
     .addSeparator()
-    .addItem("🛠️ Setup Lembar Kerja (Reset & Format Cantik)", "setupTracker")
-    .addItem("🌱 Muat Jadwal Aktif November 2026", "seedNovemberData")
+    .addItem("📥 Sinkronisasi Naskah dari GitHub (Nov 2026)", "syncNovemberSchedule")
+    .addItem("🛠️ Setup Ulang Lembar Kerja (Format Cantik)", "setupTracker")
     .addToUi();
 }
 
 /**
- * 1. FUNGSI UTAMA SETUP TRACKER: Format tampilan, dropdown, dan tata letak
+ * Setup Tab Database & Tab Kalender dengan Desain Modern
  */
 function setupTracker() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
 
-  // 1. Setup Tab Database Konten
+  // 1. Setup Tab Database
   let dbSheet = ss.getSheetByName(CONFIG.SHEET_DATABASE);
   if (!dbSheet) {
     dbSheet = ss.insertSheet(CONFIG.SHEET_DATABASE);
@@ -80,19 +85,18 @@ function setupTracker() {
     calSheet = ss.insertSheet(CONFIG.SHEET_CALENDAR, 0);
   }
   
-  // Render kalender untuk bulan saat ini
   renderCalendar();
 
   SpreadsheetApp.getUi().alert(
-    "✅ Tracker Siap Digunakan!",
-    "Lembar kerja berhasil diformat dengan tampilan modern & lean.\n\n" +
-    "Gunakan menu [⚡ Valmart & Martforum] -> [🌱 Muat Jadwal Aktif November 2026] untuk mengisi jadwal saat ini.",
+    "✅ Sistem Berhasil Dibuat!",
+    "Format lembar kerja siap dipakai.\n\n" +
+    "Klik menu [⚡ Valmart & Martforum] -> [📥 Sinkronisasi Naskah dari GitHub] untuk mengisi jadwal konten aktif.",
     SpreadsheetApp.getUi().ButtonSet.OK
   );
 }
 
 /**
- * Format Tab Database Konten dengan styling modern
+ * Format Tab Database dengan Desain Tabel Modern
  */
 function formatDatabaseSheet(sheet) {
   sheet.clear();
@@ -100,7 +104,7 @@ function formatDatabaseSheet(sheet) {
   sheet.setTabColor("#6366F1");
 
   // Title Banner
-  sheet.getRange("B2:J2").merge()
+  sheet.getRange("B2:K2").merge()
     .setValue("📝 MASTER DATABASE KONTEN — VALMART.ID & MARTFORUM.ID")
     .setFontFamily(CONFIG.FONT_FAMILY)
     .setFontSize(13)
@@ -112,8 +116,8 @@ function formatDatabaseSheet(sheet) {
   sheet.setRowHeight(2, 40);
 
   // Subtitle info
-  sheet.getRange("B3:J3").merge()
-    .setValue("💡 Tips: Isi baris jadwal di bawah ini. Buka tab '📅 Kalender Visual' untuk melihat jadwal kalender otomatis.")
+  sheet.getRange("B3:K3").merge()
+    .setValue("💡 Info: Kolom 'Link Naskah GitHub' langsung mengarah ke naskah detail per detik di repository. Editor cukup drop link draft di kolom 'Link Draft Preview'.")
     .setFontFamily(CONFIG.FONT_FAMILY)
     .setFontSize(9)
     .setFontColor("#64748B")
@@ -121,7 +125,7 @@ function formatDatabaseSheet(sheet) {
     .setHorizontalAlignment("center");
   sheet.setRowHeight(3, 24);
 
-  // Headers
+  // 10 Kolom Rapi
   const headers = [
     "No",
     "Tanggal Tayang",
@@ -129,12 +133,13 @@ function formatDatabaseSheet(sheet) {
     "Brand",
     "PIC & Role",
     "Topik & Hook Konten",
-    "Link Draft Preview",
+    "📖 Link Naskah (GitHub)",
+    "🎬 Link Draft Preview",
     "Status",
-    "Catatan / Feedback Review"
+    "Catatan Review / Feedback"
   ];
 
-  const headerRange = sheet.getRange("B4:J4");
+  const headerRange = sheet.getRange("B4:K4");
   headerRange.setValues([headers])
     .setFontFamily(CONFIG.FONT_FAMILY)
     .setFontSize(10)
@@ -146,18 +151,18 @@ function formatDatabaseSheet(sheet) {
   sheet.setRowHeight(4, 34);
 
   // Column Widths
-  sheet.setColumnWidth(1, 25);   // Padding A
+  sheet.setColumnWidth(1, 20);   // Spacing A
   sheet.setColumnWidth(2, 45);   // No (B)
   sheet.setColumnWidth(3, 115);  // Tanggal (C)
   sheet.setColumnWidth(4, 85);   // Hari (D)
   sheet.setColumnWidth(5, 110);  // Brand (E)
   sheet.setColumnWidth(6, 160);  // PIC (F)
-  sheet.setColumnWidth(7, 310);  // Topik (G)
-  sheet.setColumnWidth(8, 200);  // Link (H)
-  sheet.setColumnWidth(9, 130);  // Status (I)
-  sheet.setColumnWidth(10, 240); // Feedback (J)
+  sheet.setColumnWidth(7, 300);  // Topik (G)
+  sheet.setColumnWidth(8, 200);  // Link Naskah GitHub (H)
+  sheet.setColumnWidth(9, 190);  // Link Draft (I)
+  sheet.setColumnWidth(10, 130); // Status (J)
+  sheet.setColumnWidth(11, 240); // Feedback (K)
 
-  // Data Validation Rules
   const maxRows = 100;
 
   // Dropdown Brand (E5:E100)
@@ -174,19 +179,19 @@ function formatDatabaseSheet(sheet) {
     .build();
   sheet.getRange(5, 6, maxRows, 1).setDataValidation(picRule);
 
-  // Dropdown Status (I5:I100)
+  // Dropdown Status (J5:J100)
   const statusRule = SpreadsheetApp.newDataValidation()
     .requireValueInList(CONFIG.STATUS_LIST, true)
     .setAllowInvalid(false)
     .build();
-  sheet.getRange(5, 9, maxRows, 1).setDataValidation(statusRule);
+  sheet.getRange(5, 10, maxRows, 1).setDataValidation(statusRule);
 
-  // Date Format for C5:C100
+  // Date format C5:C100
   sheet.getRange(5, 3, maxRows, 1).setNumberFormat("yyyy-mm-dd");
 
-  // Conditional Formatting Warna Status (I5:I100)
+  // Conditional Formatting Status Colors
   const rules = [];
-  const statusRange = sheet.getRange("I5:I100");
+  const statusRange = sheet.getRange("J5:J100");
 
   const colorMap = [
     { text: "⚪ Draft", bg: CONFIG.COLORS.STATUS.DRAFT.bg, color: CONFIG.COLORS.STATUS.DRAFT.text },
@@ -208,20 +213,13 @@ function formatDatabaseSheet(sheet) {
         .build()
     );
   });
-
   sheet.setConditionalFormatRules(rules);
-
-  // Alternating row styling & borders
-  const dataRange = sheet.getRange(5, 2, maxRows, 9);
-  dataRange.setFontFamily(CONFIG.FONT_FAMILY)
-    .setFontSize(9.5)
-    .setVerticalAlignment("middle");
 
   sheet.setFrozenRows(4);
 }
 
 /**
- * 2. RENDER KALENDER VISUAL (GRID BULANAN SENIN - MINGGU)
+ * Render Grid Kalender Visual (Senin s/d Minggu)
  */
 function renderCalendar() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -231,70 +229,60 @@ function renderCalendar() {
   }
 
   const dbSheet = ss.getSheetByName(CONFIG.SHEET_DATABASE);
-  if (!dbSheet) {
-    SpreadsheetApp.getUi().alert("Error", "Tab '" + CONFIG.SHEET_DATABASE + "' tidak ditemukan. Jalankan Setup dulu.", SpreadsheetApp.getUi().ButtonSet.OK);
-    return;
-  }
+  if (!dbSheet) return;
 
-  // Ambil pilihan bulan & tahun dari kontrol (atau default bulan ini)
+  // Baca pilihan bulan & tahun dari sel C2 & E2
   let targetMonth = calSheet.getRange("C2").getValue();
   let targetYear = calSheet.getRange("E2").getValue();
 
   const now = new Date();
   if (!targetMonth || isNaN(targetMonth) || targetMonth < 1 || targetMonth > 12) {
-    targetMonth = now.getMonth() + 1; // 1-12
+    targetMonth = now.getMonth() + 1;
   }
   if (!targetYear || isNaN(targetYear) || targetYear < 2020) {
     targetYear = now.getFullYear();
   }
 
-  // Clear area kalender dari row 5 ke bawah
+  // Clear area kalender lama
   calSheet.getRange("A5:H60").clear().clearFormats();
   calSheet.setTabColor("#4F46E5");
 
-  // Setup Top Header / Controls
+  // Setup Top Controls
   setupCalendarControls(calSheet, targetMonth, targetYear);
 
-  // Baca database konten untuk bulan terpilih
+  // Ambil data konten dari tab Database
   const contentMap = loadContentFromDatabase(dbSheet, targetMonth, targetYear);
 
-  // Gambar Grid Kalender
+  // Render Grid
   drawCalendarGrid(calSheet, targetMonth, targetYear, contentMap);
 }
 
-/**
- * Kontrol Top Bar Kalender (Bulan, Tahun, Tombol Refresh)
- */
 function setupCalendarControls(sheet, month, year) {
   sheet.setColumnWidth(1, 20); // Spacing A
 
-  // 7 Kolom Hari: B sampai H (Senin s/d Minggu)
   for (let c = 2; c <= 8; c++) {
-    sheet.setColumnWidth(c, 175);
+    sheet.setColumnWidth(c, 180);
   }
 
-  // Header Banner
-  sheet.getRange("B2:H2").clear();
-  sheet.getRange("B2").setValue("🗓️ KALENDER KONTEN:").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(11).setFontWeight("bold").setFontColor("#1E293B");
+  // Baris Kontrol Bulan/Tahun
+  sheet.getRange("B2").setValue("🗓️ BULAN:").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(11).setFontWeight("bold").setFontColor("#1E293B");
   sheet.getRange("C2").setValue(month).setNumberFormat("0").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(11).setFontWeight("bold").setHorizontalAlignment("center").setBackground("#EEF2FF");
   sheet.getRange("D2").setValue("TAHUN:").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(11).setFontWeight("bold").setFontColor("#1E293B");
   sheet.getRange("E2").setValue(year).setNumberFormat("0").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(11).setFontWeight("bold").setHorizontalAlignment("center").setBackground("#EEF2FF");
-  
+
   const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
   sheet.getRange("F2:H2").merge()
-    .setValue("📅 " + monthNames[month - 1] + " " + year + " (Edit C2/E2 lalu klik Refresh)")
+    .setValue("📅 " + monthNames[month - 1] + " " + year + " (Ganti sel C2/E2 lalu klik menu Refresh)")
     .setFontFamily(CONFIG.FONT_FAMILY)
     .setFontSize(10)
     .setFontWeight("bold")
     .setFontColor("#4338CA")
     .setHorizontalAlignment("right");
-
   sheet.setRowHeight(2, 32);
 
-  // Nama Hari (Senin - Minggu)
+  // Nama Hari
   const days = ["SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU", "MINGGU"];
-  const dayRow = sheet.getRange("B4:H4");
-  dayRow.setValues([days])
+  sheet.getRange("B4:H4").setValues([days])
     .setFontFamily(CONFIG.FONT_FAMILY)
     .setFontSize(10)
     .setFontWeight("bold")
@@ -305,16 +293,12 @@ function setupCalendarControls(sheet, month, year) {
   sheet.setRowHeight(4, 30);
 }
 
-/**
- * Membaca tab Database dan mengelompokkan konten per tanggal
- */
 function loadContentFromDatabase(dbSheet, targetMonth, targetYear) {
   const lastRow = dbSheet.getLastRow();
   const map = {};
-
   if (lastRow < 5) return map;
 
-  const data = dbSheet.getRange(5, 2, lastRow - 4, 9).getValues();
+  const data = dbSheet.getRange(5, 2, lastRow - 4, 10).getValues();
 
   for (let i = 0; i < data.length; i++) {
     const rawDate = data[i][1]; // Tanggal (Col C)
@@ -335,19 +319,16 @@ function loadContentFromDatabase(dbSheet, targetMonth, targetYear) {
         brand: data[i][3],       // Col E
         pic: data[i][4],         // Col F
         topik: data[i][5],       // Col G
-        link: data[i][6],        // Col H
-        status: data[i][7],      // Col I
-        notes: data[i][8]        // Col J
+        scriptUrl: data[i][6],   // Col H (Link GitHub)
+        draftUrl: data[i][7],    // Col I (Link Draft)
+        status: data[i][8],      // Col J (Status)
+        feedback: data[i][9]     // Col K (Notes)
       });
     }
   }
-
   return map;
 }
 
-/**
- * Menggambar grid kotak kalender bulanan
- */
 function drawCalendarGrid(sheet, month, year, contentMap) {
   const firstDay = new Date(year, month - 1, 1);
   const lastDate = new Date(year, month, 0).getDate();
@@ -355,36 +336,31 @@ function drawCalendarGrid(sheet, month, year, contentMap) {
   const isCurrentMonth = (today.getFullYear() === year && (today.getMonth() + 1) === month);
   const todayDate = today.getDate();
 
-  // Hari pertama dalam minggu (0 = Minggu, 1 = Senin, ..., 6 = Sabtu)
   let startCol = firstDay.getDay(); 
-  // Konversi ke format Senin = 0, Minggu = 6
-  startCol = (startCol === 0) ? 6 : startCol - 1;
+  startCol = (startCol === 0) ? 6 : startCol - 1; // Senin = 0
 
   let currentDay = 1;
   let currentRow = 5;
 
   while (currentDay <= lastDate) {
-    // 1 Baris Angka Tanggal (Header kotak hari)
-    // 1 Baris Isi Konten (Isi kartu)
     const dateHeaderRow = currentRow;
     const contentRow = currentRow + 1;
 
     sheet.setRowHeight(dateHeaderRow, 24);
-    sheet.setRowHeight(contentRow, 110); // Tinggi kartu konten yang lega
+    sheet.setRowHeight(contentRow, 115);
 
     for (let c = 0; c < 7; c++) {
-      const colIndex = c + 2; // Mulai dari Kolom B (index 2)
+      const colIndex = c + 2;
       const cellDateHeader = sheet.getRange(dateHeaderRow, colIndex);
       const cellContent = sheet.getRange(contentRow, colIndex);
 
       if ((currentRow === 5 && c < startCol) || currentDay > lastDate) {
-        // Kotak kosong di luar bulan
         cellDateHeader.setBackground("#F8FAFC").setBorder(true, true, true, true, null, null, CONFIG.COLORS.GRID_BORDER, SpreadsheetApp.BorderStyle.SOLID);
         cellContent.setBackground("#F8FAFC").setBorder(true, true, true, true, null, null, CONFIG.COLORS.GRID_BORDER, SpreadsheetApp.BorderStyle.SOLID);
       } else {
         const isToday = isCurrentMonth && (currentDay === todayDate);
 
-        // Header Angka Tanggal
+        // Header Tanggal
         cellDateHeader
           .setValue(currentDay + (isToday ? "  📍 HARI INI" : ""))
           .setFontFamily(CONFIG.FONT_FAMILY)
@@ -396,17 +372,17 @@ function drawCalendarGrid(sheet, month, year, contentMap) {
           .setFontColor(isToday ? "#FFFFFF" : "#334155")
           .setBorder(true, true, true, true, null, null, CONFIG.COLORS.GRID_BORDER, SpreadsheetApp.BorderStyle.SOLID);
 
-        // Isi Konten Tanggal Tersebut
+        // Konten Kartu
         const items = contentMap[currentDay] || [];
         if (items.length > 0) {
           let cardText = "";
           items.forEach((item, idx) => {
-            const brandShort = (item.brand === "Valmart") ? "[VAL]" : "[MART]";
-            const statusIcon = getStatusBadge(item.status);
+            const brandTag = (item.brand === "Valmart") ? "[VAL]" : "[MART]";
+            const statusTag = item.status ? item.status : "⚪ Draft";
             cardText += (idx > 0 ? "\n───\n" : "") +
-              brandShort + " " + item.pic.split(" ")[0] + "\n" +
+              brandTag + " " + item.pic.split(" ")[0] + "\n" +
               "📌 " + item.topik + "\n" +
-              statusIcon;
+              statusTag;
           });
 
           cellContent
@@ -433,54 +409,57 @@ function drawCalendarGrid(sheet, month, year, contentMap) {
         currentDay++;
       }
     }
-
     currentRow += 2;
   }
 }
 
-function getStatusBadge(status) {
-  if (!status) return "⚪ Draft";
-  return status;
-}
-
 /**
- * 3. SEED DATA NYATA: Muat jadwal riil tim November 2026 yang aktif sekarang
+ * Sinkronisasi Naskah dari GitHub: Memasukkan Jadwal Aktif dengan Link Langsung ke Repo
  */
-function seedNovemberData() {
+function syncNovemberSchedule() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const dbSheet = ss.getSheetByName(CONFIG.SHEET_DATABASE);
-
+  let dbSheet = ss.getSheetByName(CONFIG.SHEET_DATABASE);
   if (!dbSheet) {
     setupTracker();
-    return;
+    dbSheet = ss.getSheetByName(CONFIG.SHEET_DATABASE);
   }
 
-  const sampleData = [
-    [1, "2026-11-16", "=TEXT(C5,\"dddd\")", "Valmart", "Helmy (Video)", "Mid-Month ACE Bounty Recap (Reaksi Klip 200k)", "", "🟣 Published", "Tayang Senin"],
-    [2, "2026-11-16", "=TEXT(C6,\"dddd\")", "Martforum", "Audrey (VO)", "Teaser Resmi Brand: Top Up QRIS 3 Detik", "", "🟣 Published", "Selesai"],
-    [3, "2026-11-17", "=TEXT(C7,\"dddd\")", "Valmart", "Helmy (Video)", "Meme 10 Omen Chaos di Ascent", "", "🟣 Published", "Tayang Selasa"],
-    [4, "2026-11-18", "=TEXT(C8,\"dddd\")", "Valmart", "Helmy (Video)", "Sinergi Dua Brand: Sewa Valmart Diskon Martforum", "", "🟣 Published", "Tayang Rabu"],
-    [5, "2026-11-18", "=TEXT(C9,\"dddd\")", "Martforum", "Audrey (VO)", "Meme Temen Discord Pas Ada Bundle Baru", "", "🟣 Published", "Tayang Rabu"],
-    [6, "2026-11-19", "=TEXT(C10,\"dddd\")", "Valmart", "Helmy (Video)", "Anti-Scam Awareness: Bedain Akun Resmi vs Fake", "", "🟣 Published", "Tayang Kamis"],
-    [7, "2026-11-20", "=TEXT(C11,\"dddd\")", "Valmart", "Helmy (Video)", "Meme Sekte Skin: Kuronami vs Reaver vs Primordium", "", "🟣 Published", "Tayang Jumat"],
-    [8, "2026-11-20", "=TEXT(C12,\"dddd\")", "Martforum", "Audrey (VO)", "Weekend Mabar: Anti-Phishing Cukup Riot ID", "", "🟢 Approved", "Naskah Baru Audrey"],
-    [9, "2026-11-21", "=TEXT(C13,\"dddd\")", "Valmart", "Dika (Editor/Desain)", "Infografis: Panduan Sewa Goceng 1 Menit Anti-Ribet", "", "🟢 Approved", "Desain Carousel Dika"],
-    [10, "2026-11-22", "=TEXT(C14,\"dddd\")", "Valmart", "Helmy (Video)", "Reminder Sayembara #ValmartAceBounty (Tersisa 8 Hari)", "", "🟡 In Progress", "Story & Feed Push"],
-    [11, "2026-11-23", "=TEXT(C15,\"dddd\")", "Martforum", "Audrey (VO)", "Derita Solo Queue vs Obatnya (Mabar Skin Wangi)", "", "🟠 In Review", "Jadwal Senin Week 4"],
-    [12, "2026-11-24", "=TEXT(C16,\"dddd\")", "Valmart", "Helmy (Video)", "Smart Buyer: Ngetes Skin di Valmart Sebelum Boncos", "", "🟡 In Progress", "Jadwal Selasa Week 4"],
-    [13, "2026-11-25", "=TEXT(C17,\"dddd\")", "Martforum", "Audrey (VO)", "Meme Streamer Jago vs Realita Whiff Kita", "", "⚪ Draft", "Jadwal Rabu Week 4"],
-    [14, "2026-11-25", "=TEXT(C18,\"dddd\")", "Valmart", "Helmy (Video)", "Meme Tanggal Tua Tetep Bisa Sultan (Modal Goceng)", "", "⚪ Draft", "Jadwal Rabu Week 4"],
-    [15, "2026-11-26", "=TEXT(C19,\"dddd\")", "Valmart", "Helmy (Video)", "Edukasi Anti-HB: Rahasia First Mail & Garansi 100%", "", "⚪ Draft", "Jadwal Kamis Week 4"],
-    [16, "2026-11-27", "=TEXT(C20,\"dddd\")", "Martforum", "Audrey (VO)", "PAYDAY FLASH SALE: Amankan VP Akhir Bulan QRIS 3 Detik", "", "⚪ Draft", "Jadwal Jumat Payday"],
-    [17, "2026-11-27", "=TEXT(C21,\"dddd\")", "Valmart", "Helmy (Video)", "Showcase Katalog Akun Sultan Weekend Ready Sewa", "", "⚪ Draft", "Jadwal Jumat Week 4"],
-    [18, "2026-11-30", "=TEXT(C22,\"dddd\")", "Valmart", "Dika (Editor/Desain)", "Poster Pemenang Sayembara ACE Bounty (Rp 200k Cash)", "", "⚪ Draft", "Closing November"]
+  const baseW3Val = CONFIG.REPO_BASE_URL + "04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/BRIEF_VALMART_HELMY.md";
+  const baseW3Mart = CONFIG.REPO_BASE_URL + "04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/BRIEF_MARTFORUM_JONATHAN.md";
+  const baseW4Val = CONFIG.REPO_BASE_URL + "04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%204%20(23%20-%2030%20Nov%202026)/BRIEF_VALMART_HELMY.md";
+  const baseW4Mart = CONFIG.REPO_BASE_URL + "04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%204%20(23%20-%2030%20Nov%202026)/BRIEF_MARTFORUM_JONATHAN.md";
+
+  const schedule = [
+    // Week 3
+    [1, "2026-11-16", "=TEXT(C5,\"dddd\")", "Valmart", "Helmy (Video)", "Mid-Month ACE Bounty Recap (Reaksi Klip 200k)", baseW3Val, "", "🟣 Published", "Tayang Senin W3"],
+    [2, "2026-11-16", "=TEXT(C6,\"dddd\")", "Martforum", "Audrey (VO)", "Teaser Resmi Brand: Top Up QRIS 3 Detik", baseW3Mart, "", "🟣 Published", "Selesai"],
+    [3, "2026-11-17", "=TEXT(C7,\"dddd\")", "Valmart", "Helmy (Video)", "Meme 10 Omen Chaos di Ascent", baseW3Val, "", "🟣 Published", "Tayang Selasa W3"],
+    [4, "2026-11-18", "=TEXT(C8,\"dddd\")", "Valmart", "Helmy (Video)", "Sinergi Dua Brand: Sewa Valmart Diskon Martforum", baseW3Val, "", "🟣 Published", "Tayang Rabu W3"],
+    [5, "2026-11-18", "=TEXT(C9,\"dddd\")", "Martforum", "Audrey (VO)", "Meme Temen Discord Pas Ada Bundle Baru", baseW3Mart, "", "🟣 Published", "Tayang Rabu W3"],
+    [6, "2026-11-19", "=TEXT(C10,\"dddd\")", "Valmart", "Helmy (Video)", "Anti-Scam Awareness: Bedain Akun Resmi vs Fake", baseW3Val, "", "🟣 Published", "Tayang Kamis W3"],
+    [7, "2026-11-20", "=TEXT(C11,\"dddd\")", "Valmart", "Helmy (Video)", "Meme Sekte Skin: Kuronami vs Reaver vs Primordium", baseW3Val, "", "🟣 Published", "Tayang Jumat W3"],
+    [8, "2026-11-20", "=TEXT(C12,\"dddd\")", "Martforum", "Audrey (VO)", "Weekend Mabar: Anti-Phishing Cukup Riot ID", baseW3Mart, "", "🟢 Approved", "Naskah Baru Audrey"],
+    [9, "2026-11-21", "=TEXT(C13,\"dddd\")", "Valmart", "Dika (Editor/Desain)", "Infografis: Panduan Sewa Goceng 1 Menit Anti-Ribet", baseW3Mart, "", "🟢 Approved", "Desain Carousel Dika"],
+    [10, "2026-11-22", "=TEXT(C14,\"dddd\")", "Valmart", "Helmy (Video)", "Reminder Sayembara #ValmartAceBounty (Tersisa 8 Hari)", baseW3Val, "", "🟢 Approved", "Story & Feed Push"],
+
+    // Week 4 (Minggu Ini)
+    [11, "2026-11-23", "=TEXT(C15,\"dddd\")", "Martforum", "Audrey (VO)", "Derita Solo Queue vs Obatnya (Mabar Skin Wangi)", baseW4Mart, "", "🟠 In Review", "Jadwal Hari Ini (Senin)"],
+    [12, "2026-11-24", "=TEXT(C16,\"dddd\")", "Valmart", "Helmy (Video)", "Smart Buyer: Ngetes Skin di Valmart Sebelum Boncos", baseW4Val, "", "🟡 In Progress", "Jadwal Selasa W4"],
+    [13, "2026-11-25", "=TEXT(C17,\"dddd\")", "Martforum", "Audrey (VO)", "Meme Streamer Jago vs Realita Whiff Kita", baseW4Mart, "", "⚪ Draft", "Jadwal Rabu W4"],
+    [14, "2026-11-25", "=TEXT(C18,\"dddd\")", "Valmart", "Helmy (Video)", "Meme Tanggal Tua Tetep Bisa Sultan (Modal Goceng)", baseW4Val, "", "⚪ Draft", "Jadwal Rabu W4"],
+    [15, "2026-11-26", "=TEXT(C19,\"dddd\")", "Valmart", "Helmy (Video)", "Edukasi Anti-HB: Rahasia First Mail & Garansi 100%", baseW4Val, "", "⚪ Draft", "Jadwal Kamis W4"],
+    [16, "2026-11-27", "=TEXT(C20,\"dddd\")", "Martforum", "Audrey (VO)", "PAYDAY FLASH SALE: Amankan VP Akhir Bulan QRIS 3 Detik", baseW4Mart, "", "⚪ Draft", "Jadwal Jumat Payday"],
+    [17, "2026-11-27", "=TEXT(C21,\"dddd\")", "Valmart", "Helmy (Video)", "Showcase Katalog Akun Sultan Weekend Ready Sewa", baseW4Val, "", "⚪ Draft", "Jadwal Jumat W4"],
+    [18, "2026-11-30", "=TEXT(C22,\"dddd\")", "Valmart", "Dika (Editor/Desain)", "Poster Pemenang Sayembara ACE Bounty (Rp 200k Cash)", baseW4Mart, "", "⚪ Draft", "Closing November"]
   ];
 
-  // Bersihkan data lama dari row 5
-  dbSheet.getRange(5, 2, sampleData.length, 9).setValues(sampleData);
-
-  // Render ulang kalender agar datanya langsung tampil
+  dbSheet.getRange(5, 2, schedule.length, 10).setValues(schedule);
   renderCalendar();
 
-  SpreadsheetApp.getUi().alert("🌱 Data Berhasil Dimuat!", "Jadwal aktif November 2026 (Week 3 & Week 4) sudah masuk ke Database dan Kalender Visual.", SpreadsheetApp.getUi().ButtonSet.OK);
+  SpreadsheetApp.getUi().alert(
+    "📥 Sinkronisasi Berhasil!",
+    "Seluruh jadwal aktif November 2026 berhasil disinkronkan langsung dengan tautan naskah di GitHub.\n" +
+    "Kalender visual otomatis ter-refresh.",
+    SpreadsheetApp.getUi().ButtonSet.OK
+  );
 }
