@@ -1,4 +1,4 @@
-# BRAND DNA & CONTENT GUIDELINE
+﻿# BRAND DNA & CONTENT GUIDELINE
 ## Valmart.id & Martforum.id
 
 Dokumen ini merupakan panduan resmi identitas brand (*Brand DNA*), gaya komunikasi, aturan konten media sosial, serta batasan kreatif untuk **Valmart** dan **Martforum** di bawah supervisi Ko Jeremy.
@@ -20,7 +20,7 @@ Valmart adalah brand yang berfokus pada **jual-beli dan penyewaan (rental) akun 
 * **Vibes:** Seru, santai, kompetitif, dan penuh kultur gaming.
 * **Humor & Meme:** Aktif menyisipkan meme tren terkini di komunitas gaming/TikTok/X.
 * **Sentuhan Shitpost / Jomok:** Diperbolehkan menggunakan sedikit sentuhan humor *jomok* / meme absurd Gen Z yang sedang tren, dengan catatan **tetap berkelas, tidak menjurus ke pornografi/pelecehan vulgar, dan tidak merusak reputasi brand**.
-* **Formula "Nyeleneh Tapi Tetep Jualan" (Unhinged Selling)**: Menggunakan hook/skit komedi absurd di awal untuk membunuh resistensi iklan, lalu pivot mulus ke jualan produk (detail playbook & bank ide: [REFERENSI_KONTEN_NYELENEH.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/REFERENSI_KONTEN_NYELENEH.md)).
+* **Formula "Nyeleneh Tapi Tetep Jualan" (Unhinged Selling)**: Menggunakan hook/skit komedi absurd di awal untuk membunuh resistensi iklan, lalu pivot mulus ke jualan produk (detail playbook & bank ide: [Referensi Konten Nyeleneh.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Referensi Konten Nyeleneh.md)).
 * **Bahasa Percakapan:** Menggunakan bahasa tongkrongan Valorant asli (*whiff, bot frag, gendong gebetan, modal ceban, tilt, NT, nenteng Kuronami, dll.*). Hindari sapaan kaku seperti *"Halo sobat gamers"*.
 
 ### D. Target Market

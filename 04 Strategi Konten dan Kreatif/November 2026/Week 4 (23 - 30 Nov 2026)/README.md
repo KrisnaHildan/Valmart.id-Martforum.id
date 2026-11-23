@@ -1,4 +1,4 @@
-# Kalender & Brief Konten: Minggu 4 (23 – 30 November 2026)
+﻿# Kalender & Brief Konten: Minggu 4 (23 – 30 November 2026)
 **Proyek**: Valmart.id & Martforum.id  
 **Periode**: 23 – 30 November 2026  
 **Fokus**: PAYDAY RUSH (Gajian Akhir Bulan), Edukasi Smart Buyer (Sewa Goceng vs Beli Ratusan Ribu), Anti-HB Trust, & Closing Sayembara #ValmartAceBounty (Rp 200k Cash)  
@@ -29,5 +29,5 @@
 ---
 
 ## 📂 Link File Brief Lengkap Minggu 4
-* 🎬 **[BRIEF_VALMART_HELMY.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%204%20(23%20-%2030%20Nov%202026)/BRIEF_VALMART_HELMY.md)** — Naskah rinci Helmy (Video 13 s/d 16 + Panduan Closing Ace Bounty).
-* 🎙️ **[BRIEF_MARTFORUM_JONATHAN.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%204%20(23%20-%2030%20Nov%202026)/BRIEF_MARTFORUM_JONATHAN.md)** — Naskah rinci Audrey & Dika (VO 10 s/d 12 & Desain Poster Payday / Poster Rekap Pemenang).
+* 🎬 **[Brief Valmart Helmy.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%204%20(23%20-%2030%20Nov%202026)/Brief Valmart Helmy.md)** — Naskah rinci Helmy (Video 13 s/d 16 + Panduan Closing Ace Bounty).
+* 🎙️ **[Brief Martforum Jonathan.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%204%20(23%20-%2030%20Nov%202026)/Brief Martforum Jonathan.md)** — Naskah rinci Audrey & Dika (VO 10 s/d 12 & Desain Poster Payday / Poster Rekap Pemenang).

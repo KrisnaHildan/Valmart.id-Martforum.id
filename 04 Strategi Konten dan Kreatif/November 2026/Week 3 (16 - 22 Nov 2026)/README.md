@@ -1,4 +1,4 @@
-# Kalender & Brief Konten: Minggu 3 (16 – 22 November 2026)
+﻿# Kalender & Brief Konten: Minggu 3 (16 – 22 November 2026)
 **Proyek**: Valmart.id & Martforum.id  
 **Periode**: 16 – 22 November 2026  
 **Fokus**: Edukasi Keamanan Transaksi (Anti-Phishing Riot ID & Anti-Scam), Mid-Month ACE Bounty Recap, Rental Goceng (Rp 5.000), & Sinergi Brand  
@@ -29,5 +29,5 @@
 ---
 
 ## 📂 Link File Brief Lengkap Minggu 3
-* 🎬 **[BRIEF_VALMART_HELMY.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/BRIEF_VALMART_HELMY.md)** — Naskah rinci Helmy (Video 9 s/d 12 + Reminder Ace Bounty).
-* 🎙️ **[BRIEF_MARTFORUM_JONATHAN.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/BRIEF_MARTFORUM_JONATHAN.md)** — Naskah rinci VO Martforum (VO 7 s/d 9 - Audrey & Dika) & Desain Infografis Sewa Goceng.
+* 🎬 **[Brief Valmart Helmy.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/Brief Valmart Helmy.md)** — Naskah rinci Helmy (Video 9 s/d 12 + Reminder Ace Bounty).
+* 🎙️ **[Brief Martforum Jonathan.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/Brief Martforum Jonathan.md)** — Naskah rinci VO Martforum (VO 7 s/d 9 - Audrey & Dika) & Desain Infografis Sewa Goceng.

@@ -1,4 +1,4 @@
-# Valmart.id & Martforum.id — Marketing & Strategy Workspace
+﻿# Valmart.id & Martforum.id — Marketing & Strategy Workspace
 
 Workspace strategi digital marketing untuk dua brand di bawah supervisi Ko Jeremy:
 1. **[VALMART](http://valmart.id/)** (`valmart.id`) — Jual Beli, Sewa (Rental), & Cashout Akun Valorant.
@@ -14,23 +14,23 @@ Workspace strategi digital marketing untuk dua brand di bawah supervisi Ko Jerem
 ```
 ├── 01 Informasi Project/
 │   ├── README.md                       # Overview brand, fokus produk, & strategi
-│   └── BRAND_DNA_DAN_GUIDELINE.md      # Identitas resmi, target market, tone of voice & IG guidelines
+│   └── Brand DNA dan Guideline.md      # Identitas resmi, target market, tone of voice & IG guidelines
 ├── 02 Tim dan Workflow/
 │   ├── README.md                       # Peta navigasi tim & ringkasan operasional
-│   ├── STRUKTUR_DAN_PERAN.md           # Deskripsi peran 5 anggota & Matriks RACI
-│   └── WORKFLOW_MINGGUAN.md            # Siklus mingguan, agenda harian, & jadwal post mingguan
+│   ├── Struktur dan Peran.md           # Deskripsi peran 5 anggota & Matriks RACI
+│   └── Workflow Mingguan.md            # Siklus mingguan, agenda harian, & jadwal post mingguan
 ├── 03 Riset Kompetitor/
-│   ├── DAFTAR_KOMPETITOR.md            # Database & mapping 7 kompetitor utama
-│   ├── SCRAPING_SOSMED_KOMPETITOR.md   # Hasil audit & scraping channel medsos kompetitor
-│   └── INSIGHT_DAN_IMPLEMENTASI.md     # Rekomendasi aksi strategis, hook konten, & sinergi cross-funnel
+│   ├── Daftar Kompetitor.md            # Database & mapping 7 kompetitor utama
+│   ├── Scraping Sosmed Kompetitor.md   # Hasil audit & scraping channel medsos kompetitor
+│   └── Insight dan Implementasi.md     # Rekomendasi aksi strategis, hook konten, & sinergi cross-funnel
 ├── 04 Strategi Konten dan Kreatif/
 │   ├── README.md                       # Peta modul konten & arsip sprint bulanan
-│   ├── REFERENSI_KONTEN_NYELENEH.md    # Playbook konten komedi unhinged tapi jualan
+│   ├── Referensi Konten Nyeleneh.md    # Playbook konten komedi unhinged tapi jualan
 │   └── Oktober 2026/
 │       ├── README.md                   # Jadwal posting harian 20-31 Oktober 2026
-│       ├── BRIEF_KONTEN_GIVEAWAY.md    # Brief KOL Widipu Giveaway
-│       ├── BRIEF_VALMART_HELMY.md      # 8 Brief video singkat Valmart (Helmy)
-│       └── BRIEF_MARTFORUM_JONATHAN.md # 5 Brief naskah Voice Over Martforum (Jonathan)
+│       ├── Brief Konten Giveaway.md    # Brief KOL Widipu Giveaway
+│       ├── Brief Valmart Helmy.md      # 8 Brief video singkat Valmart (Helmy)
+│       └── Brief Martforum Jonathan.md # 5 Brief naskah Voice Over Martforum (Jonathan)
 └── 05 Event dan Campaign/
     ├── README.md                       # Peta navigasi event & program promosi
     └── EVENT_STREAMER_NOVEMBER_2026.md # 3 Opsi event streamer November (Paid Rp 500rb & Free)

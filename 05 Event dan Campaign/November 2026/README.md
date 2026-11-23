@@ -1,4 +1,4 @@
-# Master Event & Campaign: November 2026
+﻿# Master Event & Campaign: November 2026
 **Brand**: Valmart.id & Martforum.id  
 **Periode**: 1 – 30 November 2026  
 **Supervisi**: Ko Jeremy | **Koordinator**: Hildan  
@@ -10,10 +10,10 @@
 
 | No | Inisiatif Event / Campaign | Tipe & Sifat | Periode | Output Bisnis yang Ditargetkan | Berkas Dokumen Rinci |
 | :---: | :--- | :--- | :---: | :--- | :--- |
-| 1 | **Valmart Streamer Affiliate Sprint** | 💰 **PAID** (Rp 500k Cash) | 1 – 30 Nov 2026 | **Omset Penjualan Riil**: 15+ Streamer adu referral dengan syarat ambang batas minimal 15 pesanan sah. | 📄 **[EVENT_AFFILIATE_SPRINT.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/EVENT_AFFILIATE_SPRINT.md)** |
-| 2 | **Martforum Sultan Showmatch feat. Valmart** | 💰 **PAID** (Rp 250k Juara 1) | 28 – 29 Nov 2026 | **Ledakan Reach Multi-Channel**: Dipusatkan di Martforum, format 10 Agent Sama, live streaming di channel masing-masing streamer + clipping masif. *(Diskon 1% tidak diumumkan)*. | 📄 **[EVENT_SULTAN_SHOWMATCH.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/EVENT_SULTAN_SHOWMATCH.md)** |
-| 3 | **Valmart ACE Bounty** | 🎁 **UGC CASH** | 2 – 30 Nov 2026 | **Banjir Konten TikTok Bebas Sewa**: Terbuka untuk umum tanpa syarat sewa akun. Konten gameplay ter-kece berhadiah Cash Reward Tunai *(Aman dari sensor platform)*. | 📄 **[PROGRAM_ACE_BOUNTY.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/PROGRAM_ACE_BOUNTY.md)** |
-| 4 | **Mega Sale 11.11 (Valmart x Martforum)** | ⚡ **FLASH SALE** (Web) | 11 – 13 Nov 2026 | **Lonjakan Checkout 72 Jam**: Valmart Flash Rent serba **Rp 11.000 / hari** & Martforum Flash Drop Saldo Nanggung **125 VP Cuma Rp 11.000**. | 📄 **[EVENT_MEGA_SALE_1111.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/EVENT_MEGA_SALE_1111.md)** |
+| 1 | **Valmart Streamer Affiliate Sprint** | 💰 **PAID** (Rp 500k Cash) | 1 – 30 Nov 2026 | **Omset Penjualan Riil**: 15+ Streamer adu referral dengan syarat ambang batas minimal 15 pesanan sah. | 📄 **[Event Affiliate Sprint.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/Event Affiliate Sprint.md)** |
+| 2 | **Martforum Sultan Showmatch feat. Valmart** | 💰 **PAID** (Rp 250k Juara 1) | 28 – 29 Nov 2026 | **Ledakan Reach Multi-Channel**: Dipusatkan di Martforum, format 10 Agent Sama, live streaming di channel masing-masing streamer + clipping masif. *(Diskon 1% tidak diumumkan)*. | 📄 **[Event Sultan Showmatch.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/Event Sultan Showmatch.md)** |
+| 3 | **Valmart ACE Bounty** | 🎁 **UGC CASH** | 2 – 30 Nov 2026 | **Banjir Konten TikTok Bebas Sewa**: Terbuka untuk umum tanpa syarat sewa akun. Konten gameplay ter-kece berhadiah Cash Reward Tunai *(Aman dari sensor platform)*. | 📄 **[Program Ace Bounty.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/Program Ace Bounty.md)** |
+| 4 | **Mega Sale 11.11 (Valmart x Martforum)** | ⚡ **FLASH SALE** (Web) | 11 – 13 Nov 2026 | **Lonjakan Checkout 72 Jam**: Valmart Flash Rent serba **Rp 11.000 / hari** & Martforum Flash Drop Saldo Nanggung **125 VP Cuma Rp 11.000**. | 📄 **[Event Mega Sale 1111.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/Event Mega Sale 1111.md)** |
 
 ---
 

@@ -1,4 +1,4 @@
-# Master Sponsorship & Kolaborasi Event: Martforum.id
+﻿# Master Sponsorship & Kolaborasi Event: Martforum.id
 **Proyek**: Martforum.id  
 **Supervisi**: Ko Jeremy | **Koordinator**: Hildan  
 **Periode**: Q4 2026 (November – Desember 2026)  
@@ -26,13 +26,13 @@ Sponsorship Martforum **wajib berorientasi pada direct engagement & authentic co
 
 | No | Inisiatif Event | Penyelenggara & Segmentasi | Bentuk Kerja Sama Kunci | Status | Dokumen Rinci |
 | :---: | :--- | :--- | :--- | :---: | :--- |
-| 1 | **COPA 2026** *(Competition of PPIT Athletics)* | **PPI Tiongkok**<br>• Pelajar Indonesia di Tiongkok<br>• Cabor Esports (MLBB) & Olahraga | • Official MVP Voting di IG @martforum.id<br>• Kuis Tebak Juara Region (Adu Gengsi Kota)<br>• Voucher Pelajar Rantau `COPA2026`<br>• Link promosi di deskripsi Livestream | 🟡 Finalisasi Pitch | 📄 **[MARTFORUM_X_COPA.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/06%20Sponsorship/MARTFORUM_X_COPA.md)** |
-| 2 | **PFL** *(Pro Futsal League)* | **Penyelenggara Liga PFL**<br>• Komunitas Olahraga, Futsal, & Gamers Gen Z Indonesia | • Penampilan logo resmi di semua poster PFL<br>• Peletakan banner interaktif di live match stream<br>• Official MVP Voting di IG @martforum.id<br>• Kuis Tebak Tim Juara di IG @martforum.id<br>• **Rancangan 1 Poster & 1 Video Collab (Softselling Awareness)** | 🟢 Deal / Aktif | 📄 **[MARTFORUM_X_PFL.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/06%20Sponsorship/MARTFORUM_X_PFL.md)** |
+| 1 | **COPA 2026** *(Competition of PPIT Athletics)* | **PPI Tiongkok**<br>• Pelajar Indonesia di Tiongkok<br>• Cabor Esports (MLBB) & Olahraga | • Official MVP Voting di IG @martforum.id<br>• Kuis Tebak Juara Region (Adu Gengsi Kota)<br>• Voucher Pelajar Rantau `COPA2026`<br>• Link promosi di deskripsi Livestream | 🟡 Finalisasi Pitch | 📄 **[Martforum x COPA.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/06%20Sponsorship/Martforum x COPA.md)** |
+| 2 | **PFL** *(Pro Futsal League)* | **Penyelenggara Liga PFL**<br>• Komunitas Olahraga, Futsal, & Gamers Gen Z Indonesia | • Penampilan logo resmi di semua poster PFL<br>• Peletakan banner interaktif di live match stream<br>• Official MVP Voting di IG @martforum.id<br>• Kuis Tebak Tim Juara di IG @martforum.id<br>• **Rancangan 1 Poster & 1 Video Collab (Softselling Awareness)** | 🟢 Deal / Aktif | 📄 **[Martforum x PFL.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/06%20Sponsorship/Martforum x PFL.md)** |
 
 ---
 
 ## 📁 Struktur Berkas di `06 Sponsorship/`
 
 1. 📄 **[README.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/06%20Sponsorship/README.md)**: Master Hub & Panduan Induk Sponsorship.
-2. 📄 **[MARTFORUM_X_COPA.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/06%20Sponsorship/MARTFORUM_X_COPA.md)**: Rencana Sponsorship & Aktivasi Komunitas Diaspora PPI Tiongkok.
-3. 📄 **[MARTFORUM_X_PFL.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/06%20Sponsorship/MARTFORUM_X_PFL.md)**: Blueprint Lengkap Kemitraan PFL + Rancangan Lengkap 1 Poster & 1 Video Khusus Collab PFL x Martforum (Konsep Softselling Awareness).
+2. 📄 **[Martforum x COPA.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/06%20Sponsorship/Martforum x COPA.md)**: Rencana Sponsorship & Aktivasi Komunitas Diaspora PPI Tiongkok.
+3. 📄 **[Martforum x PFL.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/06%20Sponsorship/Martforum x PFL.md)**: Blueprint Lengkap Kemitraan PFL + Rancangan Lengkap 1 Poster & 1 Video Khusus Collab PFL x Martforum (Konsep Softselling Awareness).

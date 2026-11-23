@@ -1,4 +1,4 @@
-# Kalender & Brief Konten: Minggu 2 (9 – 15 November 2026)
+﻿# Kalender & Brief Konten: Minggu 2 (9 – 15 November 2026)
 **Proyek**: Valmart.id & Martforum.id  
 **Periode**: 9 – 15 November 2026  
 **Fokus**: Mega Sale 11.11 Harbolnas (Valmart Flash Rent Rp 11k & Martforum 125 VP Rp 11k), Cashout Pensiun, & Launching Teaser H-14 Sultan Showmatch  
@@ -28,5 +28,5 @@
 ---
 
 ## 📂 Link File Brief Lengkap Minggu 2
-* 🎬 **[BRIEF_VALMART_HELMY.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%202%20(9%20-%2015%20Nov%202026)/BRIEF_VALMART_HELMY.md)** — Naskah rinci Helmy (Video 5 s/d 8).
-* 🎙️ **[BRIEF_MARTFORUM_JONATHAN.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%202%20(9%20-%2015%20Nov%202026)/BRIEF_MARTFORUM_JONATHAN.md)** — Naskah rinci Jonathan (VO 4 s/d 6 & Deliverables Desain Grafis).
+* 🎬 **[Brief Valmart Helmy.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%202%20(9%20-%2015%20Nov%202026)/Brief Valmart Helmy.md)** — Naskah rinci Helmy (Video 5 s/d 8).
+* 🎙️ **[Brief Martforum Jonathan.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%202%20(9%20-%2015%20Nov%202026)/Brief Martforum Jonathan.md)** — Naskah rinci Jonathan (VO 4 s/d 6 & Deliverables Desain Grafis).
