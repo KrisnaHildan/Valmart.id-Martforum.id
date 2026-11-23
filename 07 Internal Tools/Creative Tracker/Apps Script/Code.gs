@@ -13,7 +13,7 @@ const CONFIG = {
   SHEET_DASHBOARD: "📊 Dashboard",
   SHEET_CALENDAR: "📅 Kalender Visual",
   SHEET_DATABASE: "📝 Database Konten",
-  REPO_BASE_URL: "https://github.com/KrisnaHildan/Valmart.id-Martforum.id/blob/main/",
+  REPO_BASE_URL: "https://github.com/KrisnaHildan/Valmart-x-Martforum/blob/main/",
   FONT_FAMILY: "Google Sans",
   COLORS: {
     HEADER_BG: "#0F172A",       // Deep Slate / Navy
