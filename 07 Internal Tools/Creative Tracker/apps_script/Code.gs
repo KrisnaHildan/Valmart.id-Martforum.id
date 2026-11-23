@@ -115,6 +115,16 @@ function setupDashboard() {
     sheet = ss.insertSheet(CONFIG.SHEET_DASHBOARD, 0);
   }
 
+  const locale = (ss.getSpreadsheetLocale() || "").toLowerCase();
+  const isIndo = locale.startsWith("in") || locale.startsWith("id");
+  const setSafeFormula = (range, formulaEn, formulaId) => {
+    if (isIndo && formulaId) {
+      range.setFormulaLocal(formulaId);
+    } else {
+      range.setFormula(formulaEn);
+    }
+  };
+
   sheet.clear();
   sheet.setTabColor("#10B981"); // Emerald Tab Color
 
@@ -163,30 +173,31 @@ function setupDashboard() {
   // Card 1: Total Konten (B5:C7)
   createScoreCard(sheet, "B5:C5", "B6:C6", "B7:C7", 
     "🎯 TOTAL TERJADWAL", 
-    "=COUNTA('📝 Database Konten'!C5:C100)", 
+    "=COUNTIF('📝 Database Konten'!B5:B100, \">0\")", 
     "Bulan Berjalan", 
-    "#F8FAFC", "#0F172A", "#CBD5E1");
+    "#F8FAFC", "#0F172A", "#CBD5E1", null, isIndo);
 
   // Card 2: Siap Tayang / Published (D5:E7)
   createScoreCard(sheet, "D5:E5", "D6:E6", "D7:E7", 
     "🚀 APPROVED / PUBLISHED", 
     "=COUNTIF('📝 Database Konten'!J5:J100, \"*Approved*\") + COUNTIF('📝 Database Konten'!J5:J100, \"*Published*\")", 
-    "=IF(B6>0, TEXT((D6/B6),\"0% Selesai\"), \"0%\")", 
-    "#F0FDF4", "#166534", "#86EFAC");
+    "=IF(B6>0, TEXT((D6/B6),\"0%\") & \" Selesai\", \"0%\")", 
+    "#F0FDF4", "#166534", "#86EFAC",
+    "=IF(B6>0; TEXT((D6/B6);\"0%\") & \" Selesai\"; \"0%\")", isIndo);
 
   // Card 3: Butuh Review (G5:H7)
   createScoreCard(sheet, "G5:H5", "G6:H6", "G7:H7", 
     "⚠️ ANTREAN REVIEW", 
     "=COUNTIF('📝 Database Konten'!J5:J100, \"*In Review*\") + COUNTIF('📝 Database Konten'!J5:J100, \"*Revision*\")", 
     "Perlu Dicek Hari Ini", 
-    "#FFF7ED", "#C2410C", "#FDBA74");
+    "#FFF7ED", "#C2410C", "#FDBA74", null, isIndo);
 
   // Card 4: Dalam Pengerjaan (J5:K7)
   createScoreCard(sheet, "J5:K5", "J6:K6", "J7:K7", 
     "⏳ DALAM PENGERJAAN", 
     "=COUNTIF('📝 Database Konten'!J5:J100, \"*Draft*\") + COUNTIF('📝 Database Konten'!J5:J100, \"*In Progress*\")", 
     "On Track Talent", 
-    "#FEFCE8", "#A16207", "#FDE047");
+    "#FEFCE8", "#A16207", "#FDE047", null, isIndo);
 
   sheet.setRowHeight(8, 15); // Spacer
 
@@ -219,21 +230,30 @@ function setupDashboard() {
   sheet.getRange("B11").setValue("🎬 Helmy (Valmart)").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold");
   sheet.getRange("C11").setValue("4 Video/Mgg").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setHorizontalAlignment("center");
   sheet.getRange("D11").setFormula("=COUNTIFS('📝 Database Konten'!F5:F100, \"*Helmy*\", '📝 Database Konten'!J5:J100, \"*Approved*\") + COUNTIFS('📝 Database Konten'!F5:F100, \"*Helmy*\", '📝 Database Konten'!J5:J100, \"*Published*\")").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold").setHorizontalAlignment("center");
-  sheet.getRange("E11").setFormula("=SPARKLINE(D11, {\"charttype\", \"bar\"; \"max\", 8; \"color1\", \"#4F46E5\"; \"color2\", \"#E2E8F0\"})");
+  setSafeFormula(sheet.getRange("E11"),
+    "=SPARKLINE(D11, {\"charttype\", \"bar\"; \"max\", 8; \"color1\", \"#4F46E5\"; \"color2\", \"#E2E8F0\"})",
+    "=SPARKLINE(D11; {\"charttype\"\\ \"bar\"; \"max\"\\ 8; \"color1\"\\ \"#4F46E5\"; \"color2\"\\ \"#E2E8F0\"})",
+    isIndo);
   sheet.setRowHeight(11, 26);
 
   // Baris Audrey (Row 12)
   sheet.getRange("B12").setValue("🎙️ Audrey (Martforum)").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold");
   sheet.getRange("C12").setValue("3 VO/Mgg").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setHorizontalAlignment("center");
   sheet.getRange("D12").setFormula("=COUNTIFS('📝 Database Konten'!F5:F100, \"*Audrey*\", '📝 Database Konten'!J5:J100, \"*Approved*\") + COUNTIFS('📝 Database Konten'!F5:F100, \"*Audrey*\", '📝 Database Konten'!J5:J100, \"*Published*\")").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold").setHorizontalAlignment("center");
-  sheet.getRange("E12").setFormula("=SPARKLINE(D12, {\"charttype\", \"bar\"; \"max\", 6; \"color1\", \"#0284C7\"; \"color2\", \"#E2E8F0\"})");
+  setSafeFormula(sheet.getRange("E12"),
+    "=SPARKLINE(D12, {\"charttype\", \"bar\"; \"max\", 6; \"color1\", \"#0284C7\"; \"color2\", \"#E2E8F0\"})",
+    "=SPARKLINE(D12; {\"charttype\"\\ \"bar\"; \"max\"\\ 6; \"color1\"\\ \"#0284C7\"; \"color2\"\\ \"#E2E8F0\"})",
+    isIndo);
   sheet.setRowHeight(12, 26);
 
   // Baris Dika / Jonathan (Row 13)
   sheet.getRange("B13").setValue("🎨 Dika / Jonathan (Desain)").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold");
   sheet.getRange("C13").setValue("Support Aset").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setHorizontalAlignment("center");
   sheet.getRange("D13").setFormula("=COUNTIFS('📝 Database Konten'!F5:F100, \"*Dika*\", '📝 Database Konten'!J5:J100, \"*Approved*\") + COUNTIFS('📝 Database Konten'!F5:F100, \"*Dika*\", '📝 Database Konten'!J5:J100, \"*Published*\") + COUNTIFS('📝 Database Konten'!F5:F100, \"*Jonathan*\", '📝 Database Konten'!J5:J100, \"*Approved*\") + COUNTIFS('📝 Database Konten'!F5:F100, \"*Jonathan*\", '📝 Database Konten'!J5:J100, \"*Published*\")").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setFontWeight("bold").setHorizontalAlignment("center");
-  sheet.getRange("E13").setFormula("=SPARKLINE(D13, {\"charttype\", \"bar\"; \"max\", 4; \"color1\", \"#10B981\"; \"color2\", \"#E2E8F0\"})");
+  setSafeFormula(sheet.getRange("E13"),
+    "=SPARKLINE(D13, {\"charttype\", \"bar\"; \"max\", 4; \"color1\", \"#10B981\"; \"color2\", \"#E2E8F0\"})",
+    "=SPARKLINE(D13; {\"charttype\"\\ \"bar\"; \"max\"\\ 4; \"color1\"\\ \"#10B981\"; \"color2\"\\ \"#E2E8F0\"})",
+    isIndo);
   sheet.setRowHeight(13, 26);
 
   sheet.getRange("B11:E13").setBorder(true, true, true, true, true, true, CONFIG.COLORS.GRID_BORDER, SpreadsheetApp.BorderStyle.SOLID);
@@ -257,7 +277,10 @@ function setupDashboard() {
   sheet.getRange("D17:E17").merge().setFormula("=COUNTIF('📝 Database Konten'!E5:E100, \"Martforum\") & \" Konten\"").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setHorizontalAlignment("center");
   sheet.setRowHeight(17, 24);
 
-  sheet.getRange("B18:E18").merge().setFormula("=SPARKLINE({COUNTIF('📝 Database Konten'!E5:E100, \"Valmart\"), COUNTIF('📝 Database Konten'!E5:E100, \"Martforum\")}, {\"charttype\", \"bar\"; \"color1\", \"#4F46E5\"; \"color2\", \"#0284C7\"})");
+  setSafeFormula(sheet.getRange("B18:E18").merge(),
+    "=SPARKLINE({COUNTIF('📝 Database Konten'!E5:E100, \"Valmart\"), COUNTIF('📝 Database Konten'!E5:E100, \"Martforum\")}, {\"charttype\", \"bar\"; \"color1\", \"#4F46E5\"; \"color2\", \"#0284C7\"})",
+    "=SPARKLINE({COUNTIF('📝 Database Konten'!E5:E100; \"Valmart\")\\ COUNTIF('📝 Database Konten'!E5:E100; \"Martforum\")}; {\"charttype\"\\ \"bar\"; \"color1\"\\ \"#4F46E5\"; \"color2\"\\ \"#0284C7\"})",
+    isIndo);
   sheet.setRowHeight(18, 20);
   sheet.getRange("B15:E18").setBorder(true, true, true, true, true, true, CONFIG.COLORS.GRID_BORDER, SpreadsheetApp.BorderStyle.SOLID);
 
@@ -285,14 +308,16 @@ function setupDashboard() {
     .setBorder(true, true, true, true, null, null, CONFIG.COLORS.GRID_BORDER, SpreadsheetApp.BorderStyle.SOLID);
 
   // Filter dinamis otomatis menampilkan baris yang "In Review" atau "Revision"
-  sheet.getRange("G11").setFormula(
-    "=IFERROR(FILTER({'📝 Database Konten'!C5:C100, '📝 Database Konten'!E5:E100, '📝 Database Konten'!F5:F100, '📝 Database Konten'!G5:G100, '📝 Database Konten'!J5:J100}, ('📝 Database Konten'!J5:J100 = \"🟠 In Review\") + ('📝 Database Konten'!J5:J100 = \"🔴 Revision\")), {\"-\", \"-\", \"-\", \"✅ Tidak ada antrean review saat ini! Semuanya aman.\", \"-\"})"
-  );
+  setSafeFormula(sheet.getRange("G11"),
+    "=IFERROR(FILTER({'📝 Database Konten'!C5:C100, '📝 Database Konten'!E5:E100, '📝 Database Konten'!F5:F100, '📝 Database Konten'!G5:G100, '📝 Database Konten'!J5:J100}, ('📝 Database Konten'!J5:J100 = \"🟠 In Review\") + ('📝 Database Konten'!J5:J100 = \"🔴 Revision\")), {\"-\", \"-\", \"-\", \"✅ Tidak ada antrean review saat ini! Semuanya aman.\", \"-\"})",
+    "=IFERROR(FILTER({'📝 Database Konten'!C5:C100\\ '📝 Database Konten'!E5:E100\\ '📝 Database Konten'!F5:F100\\ '📝 Database Konten'!G5:G100\\ '📝 Database Konten'!J5:J100}; ('📝 Database Konten'!J5:J100 = \"🟠 In Review\") + ('📝 Database Konten'!J5:J100 = \"🔴 Revision\")); {\"-\"\\ \"-\"\\ \"-\"\\ \"✅ Tidak ada antrean review saat ini! Semuanya aman.\"\\ \"-\"})",
+    isIndo);
+
   sheet.getRange("G11:K18").setFontFamily(CONFIG.FONT_FAMILY).setFontSize(9).setVerticalAlignment("middle");
   sheet.getRange("G11:K18").setBorder(true, true, true, true, true, true, CONFIG.COLORS.GRID_BORDER, SpreadsheetApp.BorderStyle.SOLID);
 }
 
-function createScoreCard(sheet, labelRange, numRange, tagRange, label, formula, tagFormula, bg, textColor, borderColor) {
+function createScoreCard(sheet, labelRange, numRange, tagRange, label, formula, tagFormula, bg, textColor, borderColor, tagFormulaId, isIndo) {
   sheet.getRange(labelRange).merge()
     .setValue(label)
     .setFontFamily(CONFIG.FONT_FAMILY)
@@ -313,8 +338,18 @@ function createScoreCard(sheet, labelRange, numRange, tagRange, label, formula, 
     .setHorizontalAlignment("center")
     .setVerticalAlignment("middle");
 
-  sheet.getRange(tagRange).merge()
-    .setValue(tagFormula)
+  const tagCell = sheet.getRange(tagRange).merge();
+  if (tagFormula && tagFormula.startsWith("=")) {
+    if (isIndo && tagFormulaId) {
+      tagCell.setFormulaLocal(tagFormulaId);
+    } else {
+      tagCell.setFormula(tagFormula);
+    }
+  } else {
+    tagCell.setValue(tagFormula || "");
+  }
+
+  tagCell
     .setFontFamily(CONFIG.FONT_FAMILY)
     .setFontSize(8)
     .setFontColor("#64748B")
@@ -636,26 +671,26 @@ function syncNovemberSchedule() {
 
   const schedule = [
     // Week 3
-    [1, "2026-11-16", "=TEXT(C5,\"dddd\")", "Valmart", "Helmy (Video)", "Mid-Month ACE Bounty Recap (Reaksi Klip 200k)", baseW3Val, "", "🟣 Published", "Tayang Senin W3"],
-    [2, "2026-11-16", "=TEXT(C6,\"dddd\")", "Martforum", "Audrey (VO)", "Teaser Resmi Brand: Top Up QRIS 3 Detik", baseW3Mart, "", "🟣 Published", "Selesai"],
-    [3, "2026-11-17", "=TEXT(C7,\"dddd\")", "Valmart", "Helmy (Video)", "Meme 10 Omen Chaos di Ascent", baseW3Val, "", "🟣 Published", "Tayang Selasa W3"],
-    [4, "2026-11-18", "=TEXT(C8,\"dddd\")", "Valmart", "Helmy (Video)", "Sinergi Dua Brand: Sewa Valmart Diskon Martforum", baseW3Val, "", "🟣 Published", "Tayang Rabu W3"],
-    [5, "2026-11-18", "=TEXT(C9,\"dddd\")", "Martforum", "Audrey (VO)", "Meme Temen Discord Pas Ada Bundle Baru", baseW3Mart, "", "🟣 Published", "Tayang Rabu W3"],
-    [6, "2026-11-19", "=TEXT(C10,\"dddd\")", "Valmart", "Helmy (Video)", "Anti-Scam Awareness: Bedain Akun Resmi vs Fake", baseW3Val, "", "🟣 Published", "Tayang Kamis W3"],
-    [7, "2026-11-20", "=TEXT(C11,\"dddd\")", "Valmart", "Helmy (Video)", "Meme Sekte Skin: Kuronami vs Reaver vs Primordium", baseW3Val, "", "🟣 Published", "Tayang Jumat W3"],
-    [8, "2026-11-20", "=TEXT(C12,\"dddd\")", "Martforum", "Audrey (VO)", "Weekend Mabar: Anti-Phishing Cukup Riot ID", baseW3Mart, "", "🟢 Approved", "Naskah Baru Audrey"],
-    [9, "2026-11-21", "=TEXT(C13,\"dddd\")", "Valmart", "Dika / Jonathan (Editor & Desain)", "Infografis: Panduan Sewa Goceng 1 Menit Anti-Ribet", baseW3Mart, "", "🟢 Approved", "Desain Carousel Dika"],
-    [10, "2026-11-22", "=TEXT(C14,\"dddd\")", "Valmart", "Helmy (Video)", "Reminder Sayembara #ValmartAceBounty (Tersisa 8 Hari)", baseW3Val, "", "🟢 Approved", "Story & Feed Push"],
+    [1, "2026-11-16", "Senin", "Valmart", "Helmy (Video)", "Mid-Month ACE Bounty Recap (Reaksi Klip 200k)", baseW3Val, "", "🟣 Published", "Tayang Senin W3"],
+    [2, "2026-11-16", "Senin", "Martforum", "Audrey (VO)", "Teaser Resmi Brand: Top Up QRIS 3 Detik", baseW3Mart, "", "🟣 Published", "Selesai"],
+    [3, "2026-11-17", "Selasa", "Valmart", "Helmy (Video)", "Meme 10 Omen Chaos di Ascent", baseW3Val, "", "🟣 Published", "Tayang Selasa W3"],
+    [4, "2026-11-18", "Rabu", "Valmart", "Helmy (Video)", "Sinergi Dua Brand: Sewa Valmart Diskon Martforum", baseW3Val, "", "🟣 Published", "Tayang Rabu W3"],
+    [5, "2026-11-18", "Rabu", "Martforum", "Audrey (VO)", "Meme Temen Discord Pas Ada Bundle Baru", baseW3Mart, "", "🟣 Published", "Tayang Rabu W3"],
+    [6, "2026-11-19", "Kamis", "Valmart", "Helmy (Video)", "Anti-Scam Awareness: Bedain Akun Resmi vs Fake", baseW3Val, "", "🟣 Published", "Tayang Kamis W3"],
+    [7, "2026-11-20", "Jumat", "Valmart", "Helmy (Video)", "Meme Sekte Skin: Kuronami vs Reaver vs Primordium", baseW3Val, "", "🟣 Published", "Tayang Jumat W3"],
+    [8, "2026-11-20", "Jumat", "Martforum", "Audrey (VO)", "Weekend Mabar: Anti-Phishing Cukup Riot ID", baseW3Mart, "", "🟢 Approved", "Naskah Baru Audrey"],
+    [9, "2026-11-21", "Sabtu", "Valmart", "Dika / Jonathan (Editor & Desain)", "Infografis: Panduan Sewa Goceng 1 Menit Anti-Ribet", baseW3Mart, "", "🟢 Approved", "Desain Carousel Dika"],
+    [10, "2026-11-22", "Minggu", "Valmart", "Helmy (Video)", "Reminder Sayembara #ValmartAceBounty (Tersisa 8 Hari)", baseW3Val, "", "🟢 Approved", "Story & Feed Push"],
 
     // Week 4 (Minggu Ini)
-    [11, "2026-11-23", "=TEXT(C15,\"dddd\")", "Martforum", "Audrey (VO)", "Derita Solo Queue vs Obatnya (Mabar Skin Wangi)", baseW4Mart, "", "🟠 In Review", "Jadwal Hari Ini (Senin)"],
-    [12, "2026-11-24", "=TEXT(C16,\"dddd\")", "Valmart", "Helmy (Video)", "Smart Buyer: Ngetes Skin di Valmart Sebelum Boncos", baseW4Val, "", "🟡 In Progress", "Jadwal Selasa W4"],
-    [13, "2026-11-25", "=TEXT(C17,\"dddd\")", "Martforum", "Audrey (VO)", "Meme Streamer Jago vs Realita Whiff Kita", baseW4Mart, "", "⚪ Draft", "Jadwal Rabu W4"],
-    [14, "2026-11-25", "=TEXT(C18,\"dddd\")", "Valmart", "Helmy (Video)", "Meme Tanggal Tua Tetep Bisa Sultan (Modal Goceng)", baseW4Val, "", "⚪ Draft", "Jadwal Rabu W4"],
-    [15, "2026-11-26", "=TEXT(C19,\"dddd\")", "Valmart", "Helmy (Video)", "Edukasi Anti-HB: Rahasia First Mail & Garansi 100%", baseW4Val, "", "⚪ Draft", "Jadwal Kamis W4"],
-    [16, "2026-11-27", "=TEXT(C20,\"dddd\")", "Martforum", "Audrey (VO)", "PAYDAY FLASH SALE: Amankan VP Akhir Bulan QRIS 3 Detik", baseW4Mart, "", "⚪ Draft", "Jadwal Jumat Payday"],
-    [17, "2026-11-27", "=TEXT(C21,\"dddd\")", "Valmart", "Helmy (Video)", "Showcase Katalog Akun Sultan Weekend Ready Sewa", baseW4Val, "", "⚪ Draft", "Jadwal Jumat W4"],
-    [18, "2026-11-30", "=TEXT(C22,\"dddd\")", "Valmart", "Dika / Jonathan (Editor & Desain)", "Poster Pemenang Sayembara ACE Bounty (Rp 200k Cash)", baseW4Mart, "", "⚪ Draft", "Closing November"]
+    [11, "2026-11-23", "Senin", "Martforum", "Audrey (VO)", "Derita Solo Queue vs Obatnya (Mabar Skin Wangi)", baseW4Mart, "", "🟠 In Review", "Jadwal Hari Ini (Senin)"],
+    [12, "2026-11-24", "Selasa", "Valmart", "Helmy (Video)", "Smart Buyer: Ngetes Skin di Valmart Sebelum Boncos", baseW4Val, "", "🟡 In Progress", "Jadwal Selasa W4"],
+    [13, "2026-11-25", "Rabu", "Martforum", "Audrey (VO)", "Meme Streamer Jago vs Realita Whiff Kita", baseW4Mart, "", "⚪ Draft", "Jadwal Rabu W4"],
+    [14, "2026-11-25", "Rabu", "Valmart", "Helmy (Video)", "Meme Tanggal Tua Tetep Bisa Sultan (Modal Goceng)", baseW4Val, "", "⚪ Draft", "Jadwal Rabu W4"],
+    [15, "2026-11-26", "Kamis", "Valmart", "Helmy (Video)", "Edukasi Anti-HB: Rahasia First Mail & Garansi 100%", baseW4Val, "", "⚪ Draft", "Jadwal Kamis W4"],
+    [16, "2026-11-27", "Jumat", "Martforum", "Audrey (VO)", "PAYDAY FLASH SALE: Amankan VP Akhir Bulan QRIS 3 Detik", baseW4Mart, "", "⚪ Draft", "Jadwal Jumat Payday"],
+    [17, "2026-11-27", "Jumat", "Valmart", "Helmy (Video)", "Showcase Katalog Akun Sultan Weekend Ready Sewa", baseW4Val, "", "⚪ Draft", "Jadwal Jumat W4"],
+    [18, "2026-11-30", "Senin", "Valmart", "Dika / Jonathan (Editor & Desain)", "Poster Pemenang Sayembara ACE Bounty (Rp 200k Cash)", baseW4Mart, "", "⚪ Draft", "Closing November"]
   ];
 
   dbSheet.getRange(5, 2, schedule.length, 10).setValues(schedule);
