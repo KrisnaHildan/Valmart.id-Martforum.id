@@ -1,52 +1,69 @@
-# ⚡ Valmart & Martforum Creative Engine & Dashboard
-**Integrasi**: GitHub Repository (Naskah Detail) $\longleftrightarrow$ Google Sheets (Dashboard & Kalender)  
-**Tujuan**: Sistem pemantauan produksi konten realtime yang lean, estetik, dan memotivasi tim kreatif (Ko Jeremy, Hildan, Helmy, Audrey, Dika).
+# ⚡ Valmart & Martforum Creative Content Engine & Tracker
+**Integrasi**: GitHub Repository (`Jadwal Konten.md` & Naskah Detail) $\longleftrightarrow$ Google Sheets (Dashboard, Kalender, Database, Config)  
+**Tujuan**: Sistem pemantauan produksi konten real-time untuk **Ko Jeremy (Jeje)**, **Hildan**, **Helmy**, **Audrey**, **Dika**, dan **Jonathan**.
 
 ---
 
-## 🏗️ 3 Tab Utama yang Terbentuk
+## 🏗️ Arsitektur 4 Tab Utama
 
-```
-┌────────────────────────────────────────────────────────┐
-│              SISTEM CREATIVE TRACKER LENGKAP           │
-├──────────────────┬──────────────────┬──────────────────┤
-│ 1. 📊 DASHBOARD  │ 2. 📅 KALENDER   │ 3. 📝 DATABASE   │
-│ (Executive View) │ (Visual Monthly) │ (Master Table)   │
-└──────────────────┴──────────────────┴──────────────────┘
-```
-
-### 1. Tab `📊 Dashboard` (Tampilan Eksekutif & Antrean Review)
-* **4 Modern KPI Scorecards**:
-  * 🎯 **Total Terjadwal**: Total konten bulan berjalan.
-  * 🚀 **Approved / Published**: Berapa % konten yang sudah siap tayang / live.
-  * ⚠️ **Antrean Review**: Jumlah video/naskah yang statusnya `🟠 In Review` atau `🔴 Revision` (perlu tindakan Ko Jeje/Hildan).
-  * ⏳ **Dalam Pengerjaan**: Konten yang sedang diproduksi oleh talent (`Draft` & `In Progress`).
-* **👥 Target Mingguan & Pacing Talent**:
-  * **Helmy (Valmart)**: Target 4 Video/Mgg + Visual Progress Bar (Sparkline).
-  * **Audrey (Martforum)**: Target 3 VO/Mgg + Visual Progress Bar (Sparkline).
-  * **Dika / Jonathan (Editor/Desain)**: Support Aset Desain + Visual Progress Bar (Sparkline).
-* **⚖️ Keseimbangan Brand**:
-  * Rasio volume konten Valmart vs Martforum (menjaga sinergi cross-selling).
-* **🚨 Antrean Review Otomatis (Action Needed)**:
-  * Menampilkan otomatis daftar video/konten yang menunggu review agar Ko Jeremy / Hildan bisa langsung klik link draft tanpa mencari di database.
-
-### 2. Tab `📅 Kalender Visual` (Grid Bulanan)
-* Format kalender dinding 7 kolom (Senin s/d Minggu).
-* Penanda tanggal otomatis: **`📍 HARI INI`** dengan border dan highlight warna ungu indigo.
-* Di dalam kotak tanggal, muncul kartu ringkas: `[VAL]` / `[MART]`, nama PIC, judul hook, dan status badge warna (`🟢 Approved`, `🟡 In Progress`, dll).
-
-### 3. Tab `📝 Database Konten` (Master Data 10 Kolom)
-* Kolom lengkap dari tanggal, brand, PIC, hook, link naskah GitHub, link draft preview editor, status, hingga catatan review.
+1. **`📊 Dashboard`**: 5 KPI Scorecards (termasuk **Konten Telat**), filter Bulan/Tahun & selector Minggu, Pacing Talent (Helmy, Audrey, Dika, Jonathan), Distribusi Brand, Antrean Review otomatis, dan Daftar Konten Telat.
+2. **`📅 Kalender Visual`**: Grid bulanan Senin–Minggu dengan dropdown Bulan (`C2`) & Tahun (`E2`) yang auto-refresh saat diubah, penanda `📍 HARI INI`, highlight akhir pekan, dan batas 4 kartu per tanggal (`+N lainnya`).
+3. **`📝 Database Konten`**: Master data 11 kolom (`ID`, `Tanggal Tayang`, `Hari`, `Brand`, `PIC & Role`, `Topik & Hook`, `Link Naskah`, `Link Draft Preview`, `Status`, `Catatan Review`, `Update Terakhir`) dengan validasi 1.000 baris, auto-filter, banded rows, dan highlight merah otomatis untuk konten **TELAT**.
+4. **`⚙️ Config`**: Pusat pengaturan repo GitHub, daftar PIC & target mingguan, brand, status, dan penerima email ringkasan harian (bisa diubah tanpa menyentuh kode).
 
 ---
 
-## 🚀 Cara Pasang ke Google Sheets (Tinggal Copy-Paste)
+## 📁 Struktur File Apps Script
 
-1. Buka Google Sheet Anda.
-2. Buka menu **Extensions (Ekstensi)** $\rightarrow$ **Apps Script**.
-3. Replace semua kodenya dengan isi file terbaru [apps_script/Code.gs](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/07%20Internal%20Tools/Creative%20Tracker/apps_script/Code.gs).
-4. Tekan **Save (`Ctrl + S`)**.
-5. Pilih fungsi **`setupTracker`**, lalu klik **Run (Jalankan)**.
-   *(Semua 3 tab langsung terbuat dan terformat rapi secara otomatis!)*
-6. Di Google Sheet Anda, klik menu **`⚡ Valmart & Martforum`** $\rightarrow$ **`📥 Sinkronisasi Naskah dari GitHub`**.
-   * Seluruh data aktif November 2026 langsung masuk, dan Dashboard serta Kalender Visual langsung hidup realtime!
+Semua file berada di folder [Apps Script](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/07%20Internal%20Tools/Creative%20Tracker/Apps%20Script/appsscript.json):
+- `Config.gs` — Konstanta global & pembaca/penulis tab `⚙️ Config`
+- `Utils.gs` — Helper tanggal Indonesia, URL GitHub (`encodeURI`), & UI feedback aman
+- `Setup.gs` — Menu kustom, `setupInitial()` (aman/idempotent), `resetTotalWithConfirmation()` (dengan backup Drive), & format database 1.000 baris
+- `Dashboard.gs` — Render KPI, pacing mingguan, antrean review, & daftar telat
+- `Calendar.gs` — Render kalender bulanan secara batch
+- `Sync.gs` — Fetch GitHub (API + token untuk private, raw URL untuk public), parser `Jadwal Konten.md`, dan upsert non-destruktif
+- `Triggers.gs` — `onEdit` auto-refresh, trigger harian 07:00 WIB, dan email ringkasan 08:00 WIB
+- `Tests.gs` — `testRunAll()` untuk verifikasi parser, deteksi telat, kalender, & upsert 2x
+- `appsscript.json` — Konfigurasi V8, `Asia/Jakarta`, dan OAuth scopes minimal
+
+---
+
+## 🚀 Cara Deploy ke Google Sheets
+
+### Opsi A: Copy-Paste Manual
+1. Buka Google Sheet tujuan $\rightarrow$ **Extensions (Ekstensi)** $\rightarrow$ **Apps Script**.
+2. Aktifkan tampilan file manifest di **Project Settings** $\rightarrow$ centang *"Show 'appsscript.json' manifest file in editor"*.
+3. Salin isi file berikut ke project Apps Script (buat file dengan nama persis sama):
+   - [appsscript.json](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/07%20Internal%20Tools/Creative%20Tracker/Apps%20Script/appsscript.json)
+   - [Config.gs](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/07%20Internal%20Tools/Creative%20Tracker/Apps%20Script/Config.gs)
+   - [Utils.gs](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/07%20Internal%20Tools/Creative%20Tracker/Apps%20Script/Utils.gs)
+   - [Setup.gs](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/07%20Internal%20Tools/Creative%20Tracker/Apps%20Script/Setup.gs)
+   - [Dashboard.gs](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/07%20Internal%20Tools/Creative%20Tracker/Apps%20Script/Dashboard.gs)
+   - [Calendar.gs](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/07%20Internal%20Tools/Creative%20Tracker/Apps%20Script/Calendar.gs)
+   - [Sync.gs](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/07%20Internal%20Tools/Creative%20Tracker/Apps%20Script/Sync.gs)
+   - [Triggers.gs](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/07%20Internal%20Tools/Creative%20Tracker/Apps%20Script/Triggers.gs)
+   - [Tests.gs](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/07%20Internal%20Tools/Creative%20Tracker/Apps%20Script/Tests.gs)
+4. Simpan (`Ctrl + S`), lalu muat ulang tab Google Sheet.
+
+### Opsi B: Via `clasp` (CLI)
+```powershell
+cd "All Projects\Valmart x Martforum\07 Internal Tools\Creative Tracker\Apps Script"
+clasp login
+clasp push
+```
+
+---
+
+## 🔑 Setup Awal & GitHub Token
+1. Di Google Sheet, klik menu **`⚡ Valmart & Martforum`** $\rightarrow$ **`🛠️ Setup Awal (Aman)`**.
+2. *(Khusus Repo Private)* Klik **`🔑 Atur GitHub Token`** lalu masukkan Personal Access Token (fine-grained, read-only `Contents`). Token disimpan aman di `Script Properties`, bukan di kode atau sheet.
+3. Klik **`📥 Sinkronisasi Naskah dari GitHub`**:
+   - Isi periode `YYYY-MM` (misal `2026-11`) atau kosongkan untuk sync semua bulan dari [Jadwal Konten.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/Jadwal%20Konten.md).
+   - Sync bersifat **non-destruktif (upsert)**: kolom **Link Draft Preview**, **Status**, dan **Catatan Review** milik tim **tidak akan pernah ditimpa**.
+4. Klik **`⏰ Pasang Trigger Otomatis`** agar kalender auto-refresh tiap jam 07:00 WIB.
+5. *(Opsional)* Isi email Ko Jeremy & Hildan di tab **`⚙️ Config`** sel `C12` (pisahkan dengan koma), lalu aktifkan ringkasan email jam 08:00 WIB lewat menu **`🔔 Aktifkan / Matikan Ringkasan Harian`**.
+
+---
+
+## 📚 Panduan Tim
+Lihat panduan penggunaan harian untuk talent, editor, dan reviewer di [Panduan Tim.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/07%20Internal%20Tools/Creative%20Tracker/Panduan%20Tim.md).
