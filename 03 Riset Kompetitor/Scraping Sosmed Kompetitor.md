@@ -1,141 +1,122 @@
 # Hasil Scraping & Audit Media Sosial Kompetitor
-**Project**: Ko Jeremy (Valmart & Martforum)  
-**Fokus**: Pemetaan Channel, Strategi Konten, & Funnel Sosmed Kompetitor  
-**Terakhir Diperbarui / Tanggal Scraping**: 1 November 2026 (Pukul 18:55 WIB)  
-**Status Audit**: ✅ Fresh Data & Updated (Edisi Kickoff November 2026)
+**Project**: Valmart (`valmart.id`) & Martforum (`martforum.id`)  
+**Fokus**: Pemetaan Channel, Strategi Konten, Pola Anti-Suspend, & Funnel Sosmed Kompetitor  
+**Terakhir Diperbarui / Tanggal Scraping**: 26 November 2026 (Pukul 21:00 WIB)  
+**Status Audit**: ✅ Updated (Edisi Evaluasi Akhir November & Persiapan Desember 2026)
 
 ---
 
 > [!NOTE]
-> **Catatan Pembaruan (1 November 2026)**:
-> Audit diperbarui dengan memantau pergerakan konten kompetitor sepanjang akhir Oktober hingga awal November 2026. Fokus pengamatan meliputi tren *TikTok Live Push Rank + Demo Finisher*, kemunculan kompetitor niche rental baru (`skuyrent.com` / SkinKitchen), eskalasi sentimen anti-HB di grup Facebook, serta standardisasi web top up otomatis QRIS instan tanpa login password.
+> **Catatan Pembaruan (26 November 2026)**:
+> Pembaruan ini memfokuskan pengamatan pada dua aspek krusial: **(1) Bagaimana kompetitor menjaga akun TikTok & Instagram tetap hidup tanpa terkena suspend**, dan **(2) Pergerakan konten serta tren Valorant akhir November–Desember 2026** (pasca rilis **Agent Hush** di Patch 13.09, rilis bundle **Snowfall 2.0**, antisipasi **Night Market Desember**, serta momentum libur akhir tahun).
 
 ---
 
-## 1. Peta Sosmed & Karakteristik Kompetitor (Update November 2026)
+## 1. Peta Sosmed & Temuan Terbaru Kompetitor (Update 26 November 2026)
 
 ### 1. Valforum
 * **Website**: `valforum.com`
-* **Struktur Akun**:
-  * **Media / Komunitas**: `@valforum.id` (Instagram & TikTok)
+* **Struktur Akun (Multi-Layer)**:
+  * **Akun Utama / Media Hiburan**: `@valforumofc` (TikTok & Instagram) — slogan `#SipalingValorant`
   * **Katalog Jual Beli**: `@valjubel` (Instagram)
-  * **Rental/Sewa Akun**: `@valsewaaa` (Instagram)
-* **Temuan Konten Terbaru (Nov 2026)**:
-  * **Mini Showmatch & Creator Scrim**: Valforum makin rutin mengadakan showmatch antar-streamer tier mikro untuk memancing views organik di TikTok & Reels. Konten klip lucu/whiff dari match ini mendulang puluhan ribu views tanpa biaya iklan.
-  * Tetap mempertahankan pemisahan tegas akun media hiburan dan akun katalog jualan untuk mengamankan akun dari sanksi *community guideline* Meta & TikTok.
-* **Funnel**: Konten media/turnamen $\rightarrow$ Linktree/Web $\rightarrow$ Cabang layanan $\rightarrow$ Admin WhatsApp.
+  * **Rental/Sewa Akun**: `@valsewa` / `@valsewaaa` (Instagram)
+  * **Jasa Joki**: `@valjoki` (Instagram)
+* **Temuan Konten & Ketahanan Akun (Akhir Nov 2026)**:
+  * **Isolasi Risiko Akun**: Akun utama `@valforumofc` nyaris tidak pernah mengunggah video berisikan kata transaksi vulgar (*"jual akun murah / beli akun"*). Isinya didominasi berita esports, update Valorant, meme komunitas, dan *giveaway*.
+  * Layanan transaksi (Valjubel, Valsewa, Valjoki) dialirkan melalui Linktree/Carrd dan akun katalog Instagram terpisah sehingga akun penarik traffic utama tetap awet dari sanksi *Community Guidelines* TikTok & Meta.
+* **Funnel**: Konten hiburan/news `@valforumofc` $\rightarrow$ Linktree/Bio $\rightarrow$ Cabang layanan (`valforum.com` / IG katalog).
 
 ---
 
 ### 2. Valskuy / Skuyrent
 * **Website**: `valskuy.com` / `skuyrent.com` / `skuytopup.id`
-* **Struktur Akun**:
-  * **Media / Entertainment**: `@valskuy.id` (Instagram & TikTok) & `@valskuy.tv`
+* **Struktur Akun (Multi-Layer)**:
+  * **Media / Entertainment & Brand Utama**: `@valskuy.id` (Instagram & TikTok)
   * **Katalog JB**: `@skuycatalog.id`
-  * **Rental**: `@skuy.rent` (fokus rental khusus)
+  * **Rental**: `@skuy.rent`
   * **Top Up**: `@skuytopup.idn`
-* **Temuan Konten Terbaru (Nov 2026)**:
-  * Meluncurkan domain dan katalog terpisah untuk rental di `skuyrent.com`.
-  * Akun `@skuy.rent` sangat gencar memakai audio tren TikTok bertema *"mabar weekend cuma modal ceban"* dengan menampilkan finisher Kuronami, Champions, dan Reaver.
-  * Di Instagram Story, mereka konsisten memasang countdown *flash rent weekend* untuk menciptakan urgensi FOMO.
-* **Funnel**: TikTok/Reels $\rightarrow$ Bio link $\rightarrow$ Web katalog / DM / WA otomatis.
+* **Temuan Konten & Ketahanan Akun (Akhir Nov 2026)**:
+  * Konten di akun utama `@valskuy.id` bertumpu pada **berita patch terbaru, update VCT, klip kreator/streamer, behind-the-scene, dan giveaway**.
+  * Website transaksi top-up dipisah ke domain tersendiri (`skuytopup.id`) dan rental ke `skuyrent.com`.
+  * Untuk konten sewa, narasi lebih banyak menyorot **pengalaman bermain (mabar pakai skin sultan dengan biaya receh)** dan testimoni streamer, bukan menonjolkan kata *"jual/beli akun"* secara eksplisit.
+* **Funnel**: Video berita/hiburan TikTok & IG $\rightarrow$ Bio link ekosistem $\rightarrow$ `skuyrent.com` / `skuytopup.id`.
 
 ---
 
 ### 3. Fuze Valo
 * **Website**: `fuzevalo.com`
 * **Struktur Akun**:
-  * **Facebook Group**: *JUAL BELI AKUN VALORANT INDONESIA x FUZEVALO* (Traffic utama puluhan ribu member)
-  * **Facebook Page**: *VALORANT Indonesia ID | FUZEVALO*
-  * **Instagram**: `@fuzevalo`
-* **Temuan Konten Terbaru (Nov 2026)**:
-  * Di grup Facebook, isu **Akun Suntikan & Modus Hackback (HB)** semakin memanas pasca beberapa insiden rekber bodong. Postingan tanpa label *"First Mail (FMail) / Creation Mail"* langsung diragukan oleh calon pembeli.
-  * Postingan yang menyertakan sertifikat/bukti jaminan anti-HB laku 3x lebih cepat.
-  * Di Instagram, format postingan dominan adalah *carousel screenshot transferan berhasil* dan review kepuasan customer.
-* **Funnel**: Grup Facebook $\rightarrow$ Katalog admin $\rightarrow$ WhatsApp deal.
+  * **Facebook Group & Page**: *JUAL BELI AKUN VALORANT INDONESIA x FUZEVALO*
+  * **Instagram & TikTok**: `@fuzevalo` / `@fuzevalo_`
+  * **Saluran Distribusi Stok**: **WhatsApp Channel** resmi Fuzevalo
+* **Temuan Konten & Ketahanan Akun (Akhir Nov 2026)**:
+  * **Pemanfaatan WhatsApp Channel**: Alih-alih mengunggah katalog harga akun tiap hari di TikTok/IG (yang sangat berisiko kena hapus/suspend), Fuzevalo memindahkan pembaruan stok akun real-time ke **Saluran WhatsApp** dan website `fuzevalo.com`.
+  * Konten sosmed lebih fokus ke validasi trust (garansi aman, showcase stok tanpa kata pemicu ban) dan diskusi komunitas.
+* **Funnel**: Sosmed / Grup FB $\rightarrow$ Linktree $\rightarrow$ WhatsApp Channel / `fuzevalo.com`.
 
 ---
 
-### 4. Johen Store (Johen Gaming)
-* **Struktur Akun**:
-  * **Instagram Valorant**: `@johengaming.valorant`
-  * **Instagram Induk**: `@johengaming.id`
-* **Temuan Konten Terbaru (Nov 2026)**:
-  * Mengandalkan *Legacy Trust* (nama besar yang sudah terverifikasi lama).
-  * Di Story rutin membuat kampanye edukasi **Anti-Impersonator**, mengingatkan gamer bahwa banyak penipu membuat akun tiruan mirip Johen untuk menipu calon pembeli.
-  * Desain feed katalog rapi dengan badge status stok: **READY / BOOKED / SOLD**.
-* **Funnel**: Feed IG / Story $\rightarrow$ Direct WhatsApp Admin.
-
----
-
-### 5. Xylious
-* **Struktur Akun**:
-  * **Facebook Group**: *Jual Beli Valorant Indonesia Xylious*
-  * **Instagram**: `@akun.xylious`, `@xyl.valo`, `@xyliousid`
-* **Temuan Konten Terbaru (Nov 2026)**:
-  * Memanfaatkan rotasi toko harian (Daily Store) dan antusiasme bundle baru untuk menawarkan akun *ready-stock* dengan skin incaran pemain.
-  * Transaksi didominasi alur rekber Facebook via WhatsApp admin.
-* **Funnel**: Facebook / IG Story $\rightarrow$ Direct WhatsApp.
-
----
-
-### 6. Tokovalorant (TokVal)
+### 4. Tokovalorant (TokVal)
 * **Website**: `tokovalorant.com`
 * **Struktur Akun**:
-  * **Instagram**: `@tokovalo` / `@tokovalorant`
-  * **TikTok / Live Streaming**: Akun Tokovalorant
-* **Temuan Konten Terbaru (Nov 2026)**:
-  * **Pioneer TikTok Live Selling**: Rutin mengadakan sesi Live Streaming TikTok saat jam prime-time mabar (Jumat – Minggu malam). Host bermain Valorant secara live sambil mendemonstrasikan efek finisher skin dari akun-akun rental yang ready.
-  * Penonton live chat bisa langsung request: *"Bang coba finisher Vandal Kuronami dong"*, lalu host mengarahkan penonton untuk langsung sewa akun tersebut via link bio.
-  * Konversi rental dari live streaming ini sangat tinggi dan instan.
-* **Funnel**: TikTok Live & Konten $\rightarrow$ Linktree $\rightarrow$ Web tokovalorant.com & WA.
+  * **Instagram & TikTok**: `@tokovalo` / `@tokovalorant`
+  * **Komunitas**: Discord & Facebook Group
+* **Temuan Konten & Ketahanan Akun (Akhir Nov 2026)**:
+  * **Kombinasi Turnamen Komunitas + Live Streaming**: Selain top up VP region ID/MY/PH, Tokovalorant rutin menggelar turnamen komunitas seperti **Skirmish 2v2** dan memusatkan interaksi di **Discord**.
+  * Saat **TikTok Live**, host bermain langsung sambil memamerkan skin dan mengarahkan audiens ke bio/Discord secara lisan, jauh lebih aman daripada menaruh teks statis *"Sewa/Jual Akun"* di video pendek yang mudah dipindai bot OCR TikTok.
+* **Funnel**: TikTok Live / Turnamen Skirmish $\rightarrow$ Discord & Linktree $\rightarrow$ `tokovalorant.com`.
 
 ---
 
-### 7. ZYS (zys.consign / Zys Game Corner)
-* **Website**: `zysgamecorner.com`
+### 5. Johen Gaming
+* **Website**: `johengaming.com` (Top Up) & `johengaming.id` (Jual Beli Akun)
 * **Struktur Akun**:
-  * **Instagram**: `@zysgamecorner` & `@mlvnzys`
-* **Temuan Konten Terbaru (Nov 2026)**:
-  * Model titip jual (consignment) memperketat seleksi akun: wajib verifikasi data identitas seller untuk meminimalisasi risiko sengketa HB.
-  * Konten edukasi berfokus pada transparansi rate fee rekber / jasa titip jual.
-* **Funnel**: IG $\rightarrow$ Form Titip Jual $\rightarrow$ WhatsApp Admin.
+  * **Instagram**: `@johengaming.valorant` & `@johengaming.id`
+* **Temuan Konten (Akhir Nov 2026)**:
+  * Memisahkan domain top up (`johengaming.com`) dari domain marketplace akun (`johengaming.id`).
+  * Konsisten mengedukasi anti-penipuan/anti-impersonator dan menjaga feed IG tetap rapi dengan badge status `READY / BOOKED / SOLD`.
+* **Funnel**: Feed IG / Story $\rightarrow$ Website / WhatsApp Admin Resmi.
 
 ---
 
-### 8. SkinKitchen / Niche Rental Store *(Kompetitor Baru / Tambahan)*
-* **Karakteristik**:
-  * Pemain niche yang murni menawarkan jasa sewa akun sultan per 12 jam atau 24 jam dengan katalog bundle terbatas (fokus pada skin melee mahal dan bundle turnamen VCT Champions).
-  * Promosi mengandalkan video TikTok jedag-jedug flex skin dan sound meme gaming.
-  * **Kelemahan Kompetitor**: Pendaftaran masih manual chat admin WA, sering *slow response* saat malam hari.
+### 6. Xylious, ZYS, & SkinKitchen
+* **Xylious**: Tetap kuat di grup FJB Facebook dengan memanfaatkan rotasi Daily Store & antusiasme bundle baru (`Snowfall 2.0` dan bundle Natal/Akhir Tahun).
+* **ZYS (`@zysgamecorner`)**: Konsisten dengan model konsinyasi/rekber berverifikasi identitas ketat untuk meredam sengketa HB.
+* **SkinKitchen**: Mengandalkan video pendek showcase animasi/finisher skin mewah dengan musik ritmis (jedag-jedug) tanpa teks narasi transaksi yang kaku.
 
 ---
 
-### 9. Itemku / Aggregator Escrow *(Benchmark Komparasi)*
-* **Karakteristik**:
-  * Menjadi tolok ukur keamanan bagi gamer yang trauma penipuan media sosial.
-  * **Kelemahan bagi User**: Biaya admin transaksi (fee marketplace) cukup tinggi (5–10%), dan proses pencairan dana bagi penjual memakan waktu berhari-hari.
-  * **Celah Valmart**: Valmart menawarkan keamanan setara escrow dengan **Garansi HB 100%**, proses pendaftaran anti-ribet (KTP + nama sekolah/kantor), dan pencairan cashout kilat 15 menit tanpa potongan fee berlebih.
+## 2. Audit Khusus: Mengapa Akun Sosmed Gaming Rawan Suspend di Akhir 2026?
 
----
+Berdasarkan penelusuran kebijakan **Community Guidelines TikTok & Meta (2025–2026)** serta **Terms of Service Riot Games**, ditambah komparasi dengan akun kita di November 2026, ada **4 pemicu utama** mengapa akun mudah terkena *takedown* atau *suspend*:
 
-## 2. Benchmark Harga Rental & JB Pasar (Update 1 November 2026)
-
-| Kategori Akun | Rata-Rata Tarif Sewa (Per Hari) | Harga Jual Akun (Pasaran JB) | Skin Unggulan Paling Dicari |
+| Pemicu Suspend | Penjelasan Teknis (Bot AI & Moderasi) | Masalah yang Ditemukan di Konten Kita (Nov 2026) | Cara Kompetitor Menghindarinya |
 | :--- | :--- | :--- | :--- |
-| **Tier Budget / Pelajar** | Rp 10.000 – Rp 15.000 | Rp 150.000 – Rp 350.000 | 1–2 Vandal Unggulan (Prime, Reaver, Gaia, Ion) |
-| **Tier Sultan / Flex** | Rp 20.000 – Rp 35.000 | Rp 600.000 – Rp 1.800.000+ | Kuronami, VCT Champions (2021-2024), Arcane, Araxys |
-| **Tier Komplit / Kolektor** | Rp 40.000 – Rp 65.000 | Rp 2.500.000 – Rp 6.000.000+ | Full inventory knife langka, puluhan skin finisher upgrade |
+| **1. Trigger Words Transaksi Akun** | AI *Automatic Speech Recognition* (ASR) & *Optical Character Recognition* (OCR) langsung menandai frasa: *"jual akun"*, *"beli akun"*, *"sewa akun"*, *"akun second"*, *"hackback / HB"*, *"cair 15 menit"* sebagai pelanggaran *Frauds & Scams* / *Inauthentic Commercial Activity* / ToS Riot. | Naskah video November secara eksplisit menulis & mengucapkan *"sewa akun sultan"*, *"beli akun game second"*, *"garansi Anti-HB 100% uang kembali"* di Text on Screen (TOS), audio, dan caption. | Akun utama hanya membahas **pengalaman main pakai skin, berita patch, meme mabar, atau edukasi keamanan umum**, tanpa menulis/mengucap kata *"jual/beli/sewa akun"* secara vulgar. |
+| **2. Angka Nominal Uang & Klaim Finansial** | Mencantumkan nominal uang tunai (*"Rp 200.000"*, *"Rp 5.000"*, *"cair 15 menit"*, *"uang kembali 100%"*) bersamaan dengan ajakan link keluar aplikasi sering terbaca sebagai pola *financial scam / phishing*. | Di November sempat ada insiden takedown karena angka `"Rp 200.000"` di cover/judul, namun angka `"Rp 5.000"` & `"100% uang kembali"` masih sering muncul di TOS detik awal. | Menyebut nominal secara halus atau lisan non-komersial (*"modal goceng"*, *"harga jajan es teh"*, *"total hadiah ratusan ribu"*), tanpa menaruh teks nominal uang besar di 3 detik pertama. |
+| **3. Tidak Memisahkan Akun Media vs Akun Katalog** | Jika satu akun utama dipakai untuk semua konten hard-sell transaksi akun + kena *mass report* (dari kompetitor atau netizen), seluruh akun utama langsung tumbang. | `@valmart.id` (TikTok) dan `@valomart._id` (IG) memborong konten meme + hard-sell katalog/cashout/promo di satu akun yang sama. | **Valforum** & **Valskuy** memisahkan akun media/hiburan (`@valforumofc`, `@valskuy.id`) dari akun katalog (`@valjubel`, `@skuy.rent`) serta memakai **WA Channel / Discord**. |
+| **4. Repetisi CTA Link Eksternal & Komentar Spam** | Mengulang frasa *"Klik link di bio / valmart.id sekarang"* di hampir setiap video + copy-paste balasan komentar yang identik memicu filter *Off-Platform Redirection & Spam*. | Hampir 100% caption & penutup audio di November memakai pola CTA seragam (*"cek di valmart.id link di bio"*). | Variasikan CTA dengan interaksi organik (*"Cek profil kita"*, *"Komen kata kunci"*, *"Mampir ke Discord/Channel"*) dan bangun funnel lewat **Pinned Comment** atau **Bio**. |
 
 ---
 
-## 3. Pola Kunci & Gap Peluang untuk Valmart & Martforum (November 2026)
+## 3. Momentum Tren Game Akhir November – Desember 2026
 
-1. **Eksperimen TikTok Live Selling (Meniru Keberhasilan Tokovalorant)**:
-   * Menampilkan gameplay langsung sambil mendemokan skin rental yang ready terbukti menghasilkan konversi sewa jauh lebih tinggi dan instan dibanding video feed biasa. Helmy bisa menjadwalkan sesi live mabar saat weekend rush.
-2. **Krisis Trust Hackback (HB) Makin Memuncak**:
-   * Ketakutan gamer terhadap penipuan akun suntikan di grup Facebook adalah panggung emas bagi Valmart. Konten edukasi First Mail (FMail) dan Garansi HB Uang Kembali 100% wajib menjadi *anchor of trust* di profil IG & TikTok.
-3. **Keunggulan Sistem Web Otomatis QRIS Martforum**:
-   * Para gamer semakin tidak sabar dengan toko yang masih manual chat admin WA untuk top-up jam 2 pagi. Positioning Martforum: *"Top up hitungan detik via QRIS, saldo VP langsung masuk sebelum kelar match"* adalah killer hook yang kuat.
-4. **Sinergi Campaign November (Affiliate Sprint + One Agent Showmatch)**:
-   * Valforum sukses menaikkan views lewat showmatch komunitas. Di November ini, Valmart mengeksekusinya lebih rapi: **Valmart Clone Clash (Showmatch 10 Agent Sama)** dipadukan dengan **Sesi Clipping TikTok** oleh 15+ streamer partner, serta monetisasi langsung via **Affiliate Sprint (Hadiah Rp 500k)**.
+1. **Rilis Agent Baru *Hush* (Patch 13.09) & Mastery Rewards**:
+   - Masih sangat hangat dibahas di komunitas Valorant untuk konten meme gameplay, line-up, dan reaksi *whiff* menggunakan skill Agent Hush.
+2. **Bundle *Snowfall 2.0* (Rilis 11 November 2026 — 5.100 VP) & Tema Musim Dingin**:
+   - Cocok untuk konten review skin/inspect dan konten bertema dingin/akhir tahun menjelang Natal & Tahun Baru.
+3. **Antisipasi *Night Market* Desember 2026**:
+   - Secara historis Riot membuka *Night Market* akhir tahun di **awal hingga pertengahan Desember** (misal kisaran 10–18 Desember hingga awal Januari). Ini adalah **puncak tertinggi kebutuhan top-up VP di Martforum** sekaligus momen konten *"ekspektasi vs realita Night Market zonk"* di Valmart & Martforum.
+4. **Harbolnas 12.12 & Liburan Sekolah / Akhir Tahun**:
+   - Trafik mabar anak sekolah & mahasiswa melonjak tajam mulai pertengahan Desember hingga 31 Desember.
+
+---
+
+## 4. Kesimpulan & Gap Peluang untuk Desember 2026
+
+1. **Wajib Migrasi ke Pola Konten "Entertainment First, Soft-Bridge Second"**:
+   - Ubah komposisi konten Desember menjadi **~65–70% hiburan/meme/berita game murni** dan **~30–35% soft-selling** dengan **kosakata bebas trigger ban**.
+2. **Manfaatkan Ekosistem Tertutup Sebagai Penyangga (Buffer)**:
+   - Arahkan stok update atau detail promo ke **WhatsApp Channel / Discord / Link Profil**, bukan memaksa semua kalimat jualan masuk ke dalam teks video TikTok/Reels.
+3. **Dominasi Momen 12.12 + Night Market + Libur Akhir Tahun**:
+   - Martforum menangkap lonjakan pembeli *Night Market* & *Daily Shop* liburan dengan narasi **"Isi Amunisi QRIS 3 Detik (Cukup Riot ID)"**, sedangkan Valmart menangkap pemain yang dapat *Night Market* ampas dengan narasi **"Daripada nyesel di Night Market, mending cicipin langsung skin idaman buat mabar"**.

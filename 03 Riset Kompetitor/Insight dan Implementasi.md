@@ -1,83 +1,72 @@
-# Actionable Insight & Rencana Implementasi
+# Actionable Insight & Rencana Implementasi (Update Desember 2026)
 **Target Brand**: Valmart (`valmart.id`) & Martforum (`martforum.id`)  
-**Basis Data**: Hasil Scraping Kompetitor (Valforum, Valskuy/Skuyrent, Fuze Valo, Johen, Xylious, Tokovalorant, ZYS, SkinKitchen, Itemku)  
-**Terakhir Diperbarui**: 1 November 2026  
-**Tujuan**: Implementasi langsung pada strategi konten harian, kampanye November 2026, dan funnel penjualan terintegrasi.
+**Basis Data**: Hasil Scraping Kompetitor Terbaru (26 November 2026) & Audit Keamanan Akun  
+**Terakhir Diperbarui**: 26 November 2026  
+**Tujuan**: Panduan eksekusi konten aman (anti-suspend) dan strategi konversi tinggi untuk Sprint Desember 2026.
 
 ---
 
-## I. Insight & Strategi untuk VALMART (`valmart.id`)
+## I. Protokol Wajib Anti-Suspend (Prioritas Utama Desember 2026)
 
-### 1. Jadikan Fitur "Sewa Akun" Sebagai Pintu Masuk Konten TikTok & Reels
-* **Realita Lapangan**: Beli akun Valorant butuh Rp 300rb – Rp 3jt+ (barrier beli tinggi, pertimbangan lama). Tapi **Sewa Akun** cuma butuh Rp 10rb – Rp 25rb (pembelian impulsif tanpa ragu).
-* **Formula Kompetitor**: Valskuy (`@skuy.rent`) sukses besar di TikTok karena mengangkat rasa *FOMO* anak muda yang mau mabar weekend pakai skin sultan tanpa boncos.
-* **Implementasi Valmart**:
-  * Konten TikTok format POV: *"POV: Lu mabar weekend cuma modal 15 ribu sewa akun di Valmart, temen satu lobi ngira lu sultan beneran."*
-  * Tampilkan sensasi efek finisher skin langka (Kuronami, Reaver, Champions, Arcane) dengan CTA: *"Gak perlu beli jutaan, sewa langsung di valmart.id mulai 10 ribuan."*
-  * **Fungsi**: Sewa adalah pintu masuk termudah untuk mendapatkan pelanggan baru yang nantinya akan naik kelas menjadi pembeli akun atau pelanggan top-up Martforum.
+Karena maraknya akun terkena *suspend* atau *takedown* akibat filter AI moderasi TikTok/Meta dan kebijakan ToS Riot Games, seluruh tim (**Hildan, Helmy, Dika, Audrey**) wajib menerapkan **4 Aturan Keselamatan Konten** di bulan Desember:
 
----
+1. **Kamus Sanitasi Kata (Dilarang vs Pengganti Aman)**:
+   | Kata Terlarang (Picu AI Flag / Report) | Pengganti Aman untuk Audio, TOS, & Caption |
+   | :--- | :--- |
+   | *"Jual akun"*, *"Beli akun"*, *"Akun second"* | *"Pindah tangan koleksi"*, *"Koleksi siap pakai"*, *"Akun utama / akun mabar"* |
+   | *"Sewa akun"*, *"Rental akun"* (di TOS awal & caption) | *"Ngerasain skin sultan"*, *"Pinjam koleksi mabar"*, *"Cicipin skin"*, *"Main pake akun katalog"* |
+   | *"Hackback"*, *"HB"*, *"Anti-HB"* | *"Aman data tangan pertama"*, *"Anti-drama"*, *"Jaminan aman 100%"* |
+   | *"Cashout cair 15 menit"* | *"Pensiun mabar? Lepas inventori aman tanpa ribet"* |
+   | *"Rp 5.000"* / *"Rp 200.000"* di TOS 3 detik awal | *"Modal goceng"*, *"Seharga es teh"*, *"Hadiah ratusan ribu"* (tanpa simbol Rp di cover) |
+   | *"Klik link di bio sekarang"* (berulang tiap hari) | *"Cek profil kita"*, *"Detailnya udah disematin di bio"*, *"Komen 'MAU' buat infonya"* |
 
-### 2. Adopsi Taktik "TikTok Live Demo Finisher" (Pelajaran dari Tokovalorant)
-* **Realita Lapangan**: Tokovalorant membuktikan bahwa live streaming push rank sambil mencoba skin yang ready menghasilkan konversi rental instan tertinggi.
-* **Implementasi Valmart**:
-  * Helmy / talent Valmart menjadwalkan sesi **Live Streaming TikTok di jam weekend** (Jumat/Sabtu malam).
-  * Main di mode Unrated / Swiftplay menggunakan akun rental sultan yang statusnya ready.
-  * Buat interaksi live: penonton minta dites finisher senjata tertentu, host langsung mainkan, lalu host menyematkan link pemesanan rental di kolom komentar/bio.
+2. **Rasio Konten Aman (70% Pure Gaming — 30% Soft-Sell)**:
+   - Jangan menjadikan akun utama sebagai brosur jualan harian. Mayoritas video harus tampil 100% seperti konten kreator gaming (meme mabar, berita **Agent Hush**, review **Snowfall 2.0**, drama **Night Market**, tips gameplay).
+   - Branding `Valmart` dan `Martforum` hadir secara natural melalui **watermark halus**, **obrolan lobi**, **stiker/kaos**, atau **pinned comment**.
 
----
+3. **Pemisahan Fungsi Akun (Belajar dari Valforum & Valskuy)**:
+   - **Akun Utama (`@valmart.id` / `@valomart._id` / `@martforum.id`)**: Fokus hiburan, komunitas, edukasi aman, & berita game.
+   - **Akun Katalog / Saluran WA / Website**: Tempat menampilkan daftar harga, katalog skin ready, dan promo detail. Jangan mengunggah gambar daftar harga akun mentah di akun TikTok utama.
 
-### 3. Bangun "Authority & Trust" Lewat Edukasi Anti-HB (Hackback)
-* **Realita Lapangan**: Ketakutan terbesar nomor 1 pembeli akun game di Indonesia adalah **Hackback (HB)** (akun ditarik kembali oleh pemilik pertama via support tiket Riot). Banyak drama akun suntikan tanpa FMail di grup FJB FB.
-* **Implementasi Valmart**:
-  * Buat serial konten edukasi di Reels & TikTok: *"Cara bedain akun First Mail (FMail) asli vs Akun Suntikan"* dan *"Kenapa beli akun sembarangan di FB rawan di-HB?"*.
-  * Tampilkan proses verifikasi ketat Valmart saat kurasi akun masuk (transparansi data).
-  * Tonjolkan USP resmi: **Garansi Uang Kembali 100% Anti-HB**. Ini memposisikan Valmart jauh lebih aman daripada penjual anonim di medsos.
+4. **Keamanan Visual & Interaksi**:
+   - Gunakan rekaman gameplay sendiri (Helmy/tim/partner streamer) — hindari mengambil klip streamer besar tanpa editan transformatif agar tidak terkena *strike* hak cipta.
+   - Jangan membalas komentar dengan kalimat template + link yang sama secara beruntun dalam waktu singkat (picu *spam bot flag*).
 
 ---
 
-### 4. Dorong Kampanye "Cashout Instant 15 Menit" untuk Pasokan Stok Akun
-* **Realita Lapangan**: Bisnis JB akun sering menghadapi kendala kehabisan stok akun sultan berkualitas.
-* **Implementasi Valmart**:
-  * Manfaatkan fitur Cashout di website `valmart.id`.
-  * Rilis konten rutin untuk pemain yang mau pensiun: *"Pensiun main Valorant tapi skin numpuk? Cashout akunmu di Valmart, 15 menit langsung cair ke e-wallet/rekening tanpa kena tipu middleman palsu."*
-  * Mendatangkan suplai inventaris akun berharga wajar secara konsisten.
+## II. Insight & Strategi untuk VALMART (`valmart.id`) — Edisi Desember 2026
+
+### 1. Memanfaatkan Momen "Night Market Zonk" Sebagai Jembatan Tanpa Kata Terlarang
+* **Realita Lapangan**: Pertengahan Desember adalah jadwal tradisional rilisnya *Night Market* Valorant. Mayoritas pemain mendapat kartu skin yang mengecewakan (Smite, Nebula, Sensation, dll.).
+* **Implementasi Aman**: Buat skit reaksi *Night Market* ampas: *"Udah nunggu sebulan, isi Night Market kayak gini semua... untung masih bisa nyicipin Kuronami & Champions pas mabar weekend cuma modal es teh."* (Arahkan ke profil/komen tanpa menulis kata *"sewa/jual akun"* di layar).
+
+### 2. Adopsi Taktik "TikTok Live Mabar & Pamer Finisher" (Pelajaran dari Tokovalorant)
+* **Realita Lapangan**: Live streaming di TikTok sambil mabar dan mendemokan finisher skin jauh lebih aman dari sensor video pendek statis sekaligus punya konversi tertinggi.
+* **Implementasi**: Helmy jadwalkan live santai setiap **Sabtu malam** (sesuai jadwal barunya di Desember), mabar bersama viewer sambil menjawab pertanyaan di kolom komentar secara lisan.
+
+### 3. Menggarap Liburan Sekolah & Akhir Tahun (18–31 Desember)
+* **Realita Lapangan**: Pelajar/mahasiswa mulai libur dan begadang mabar.
+* **Implementasi**: Angkat POV mabar liburan: *"Libur semester di rumah doang? Minimal di lobi Valorant kelihatan paling sultan."*
 
 ---
 
-## II. Insight & Strategi untuk MARTFORUM (`martforum.id`)
+## III. Insight & Strategi untuk MARTFORUM (`martforum.id`) — Edisi Desember 2026
 
-### 1. Menangkan Persaingan di "Kecepatan QRIS 1-3 Detik & Akses 24 Jam Tanpa Admin"
-* **Realita Lapangan**: Web top-up di Indonesia sangat banyak. Bersaing margin receh Rp 500 dengan bot reseller besar tidak efektif jangka panjang.
-* **Implementasi Martforum**:
-  * Posisikan Martforum sebagai platform top up otomatis paling ramah anak mabar: **Bayar via QRIS detik itu juga langsung masuk**, tanpa perlu antre nunggu admin WA bangun di jam 2 pagi.
-  * Konten komparasi Jonathan: *"Momen ngenes toko sebelah: top up jam 1 malem, dibalas jam 9 pagi pas skin incaran udah hilang dari Daily Shop."* vs *"Martforum: Scan QRIS pas countdown agent select, VP udah mendarat sebelum ronde 1 mulai."*
+### 1. Menunggangi Hype *Night Market* & Bundle *Snowfall 2.0*
+* **Realita Lapangan**: Saat *Night Market* buka dan bundle musim dingin ramai dibahas, gamer berburu tempat isi VP yang cepat, murah, dan aman tanpa login password.
+* **Implementasi Aman**: Audrey (VO) & Dika (Editor) merilis konten bertema kalkulasi hemat VP, reaksi kartu *Night Market*, dan tips mengamankan *Daily Shop* jam malam lewat QRIS otomatis 3 detik tanpa perlu mengumbar kata-kata ilegal (*carding/hack*) di teks layar.
 
----
-
-### 2. Edukasi "Legalitas 100% Anti-Minus & Anti-Ban Riot"
-* **Realita Lapangan**: Marak kasus top-up ilegal via carding/refund yang menyebabkan saldo VP minus dan akun terkena ban permanen Riot.
-* **Implementasi Martforum**:
-  * Konten investigasi VO Jonathan: Menjelaskan bahaya top up VP murah tidak masuk akal yang berujung Riot ban.
-  * Tegaskan bahwa Martforum hanya menggunakan jalur resmi distributor legal, menjamin saldo 100% aman dan anti-minus seumur hidup.
+### 2. Konten Multi-Game untuk Menangkap Traffic Liburan (MLBB & Game Populer)
+* **Realita Lapangan**: Sesuai Brand DNA dan momentum kolaborasi **PFL / COPA**, Martforum juga melayani MLBB, Free Fire, dan game mobile lain yang pemainnya membludak saat libur Natal & Tahun Baru.
+* **Implementasi**: Sisipkan 1 konten lintas game/topik liburan atau olahraga x gaming (gaya softselling) per 1–2 minggu agar jangkauan audiens lebih luas.
 
 ---
 
-## III. Sinergi Cross-Selling Antara Valmart & Martforum
+## IV. Sinergi Lintas Brand & Penyesuaian Tim Desember 2026
 
-Sebagai Marketing Coordinator yang memegang kedua brand ini sekaligus, kita memiliki ekosistem tertutup (*closed-loop funnel*):
-
-```mermaid
-flowchart LR
-    A["Konten Sosmed Viral TikTok/IG:<br/>Sewa Akun & Flex Skin"] --> B["Web Valmart:<br/>Transaksi Sewa / Beli Akun"]
-    B --> C["Konfirmasi Checkout Web"]
-    C --> D["Voucher Diskon Top Up VP<br/>di Martforum.id"]
-    D --> E["Pelanggan Setia Top Up<br/>di Martforum"]
-```
-
-1. **Voucher Sinergi Pasca-Transaksi**:
-   * Setiap customer yang menyewa atau membeli akun di **Valmart**, otomatis menerima voucher potongan harga top-up di **Martforum.id**.
-2. **Pemanfaatan Campaign Streamer November**:
-   * Streamer partner di ajang **Affiliate Sprint** didorong mempromosikan kedua brand: transaksi sewa Kode C+ (Valmart) dan transaksi top-up >Rp 150k (Martforum) sama-sama dihitung sebagai poin klasemen resmi.
-3. **Penyatuan Voice & Cross-Support**:
-   * Tim CS Valmart langsung merekomendasikan link Martforum saat customer bertanya: *"Kak, bisa sekalian top up VP gak buat beli skin baru?"*.
+1. **Penyesuaian Jadwal Operasional Desember 2026**:
+   - **Helmy (Valmart)**: Bergeser dari *Sel–Rab–Kam–Jum* menjadi **Selasa, Rabu, Kamis, Sabtu** (4 video/minggu). Hari Sabtu memberi keuntungan besar karena pas dengan puncak trafik mabar malam minggu.
+   - **Dika (Editor & Desain) + Audrey (VO Martforum)**: Tetap di **Senin, Rabu, Jumat** (3 konten VO/minggu + aset desain event 12.12).
+   - **Penanganan Libur Dika (24–27 Desember)**: Slot konten Martforum Jumat, 25 Desember **digeser maju ke Selasa, 22 Desember 2026** sehingga seluruh produksi Minggu ke-4 selesai dan tayang/terjadwal rapi sebelum 24 Desember.
+2. **Funnel Tertutup Aman (Closed-Loop)**:
+   - Konten hiburan menarik audiens $\rightarrow$ Profil / Saluran WA / Discord menampung trafik $\rightarrow$ Transaksi otomatis di `valmart.id` & `martforum.id` $\rightarrow$ Voucher sinergi pasca-checkout.
