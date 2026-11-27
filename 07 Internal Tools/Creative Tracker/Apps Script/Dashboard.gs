@@ -20,12 +20,8 @@ function renderDashboard() {
   const prevWeekOpt = sheet.getRange("I4").getValue();
 
   const now = new Date();
-  const parsedMonth = (typeof prevMonth === "number" || (typeof prevMonth === "string" && /^\d+$/.test(prevMonth.trim())))
-    ? Number(prevMonth) : NaN;
-  const parsedYear = (typeof prevYear === "number" || (typeof prevYear === "string" && /^\d+$/.test(prevYear.trim())))
-    ? Number(prevYear) : NaN;
-  const activeMonth = (Number.isInteger(parsedMonth) && parsedMonth >= 1 && parsedMonth <= 12) ? parsedMonth : (now.getMonth() + 1);
-  const activeYear = (Number.isInteger(parsedYear) && parsedYear >= 2024 && parsedYear <= 2035) ? parsedYear : now.getFullYear();
+  const activeMonth = parseMonthFilterValue(prevMonth, false, now.getMonth() + 1);
+  const activeYear = parseYearFilterValue(prevYear, false, now.getFullYear());
   const activeWeekOpt = prevWeekOpt ? String(prevWeekOpt) : "Minggu Ini";
 
   const config = getAppConfig();
@@ -33,7 +29,7 @@ function renderDashboard() {
   const f = (formulaStr) => localizeFormula(formulaStr, isIndo);
   const dbName = `'${APP_CONSTANTS.SHEETS.DATABASE}'`;
   const cfgName = `'${APP_CONSTANTS.SHEETS.CONFIG}'`;
-  const maxRow = APP_CONSTANTS.DB_START_ROW + APP_CONSTANTS.MAX_DB_ROWS - 1; // 1004
+  const dbStart = APP_CONSTANTS.DB_START_ROW;
 
   // Pastikan minimal 26 kolom (A..Z) agar kolom bantu tersembunyi O..Z selalu tersedia
   if (sheet.getMaxColumns() < 26) {
@@ -48,7 +44,7 @@ function renderDashboard() {
   sheet.clear();
   sheet.setTabColor("#10B981");
 
-  // Lebar kolom A..M
+  // Lebar kolom A..M (L = Link Draft agar bisa diklik langsung dari Antrean Review)
   const colWidths = [
     [1, 20],  // A Spacer
     [2, 175], // B
@@ -58,17 +54,17 @@ function renderDashboard() {
     [6, 90],  // F
     [7, 150], // G
     [8, 22],  // H Spacer
-    [9, 105], // I
-    [10, 100],// J
-    [11, 130],// K
-    [12, 230],// L
-    [13, 180] // M
+    [9, 95],  // I Tanggal
+    [10, 145],// J Brand & PIC
+    [11, 215],// K Topik & Status
+    [12, 115],// L Link Draft
+    [13, 210] // M Catatan Review
   ];
   colWidths.forEach(([c, w]) => sheet.setColumnWidth(c, w));
 
   // Header Banner
   sheet.getRange("B2:M2").merge()
-    .setValue("📊 CREATIVE DASHBOARD — VALMART.ID & MARTFORUM.ID")
+    .setValue("📊 CREATIVE DASHBOARD - VALMART.ID & MARTFORUM.ID")
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
     .setFontSize(13)
     .setFontWeight("bold")
@@ -79,7 +75,7 @@ function renderDashboard() {
   sheet.setRowHeight(2, 38);
 
   sheet.getRange("B3:M3").merge()
-    .setValue("💡 Pilih Bulan/Tahun & Minggu di baris 4 untuk memfilter metrik. Semua angka terhubung langsung ke '📝 Database Konten'.")
+    .setValue("💡 Pilih Bulan/Tahun & Minggu di baris 4 untuk metrik bulanan & pacing. Antrean Review dan Konten Telat memantau seluruh periode.")
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
     .setFontSize(9)
     .setFontColor(APP_CONSTANTS.COLORS.MUTED_TEXT)
@@ -108,23 +104,23 @@ function renderDashboard() {
     SpreadsheetApp.newDataValidation().requireValueInList(["1","2","3","4","5","6","7","8","9","10","11","12"], true).setAllowInvalid(false).build()
   );
   sheet.getRange("E4").setDataValidation(
-    SpreadsheetApp.newDataValidation().requireValueInList(["2025","2026","2027","2028"], true).setAllowInvalid(true).build()
+    SpreadsheetApp.newDataValidation().requireValueInList(getSupportedYearsList(false), true).setAllowInvalid(true).build()
   );
   sheet.getRange("I4").setDataValidation(
     SpreadsheetApp.newDataValidation().requireValueInList(["Minggu Lalu", "Minggu Ini", "Minggu Depan"], true).setAllowInvalid(false).build()
   );
 
   // -------------------------------------------------------------------------
-  // 5 KPI SCORECARDS (Baris 6 - 8)
+  // 5 KPI SCORECARDS (Baris 6 - 8) - Open-ended range $6:$C agar tembus > 1000 baris
   // -------------------------------------------------------------------------
   sheet.setRowHeight(5, 10);
   sheet.setRowHeight(6, 22);
   sheet.setRowHeight(7, 38);
   sheet.setRowHeight(8, 20);
 
-  const dateCondStart = `${dbName}!$C$5:$C$${maxRow}, ">=" & DATE($E$4, $C$4, 1)`;
-  const dateCondEnd = `${dbName}!$C$5:$C$${maxRow}, "<=" & EOMONTH(DATE($E$4, $C$4, 1), 0)`;
-  const statusRange = `${dbName}!$J$5:$J$${maxRow}`;
+  const dateCondStart = `${dbName}!$C$${dbStart}:$C, ">=" & DATE($E$4, $C$4, 1)`;
+  const dateCondEnd = `${dbName}!$C$${dbStart}:$C, "<=" & EOMONTH(DATE($E$4, $C$4, 1), 0)`;
+  const statusRange = `${dbName}!$J$${dbStart}:$J`;
 
   createScoreCard(sheet, "B6:C6", "B7:C7", "B8:C8",
     "🎯 TOTAL TERJADWAL",
@@ -142,22 +138,22 @@ function renderDashboard() {
 
   createScoreCard(sheet, "F6:G6", "F7:G7", "F8:G8",
     "⚠️ ANTREAN REVIEW",
-    f(`=COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${statusRange}, "🟠 In Review") + COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${statusRange}, "🔴 Revision")`),
-    "Perlu Dicek Ko Jeje/Hildan",
+    f(`=COUNTIFS(${statusRange}, "🟠 In Review") + COUNTIFS(${statusRange}, "🔴 Revision")`),
+    "Semua Bulan (Dicek Jeje/Hildan)",
     "#FFF7ED", "#C2410C", "#FDBA74"
   );
 
   createScoreCard(sheet, "I6:K6", "I7:K7", "I8:K8",
     "⏳ DALAM PENGERJAAN",
     f(`=COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${statusRange}, "⚪ Draft") + COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${statusRange}, "🟡 In Progress")`),
-    "On Track Talent",
+    "On Track Talent (Bulan Ini)",
     "#FEFCE8", "#A16207", "#FDE047"
   );
 
   createScoreCard(sheet, "L6:M6", "L7:M7", "L8:M8",
     "🚨 KONTEN TELAT",
-    f(`=COUNTIFS(${dbName}!$C$5:$C$${maxRow}, "<" & TODAY(), ${dbName}!$C$5:$C$${maxRow}, "<>", ${statusRange}, "<>🟣 Published")`),
-    "Lewat Tanggal & Belum Publish",
+    f(`=COUNTIFS(${dbName}!$C$${dbStart}:$C, "<" & TODAY(), ${dbName}!$C$${dbStart}:$C, "<>", ${statusRange}, "<>🟣 Published")`),
+    "Semua Bulan (Lewat & Blm Publish)",
     APP_CONSTANTS.COLORS.LATE_BG, APP_CONSTANTS.COLORS.LATE_TEXT, APP_CONSTANTS.COLORS.LATE_BORDER
   );
 
@@ -167,7 +163,7 @@ function renderDashboard() {
   // SECTION KIRI: TARGET MINGGUAN & PACING TALENT (B10:G...)
   // -------------------------------------------------------------------------
   sheet.getRange("B10:G10").merge()
-    .setValue("👥 TARGET MINGGUAN & PACING TALENT (SENIN–MINGGU)")
+    .setValue("👥 TARGET MINGGUAN & PACING TALENT (SENIN-MINGGU)")
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
     .setFontSize(10)
     .setFontWeight("bold")
@@ -187,27 +183,42 @@ function renderDashboard() {
     .setBorder(true, true, true, true, true, true, APP_CONSTANTS.COLORS.BORDER, SpreadsheetApp.BorderStyle.SOLID);
   sheet.setRowHeight(11, 24);
 
+  // Sertakan PIC target 0 (misal Jonathan) otomatis kalau punya jadwal di bulan terpilih
+  const dbSheet = ss.getSheetByName(APP_CONSTANTS.SHEETS.DATABASE);
+  const picsWithTasksInPeriod = {};
+  if (dbSheet && dbSheet.getLastRow() >= dbStart) {
+    const numDbRows = dbSheet.getLastRow() - dbStart + 1;
+    const dbQuick = dbSheet.getRange(dbStart, APP_CONSTANTS.DB_COLS.DATE, numDbRows, 4).getValues();
+    for (let i = 0; i < dbQuick.length; i++) {
+      const dt = parseDateSafe(dbQuick[i][0]);
+      const pName = String(dbQuick[i][3] || "").trim();
+      if (dt && pName && (dt.getMonth() + 1) === activeMonth && dt.getFullYear() === activeYear) {
+        picsWithTasksInPeriod[pName] = true;
+      }
+    }
+  }
+
   const picStartRow = 12;
-  const activePics = config.pics.filter(p => p.target > 0);
+  const activePics = config.pics.filter(p => p.target > 0 || picsWithTasksInPeriod[p.name]);
   const picsToDisplay = activePics.length > 0 ? activePics : config.pics;
   const picCount = picsToDisplay.length;
-  const wkStartCond = `${dbName}!$C$5:$C$${maxRow}, ">=" & $K$4`;
-  const wkEndCond = `${dbName}!$C$5:$C$${maxRow}, "<=" & ($K$4+6)`;
-  const picRange = `${dbName}!$F$5:$F$${maxRow}`;
+  const wkStartCond = `${dbName}!$C$${dbStart}:$C, ">=" & $K$4`;
+  const wkEndCond = `${dbName}!$C$${dbStart}:$C, "<=" & ($K$4+6)`;
+  const picRange = `${dbName}!$F$${dbStart}:$F`;
 
   const picRowsFormulas = [];
   for (let i = 0; i < picCount; i++) {
     const r = picStartRow + i;
-    const cfgRow = picsToDisplay[i].row || (7 + i); // Posisi baris aktual di tab Config E7:G20
+    const cfgRow = picsToDisplay[i].row || (7 + i);
     picRowsFormulas.push([
       f(`=${cfgName}!E${cfgRow}`),
       f(`=${cfgName}!G${cfgRow}`),
       f(`=COUNTIFS(${wkStartCond}, ${wkEndCond}, ${picRange}, B${r})`),
       f(`=COUNTIFS(${wkStartCond}, ${wkEndCond}, ${picRange}, B${r}, ${statusRange}, "🟢 Approved") + COUNTIFS(${wkStartCond}, ${wkEndCond}, ${picRange}, B${r}, ${statusRange}, "🟣 Published")`),
-      f(`=MAX(0, C${r}-E${r})`),
-      f(`=SPARKLINE(E${r}, {"charttype", "bar"; "max", MAX(1, C${r}, E${r}); "color1", "${APP_CONSTANTS.COLORS.ACCENT}"; "color2", "#E2E8F0"})`)
+      f(`=MAX(0, D${r}-E${r})`),
+      f(`=SPARKLINE(E${r}, {"charttype", "bar"; "max", MAX(1, D${r}, E${r}); "color1", "${APP_CONSTANTS.COLORS.ACCENT}"; "color2", "#E2E8F0"})`)
     ]);
-    sheet.setRowHeight(r, 26);
+    sheet.setRowHeight(r, 32);
   }
 
   if (picCount > 0) {
@@ -221,9 +232,8 @@ function renderDashboard() {
     sheet.getRange(picStartRow, 3, picCount, 4).setHorizontalAlignment("center");
   }
 
-  // Distribusi Brand (di bawah tabel Talent)
+  // Distribusi Brand dinamis membaca daftar brand dari tab Config
   const brandHeaderRow = picStartRow + picCount + 1;
-  // Jangan perkecil tinggi baris <= 19 karena berbagi grid dengan tabel Antrean Review (I12:M19)
   if (brandHeaderRow - 1 > 19) {
     sheet.setRowHeight(brandHeaderRow - 1, 12);
   }
@@ -237,30 +247,53 @@ function renderDashboard() {
     .setHorizontalAlignment("center");
   sheet.setRowHeight(brandHeaderRow, 28);
 
-  const brandRange = `${dbName}!$E$5:$E$${maxRow}`;
-  const bRow1 = brandHeaderRow + 1;
-  const bRow2 = brandHeaderRow + 2;
-  const bBarRow = brandHeaderRow + 3;
+  const brandRange = `${dbName}!$E$${dbStart}:$E`;
+  const brandsList = (config.brands && config.brands.length > 0) ? config.brands : APP_CONSTANTS.DEFAULTS.BRANDS;
+  const brandPalette = APP_CONSTANTS.COLORS.BRAND_PALETTE || [APP_CONSTANTS.COLORS.VALMART, APP_CONSTANTS.COLORS.MARTFORUM];
+  const brandIcons = ["🟣", "🔵", "🟢", "🟠", "🔴", "🟣"];
 
-  sheet.getRange(bRow1, 2, 1, 3).merge().setValue("🟣 Valmart.id").setFontFamily(APP_CONSTANTS.FONT_FAMILY).setFontSize(9.5).setFontWeight("bold");
-  sheet.getRange(bRow1, 5, 1, 3).merge().setFormula(f(`=COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "Valmart") & " Konten"`)).setFontFamily(APP_CONSTANTS.FONT_FAMILY).setFontSize(9.5).setHorizontalAlignment("center");
-  sheet.setRowHeight(bRow1, bRow1 <= 19 ? 28 : 24);
+  for (let bIdx = 0; bIdx < brandsList.length; bIdx++) {
+    const bName = brandsList[bIdx];
+    const bRow = brandHeaderRow + 1 + bIdx;
+    const bEscaped = bName.replace(/"/g, '""');
+    const displayLabel = `${brandIcons[bIdx % brandIcons.length]} ${bName}`;
+    sheet.getRange(bRow, 2, 1, 3).merge().setValue(displayLabel).setFontFamily(APP_CONSTANTS.FONT_FAMILY).setFontSize(9.5).setFontWeight("bold");
+    sheet.getRange(bRow, 5, 1, 3).merge().setFormula(f(`=COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "${bEscaped}") & " Konten"`))
+      .setFontFamily(APP_CONSTANTS.FONT_FAMILY).setFontSize(9.5).setHorizontalAlignment("center");
+    sheet.setRowHeight(bRow, bRow <= 19 ? 34 : 26);
+  }
 
-  sheet.getRange(bRow2, 2, 1, 3).merge().setValue("🔵 Martforum.id").setFontFamily(APP_CONSTANTS.FONT_FAMILY).setFontSize(9.5).setFontWeight("bold");
-  sheet.getRange(bRow2, 5, 1, 3).merge().setFormula(f(`=COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "Martforum") & " Konten"`)).setFontFamily(APP_CONSTANTS.FONT_FAMILY).setFontSize(9.5).setHorizontalAlignment("center");
-  sheet.setRowHeight(bRow2, bRow2 <= 19 ? 28 : 24);
+  const bBarRow = brandHeaderRow + 1 + brandsList.length;
+  let brandBarFormula = "";
+  if (brandsList.length === 1) {
+    const b0 = brandsList[0].replace(/"/g, '""');
+    const c0 = `COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "${b0}")`;
+    brandBarFormula = f(`=IF(${c0}=0, "", SPARKLINE(${c0}, {"charttype", "bar"; "max", MAX(1, ${c0}); "color1", "${brandPalette[0]}"}))`);
+  } else if (brandsList.length === 2) {
+    const b0 = brandsList[0].replace(/"/g, '""');
+    const b1 = brandsList[1].replace(/"/g, '""');
+    const c0 = `COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "${b0}")`;
+    const c1 = `COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "${b1}")`;
+    brandBarFormula = f(`=IF(${c0} + ${c1} = 0, "", SPARKLINE({${c0}, ${c1}}, {"charttype", "bar"; "color1", "${brandPalette[0]}"; "color2", "${brandPalette[1]}"}))`);
+  } else {
+    const b0 = brandsList[0].replace(/"/g, '""');
+    const c0 = `COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "${b0}")`;
+    const cAll = `COUNTIFS(${dateCondStart}, ${dateCondEnd})`;
+    brandBarFormula = f(`=IF(${cAll}=0, "", SPARKLINE({${c0}, MAX(0, ${cAll}-${c0})}, {"charttype", "bar"; "color1", "${brandPalette[0]}"; "color2", "#94A3B8"}))`);
+  }
 
   sheet.getRange(bBarRow, 2, 1, 6).merge()
-    .setFormula(f(`=IF(COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "Valmart") + COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "Martforum") = 0, "", SPARKLINE({COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "Valmart"), COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "Martforum")}, {"charttype", "bar"; "color1", "${APP_CONSTANTS.COLORS.VALMART}"; "color2", "${APP_CONSTANTS.COLORS.MARTFORUM}"}))`))
+    .setFormula(brandBarFormula)
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY);
-  sheet.setRowHeight(bBarRow, bBarRow <= 19 ? 28 : 22);
-  sheet.getRange(brandHeaderRow, 2, 4, 6).setBorder(true, true, true, true, true, true, APP_CONSTANTS.COLORS.BORDER, SpreadsheetApp.BorderStyle.SOLID);
+  sheet.setRowHeight(bBarRow, bBarRow <= 19 ? 34 : 24);
+  sheet.getRange(brandHeaderRow, 2, 2 + brandsList.length, 6)
+    .setBorder(true, true, true, true, true, true, APP_CONSTANTS.COLORS.BORDER, SpreadsheetApp.BorderStyle.SOLID);
 
   // -------------------------------------------------------------------------
   // SECTION KANAN: ANTREAN REVIEW OTOMATIS (I10:M20, helper di V12:Z)
   // -------------------------------------------------------------------------
   sheet.getRange("I10:M10").merge()
-    .setValue("🚨 ANTREAN REVIEW (URUT TANGGAL TERDEKAT)")
+    .setValue("🚨 ANTREAN REVIEW - SEMUA BULAN (URUT TERDEKAT)")
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
     .setFontSize(10)
     .setFontWeight("bold")
@@ -269,7 +302,7 @@ function renderDashboard() {
     .setHorizontalAlignment("center")
     .setVerticalAlignment("middle");
 
-  sheet.getRange("I11:M11").setValues([["Tanggal", "Brand", "PIC", "Topik & Status", "Catatan Review"]])
+  sheet.getRange("I11:M11").setValues([["Tanggal", "Brand & PIC", "Topik & Status", "Link Draft", "Catatan Review"]])
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
     .setFontSize(9)
     .setFontWeight("bold")
@@ -279,26 +312,27 @@ function renderDashboard() {
     .setBorder(true, true, true, true, true, true, APP_CONSTANTS.COLORS.BORDER, SpreadsheetApp.BorderStyle.SOLID);
 
   sheet.getRange("V12").setFormula(f(
-    `=IFERROR(SORT(FILTER({${dbName}!C5:C${maxRow}, ${dbName}!E5:E${maxRow}, ${dbName}!F5:F${maxRow}, ARRAYFORMULA(${dbName}!G5:G${maxRow} & " [" & ${dbName}!J5:J${maxRow} & "]"), ${dbName}!K5:K${maxRow}}, (${dbName}!J5:J${maxRow}="🟠 In Review") + (${dbName}!J5:J${maxRow}="🔴 Revision")), 1, TRUE), {"-", "-", "-", "✅ Antrean kosong, aman!", "-"})`
+    `=IFERROR(SORT(FILTER({${dbName}!$C$${dbStart}:$C, ARRAYFORMULA(${dbName}!$E$${dbStart}:$E & CHAR(10) & ${dbName}!$F$${dbStart}:$F), ARRAYFORMULA(${dbName}!$G$${dbStart}:$G & " [" & ${dbName}!$J$${dbStart}:$J & "]"), ${dbName}!$I$${dbStart}:$I, ${dbName}!$K$${dbStart}:$K}, (${dbName}!$J$${dbStart}:$J="🟠 In Review") + (${dbName}!$J$${dbStart}:$J="🔴 Revision")), 1, TRUE), {"-", "-", "✅ Antrean kosong, aman!", "-", "-"})`
   ));
 
   const reviewDisplayRows = 8; // I12:M19
   const reviewFormulas = [];
   for (let i = 0; i < reviewDisplayRows; i++) {
     const r = 12 + i;
-    if (r >= picStartRow + picCount && r !== brandHeaderRow && r !== bRow1 && r !== bRow2 && r !== bBarRow) {
-      sheet.setRowHeight(r, 28);
+    if (r >= picStartRow + picCount && (r < brandHeaderRow || r > bBarRow)) {
+      sheet.setRowHeight(r, 34);
     }
     reviewFormulas.push([
       f(`=IF($V${r}="", "", $V${r})`),
       f(`=IF($W${r}="", "", $W${r})`),
       f(`=IF($X${r}="", "", $X${r})`),
-      f(`=IF($Y${r}="", "", $Y${r})`),
+      f(`=IF($V${r}="", "", IF($Y${r}="-", "-", IF(REGEXMATCH(TO_TEXT($Y${r}), "^https?://"), HYPERLINK($Y${r}, "🎬 Buka Draft"), IF(TRIM(TO_TEXT($Y${r}))="", "⚪ Belum ada", $Y${r}))))`),
       f(`=IF($Z${r}="", "", $Z${r})`)
     ]);
   }
   sheet.getRange(12, 9, reviewDisplayRows, 5).setFormulas(reviewFormulas);
   sheet.getRange("I12:I19").setNumberFormat("yyyy-mm-dd").setHorizontalAlignment("center");
+  sheet.getRange("L12:L19").setHorizontalAlignment("center");
   sheet.getRange("I12:M19")
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
     .setFontSize(8.5)
@@ -307,7 +341,7 @@ function renderDashboard() {
     .setBorder(true, true, true, true, true, true, APP_CONSTANTS.COLORS.BORDER, SpreadsheetApp.BorderStyle.SOLID);
 
   sheet.getRange("I20:M20").merge()
-    .setFormula(f(`=IF($V20<>"", "⚠️ +" & COUNTA($V20:$V${20 + APP_CONSTANTS.MAX_DB_ROWS}) & " antrean lagi — lihat tab '📝 Database Konten'", "")`))
+    .setFormula(f(`=IF($V20<>"", "⚠️ +" & COUNTA($V20:$V) & " antrean lagi - lihat tab '📝 Database Konten'", "")`))
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
     .setFontSize(8.5)
     .setFontWeight("bold")
@@ -322,7 +356,7 @@ function renderDashboard() {
   const lateHeaderRow = Math.max(bBarRow + 2, 22);
   sheet.setRowHeight(lateHeaderRow - 1, 14);
   sheet.getRange(lateHeaderRow, 2, 1, 12).merge()
-    .setValue("⏰ DAFTAR KONTEN TELAT (LEWAT TANGGAL TAYANG & BELUM PUBLISHED)")
+    .setValue("⏰ DAFTAR KONTEN TELAT - SEMUA BULAN (LEWAT TANGGAL & BELUM PUBLISHED)")
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
     .setFontSize(10)
     .setFontWeight("bold")
@@ -352,7 +386,7 @@ function renderDashboard() {
   const lateDataRow = lateSubRow + 1;
   const lateDisplayRows = 15;
   sheet.getRange(lateDataRow, 15).setFormula(f(
-    `=IFERROR(SORT(FILTER({${dbName}!C5:C${maxRow}, ${dbName}!E5:E${maxRow}, ${dbName}!F5:F${maxRow}, ${dbName}!G5:G${maxRow}, ${dbName}!J5:J${maxRow}, ${dbName}!K5:K${maxRow}}, ${dbName}!C5:C${maxRow}<>"", ${dbName}!C5:C${maxRow}<TODAY(), ${dbName}!J5:J${maxRow}<>"🟣 Published"), 1, TRUE), {"-", "-", "-", "✅ Tidak ada konten telat!", "-", "-"})`
+    `=IFERROR(SORT(FILTER({${dbName}!$C$${dbStart}:$C, ${dbName}!$E$${dbStart}:$E, ${dbName}!$F$${dbStart}:$F, ${dbName}!$G$${dbStart}:$G, ${dbName}!$J$${dbStart}:$J, ${dbName}!$K$${dbStart}:$K}, ${dbName}!$C$${dbStart}:$C<>"", ${dbName}!$C$${dbStart}:$C<TODAY(), ${dbName}!$J$${dbStart}:$J<>"🟣 Published"), 1, TRUE), {"-", "-", "-", "✅ Tidak ada konten telat!", "-", "-"})`
   ));
 
   const colBFormulas = [];
@@ -398,7 +432,7 @@ function renderDashboard() {
 
   const lateOverflowRow = lateDataRow + lateDisplayRows;
   sheet.getRange(lateOverflowRow, 2, 1, 12).merge()
-    .setFormula(f(`=IF($O${lateOverflowRow}<>"", "⚠️ +" & COUNTA($O${lateOverflowRow}:$O${lateOverflowRow + APP_CONSTANTS.MAX_DB_ROWS}) & " konten telat lainnya belum ditampilkan — buka tab '📝 Database Konten'.", "")`))
+    .setFormula(f(`=IF($O${lateOverflowRow}<>"", "⚠️ +" & COUNTA($O${lateOverflowRow}:$O) & " konten telat lainnya belum ditampilkan - buka tab '📝 Database Konten'.", "")`))
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
     .setFontSize(8.5)
     .setFontWeight("bold")
@@ -425,8 +459,13 @@ function renderDashboard() {
   ];
   sheet.setConditionalFormatRules(cfRules);
 
-  // Proteksi sheet (Warning Only) agar formula tidak terhapus tidak sengaja
+  // Proteksi sheet (Warning Only), sisakan dropdown filter C4, E4, I4:J4 tetap bebas diubah tanpa warning
   const protection = sheet.protect().setDescription("Proteksi Dashboard (Warning Only)");
+  protection.setUnprotectedRanges([
+    sheet.getRange("C4"),
+    sheet.getRange("E4"),
+    sheet.getRange("I4:J4")
+  ]);
   protection.setWarningOnly(true);
 }
 

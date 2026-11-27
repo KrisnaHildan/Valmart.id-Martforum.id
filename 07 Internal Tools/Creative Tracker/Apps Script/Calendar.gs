@@ -6,45 +6,49 @@
 
 /**
  * Merender tab 📅 Kalender Visual berdasarkan bulan (C2) & tahun (E2).
+ * Gunakan options = { skipLock: true } jika pemanggil sudah memegang scriptLock.
  */
-function renderCalendar() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  let calSheet = ss.getSheetByName(APP_CONSTANTS.SHEETS.CALENDAR);
-  if (!calSheet) {
-    calSheet = ss.insertSheet(APP_CONSTANTS.SHEETS.CALENDAR);
+function renderCalendar(options) {
+  const opts = options || {};
+  const lock = LockService.getScriptLock();
+  if (!opts.skipLock) {
+    if (!lock.tryLock(10000)) {
+      return;
+    }
   }
 
-  const dbSheet = ss.getSheetByName(APP_CONSTANTS.SHEETS.DATABASE);
-  if (!dbSheet) return;
+  try {
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+    let calSheet = ss.getSheetByName(APP_CONSTANTS.SHEETS.CALENDAR);
+    if (!calSheet) {
+      calSheet = ss.insertSheet(APP_CONSTANTS.SHEETS.CALENDAR);
+    }
 
-  const rawMonth = calSheet.getRange("C2").getValue();
-  const rawYear = calSheet.getRange("E2").getValue();
-  let targetMonth = (typeof rawMonth === "number" || (typeof rawMonth === "string" && /^\d+$/.test(rawMonth.trim())))
-    ? Number(rawMonth) : NaN;
-  let targetYear = (typeof rawYear === "number" || (typeof rawYear === "string" && /^\d+$/.test(rawYear.trim())))
-    ? Number(rawYear) : NaN;
+    const dbSheet = ss.getSheetByName(APP_CONSTANTS.SHEETS.DATABASE);
+    if (!dbSheet) return;
 
-  const now = new Date();
-  if (!Number.isInteger(targetMonth) || targetMonth < 1 || targetMonth > 12) {
-    targetMonth = now.getMonth() + 1;
+    const now = new Date();
+    const targetMonth = parseMonthFilterValue(calSheet.getRange("C2").getValue(), false, now.getMonth() + 1);
+    const targetYear = parseYearFilterValue(calSheet.getRange("E2").getValue(), false, now.getFullYear());
+
+    const maxRows = calSheet.getMaxRows();
+    if (maxRows >= 5) {
+      calSheet.getRange(5, 1, maxRows - 4, calSheet.getMaxColumns()).clear();
+    }
+    calSheet.setTabColor(APP_CONSTANTS.COLORS.VALMART);
+
+    setupCalendarControls(calSheet, targetMonth, targetYear);
+    const contentMap = loadContentMapFromDatabase(dbSheet, targetMonth, targetYear);
+    drawCalendarGridBatch(calSheet, targetMonth, targetYear, contentMap);
+  } finally {
+    if (!opts.skipLock) {
+      lock.releaseLock();
+    }
   }
-  if (!Number.isInteger(targetYear) || targetYear < 2020) {
-    targetYear = now.getFullYear();
-  }
-
-  const maxRows = calSheet.getMaxRows();
-  if (maxRows >= 5) {
-    calSheet.getRange(5, 1, maxRows - 4, calSheet.getMaxColumns()).clear();
-  }
-  calSheet.setTabColor(APP_CONSTANTS.COLORS.VALMART);
-
-  setupCalendarControls(calSheet, targetMonth, targetYear);
-  const contentMap = loadContentMapFromDatabase(dbSheet, targetMonth, targetYear);
-  drawCalendarGridBatch(calSheet, targetMonth, targetYear, contentMap);
 }
 
 /**
- * Menyiapkan kontrol dropdown Bulan (C2) & Tahun (E2) serta header hari Senin–Minggu.
+ * Menyiapkan kontrol dropdown Bulan (C2) & Tahun (E2) serta header hari Senin-Minggu.
  */
 function setupCalendarControls(sheet, month, year) {
   sheet.setColumnWidth(1, 20);
@@ -61,7 +65,7 @@ function setupCalendarControls(sheet, month, year) {
     SpreadsheetApp.newDataValidation().requireValueInList(["1","2","3","4","5","6","7","8","9","10","11","12"], true).setAllowInvalid(false).build()
   );
   sheet.getRange("E2").setDataValidation(
-    SpreadsheetApp.newDataValidation().requireValueInList(["2025","2026","2027","2028"], true).setAllowInvalid(true).build()
+    SpreadsheetApp.newDataValidation().requireValueInList(getSupportedYearsList(false), true).setAllowInvalid(true).build()
   );
 
   sheet.getRange("F2:H2").merge()
@@ -139,6 +143,7 @@ function buildCalendarMatrix(month, year, contentMap, todayRef) {
     const contentBgs = [];
     const contentColors = [];
     let todayCol = -1;
+    let maxCards = 0;
 
     for (let c = 0; c < 7; c++) {
       const isWeekend = (c >= 5);
@@ -153,15 +158,19 @@ function buildCalendarMatrix(month, year, contentMap, todayRef) {
         const isToday = isCurrentMonth && (currentDay === todayDate);
         if (isToday) todayCol = c;
 
-        headerVals.push(currentDay + (isToday ? "  📍 HARI INI" : ""));
-        headerBgs.push(isToday ? APP_CONSTANTS.COLORS.ACCENT : (isWeekend ? "#E2E8F0" : "#F1F5F9"));
-        headerColors.push(isToday ? "#FFFFFF" : "#334155");
-
+        const cellDate = new Date(year, month - 1, currentDay);
         const items = contentMap[currentDay] || [];
+        let hasLate = false;
+        const visibleCount = Math.min(items.length, APP_CONSTANTS.CALENDAR_MAX_ITEMS_PER_DAY);
+        const effectiveCount = items.length > APP_CONSTANTS.CALENDAR_MAX_ITEMS_PER_DAY ? visibleCount + 1 : visibleCount;
+        if (effectiveCount > maxCards) maxCards = effectiveCount;
+
         if (items.length > 0) {
           const maxShow = APP_CONSTANTS.CALENDAR_MAX_ITEMS_PER_DAY;
           const visibleItems = items.slice(0, maxShow);
           let cardText = visibleItems.map(item => {
+            const late = isTaskLate(cellDate, item.status, today);
+            if (late) hasLate = true;
             const brandLower = item.brand.toLowerCase();
             const brandTag = brandLower.includes("valmart")
               ? "[VAL]"
@@ -169,18 +178,30 @@ function buildCalendarMatrix(month, year, contentMap, todayRef) {
             const statusTag = item.status || "⚪ Draft";
             const picShort = item.pic ? item.pic.split(" ")[0] : "-";
             const topikShort = item.topik.length > 42 ? item.topik.substring(0, 39) + "..." : item.topik;
-            return `${brandTag} ${picShort}\n📌 ${topikShort}\n${statusTag}`;
+            const latePrefix = late ? "🚨 TELAT | " : "";
+            return `${latePrefix}${brandTag} ${picShort}\n📌 ${topikShort}\n${statusTag}`;
           }).join("\n───\n");
 
           if (items.length > maxShow) {
+            if (items.slice(maxShow).some(it => isTaskLate(cellDate, it.status, today))) {
+              hasLate = true;
+            }
             cardText += `\n+${items.length - maxShow} lainnya`;
           }
 
+          headerVals.push(currentDay + (isToday ? "  📍 HARI INI" : (hasLate ? "  🚨 TELAT" : "")));
+          headerBgs.push(isToday ? APP_CONSTANTS.COLORS.ACCENT : (hasLate ? APP_CONSTANTS.COLORS.LATE_BG : (isWeekend ? "#E2E8F0" : "#F1F5F9")));
+          headerColors.push(isToday ? "#FFFFFF" : (hasLate ? APP_CONSTANTS.COLORS.LATE_TEXT : "#334155"));
+
           contentVals.push(cardText);
-          contentBgs.push(isToday ? APP_CONSTANTS.COLORS.ACCENT_SOFT : (isWeekend ? APP_CONSTANTS.COLORS.WEEKEND_BG : "#FFFFFF"));
+          contentBgs.push(isToday ? APP_CONSTANTS.COLORS.ACCENT_SOFT : (hasLate ? "#FEF2F2" : (isWeekend ? APP_CONSTANTS.COLORS.WEEKEND_BG : "#FFFFFF")));
           contentColors.push("#0F172A");
         } else {
-          contentVals.push("—");
+          headerVals.push(currentDay + (isToday ? "  📍 HARI INI" : ""));
+          headerBgs.push(isToday ? APP_CONSTANTS.COLORS.ACCENT : (isWeekend ? "#E2E8F0" : "#F1F5F9"));
+          headerColors.push(isToday ? "#FFFFFF" : "#334155");
+
+          contentVals.push("-");
           contentBgs.push(isToday ? APP_CONSTANTS.COLORS.ACCENT_SOFT : (isWeekend ? APP_CONSTANTS.COLORS.WEEKEND_BG : "#FFFFFF"));
           contentColors.push("#94A3B8");
         }
@@ -191,7 +212,8 @@ function buildCalendarMatrix(month, year, contentMap, todayRef) {
     weeks.push({
       headerVals, headerBgs, headerColors,
       contentVals, contentBgs, contentColors,
-      todayCol
+      todayCol,
+      maxCards
     });
     weekIdx++;
   }
@@ -221,8 +243,10 @@ function drawCalendarGridBatch(sheet, month, year, contentMap) {
   weeks.forEach((wk, idx) => {
     const hRow = startRow + idx * 2;
     const cRow = hRow + 1;
+    const mc = wk.maxCards || 0;
+    const contentHeight = mc <= 0 ? 85 : (mc === 1 ? 105 : (mc === 2 ? 140 : (mc === 3 ? 180 : 220)));
     sheet.setRowHeight(hRow, 24);
-    sheet.setRowHeight(cRow, 125);
+    sheet.setRowHeight(cRow, contentHeight);
 
     allVals.push(wk.headerVals, wk.contentVals);
     allBgs.push(wk.headerBgs, wk.contentBgs);

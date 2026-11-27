@@ -12,7 +12,7 @@ function testRunAll() {
   const results = [];
   const assert = (name, condition, detail) => {
     results.push({ name, pass: Boolean(condition), detail: detail || "" });
-    Logger.log(`${condition ? "[PASS]" : "[FAIL]"} ${name}${detail ? " — " + detail : ""}`);
+    Logger.log(`${condition ? "[PASS]" : "[FAIL]"} ${name}${detail ? " - " + detail : ""}`);
   };
 
   // 1. Test Parser Markdown Toleran
@@ -74,32 +74,48 @@ function testRunAll() {
     builtUrl
   );
 
-  // 3b. Test Parser toleran terhadap formatting markdown (`code`, **bold**) & backslash
+  // 3b. Test Parser toleran terhadap formatting markdown (`code`, **bold**), backslash, & escaped pipe
   const formattedMd = [
     "| ID | Tanggal | Brand | PIC | Topik & Hook | File Naskah |",
     "| :--- | :--- | :--- | :--- | :--- | :--- |",
-    "| `VAL-20261201-01` | **2026-12-01** | **Valmart** | `Helmy` | Tes Format | `Desember 2026\\Week 1\\Brief.md` |"
+    "| `VAL-20261201-01` | **2026-12-01** | **Valmart** | `Helmy` | Tes Format \\| Pipe | `Desember 2026\\Week 1\\Brief.md` |"
   ].join("\n");
   const parsedFormatted = parseMarkdownSchedule(formattedMd);
-  assert("Parser Markdown: strip backtick/bold dan normalisasi backslash",
+  assert("Parser Markdown: strip backtick/bold, normalisasi backslash, & escaped pipe",
     parsedFormatted.rows.length === 1 &&
     parsedFormatted.rows[0].id === "VAL-20261201-01" &&
     parsedFormatted.rows[0].tanggal === "2026-12-01" &&
+    parsedFormatted.rows[0].topik === "Tes Format | Pipe" &&
     parsedFormatted.rows[0].fileNaskah === "Desember 2026/Week 1/Brief.md"
   );
 
-  // 4. Test Render Kalender: bulan 28/30/31 hari & bulan mulai hari Minggu (Nov 2026)
+  // 3c. Test normalisasi PIC kata utuh
+  const picTestCfg = [
+    { name: "Tim A", target: 1 },
+    { name: "Jonathan (Editor & Desain)", target: 0 }
+  ];
+  assert("Normalisasi PIC: tidak salah cocok substring parsial",
+    normalizePic("Fatimah", picTestCfg) === "Fatimah" &&
+    normalizePic("Jonathan", picTestCfg) === "Jonathan (Editor & Desain)"
+  );
+
+  // 4. Test Render Kalender: bulan 28/30/31 hari, bulan mulai Minggu, & penanda TELAT
   const feb2026 = buildCalendarMatrix(2, 2026, {}, refToday); // 28 hari, mulai Minggu
   const apr2026 = buildCalendarMatrix(4, 2026, {}, refToday); // 30 hari
   const dec2026 = buildCalendarMatrix(12, 2026, {}, refToday); // 31 hari
-  const nov2026 = buildCalendarMatrix(11, 2026, {}, refToday); // 1 Nov 2026 = Minggu (kolom indeks 6)
+  const nov2026 = buildCalendarMatrix(11, 2026, {
+    24: [{ brand: "Valmart", pic: "Helmy", topik: "Konten Telat", status: "⚪ Draft" }],
+    25: [{ brand: "Valmart", pic: "Helmy", topik: "Konten Hari Ini", status: "⚪ Draft" }]
+  }, refToday); // 1 Nov 2026 = Minggu (kolom indeks 6)
 
   assert("Kalender: Feb 2026 (28 hari) ter-generate rapi", feb2026.length >= 4 && feb2026[0].headerVals[6] === "1");
   assert("Kalender: Apr 2026 (30 hari) ter-generate rapi", apr2026.length >= 5);
   assert("Kalender: Des 2026 (31 hari) ter-generate rapi", dec2026.length >= 5);
   assert("Kalender: Nov 2026 mulai hari Minggu (kolom ke-7)", nov2026[0].headerVals[6] === "1" && nov2026[0].headerVals[0] === "");
+  const novTextFlat = nov2026.map(w => w.contentVals.join(" ")).join(" ");
+  assert("Kalender: menandai item telat (24 Nov) sebagai TELAT", novTextFlat.includes("🚨 TELAT"));
 
-  // 5. Test Integrasi Terisolasi: Setup Idempotent & Sync Upsert 2x (kolom tim tidak tertimpa)
+  // 5. Test Integrasi Terisolasi: Setup Baru (row 6), Sync Upsert 2x, Chronological Sort, & Auto-Migrasi
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const tempName = "__TEST_DB_TEMP__";
   let tempSheet = ss.getSheetByName(tempName);
@@ -108,38 +124,92 @@ function testRunAll() {
 
   try {
     formatDatabaseSheet(tempSheet, true);
+    const startRow = APP_CONSTANTS.DB_START_ROW; // 6
 
-    // Sync pertama
-    const res1 = upsertScheduleToDatabase(tempSheet, parsed.rows, dummyCfg, { checkLinks: false });
-    assert("Sync #1: menambah 2 baris baru", res1.added === 2 && res1.updated === 0);
+    // Sync pertama (masukkan ID duplikat & tanggal mundur untuk uji dedup + chronological sort)
+    const rowsWithOutOrder = [
+      parsed.rows[0], // 2026-11-16
+      parsed.rows[1], // 2026-11-16
+      { id: "VAL-20261116-01", tanggal: "2026-11-16", brand: "Valmart", pic: "Helmy", topik: "Mid-Month ACE Bounty", fileNaskah: parsed.rows[0].fileNaskah },
+      { id: "VAL-20261102-01", tanggal: "2026-11-02", brand: "Valmart", pic: "Helmy", topik: "Harus Urut Atas", fileNaskah: "file.md" }
+    ];
+    const res1 = upsertScheduleToDatabase(tempSheet, rowsWithOutOrder, dummyCfg, { checkLinks: false, skipFilterRefresh: true });
+    const firstIdSorted = tempSheet.getRange(startRow, APP_CONSTANTS.DB_COLS.ID).getValue();
+    assert("Sync #1: dedup ID & sort kronologis berhasil (3 baris unik, terawal 2 Nov)",
+      res1.added === 3 && firstIdSorted === "VAL-20261102-01",
+      `added=${res1.added}, first=${firstIdSorted}`
+    );
 
-    // Simulasi edit manual tim pada baris 5: ubah Link Draft, Status, dan Catatan
-    tempSheet.getRange(5, APP_CONSTANTS.DB_COLS.DRAFT_LINK).setValue("https://drive.google.com/draft-helmy");
-    tempSheet.getRange(5, APP_CONSTANTS.DB_COLS.STATUS).setValue("🟠 In Review");
-    tempSheet.getRange(5, APP_CONSTANTS.DB_COLS.NOTES).setValue("Sudah oke, tinggal ACC");
+    // Simulasi edit manual tim pada baris ke-2 data (startRow + 1 = VAL-20261116-01)
+    const rowMid = startRow + 1;
+    const rowMart = startRow + 2;
+    tempSheet.getRange(rowMid, APP_CONSTANTS.DB_COLS.DRAFT_LINK).setValue("https://drive.google.com/draft-helmy");
+    tempSheet.getRange(rowMid, APP_CONSTANTS.DB_COLS.STATUS).setValue("🟠 In Review");
+    tempSheet.getRange(rowMid, APP_CONSTANTS.DB_COLS.NOTES).setValue("Sudah oke, tinggal ACC");
 
-    // Simulasi kondisi link 404 pada Sync #1 lalu pulih di Sync #2 tanpa ubah URL maupun kolom lain
+    // Simulasi link 404 pada MART + tag [Tidak ada di GitHub] pada rowMid
     const row2Url = buildGithubBlobUrl(dummyCfg, parsed.rows[1].fileNaskah);
     const brokenFormula = makeHyperlinkFormula(row2Url, "⚠️ Link 404 (Cek Repo)", isIndonesianLocale(ss));
-    tempSheet.getRange(6, APP_CONSTANTS.DB_COLS.SCRIPT_LINK).setFormula(brokenFormula);
+    tempSheet.getRange(rowMart, APP_CONSTANTS.DB_COLS.SCRIPT_LINK).setFormula(brokenFormula);
+    tempSheet.getRange(rowMart, APP_CONSTANTS.DB_COLS.NOTES).setValue("[Tidak ada di GitHub] Catatan lama");
 
-    // Sync kedua dengan judul topik #1 diupdate & link #2 pulih
+    // Sync kedua (tanpa VAL-20261102-01 supaya teruji flag missing, topik rowMid berubah, link MART pulih)
     const updatedRows = JSON.parse(JSON.stringify(parsed.rows));
     updatedRows[0].topik = "Mid-Month ACE Bounty (Revisi Judul)";
-    const res2 = upsertScheduleToDatabase(tempSheet, updatedRows, dummyCfg, { checkLinks: false });
+    const res2 = upsertScheduleToDatabase(tempSheet, updatedRows, dummyCfg, { checkLinks: false, skipFilterRefresh: true });
 
-    const savedStatus = tempSheet.getRange(5, APP_CONSTANTS.DB_COLS.STATUS).getValue();
-    const savedDraft = tempSheet.getRange(5, APP_CONSTANTS.DB_COLS.DRAFT_LINK).getValue();
-    const savedNotes = tempSheet.getRange(5, APP_CONSTANTS.DB_COLS.NOTES).getValue();
-    const savedTopic = tempSheet.getRange(5, APP_CONSTANTS.DB_COLS.TOPIC).getValue();
-    const recoveredLabel = tempSheet.getRange(6, APP_CONSTANTS.DB_COLS.SCRIPT_LINK).getValue();
+    const savedStatus = tempSheet.getRange(rowMid, APP_CONSTANTS.DB_COLS.STATUS).getValue();
+    const savedDraft = tempSheet.getRange(rowMid, APP_CONSTANTS.DB_COLS.DRAFT_LINK).getValue();
+    const savedNotes = tempSheet.getRange(rowMid, APP_CONSTANTS.DB_COLS.NOTES).getValue();
+    const savedTopic = tempSheet.getRange(rowMid, APP_CONSTANTS.DB_COLS.TOPIC).getValue();
+    const recoveredLabel = tempSheet.getRange(rowMart, APP_CONSTANTS.DB_COLS.SCRIPT_LINK).getValue();
+    const recoveredNote = tempSheet.getRange(rowMart, APP_CONSTANTS.DB_COLS.NOTES).getValue();
+    const missingFlagged = tempSheet.getRange(startRow, APP_CONSTANTS.DB_COLS.NOTES).getValue();
 
-    assert("Sync #2: tidak ada duplikat (0 add, 2 update)", res2.added === 0 && res2.updated === 2 && res2.unchanged === 0);
+    assert("Sync #2: tidak ada duplikat (0 add, 2 update, 1 missing)", res2.added === 0 && res2.updated === 2 && res2.missing === 1);
     assert("Sync #2: Status tim tetap utuh", savedStatus === "🟠 In Review", savedStatus);
     assert("Sync #2: Link Draft tim tetap utuh", savedDraft === "https://drive.google.com/draft-helmy", savedDraft);
     assert("Sync #2: Catatan Review tim tetap utuh", savedNotes === "Sudah oke, tinggal ACC", savedNotes);
     assert("Sync #2: Topik dari GitHub terupdate", savedTopic === "Mid-Month ACE Bounty (Revisi Judul)", savedTopic);
-    assert("Sync #2: Label Link 404 pulih ke Buka Naskah", recoveredLabel === "📖 Buka Naskah", recoveredLabel);
+    assert("Sync #2: Label Link 404 pulih & tag missing dibersihkan", recoveredLabel === "📖 Buka Naskah" && recoveredNote === "Catatan lama", recoveredNote);
+    assert("Sync #2: Baris hilang dari GitHub diberi tanda non-destruktif", String(missingFlagged).includes("[Tidak ada di GitHub]"), missingFlagged);
+
+    // Uji Filter Bulan/Tahun Database Konten
+    tempSheet.getRange("D4").setValue(11);
+    tempSheet.getRange("F4").setValue(2026);
+    applyDatabaseMonthYearFilter(tempSheet);
+    assert("Filter Database: kriteria filter tanggal aktif terpasang untuk 11/2026",
+      Boolean(tempSheet.getFilter() && tempSheet.getFilter().getColumnFilterCriteria(APP_CONSTANTS.DB_COLS.DATE))
+    );
+    tempSheet.getRange("D4").setValue("Semua");
+    tempSheet.getRange("F4").setValue("Semua");
+    applyDatabaseMonthYearFilter(tempSheet);
+    assert("Filter Database: memilih 'Semua' membersihkan kriteria filter tanggal",
+      Boolean(tempSheet.getFilter() && !tempSheet.getFilter().getColumnFilterCriteria(APP_CONSTANTS.DB_COLS.DATE))
+    );
+
+    // Uji kapasitas dinamis > 1000 baris
+    const capLarge = getDatabaseCapacityRows(tempSheet, 1250);
+    assert("Kapasitas Dinamis: sanggup melebihi 1.000 baris (1250)", capLarge >= 1250, String(capLarge));
+
+    // Uji Auto-Migrasi dari layout lama (header baris 4, data baris 5) ke layout baru (header baris 5, data baris 6)
+    const migName = "__TEST_MIG_TEMP__";
+    let migSheet = ss.getSheetByName(migName);
+    if (migSheet) ss.deleteSheet(migSheet);
+    migSheet = ss.insertSheet(migName);
+    try {
+      migSheet.getRange(4, 2, 1, 3).setValues([["ID", "Tanggal Tayang", "Hari"]]);
+      migSheet.getRange(5, 2, 1, 3).setValues([["OLD-001", new Date(2026, 9, 20), "Selasa"]]);
+      formatDatabaseSheet(migSheet, false);
+      const migratedHeader = migSheet.getRange(5, 2).getValue();
+      const migratedDataId = migSheet.getRange(6, 2).getValue();
+      assert("Auto-Migrasi: header geser ke baris 5 dan data lama utuh di baris 6",
+        migratedHeader === "ID" && migratedDataId === "OLD-001",
+        `header=${migratedHeader}, data=${migratedDataId}`
+      );
+    } finally {
+      ss.deleteSheet(migSheet);
+    }
   } finally {
     ss.deleteSheet(tempSheet);
   }

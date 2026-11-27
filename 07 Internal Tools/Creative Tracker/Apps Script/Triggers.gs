@@ -26,19 +26,47 @@ function onEdit(e) {
   if (sheetName === APP_CONSTANTS.SHEETS.DATABASE) {
     const startRow = e.range.getRow();
     const numRows = e.range.getNumRows();
+    const endRow = startRow + numRows - 1;
     const startCol = e.range.getColumn();
-    const endCol = startCol + e.range.getNumColumns() - 1;
+    const numCols = e.range.getNumColumns();
+    const endCol = startCol + numCols - 1;
 
-    if (startRow < APP_CONSTANTS.DB_START_ROW) return;
+    // 2a. Filter Bulan (D4) atau Tahun (F4) diubah di baris kontrol Database
+    if (startRow <= APP_CONSTANTS.DB_FILTER_ROW && endRow >= APP_CONSTANTS.DB_FILTER_ROW) {
+      if ((startCol <= 4 && endCol >= 4) || (startCol <= 6 && endCol >= 6)) {
+        applyDatabaseMonthYearFilter(sheet);
+        showToastSafe("Filter Database Konten diperbarui.", "🔍 Filter Aktif", 2);
+      }
+      if (endRow < APP_CONSTANTS.DB_START_ROW) return;
+    }
 
-    // Jika Tanggal Tayang (Col C) diedit -> isi otomatis Hari (Col D)
+    if (endRow < APP_CONSTANTS.DB_START_ROW) return;
+
+    const effStartRow = Math.max(startRow, APP_CONSTANTS.DB_START_ROW);
+    const effNumRows = endRow - effStartRow + 1;
+
+    // Jika Tanggal Tayang (Col C) diedit -> normalisasi ke Date & isi otomatis Hari (Col D)
+    const editedDates = [];
     if (startCol <= APP_CONSTANTS.DB_COLS.DATE && endCol >= APP_CONSTANTS.DB_COLS.DATE) {
-      const dateVals = sheet.getRange(startRow, APP_CONSTANTS.DB_COLS.DATE, numRows, 1).getValues();
+      const dateRange = sheet.getRange(effStartRow, APP_CONSTANTS.DB_COLS.DATE, effNumRows, 1);
+      const dateVals = dateRange.getValues();
+      let needDateWrite = false;
+      const normDatesOut = [];
       const dayOut = dateVals.map(r => {
         const dt = parseDateSafe(r[0]);
+        if (dt) editedDates.push(dt);
+        if (dt && !(r[0] instanceof Date)) {
+          needDateWrite = true;
+          normDatesOut.push([dt]);
+        } else {
+          normDatesOut.push([r[0]]);
+        }
         return [dt ? getIndonesianDayName(dt) : ""];
       });
-      sheet.getRange(startRow, APP_CONSTANTS.DB_COLS.DAY, numRows, 1).setValues(dayOut);
+      if (needDateWrite) {
+        dateRange.setValues(normDatesOut).setNumberFormat("yyyy-mm-dd");
+      }
+      sheet.getRange(effStartRow, APP_CONSTANTS.DB_COLS.DAY, effNumRows, 1).setValues(dayOut);
     }
 
     // Jika Link Draft (Col I), Status (Col J), atau Catatan (Col K) diedit -> isi Update Terakhir (Col L)
@@ -49,22 +77,54 @@ function onEdit(e) {
 
     if (editedTeamCols) {
       const now = new Date();
-      const stamps = Array.from({ length: numRows }, () => [now]);
-      sheet.getRange(startRow, APP_CONSTANTS.DB_COLS.UPDATED_AT, numRows, 1)
+      const stamps = Array.from({ length: effNumRows }, () => [now]);
+      sheet.getRange(effStartRow, APP_CONSTANTS.DB_COLS.UPDATED_AT, effNumRows, 1)
         .setValues(stamps)
         .setNumberFormat("yyyy-mm-dd hh:mm");
+
+      // Pengingat ringan jika Status diubah ke In Review tapi Link Draft masih kosong
+      if (effNumRows === 1 && startCol <= APP_CONSTANTS.DB_COLS.STATUS && endCol >= APP_CONSTANTS.DB_COLS.STATUS) {
+        const curStatus = String(sheet.getRange(effStartRow, APP_CONSTANTS.DB_COLS.STATUS).getValue() || "").trim();
+        const curDraft = String(sheet.getRange(effStartRow, APP_CONSTANTS.DB_COLS.DRAFT_LINK).getValue() || "").trim();
+        if (curStatus === "🟠 In Review" && !curDraft) {
+          showToastSafe("Link Draft Preview masih kosong! Jangan lupa tempel link draft di kolom I.", "⚠️ Cek Link Draft", 5);
+        }
+      }
     }
 
-    // Refresh kalender jika kolom yang tampil di kalender berubah
+    // Refresh kalender hanya jika kolom terkait berubah DAN tanggal barisnya ada di bulan aktif Kalender
     const affectsCalendar =
       (startCol <= APP_CONSTANTS.DB_COLS.PIC && endCol >= APP_CONSTANTS.DB_COLS.DATE) ||
       (startCol <= APP_CONSTANTS.DB_COLS.TOPIC && endCol >= APP_CONSTANTS.DB_COLS.TOPIC) ||
       (startCol <= APP_CONSTANTS.DB_COLS.STATUS && endCol >= APP_CONSTANTS.DB_COLS.STATUS);
 
-    if (affectsCalendar) {
+    if (affectsCalendar && shouldRefreshCalendarForRows(sheet, effStartRow, effNumRows, editedDates)) {
       renderCalendar();
     }
   }
+}
+
+/**
+ * Mengecek apakah baris yang diedit ada di bulan/tahun yang sedang tampil di Kalender Visual.
+ */
+function shouldRefreshCalendarForRows(dbSheet, startRow, numRows, preParsedDates) {
+  const ss = dbSheet.getParent();
+  const calSheet = ss.getSheetByName(APP_CONSTANTS.SHEETS.CALENDAR);
+  if (!calSheet) return false;
+
+  const calMonth = parseMonthFilterValue(calSheet.getRange("C2").getValue(), false, new Date().getMonth() + 1);
+  const calYear = parseYearFilterValue(calSheet.getRange("E2").getValue(), false, new Date().getFullYear());
+
+  let datesToCheck = preParsedDates;
+  if (!datesToCheck || datesToCheck.length === 0) {
+    datesToCheck = dbSheet.getRange(startRow, APP_CONSTANTS.DB_COLS.DATE, numRows, 1)
+      .getValues()
+      .map(r => parseDateSafe(r[0]))
+      .filter(Boolean);
+  }
+
+  if (datesToCheck.length === 0) return true;
+  return datesToCheck.some(dt => (dt.getMonth() + 1) === calMonth && dt.getFullYear() === calYear);
 }
 
 /**
@@ -107,7 +167,7 @@ function scheduledDailyEmailDigest() {
     const pic = rows[i][4] || "-";
     const topik = rows[i][5] || "-";
     const status = String(rows[i][8] || "").trim();
-    const label = `[${brand}] ${topik} (${pic}) — ${status}`;
+    const label = `[${brand}] ${topik} (${pic}) - ${status}`;
 
     if (status === "🟠 In Review" || status === "🔴 Revision") {
       reviewItems.push(`${formatDateIso(dt)} | ${label}`);
@@ -149,7 +209,7 @@ function scheduledDailyEmailDigest() {
 
   MailApp.sendEmail({
     to: config.emailRecipients.join(","),
-    subject: `[Creative Tracker] ${reviewItems.length} Review, ${lateItems.length} Telat — ${formatDateIso(today)}`,
+    subject: `[Creative Tracker] ${reviewItems.length} Review, ${lateItems.length} Telat (${formatDateIso(today)})`,
     body: bodyLines.join("\n")
   });
 }

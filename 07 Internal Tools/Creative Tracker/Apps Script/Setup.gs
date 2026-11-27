@@ -26,11 +26,14 @@ function onOpen() {
 /**
  * Setup awal yang aman (idempotent): tidak menghapus data yang sudah ada.
  */
-function setupInitial() {
+function setupInitial(options) {
+  const opts = options || {};
   const lock = LockService.getScriptLock();
-  if (!lock.tryLock(15000)) {
-    showAlertSafe("Sedang Diproses", "Setup sedang dijalankan oleh pengguna lain. Coba lagi sebentar.");
-    return;
+  if (!opts.skipLock) {
+    if (!lock.tryLock(15000)) {
+      showAlertSafe("Sedang Diproses", "Setup sedang dijalankan oleh pengguna lain. Coba lagi sebentar.");
+      return;
+    }
   }
 
   try {
@@ -68,13 +71,15 @@ function setupInitial() {
       }
     });
 
-    renderCalendar();
+    renderCalendar({ skipLock: true });
     renderDashboard();
     ss.setActiveSheet(ss.getSheetByName(APP_CONSTANTS.SHEETS.DASHBOARD));
 
     showToastSafe("Setup awal selesai. Data yang ada tetap aman.", "✅ Setup Berhasil", 5);
   } finally {
-    lock.releaseLock();
+    if (!opts.skipLock) {
+      lock.releaseLock();
+    }
   }
 }
 
@@ -92,8 +97,9 @@ function refreshAllViews() {
     const dbSheet = ss.getSheetByName(APP_CONSTANTS.SHEETS.DATABASE);
     if (dbSheet) {
       applyDatabaseValidationsAndRules(dbSheet);
+      applyDatabaseMonthYearFilter(dbSheet);
     }
-    renderCalendar();
+    renderCalendar({ skipLock: true });
     renderDashboard();
     showToastSafe("Dashboard dan Kalender Visual sudah diperbarui.", "🔄 Refresh Selesai", 4);
   } finally {
@@ -138,7 +144,7 @@ function resetTotalWithConfirmation() {
 
     const calSheet = ensureSheet(ss, APP_CONSTANTS.SHEETS.CALENDAR);
     calSheet.clear();
-    renderCalendar();
+    renderCalendar({ skipLock: true });
 
     const dashSheet = ensureSheet(ss, APP_CONSTANTS.SHEETS.DASHBOARD, 0);
     dashSheet.clear();
@@ -168,21 +174,58 @@ function ensureSheet(ss, name, index) {
 }
 
 /**
- * Memformat tab 📝 Database Konten (header, lebar kolom, filter, banding, validasi 1000 baris).
+ * Memformat tab 📝 Database Konten (bar filter Bulan/Tahun, header, auto-migrasi, kapasitas dinamis).
  */
 function formatDatabaseSheet(sheet, clearExisting) {
+  const ss = sheet.getParent();
+  const isIndo = isIndonesianLocale(ss);
+  const f = (formulaStr) => localizeFormula(formulaStr, isIndo);
+  const now = new Date();
+
+  let prevMonthRaw = "";
+  let prevYearRaw = "";
+  let migratedOldLayout = false;
+
   if (clearExisting) {
+    sheet.getProtections(SpreadsheetApp.ProtectionType.SHEET).forEach(p => p.remove());
+    sheet.clearConditionalFormatRules();
     sheet.clear();
+  } else {
+    // Deteksi layout lama (header masih di baris 4) agar data existing di baris 5+ tidak tertimpa
+    const b4Val = String(sheet.getRange("B4").getValue() || "").trim();
+    const c4Val = String(sheet.getRange("C4").getValue() || "").trim();
+    const c5Val = String(sheet.getRange("C5").getValue() || "").trim();
+    if (b4Val === "ID" && c4Val === "Tanggal Tayang" && c5Val !== "Tanggal Tayang") {
+      const oldFilter = sheet.getFilter();
+      if (oldFilter) oldFilter.remove();
+      sheet.getBandings().forEach(b => b.remove());
+      sheet.getProtections(SpreadsheetApp.ProtectionType.SHEET).forEach(p => p.remove());
+      sheet.insertRowBefore(4);
+      sheet.getRange(4, 1, 1, 12).clear();
+      migratedOldLayout = true;
+    } else if (c5Val === "Tanggal Tayang") {
+      prevMonthRaw = sheet.getRange("D4").getValue();
+      prevYearRaw = sheet.getRange("F4").getValue();
+    }
   }
+
+  const activeMonth = (clearExisting || migratedOldLayout || prevMonthRaw === "")
+    ? (now.getMonth() + 1)
+    : parseMonthFilterValue(prevMonthRaw, true, now.getMonth() + 1);
+  const activeYear = (clearExisting || migratedOldLayout || prevYearRaw === "")
+    ? now.getFullYear()
+    : parseYearFilterValue(prevYearRaw, true, now.getFullYear());
+
   sheet.setTabColor(APP_CONSTANTS.COLORS.ACCENT);
 
   const totalCols = APP_CONSTANTS.DB_HEADERS.length; // 11 kolom (B..L)
   const startCol = APP_CONSTANTS.DB_COLS.ID;         // 2 (B)
   const endColLetter = columnToLetter(startCol + totalCols - 1); // L
 
-  // Title Banner
-  sheet.getRange(`B2:${endColLetter}2`).merge()
-    .setValue("📝 MASTER DATABASE KONTEN — VALMART.ID & MARTFORUM.ID")
+  // Title Banner (C2:L2 agar tidak terpotong kolom B yang disembunyikan)
+  sheet.getRange(`B2:${endColLetter}2`).breakApart();
+  sheet.getRange(`C2:${endColLetter}2`).merge()
+    .setValue("📝 MASTER DATABASE KONTEN - VALMART.ID & MARTFORUM.ID")
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
     .setFontSize(13)
     .setFontWeight("bold")
@@ -192,8 +235,9 @@ function formatDatabaseSheet(sheet, clearExisting) {
     .setVerticalAlignment("middle");
   sheet.setRowHeight(2, 38);
 
-  sheet.getRange(`B3:${endColLetter}3`).merge()
-    .setValue("💡 Tim cukup isi 'Link Draft Preview', ubah 'Status', dan tambah 'Catatan Review'. Kolom lainnya otomatis dari Sync GitHub.")
+  sheet.getRange(`B3:${endColLetter}3`).breakApart();
+  sheet.getRange(`C3:${endColLetter}3`).merge()
+    .setValue("💡 Isi 'Link Draft Preview', 'Status', & 'Catatan Review'. Gunakan Filter Bulan/Tahun di baris 4 untuk fokus periode atau pilih 'Semua'.")
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
     .setFontSize(9)
     .setFontColor(APP_CONSTANTS.COLORS.MUTED_TEXT)
@@ -201,8 +245,51 @@ function formatDatabaseSheet(sheet, clearExisting) {
     .setHorizontalAlignment("center");
   sheet.setRowHeight(3, 22);
 
-  // Header tabel baris 4
-  sheet.getRange(4, startCol, 1, totalCols).setValues([APP_CONSTANTS.DB_HEADERS])
+  // Baris 4: Filter Bulan & Tahun + Penghitung Konten Tampil
+  sheet.getRange(`B4:${endColLetter}4`).breakApart();
+  sheet.setRowHeight(4, 28);
+  sheet.getRange("C4").setValue("🗓️ Filter Bulan:")
+    .setFontFamily(APP_CONSTANTS.FONT_FAMILY).setFontSize(9.5).setFontWeight("bold")
+    .setFontColor("#0F172A").setBackground("#FFFFFF")
+    .setHorizontalAlignment("right").setVerticalAlignment("middle");
+  sheet.getRange("D4").setValue(activeMonth)
+    .setNumberFormat(typeof activeMonth === "number" ? "0" : "@")
+    .setFontFamily(APP_CONSTANTS.FONT_FAMILY).setFontSize(10).setFontWeight("bold")
+    .setFontColor("#1E1B4B").setHorizontalAlignment("center").setVerticalAlignment("middle")
+    .setBackground(APP_CONSTANTS.COLORS.ACCENT_SOFT);
+  sheet.getRange("E4").setValue("Tahun:")
+    .setFontFamily(APP_CONSTANTS.FONT_FAMILY).setFontSize(9.5).setFontWeight("bold")
+    .setFontColor("#0F172A").setBackground("#FFFFFF")
+    .setHorizontalAlignment("right").setVerticalAlignment("middle");
+  sheet.getRange("F4").setValue(activeYear)
+    .setNumberFormat(typeof activeYear === "number" ? "0" : "@")
+    .setFontFamily(APP_CONSTANTS.FONT_FAMILY).setFontSize(10).setFontWeight("bold")
+    .setFontColor("#1E1B4B").setHorizontalAlignment("center").setVerticalAlignment("middle")
+    .setBackground(APP_CONSTANTS.COLORS.ACCENT_SOFT);
+
+  sheet.getRange("D4").setDataValidation(
+    SpreadsheetApp.newDataValidation()
+      .requireValueInList(["Semua", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"], true)
+      .setAllowInvalid(false)
+      .build()
+  );
+  sheet.getRange("F4").setDataValidation(
+    SpreadsheetApp.newDataValidation()
+      .requireValueInList(getSupportedYearsList(true), true)
+      .setAllowInvalid(true)
+      .build()
+  );
+
+  const dbStart = APP_CONSTANTS.DB_START_ROW;
+  sheet.getRange(`G4:${endColLetter}4`).merge()
+    .setFormula(f(`="Menampilkan " & SUBTOTAL(103, $G$${dbStart}:$G) & " dari " & COUNTA($G$${dbStart}:$G) & " total konten"`))
+    .setFontFamily(APP_CONSTANTS.FONT_FAMILY).setFontSize(9).setFontWeight("bold")
+    .setFontColor("#4338CA").setBackground("#F8FAFC")
+    .setHorizontalAlignment("right").setVerticalAlignment("middle");
+
+  // Header tabel baris 5
+  const headerRow = APP_CONSTANTS.DB_HEADER_ROW;
+  sheet.getRange(headerRow, startCol, 1, totalCols).setValues([APP_CONSTANTS.DB_HEADERS])
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
     .setFontSize(10)
     .setFontWeight("bold")
@@ -210,7 +297,7 @@ function formatDatabaseSheet(sheet, clearExisting) {
     .setFontColor(APP_CONSTANTS.COLORS.SUBHEADER_TEXT)
     .setHorizontalAlignment("center")
     .setVerticalAlignment("middle");
-  sheet.setRowHeight(4, 34);
+  sheet.setRowHeight(headerRow, 34);
 
   // Lebar kolom
   const widths = [
@@ -231,33 +318,137 @@ function formatDatabaseSheet(sheet, clearExisting) {
 
   // Sembunyikan kolom ID agar tampilan bersih untuk tim
   sheet.hideColumns(APP_CONSTANTS.DB_COLS.ID);
-  sheet.setFrozenRows(4);
+  sheet.setFrozenRows(headerRow);
+
+  const capacityRows = getDatabaseCapacityRows(sheet, 0);
+  ensureDatabasePhysicalRows(sheet, dbStart + capacityRows - 1);
 
   // Banded rows & Auto Filter
-  const existingBandings = sheet.getBandings();
-  existingBandings.forEach(b => b.remove());
-  const tableRange = sheet.getRange(4, startCol, APP_CONSTANTS.MAX_DB_ROWS + 1, totalCols);
+  sheet.getBandings().forEach(b => b.remove());
+  const tableRange = sheet.getRange(headerRow, startCol, capacityRows + 1, totalCols);
   tableRange.applyRowBanding(SpreadsheetApp.BandingTheme.LIGHT_GREY, true, false);
 
   const existingFilter = sheet.getFilter();
   if (existingFilter) existingFilter.remove();
   tableRange.createFilter();
 
-  applyDatabaseValidationsAndRules(sheet);
+  applyDatabaseValidationsAndRules(sheet, capacityRows);
+  applyDatabaseProtection(sheet, capacityRows);
+  applyDatabaseMonthYearFilter(sheet);
 }
 
 /**
- * Menerapkan data validation (1000 baris) & conditional formatting di Database Konten.
+ * Memastikan jumlah baris fisik sheet mencukupi target row terakhir.
  */
-function applyDatabaseValidationsAndRules(sheet) {
+function ensureDatabasePhysicalRows(sheet, targetLastRow) {
+  const maxRows = sheet.getMaxRows();
+  if (maxRows < targetLastRow) {
+    sheet.insertRowsAfter(maxRows, targetLastRow - maxRows);
+  }
+}
+
+/**
+ * Memperluas kapasitas format, filter, dan validasi secara otomatis jika data mendekati batas bawah.
+ */
+function ensureDatabaseCapacityIfNeeded(sheet, minNeededDataRows) {
+  const headerRow = APP_CONSTANTS.DB_HEADER_ROW;
   const startRow = APP_CONSTANTS.DB_START_ROW;
-  const maxRows = APP_CONSTANTS.MAX_DB_ROWS;
+  const startCol = APP_CONSTANTS.DB_COLS.ID;
+  const totalCols = APP_CONSTANTS.DB_HEADERS.length;
+  const neededEndRow = startRow + Math.max(minNeededDataRows || 0, 0) - 1;
+  const existingFilter = sheet.getFilter();
+  const filterEndRow = existingFilter ? existingFilter.getRange().getLastRow() : 0;
+
+  if (existingFilter && filterEndRow >= neededEndRow && sheet.getMaxRows() >= neededEndRow) {
+    return;
+  }
+
+  const capacityRows = getDatabaseCapacityRows(sheet, minNeededDataRows);
+  ensureDatabasePhysicalRows(sheet, startRow + capacityRows - 1);
+
+  sheet.getBandings().forEach(b => b.remove());
+  const tableRange = sheet.getRange(headerRow, startCol, capacityRows + 1, totalCols);
+  tableRange.applyRowBanding(SpreadsheetApp.BandingTheme.LIGHT_GREY, true, false);
+
+  if (existingFilter) existingFilter.remove();
+  tableRange.createFilter();
+
+  applyDatabaseValidationsAndRules(sheet, capacityRows);
+  applyDatabaseProtection(sheet, capacityRows);
+}
+
+/**
+ * Memasang proteksi Warning-Only untuk kolom otomatis (D4, F4, I..K tetap bebas diedit tanpa peringatan).
+ */
+function applyDatabaseProtection(sheet, capacityRows) {
+  const startRow = APP_CONSTANTS.DB_START_ROW;
+  const rows = capacityRows || getDatabaseCapacityRows(sheet, 0);
+  sheet.getProtections(SpreadsheetApp.ProtectionType.SHEET).forEach(p => p.remove());
+  const protection = sheet.protect().setDescription("Proteksi Kolom Otomatis Database (Warning Only)");
+  protection.setUnprotectedRanges([
+    sheet.getRange("D4"),
+    sheet.getRange("F4"),
+    sheet.getRange(startRow, APP_CONSTANTS.DB_COLS.DRAFT_LINK, rows, 3) // I..K (Link Draft, Status, Catatan)
+  ]);
+  protection.setWarningOnly(true);
+}
+
+/**
+ * Menerapkan filter AutoFilter kolom Tanggal berdasarkan pilihan Bulan (D4) & Tahun (F4).
+ */
+function applyDatabaseMonthYearFilter(sheet) {
+  if (!sheet) return;
+  const ss = sheet.getParent();
+  const isIndo = isIndonesianLocale(ss);
+  const f = (formulaStr) => localizeFormula(formulaStr, isIndo);
+
+  const rawMonth = sheet.getRange("D4").getValue();
+  const rawYear = sheet.getRange("F4").getValue();
+  const monthChoice = (rawMonth === "" || rawMonth === null) ? "Semua" : parseMonthFilterValue(rawMonth, true, "Semua");
+  const yearChoice = (rawYear === "" || rawYear === null) ? "Semua" : parseYearFilterValue(rawYear, true, "Semua");
+
+  // Rapikan format angka/teks pada sel D4 dan F4 sesuai pilihannya
+  sheet.getRange("D4").setNumberFormat(typeof monthChoice === "number" ? "0" : "@");
+  sheet.getRange("F4").setNumberFormat(typeof yearChoice === "number" ? "0" : "@");
+
+  let filter = sheet.getFilter();
+  if (!filter) {
+    const capacityRows = getDatabaseCapacityRows(sheet, 0);
+    const tableRange = sheet.getRange(APP_CONSTANTS.DB_HEADER_ROW, APP_CONSTANTS.DB_COLS.ID, capacityRows + 1, APP_CONSTANTS.DB_HEADERS.length);
+    filter = tableRange.createFilter();
+  }
+
+  const dateCol = APP_CONSTANTS.DB_COLS.DATE;
+  const startRow = APP_CONSTANTS.DB_START_ROW;
+
+  if (monthChoice === "Semua" && yearChoice === "Semua") {
+    filter.removeColumnFilterCriteria(dateCol);
+    return;
+  }
+
+  const conds = [`ISNUMBER($C${startRow})`];
+  if (monthChoice !== "Semua") conds.push(`MONTH($C${startRow})=${monthChoice}`);
+  if (yearChoice !== "Semua") conds.push(`YEAR($C${startRow})=${yearChoice}`);
+
+  const formula = f(`=AND(${conds.join(", ")})`);
+  const criteria = SpreadsheetApp.newFilterCriteria()
+    .whenFormulaSatisfied(formula)
+    .build();
+  filter.setColumnFilterCriteria(dateCol, criteria);
+}
+
+/**
+ * Menerapkan data validation & conditional formatting di Database Konten sesuai kapasitas dinamis.
+ */
+function applyDatabaseValidationsAndRules(sheet, capacityRows) {
+  const startRow = APP_CONSTANTS.DB_START_ROW;
+  const maxRows = capacityRows || getDatabaseCapacityRows(sheet, 0);
   const configSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(APP_CONSTANTS.SHEETS.CONFIG);
 
-  // Validasi Tanggal
+  // Validasi Tanggal ketat agar formula Dashboard selalu sinkron dengan Calendar
   const dateRule = SpreadsheetApp.newDataValidation()
     .requireDate()
-    .setAllowInvalid(true)
+    .setAllowInvalid(false)
     .build();
   sheet.getRange(startRow, APP_CONSTANTS.DB_COLS.DATE, maxRows, 1)
     .setDataValidation(dateRule)

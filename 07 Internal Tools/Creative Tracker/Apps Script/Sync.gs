@@ -91,7 +91,7 @@ function syncFromGithub(filterMonth, filterYear) {
     const config = getAppConfig();
     let dbSheet = ss.getSheetByName(APP_CONSTANTS.SHEETS.DATABASE);
     if (!dbSheet) {
-      setupInitial();
+      setupInitial({ skipLock: true });
       dbSheet = ss.getSheetByName(APP_CONSTANTS.SHEETS.DATABASE);
     }
 
@@ -122,7 +122,7 @@ function syncFromGithub(filterMonth, filterYear) {
       checkLinks: true
     });
 
-    renderCalendar();
+    renderCalendar({ skipLock: true });
     renderDashboard();
 
     const msg =
@@ -132,6 +132,7 @@ function syncFromGithub(filterMonth, filterYear) {
       `• Tidak berubah: ${summary.unchanged}\n` +
       `• Tidak ada di GitHub: ${summary.missing}\n` +
       (summary.linkWarnings > 0 ? `• ⚠️ Peringatan link 404: ${summary.linkWarnings} baris\n` : "") +
+      (summary.rateLimitWarnings > 0 ? `• ⏳ Cek link dilewati (rate limit GitHub): ${summary.rateLimitWarnings} baris\n` : "") +
       (parseResult.warnings.length > 0 ? `\nCatatan parser: ${parseResult.warnings.length} baris dilewati karena format tidak valid.` : "");
 
     showAlertSafe("📥 Ringkasan Sinkronisasi", msg);
@@ -206,17 +207,61 @@ function handleGithubApiResponse(resp, relativePath) {
 }
 
 /**
- * Cek ringan apakah file naskah ada di GitHub (hasil di-cache per path selama 1 kali sync).
+ * Mengambil indeks seluruh file repo dalam 1 kali request Git Trees API untuk menghindari N+1 HTTP calls.
+ */
+function fetchGithubTreeIndex(config) {
+  const token = PropertiesService.getScriptProperties().getProperty(APP_CONSTANTS.SCRIPT_PROP_GITHUB_TOKEN);
+  const headers = {
+    "Accept": "application/vnd.github.v3+json",
+    "User-Agent": "Valmart-Martforum-Tracker"
+  };
+  if (token) headers["Authorization"] = "Bearer " + token;
+
+  try {
+    const resp = UrlFetchApp.fetch(buildGithubTreeApiUrl(config), {
+      method: "get",
+      muteHttpExceptions: true,
+      headers: headers
+    });
+    const code = resp.getResponseCode();
+    if (code === 200) {
+      const json = JSON.parse(resp.getContentText("UTF-8"));
+      if (json && Array.isArray(json.tree) && !json.truncated) {
+        const files = {};
+        for (let i = 0; i < json.tree.length; i++) {
+          if (json.tree[i].type === "blob" && json.tree[i].path) {
+            files[json.tree[i].path] = true;
+          }
+        }
+        return { ok: true, files: files };
+      }
+    }
+    return { ok: false, rateLimited: (code === 403 || code === 429) };
+  } catch (e) {
+    return { ok: false, rateLimited: false };
+  }
+}
+
+/**
+ * Cek keberadaan file naskah di GitHub (utamakan tree index, fallback per-path yang membedakan 404 vs rate-limit).
  */
 function checkGithubFileExists(config, relativePath, cache) {
-  if (!relativePath) return false;
+  if (!relativePath) return { exists: false, isNotFound: true, indeterminate: false };
+
+  if (cache && cache.__treeFiles) {
+    const fullPath = joinRepoPath(config.basePath, relativePath);
+    const found = Boolean(cache.__treeFiles[fullPath]);
+    return { exists: found, isNotFound: !found, indeterminate: false };
+  }
+
   if (cache && Object.prototype.hasOwnProperty.call(cache, relativePath)) {
     return cache[relativePath];
   }
 
   const token = PropertiesService.getScriptProperties().getProperty(APP_CONSTANTS.SCRIPT_PROP_GITHUB_TOKEN);
-  let exists = false;
+  let result = { exists: true, isNotFound: false, indeterminate: true };
   try {
+    let code = 0;
     if (token) {
       const apiUrl = buildGithubApiUrl(config, relativePath);
       const resp = UrlFetchApp.fetch(apiUrl, {
@@ -228,7 +273,7 @@ function checkGithubFileExists(config, relativePath, cache) {
           "User-Agent": "Valmart-Martforum-Tracker"
         }
       });
-      exists = (resp.getResponseCode() === 200);
+      code = resp.getResponseCode();
     } else {
       const rawUrl = buildGithubRawUrl(config, relativePath);
       const resp = UrlFetchApp.fetch(rawUrl, {
@@ -236,14 +281,35 @@ function checkGithubFileExists(config, relativePath, cache) {
         muteHttpExceptions: true,
         headers: { "User-Agent": "Valmart-Martforum-Tracker" }
       });
-      exists = (resp.getResponseCode() === 200);
+      code = resp.getResponseCode();
+    }
+
+    if (code === 200) {
+      result = { exists: true, isNotFound: false, indeterminate: false };
+    } else if (code === 404 || code === 410) {
+      result = { exists: false, isNotFound: true, indeterminate: false };
+    } else {
+      // Rate limit (403/429) atau gangguan server (5xx): jangan tandai sebagai 404
+      result = { exists: true, isNotFound: false, indeterminate: true };
     }
   } catch (e) {
-    exists = false;
+    result = { exists: true, isNotFound: false, indeterminate: true };
   }
 
-  if (cache) cache[relativePath] = exists;
-  return exists;
+  if (cache) cache[relativePath] = result;
+  return result;
+}
+
+/**
+ * Memecah baris tabel Markdown dengan aman terhadap pipe yang di-escape (\|).
+ */
+function splitMarkdownTableRow(line) {
+  const placeholder = "__ESCAPED_PIPE__";
+  const safeLine = String(line || "").replace(/\\\|/g, placeholder);
+  const cells = safeLine.split("|").map(c => c.replace(new RegExp(placeholder, "g"), "|").trim());
+  if (cells.length > 0 && cells[0] === "") cells.shift();
+  if (cells.length > 0 && cells[cells.length - 1] === "") cells.pop();
+  return cells;
 }
 
 /**
@@ -264,10 +330,7 @@ function parseMarkdownSchedule(markdownText) {
       continue;
     }
 
-    // Pecah kolom dan buang pipe kosong di awal/akhir baris
-    let cells = line.split("|").map(c => c.trim());
-    if (cells.length > 0 && cells[0] === "") cells.shift();
-    if (cells.length > 0 && cells[cells.length - 1] === "") cells.pop();
+    const cells = splitMarkdownTableRow(line);
     if (cells.length < 4) continue;
 
     // Deteksi baris separator (--- / :---:)
@@ -362,6 +425,13 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
   }
 
   const linkCache = {};
+  if (opts.checkLinks) {
+    const treeRes = opts.treeIndex || fetchGithubTreeIndex(config);
+    if (treeRes && treeRes.ok && treeRes.files) {
+      linkCache.__treeFiles = treeRes.files;
+    }
+  }
+
   const seenIds = {};
   const missingTag = "[Tidak ada di GitHub]";
   let added = 0;
@@ -369,6 +439,7 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
   let unchanged = 0;
   let missing = 0;
   let linkWarnings = 0;
+  let rateLimitWarnings = 0;
 
   for (let i = 0; i < parsedRows.length; i++) {
     const item = parsedRows[i];
@@ -383,14 +454,15 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
     let linkFormula = "";
     let expectedLinkLabel = "";
     if (blobUrl) {
-      let linkOk = true;
+      let checkRes = { exists: true, isNotFound: false, indeterminate: false };
       if (opts.checkLinks) {
-        linkOk = checkGithubFileExists(config, item.fileNaskah, linkCache);
+        checkRes = checkGithubFileExists(config, item.fileNaskah, linkCache);
       }
-      if (!linkOk) {
+      if (checkRes.isNotFound) {
         linkWarnings++;
         expectedLinkLabel = "⚠️ Link 404 (Cek Repo)";
       } else {
+        if (checkRes.indeterminate) rateLimitWarnings++;
         expectedLinkLabel = "📖 Buka Naskah";
       }
       linkFormula = makeHyperlinkFormula(blobUrl, expectedLinkLabel, isIndo);
@@ -403,7 +475,11 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
       const curFormula = typeof cur[6] === "string" && cur[6].startsWith("=") ? cur[6] : "";
       const curLinkUrl = extractUrlFromCell(cur[6], curFormula);
       const curLinkLabel = extractLabelFromCell(cur[6], curFormula);
-      const curNote = String(cur[9] || "").trim();
+      const rawNote = String(cur[9] || "").trim();
+      const cleanedNote = rawNote.includes(missingTag)
+        ? rawNote.replace(/\[Tidak ada di GitHub\]\s*/g, "").trim()
+        : rawNote;
+      const noteChanged = (rawNote !== cleanedNote);
 
       const changed =
         curDateIso !== item.tanggal ||
@@ -414,24 +490,22 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
         curLinkUrl !== blobUrl ||
         curLinkLabel !== expectedLinkLabel;
 
-      if (changed) {
+      if (changed || noteChanged) {
         cur[1] = dt;
         cur[2] = dayName;
         cur[3] = normBrand;
         cur[4] = normPic;
         cur[5] = item.topik;
         cur[6] = linkFormula;
+        cur[9] = cleanedNote;
         cur[10] = new Date();
-        // cur[7] (Link Draft), cur[8] (Status), cur[9] (Catatan) TIDAK ditimpa
+        // cur[7] (Link Draft), cur[8] (Status), dan catatan asli tim TIDAK ditimpa
         updated++;
       } else {
         unchanged++;
       }
-
-      if (curNote.includes(missingTag)) {
-        cur[9] = curNote.replace(/\[Tidak ada di GitHub\]\s*/g, "").trim();
-      }
     } else {
+      const newIdx = outputRows.length;
       outputRows.push([
         item.id,          // B: ID
         dt,               // C: Tanggal Tayang
@@ -445,6 +519,7 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
         "",               // K: Catatan Review
         new Date()        // L: Update Terakhir
       ]);
+      existingById[item.id] = newIdx;
       added++;
     }
   }
@@ -468,6 +543,19 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
     missing++;
   }
 
+  // Urutkan kronologis berdasarkan Tanggal Tayang (stable sort menjaga urutan pada tanggal yang sama)
+  outputRows.sort((a, b) => {
+    const da = parseDateSafe(a[1]);
+    const db = parseDateSafe(b[1]);
+    const ta = da ? da.getTime() : Number.MAX_SAFE_INTEGER;
+    const tb = db ? db.getTime() : Number.MAX_SAFE_INTEGER;
+    return ta - tb;
+  });
+
+  if (typeof ensureDatabaseCapacityIfNeeded === "function") {
+    ensureDatabaseCapacityIfNeeded(dbSheet, outputRows.length);
+  }
+
   if (outputRows.length > 0) {
     const targetRange = dbSheet.getRange(startRow, APP_CONSTANTS.DB_COLS.ID, outputRows.length, 11);
     targetRange.setValues(outputRows);
@@ -478,5 +566,9 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
     dbSheet.getRange(startRow + outputRows.length, APP_CONSTANTS.DB_COLS.ID, numExisting - outputRows.length, 11).clearContent();
   }
 
-  return { added, updated, unchanged, missing, linkWarnings };
+  if (!opts.skipFilterRefresh && typeof applyDatabaseMonthYearFilter === "function") {
+    applyDatabaseMonthYearFilter(dbSheet);
+  }
+
+  return { added, updated, unchanged, missing, linkWarnings, rateLimitWarnings };
 }

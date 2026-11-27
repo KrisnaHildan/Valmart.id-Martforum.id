@@ -9,8 +9,13 @@ const APP_CONSTANTS = {
   MENU_NAME: "⚡ Valmart & Martforum",
   FONT_FAMILY: "Google Sans",
   TIMEZONE: "Asia/Jakarta",
-  MAX_DB_ROWS: 1000,
-  DB_START_ROW: 5,
+  MIN_DB_ROWS: 1000,
+  DB_BUFFER_ROWS: 250,
+  DB_FILTER_ROW: 4,
+  DB_HEADER_ROW: 5,
+  DB_START_ROW: 6,
+  YEAR_MIN: 2020,
+  YEAR_MAX: 2040,
   CALENDAR_MAX_ITEMS_PER_DAY: 4,
   SCRIPT_PROP_GITHUB_TOKEN: "GITHUB_TOKEN",
 
@@ -68,6 +73,7 @@ const APP_CONSTANTS = {
     LATE_BORDER: "#FCA5A5",
     VALMART: "#4F46E5",
     MARTFORUM: "#0284C7",
+    BRAND_PALETTE: ["#4F46E5", "#0284C7", "#0D9488", "#D97706", "#DC2626", "#7C3AED"],
     STATUS: {
       "⚪ Draft": { bg: "#F1F5F9", text: "#475569" },
       "🟡 In Progress": { bg: "#FEF3C7", text: "#92400E" },
@@ -129,7 +135,7 @@ function setupConfigSheet(sheet, clearExisting) {
 
   // Banner utama
   sheet.getRange("B2:J2").merge()
-    .setValue("⚙️ PENGATURAN SISTEM — VALMART & MARTFORUM TRACKER")
+    .setValue("⚙️ PENGATURAN SISTEM - VALMART & MARTFORUM TRACKER")
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
     .setFontSize(13)
     .setFontWeight("bold")
