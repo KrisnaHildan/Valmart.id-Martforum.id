@@ -260,7 +260,7 @@ function parseMarkdownSchedule(markdownText) {
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim();
     if (!line || !line.includes("|")) {
-      if (inTable && !line) inTable = false;
+      inTable = false;
       continue;
     }
 
@@ -276,7 +276,7 @@ function parseMarkdownSchedule(markdownText) {
     }
 
     // Deteksi header tabel
-    const lowerCells = cells.map(c => c.toLowerCase());
+    const lowerCells = cells.map(c => c.replace(/[*_`]/g, "").trim().toLowerCase());
     if (lowerCells.some(c => c === "id") && lowerCells.some(c => c.includes("tanggal"))) {
       colMap = {
         id: lowerCells.findIndex(c => c === "id"),
@@ -292,12 +292,13 @@ function parseMarkdownSchedule(markdownText) {
 
     if (!inTable || !colMap) continue;
 
-    const id = (colMap.id >= 0 ? cells[colMap.id] : "") || "";
-    const tanggalRaw = (colMap.tanggal >= 0 ? cells[colMap.tanggal] : "") || "";
-    const brand = (colMap.brand >= 0 ? cells[colMap.brand] : "") || "";
-    const pic = (colMap.pic >= 0 ? cells[colMap.pic] : "") || "";
+    const stripMd = (val) => String(val || "").trim().replace(/^[*_`]+|[*_`]+$/g, "").trim();
+    const id = stripMd(colMap.id >= 0 ? cells[colMap.id] : "");
+    const tanggalRaw = stripMd(colMap.tanggal >= 0 ? cells[colMap.tanggal] : "");
+    const brand = stripMd(colMap.brand >= 0 ? cells[colMap.brand] : "");
+    const pic = stripMd(colMap.pic >= 0 ? cells[colMap.pic] : "");
     const topik = (colMap.topik >= 0 ? cells[colMap.topik] : "") || "";
-    const fileNaskah = (colMap.file >= 0 ? cells[colMap.file] : "") || "";
+    const fileNaskah = stripMd(colMap.file >= 0 ? cells[colMap.file] : "").replace(/\\/g, "/");
 
     const dt = parseDateSafe(tanggalRaw);
     if (!id || !dt) {
@@ -333,24 +334,36 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
 
   const existingById = {};
   const outputRows = [];
+  let isIndo = false;
+  try {
+    isIndo = isIndonesianLocale(dbSheet.getParent());
+  } catch (e) {
+    isIndo = false;
+  }
 
   for (let i = 0; i < existingVals.length; i++) {
     const rowVals = existingVals[i].slice();
     const rowForms = existingFormulas[i];
     const rowId = String(rowVals[0] || "").trim();
 
+    // Lewati baris kosong total agar baris baru tidak terdorong ke bawah
+    const isRowEmpty = rowVals.every(v => String(v === null || v === undefined ? "" : v).trim() === "");
+    if (isRowEmpty) continue;
+
     // Pertahankan formula HYPERLINK di kolom Link Naskah (idx 6) & Link Draft (idx 7) jika ada
     if (rowForms[6]) rowVals[6] = rowForms[6];
     if (rowForms[7]) rowVals[7] = rowForms[7];
 
+    const outIdx = outputRows.length;
     outputRows.push(rowVals);
     if (rowId) {
-      existingById[rowId] = i;
+      existingById[rowId] = outIdx;
     }
   }
 
   const linkCache = {};
   const seenIds = {};
+  const missingTag = "[Tidak ada di GitHub]";
   let added = 0;
   let updated = 0;
   let unchanged = 0;
@@ -368,6 +381,7 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
     const blobUrl = item.fileNaskah ? buildGithubBlobUrl(config, item.fileNaskah) : "";
 
     let linkFormula = "";
+    let expectedLinkLabel = "";
     if (blobUrl) {
       let linkOk = true;
       if (opts.checkLinks) {
@@ -375,17 +389,21 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
       }
       if (!linkOk) {
         linkWarnings++;
-        linkFormula = makeHyperlinkFormula(blobUrl, "⚠️ Link 404 (Cek Repo)");
+        expectedLinkLabel = "⚠️ Link 404 (Cek Repo)";
       } else {
-        linkFormula = makeHyperlinkFormula(blobUrl, "📖 Buka Naskah");
+        expectedLinkLabel = "📖 Buka Naskah";
       }
+      linkFormula = makeHyperlinkFormula(blobUrl, expectedLinkLabel, isIndo);
     }
 
     if (Object.prototype.hasOwnProperty.call(existingById, item.id)) {
       const idx = existingById[item.id];
       const cur = outputRows[idx];
       const curDateIso = formatDateIso(parseDateSafe(cur[1]));
-      const curLinkUrl = extractUrlFromCell(cur[6], typeof cur[6] === "string" && cur[6].startsWith("=") ? cur[6] : "");
+      const curFormula = typeof cur[6] === "string" && cur[6].startsWith("=") ? cur[6] : "";
+      const curLinkUrl = extractUrlFromCell(cur[6], curFormula);
+      const curLinkLabel = extractLabelFromCell(cur[6], curFormula);
+      const curNote = String(cur[9] || "").trim();
 
       const changed =
         curDateIso !== item.tanggal ||
@@ -393,7 +411,8 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
         String(cur[3] || "") !== normBrand ||
         String(cur[4] || "") !== normPic ||
         String(cur[5] || "") !== item.topik ||
-        curLinkUrl !== blobUrl;
+        curLinkUrl !== blobUrl ||
+        curLinkLabel !== expectedLinkLabel;
 
       if (changed) {
         cur[1] = dt;
@@ -402,10 +421,15 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
         cur[4] = normPic;
         cur[5] = item.topik;
         cur[6] = linkFormula;
-        // cur[7] (Link Draft), cur[8] (Status), cur[9] (Catatan) TIDAK disentuh
+        cur[10] = new Date();
+        // cur[7] (Link Draft), cur[8] (Status), cur[9] (Catatan) TIDAK ditimpa
         updated++;
       } else {
         unchanged++;
+      }
+
+      if (curNote.includes(missingTag)) {
+        cur[9] = curNote.replace(/\[Tidak ada di GitHub\]\s*/g, "").trim();
       }
     } else {
       outputRows.push([
@@ -426,7 +450,6 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
   }
 
   // Tandai baris yang hilang dari sumber GitHub (tanpa menghapus)
-  const missingTag = "[Tidak ada di GitHub]";
   for (let i = 0; i < outputRows.length; i++) {
     const rowId = String(outputRows[i][0] || "").trim();
     if (!rowId || seenIds[rowId]) continue;
@@ -450,6 +473,9 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
     targetRange.setValues(outputRows);
     dbSheet.getRange(startRow, APP_CONSTANTS.DB_COLS.DATE, outputRows.length, 1).setNumberFormat("yyyy-mm-dd");
     dbSheet.getRange(startRow, APP_CONSTANTS.DB_COLS.UPDATED_AT, outputRows.length, 1).setNumberFormat("yyyy-mm-dd hh:mm");
+  }
+  if (numExisting > outputRows.length) {
+    dbSheet.getRange(startRow + outputRows.length, APP_CONSTANTS.DB_COLS.ID, numExisting - outputRows.length, 11).clearContent();
   }
 
   return { added, updated, unchanged, missing, linkWarnings };

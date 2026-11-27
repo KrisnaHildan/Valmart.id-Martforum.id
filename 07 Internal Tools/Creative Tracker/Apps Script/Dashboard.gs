@@ -20,8 +20,12 @@ function renderDashboard() {
   const prevWeekOpt = sheet.getRange("I4").getValue();
 
   const now = new Date();
-  const activeMonth = (prevMonth >= 1 && prevMonth <= 12) ? Number(prevMonth) : (now.getMonth() + 1);
-  const activeYear = (prevYear >= 2024 && prevYear <= 2035) ? Number(prevYear) : now.getFullYear();
+  const parsedMonth = (typeof prevMonth === "number" || (typeof prevMonth === "string" && /^\d+$/.test(prevMonth.trim())))
+    ? Number(prevMonth) : NaN;
+  const parsedYear = (typeof prevYear === "number" || (typeof prevYear === "string" && /^\d+$/.test(prevYear.trim())))
+    ? Number(prevYear) : NaN;
+  const activeMonth = (Number.isInteger(parsedMonth) && parsedMonth >= 1 && parsedMonth <= 12) ? parsedMonth : (now.getMonth() + 1);
+  const activeYear = (Number.isInteger(parsedYear) && parsedYear >= 2024 && parsedYear <= 2035) ? parsedYear : now.getFullYear();
   const activeWeekOpt = prevWeekOpt ? String(prevWeekOpt) : "Minggu Ini";
 
   const config = getAppConfig();
@@ -31,8 +35,16 @@ function renderDashboard() {
   const cfgName = `'${APP_CONSTANTS.SHEETS.CONFIG}'`;
   const maxRow = APP_CONSTANTS.DB_START_ROW + APP_CONSTANTS.MAX_DB_ROWS - 1; // 1004
 
-  // Lepas proteksi lama sebelum clear, lalu pasang lagi di akhir
+  // Pastikan minimal 26 kolom (A..Z) agar kolom bantu tersembunyi O..Z selalu tersedia
+  if (sheet.getMaxColumns() < 26) {
+    sheet.insertColumnsAfter(sheet.getMaxColumns(), 26 - sheet.getMaxColumns());
+  }
+  sheet.showColumns(1, 14);
+  sheet.hideColumns(15, 12);
+
+  // Lepas proteksi & conditional formatting lama sebelum clear, lalu pasang lagi di akhir
   sheet.getProtections(SpreadsheetApp.ProtectionType.SHEET).forEach(p => p.remove());
+  sheet.clearConditionalFormatRules();
   sheet.clear();
   sheet.setTabColor("#10B981");
 
@@ -176,7 +188,9 @@ function renderDashboard() {
   sheet.setRowHeight(11, 24);
 
   const picStartRow = 12;
-  const picCount = config.pics.length;
+  const activePics = config.pics.filter(p => p.target > 0);
+  const picsToDisplay = activePics.length > 0 ? activePics : config.pics;
+  const picCount = picsToDisplay.length;
   const wkStartCond = `${dbName}!$C$5:$C$${maxRow}, ">=" & $K$4`;
   const wkEndCond = `${dbName}!$C$5:$C$${maxRow}, "<=" & ($K$4+6)`;
   const picRange = `${dbName}!$F$5:$F$${maxRow}`;
@@ -184,14 +198,14 @@ function renderDashboard() {
   const picRowsFormulas = [];
   for (let i = 0; i < picCount; i++) {
     const r = picStartRow + i;
-    const cfgRow = 7 + i; // Posisi baris di tab Config E7:G20
+    const cfgRow = picsToDisplay[i].row || (7 + i); // Posisi baris aktual di tab Config E7:G20
     picRowsFormulas.push([
       f(`=${cfgName}!E${cfgRow}`),
       f(`=${cfgName}!G${cfgRow}`),
       f(`=COUNTIFS(${wkStartCond}, ${wkEndCond}, ${picRange}, B${r})`),
       f(`=COUNTIFS(${wkStartCond}, ${wkEndCond}, ${picRange}, B${r}, ${statusRange}, "🟢 Approved") + COUNTIFS(${wkStartCond}, ${wkEndCond}, ${picRange}, B${r}, ${statusRange}, "🟣 Published")`),
-      f(`=MAX(0, C${r}-D${r})`),
-      f(`=SPARKLINE(D${r}, {"charttype", "bar"; "max", MAX(1, C${r}); "color1", "${APP_CONSTANTS.COLORS.ACCENT}"; "color2", "#E2E8F0"})`)
+      f(`=MAX(0, C${r}-E${r})`),
+      f(`=SPARKLINE(E${r}, {"charttype", "bar"; "max", MAX(1, C${r}, E${r}); "color1", "${APP_CONSTANTS.COLORS.ACCENT}"; "color2", "#E2E8F0"})`)
     ]);
     sheet.setRowHeight(r, 26);
   }
@@ -204,12 +218,15 @@ function renderDashboard() {
       .setVerticalAlignment("middle")
       .setBorder(true, true, true, true, true, true, APP_CONSTANTS.COLORS.BORDER, SpreadsheetApp.BorderStyle.SOLID);
     sheet.getRange(picStartRow, 2, picCount, 1).setFontWeight("bold");
-    sheet.getRange(picStartRow, 3, picCount, 3).setHorizontalAlignment("center");
+    sheet.getRange(picStartRow, 3, picCount, 4).setHorizontalAlignment("center");
   }
 
   // Distribusi Brand (di bawah tabel Talent)
   const brandHeaderRow = picStartRow + picCount + 1;
-  sheet.setRowHeight(brandHeaderRow - 1, 12);
+  // Jangan perkecil tinggi baris <= 19 karena berbagi grid dengan tabel Antrean Review (I12:M19)
+  if (brandHeaderRow - 1 > 19) {
+    sheet.setRowHeight(brandHeaderRow - 1, 12);
+  }
   sheet.getRange(brandHeaderRow, 2, 1, 6).merge()
     .setValue("⚖️ DISTRIBUSI BRAND (BULAN TERPILIH)")
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
@@ -218,7 +235,7 @@ function renderDashboard() {
     .setBackground("#334155")
     .setFontColor("#FFFFFF")
     .setHorizontalAlignment("center");
-  sheet.setRowHeight(brandHeaderRow, 26);
+  sheet.setRowHeight(brandHeaderRow, 28);
 
   const brandRange = `${dbName}!$E$5:$E$${maxRow}`;
   const bRow1 = brandHeaderRow + 1;
@@ -227,20 +244,20 @@ function renderDashboard() {
 
   sheet.getRange(bRow1, 2, 1, 3).merge().setValue("🟣 Valmart.id").setFontFamily(APP_CONSTANTS.FONT_FAMILY).setFontSize(9.5).setFontWeight("bold");
   sheet.getRange(bRow1, 5, 1, 3).merge().setFormula(f(`=COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "Valmart") & " Konten"`)).setFontFamily(APP_CONSTANTS.FONT_FAMILY).setFontSize(9.5).setHorizontalAlignment("center");
-  sheet.setRowHeight(bRow1, 24);
+  sheet.setRowHeight(bRow1, bRow1 <= 19 ? 28 : 24);
 
   sheet.getRange(bRow2, 2, 1, 3).merge().setValue("🔵 Martforum.id").setFontFamily(APP_CONSTANTS.FONT_FAMILY).setFontSize(9.5).setFontWeight("bold");
   sheet.getRange(bRow2, 5, 1, 3).merge().setFormula(f(`=COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "Martforum") & " Konten"`)).setFontFamily(APP_CONSTANTS.FONT_FAMILY).setFontSize(9.5).setHorizontalAlignment("center");
-  sheet.setRowHeight(bRow2, 24);
+  sheet.setRowHeight(bRow2, bRow2 <= 19 ? 28 : 24);
 
   sheet.getRange(bBarRow, 2, 1, 6).merge()
-    .setFormula(f(`=SPARKLINE({COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "Valmart"), COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "Martforum")}, {"charttype", "bar"; "color1", "${APP_CONSTANTS.COLORS.VALMART}"; "color2", "${APP_CONSTANTS.COLORS.MARTFORUM}"})`))
+    .setFormula(f(`=IF(COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "Valmart") + COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "Martforum") = 0, "", SPARKLINE({COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "Valmart"), COUNTIFS(${dateCondStart}, ${dateCondEnd}, ${brandRange}, "Martforum")}, {"charttype", "bar"; "color1", "${APP_CONSTANTS.COLORS.VALMART}"; "color2", "${APP_CONSTANTS.COLORS.MARTFORUM}"}))`))
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY);
-  sheet.setRowHeight(bBarRow, 22);
+  sheet.setRowHeight(bBarRow, bBarRow <= 19 ? 28 : 22);
   sheet.getRange(brandHeaderRow, 2, 4, 6).setBorder(true, true, true, true, true, true, APP_CONSTANTS.COLORS.BORDER, SpreadsheetApp.BorderStyle.SOLID);
 
   // -------------------------------------------------------------------------
-  // SECTION KANAN: ANTREAN REVIEW OTOMATIS (I10:M18)
+  // SECTION KANAN: ANTREAN REVIEW OTOMATIS (I10:M20, helper di V12:Z)
   // -------------------------------------------------------------------------
   sheet.getRange("I10:M10").merge()
     .setValue("🚨 ANTREAN REVIEW (URUT TANGGAL TERDEKAT)")
@@ -261,10 +278,27 @@ function renderDashboard() {
     .setHorizontalAlignment("center")
     .setBorder(true, true, true, true, true, true, APP_CONSTANTS.COLORS.BORDER, SpreadsheetApp.BorderStyle.SOLID);
 
-  sheet.getRange("I12").setFormula(f(
+  sheet.getRange("V12").setFormula(f(
     `=IFERROR(SORT(FILTER({${dbName}!C5:C${maxRow}, ${dbName}!E5:E${maxRow}, ${dbName}!F5:F${maxRow}, ARRAYFORMULA(${dbName}!G5:G${maxRow} & " [" & ${dbName}!J5:J${maxRow} & "]"), ${dbName}!K5:K${maxRow}}, (${dbName}!J5:J${maxRow}="🟠 In Review") + (${dbName}!J5:J${maxRow}="🔴 Revision")), 1, TRUE), {"-", "-", "-", "✅ Antrean kosong, aman!", "-"})`
   ));
-  sheet.getRange("I12:I19").setNumberFormat("yyyy-mm-dd");
+
+  const reviewDisplayRows = 8; // I12:M19
+  const reviewFormulas = [];
+  for (let i = 0; i < reviewDisplayRows; i++) {
+    const r = 12 + i;
+    if (r >= picStartRow + picCount && r !== brandHeaderRow && r !== bRow1 && r !== bRow2 && r !== bBarRow) {
+      sheet.setRowHeight(r, 28);
+    }
+    reviewFormulas.push([
+      f(`=IF($V${r}="", "", $V${r})`),
+      f(`=IF($W${r}="", "", $W${r})`),
+      f(`=IF($X${r}="", "", $X${r})`),
+      f(`=IF($Y${r}="", "", $Y${r})`),
+      f(`=IF($Z${r}="", "", $Z${r})`)
+    ]);
+  }
+  sheet.getRange(12, 9, reviewDisplayRows, 5).setFormulas(reviewFormulas);
+  sheet.getRange("I12:I19").setNumberFormat("yyyy-mm-dd").setHorizontalAlignment("center");
   sheet.getRange("I12:M19")
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
     .setFontSize(8.5)
@@ -272,10 +306,20 @@ function renderDashboard() {
     .setVerticalAlignment("middle")
     .setBorder(true, true, true, true, true, true, APP_CONSTANTS.COLORS.BORDER, SpreadsheetApp.BorderStyle.SOLID);
 
+  sheet.getRange("I20:M20").merge()
+    .setFormula(f(`=IF($V20<>"", "⚠️ +" & COUNTA($V20:$V${20 + APP_CONSTANTS.MAX_DB_ROWS}) & " antrean lagi — lihat tab '📝 Database Konten'", "")`))
+    .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
+    .setFontSize(8.5)
+    .setFontWeight("bold")
+    .setFontColor("#9A3412")
+    .setHorizontalAlignment("left")
+    .setVerticalAlignment("middle");
+  sheet.setRowHeight(20, 22);
+
   // -------------------------------------------------------------------------
-  // SECTION BAWAH: DAFTAR KONTEN TELAT (B22:M30)
+  // SECTION BAWAH: DAFTAR KONTEN TELAT (B22:M..., helper di O..T)
   // -------------------------------------------------------------------------
-  const lateHeaderRow = Math.max(bBarRow + 2, 21);
+  const lateHeaderRow = Math.max(bBarRow + 2, 22);
   sheet.setRowHeight(lateHeaderRow - 1, 14);
   sheet.getRange(lateHeaderRow, 2, 1, 12).merge()
     .setValue("⏰ DAFTAR KONTEN TELAT (LEWAT TANGGAL TAYANG & BELUM PUBLISHED)")
@@ -303,19 +347,83 @@ function renderDashboard() {
     .setFontColor(APP_CONSTANTS.COLORS.LATE_TEXT)
     .setHorizontalAlignment("center")
     .setBorder(true, true, true, true, true, true, APP_CONSTANTS.COLORS.LATE_BORDER, SpreadsheetApp.BorderStyle.SOLID);
+  sheet.setRowHeight(lateSubRow, 24);
 
   const lateDataRow = lateSubRow + 1;
-  sheet.getRange(lateDataRow, 2).setFormula(f(
+  const lateDisplayRows = 15;
+  sheet.getRange(lateDataRow, 15).setFormula(f(
     `=IFERROR(SORT(FILTER({${dbName}!C5:C${maxRow}, ${dbName}!E5:E${maxRow}, ${dbName}!F5:F${maxRow}, ${dbName}!G5:G${maxRow}, ${dbName}!J5:J${maxRow}, ${dbName}!K5:K${maxRow}}, ${dbName}!C5:C${maxRow}<>"", ${dbName}!C5:C${maxRow}<TODAY(), ${dbName}!J5:J${maxRow}<>"🟣 Published"), 1, TRUE), {"-", "-", "-", "✅ Tidak ada konten telat!", "-", "-"})`
   ));
-  // Catatan: FILTER mengembalikan 6 kolom berurutan B..G di baris lateDataRow
-  sheet.getRange(lateDataRow, 2, 8, 1).setNumberFormat("yyyy-mm-dd");
-  sheet.getRange(lateDataRow, 2, 8, 6)
+
+  const colBFormulas = [];
+  const colCFormulas = [];
+  const colDFormulas = [];
+  const colFFormulas = [];
+  const colJFormulas = [];
+  const colKFormulas = [];
+
+  for (let i = 0; i < lateDisplayRows; i++) {
+    const r = lateDataRow + i;
+    sheet.setRowHeight(r, 24);
+
+    colBFormulas.push([f(`=IF($O${r}="", "", $O${r})`)]);
+    colCFormulas.push([f(`=IF($P${r}="", "", $P${r})`)]);
+    colDFormulas.push([f(`=IF($Q${r}="", "", $Q${r})`)]);
+    colFFormulas.push([f(`=IF($R${r}="", "", $R${r})`)]);
+    colJFormulas.push([f(`=IF($S${r}="", "", $S${r})`)]);
+    colKFormulas.push([f(`=IF($T${r}="", "", $T${r})`)]);
+  }
+
+  sheet.getRange(lateDataRow, 2, lateDisplayRows, 1).setFormulas(colBFormulas).setNumberFormat("yyyy-mm-dd").setHorizontalAlignment("center");
+  sheet.getRange(lateDataRow, 3, lateDisplayRows, 1).setFormulas(colCFormulas).setHorizontalAlignment("center");
+  sheet.getRange(lateDataRow, 4, lateDisplayRows, 1).setFormulas(colDFormulas);
+  sheet.getRange(lateDataRow, 6, lateDisplayRows, 1).setFormulas(colFFormulas);
+  sheet.getRange(lateDataRow, 10, lateDisplayRows, 1).setFormulas(colJFormulas).setHorizontalAlignment("center");
+  sheet.getRange(lateDataRow, 11, lateDisplayRows, 1).setFormulas(colKFormulas);
+
+  for (let i = 0; i < lateDisplayRows; i++) {
+    const r = lateDataRow + i;
+    sheet.getRange(r, 4, 1, 2).merge();  // D:E PIC & Role
+    sheet.getRange(r, 6, 1, 4).merge();  // F:I Topik & Hook
+    sheet.getRange(r, 11, 1, 3).merge(); // K:M Catatan Review
+  }
+
+  const lateTableRange = sheet.getRange(lateDataRow, 2, lateDisplayRows, 12);
+  lateTableRange
     .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
     .setFontSize(8.5)
     .setWrap(true)
     .setVerticalAlignment("middle")
-    .setBorder(true, true, true, true, true, true, APP_CONSTANTS.COLORS.LATE_BORDER, SpreadsheetApp.BorderStyle.SOLID);
+    .setBorder(true, true, true, true, true, true, "#E2E8F0", SpreadsheetApp.BorderStyle.SOLID);
+
+  const lateOverflowRow = lateDataRow + lateDisplayRows;
+  sheet.getRange(lateOverflowRow, 2, 1, 12).merge()
+    .setFormula(f(`=IF($O${lateOverflowRow}<>"", "⚠️ +" & COUNTA($O${lateOverflowRow}:$O${lateOverflowRow + APP_CONSTANTS.MAX_DB_ROWS}) & " konten telat lainnya belum ditampilkan — buka tab '📝 Database Konten'.", "")`))
+    .setFontFamily(APP_CONSTANTS.FONT_FAMILY)
+    .setFontSize(8.5)
+    .setFontWeight("bold")
+    .setFontColor(APP_CONSTANTS.COLORS.LATE_TEXT)
+    .setHorizontalAlignment("left")
+    .setVerticalAlignment("middle");
+  sheet.setRowHeight(lateOverflowRow, 22);
+
+  // Highlight merah hanya untuk baris telat yang terisi data (dan hijau jika kosong/aman)
+  const cfRules = [
+    SpreadsheetApp.newConditionalFormatRule()
+      .whenFormulaSatisfied(f(`=$F${lateDataRow}="✅ Tidak ada konten telat!"`))
+      .setBackground("#F0FDF4")
+      .setFontColor("#166534")
+      .setBold(true)
+      .setRanges([lateTableRange])
+      .build(),
+    SpreadsheetApp.newConditionalFormatRule()
+      .whenFormulaSatisfied(f(`=AND($B${lateDataRow}<>"", $B${lateDataRow}<>"-")`))
+      .setBackground("#FEF2F2")
+      .setFontColor(APP_CONSTANTS.COLORS.LATE_TEXT)
+      .setRanges([lateTableRange])
+      .build()
+  ];
+  sheet.setConditionalFormatRules(cfRules);
 
   // Proteksi sheet (Warning Only) agar formula tidak terhapus tidak sengaja
   const protection = sheet.protect().setDescription("Proteksi Dashboard (Warning Only)");

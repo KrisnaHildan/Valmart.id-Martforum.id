@@ -17,14 +17,18 @@ function renderCalendar() {
   const dbSheet = ss.getSheetByName(APP_CONSTANTS.SHEETS.DATABASE);
   if (!dbSheet) return;
 
-  let targetMonth = Number(calSheet.getRange("C2").getValue());
-  let targetYear = Number(calSheet.getRange("E2").getValue());
+  const rawMonth = calSheet.getRange("C2").getValue();
+  const rawYear = calSheet.getRange("E2").getValue();
+  let targetMonth = (typeof rawMonth === "number" || (typeof rawMonth === "string" && /^\d+$/.test(rawMonth.trim())))
+    ? Number(rawMonth) : NaN;
+  let targetYear = (typeof rawYear === "number" || (typeof rawYear === "string" && /^\d+$/.test(rawYear.trim())))
+    ? Number(rawYear) : NaN;
 
   const now = new Date();
-  if (!targetMonth || isNaN(targetMonth) || targetMonth < 1 || targetMonth > 12) {
+  if (!Number.isInteger(targetMonth) || targetMonth < 1 || targetMonth > 12) {
     targetMonth = now.getMonth() + 1;
   }
-  if (!targetYear || isNaN(targetYear) || targetYear < 2020) {
+  if (!Number.isInteger(targetYear) || targetYear < 2020) {
     targetYear = now.getFullYear();
   }
 
@@ -158,7 +162,10 @@ function buildCalendarMatrix(month, year, contentMap, todayRef) {
           const maxShow = APP_CONSTANTS.CALENDAR_MAX_ITEMS_PER_DAY;
           const visibleItems = items.slice(0, maxShow);
           let cardText = visibleItems.map(item => {
-            const brandTag = (item.brand === "Valmart") ? "[VAL]" : "[MART]";
+            const brandLower = item.brand.toLowerCase();
+            const brandTag = brandLower.includes("valmart")
+              ? "[VAL]"
+              : (brandLower.includes("martforum") ? "[MART]" : `[${item.brand || "-"}]`);
             const statusTag = item.status || "⚪ Draft";
             const picShort = item.pic ? item.pic.split(" ")[0] : "-";
             const topikShort = item.topik.length > 42 ? item.topik.substring(0, 39) + "..." : item.topik;

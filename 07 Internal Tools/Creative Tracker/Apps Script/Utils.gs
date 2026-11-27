@@ -103,8 +103,8 @@ function isTaskLate(dateVal, statusVal, todayRef) {
  * Menggabungkan basePath dan relativePath dengan rapi tanpa double slash.
  */
 function joinRepoPath(basePath, relativePath) {
-  const cleanBase = String(basePath || "").replace(/^\/+|\/+$/g, "");
-  const cleanRel = String(relativePath || "").replace(/^\/+|\/+$/g, "");
+  const cleanBase = String(basePath || "").replace(/\\/g, "/").replace(/^\/+|\/+$/g, "");
+  const cleanRel = String(relativePath || "").replace(/\\/g, "/").replace(/^\/+|\/+$/g, "");
   if (!cleanBase) return cleanRel;
   if (!cleanRel) return cleanBase;
   // Jika relativePath sudah diawali basePath, jangan digandakan
@@ -142,13 +142,13 @@ function buildGithubRawUrl(config, relativePath) {
 }
 
 /**
- * Membuat formula =HYPERLINK("url", "label") yang aman.
+ * Membuat formula =HYPERLINK("url", "label") yang aman & sesuai locale spreadsheet.
  */
-function makeHyperlinkFormula(url, label) {
+function makeHyperlinkFormula(url, label, isIndo) {
   if (!url) return "";
   const safeUrl = String(url).replace(/"/g, "%22");
   const safeLabel = String(label || "Buka Link").replace(/"/g, "'");
-  return `=HYPERLINK("${safeUrl}", "${safeLabel}")`;
+  return localizeFormula(`=HYPERLINK("${safeUrl}", "${safeLabel}")`, Boolean(isIndo));
 }
 
 /**
@@ -162,6 +162,17 @@ function extractUrlFromCell(value, formula) {
   const str = String(value || "").trim();
   if (/^https?:\/\//i.test(str)) return str;
   return "";
+}
+
+/**
+ * Mengekstrak label tampilan dari formula =HYPERLINK("...", "...") atau nilai sel.
+ */
+function extractLabelFromCell(value, formula) {
+  if (formula && typeof formula === "string") {
+    const match = formula.match(/=HYPERLINK\(\s*"[^"]+"\s*[,;]\s*"([^"]*)"/i);
+    if (match) return match[1];
+  }
+  return String(value || "").trim();
 }
 
 /**

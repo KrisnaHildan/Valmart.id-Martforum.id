@@ -1,5 +1,3 @@
-oke
-
 # 📱 Panduan Cepat Tim — Creative Tracker Valmart & Martforum
 
 Selamat datang! Sheet ini dibuat supaya kita semua gampang pantau jadwal konten tanpa ribet. Cukup ikuti 3 langkah di bawah ini setiap hari.
@@ -28,7 +26,7 @@ Saat mau mengerjakan atau setor konten, kamu **CUKUP EDIT 3 KOLOM INI SAJA**:
 
 - **`📊 Dashboard` (Untuk Ko Jeremy, Hildan, & Cek Target):**
   - Lihat **5 Kartu Atas** untuk cek jumlah konten selesai, antrean review, dan **Konten Telat** (warna merah).
-  - Lihat tabel **Target Mingguan** untuk cek sisa target minggu ini per orang (Helmy, Audrey, Dika, Jonathan).
+  - Lihat tabel **Target Mingguan** untuk cek sisa target minggu ini per orang aktif (Helmy, Audrey, Dika — menggantikan Jonathan yang cuti).
   - Gunakan dropdown **Filter Bulan/Tahun** atau **Pacing Minggu** di baris 4 kalau mau lihat periode lain.
 - **`📅 Kalender Visual`:**
   - Kotak berwarna ungu (`📍 HARI INI`) adalah jadwal hari ini.

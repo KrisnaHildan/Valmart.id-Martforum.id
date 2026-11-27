@@ -1,12 +1,12 @@
 # ⚡ Valmart & Martforum Creative Content Engine & Tracker
 **Integrasi**: GitHub Repository (`Jadwal Konten.md` & Naskah Detail) $\longleftrightarrow$ Google Sheets (Dashboard, Kalender, Database, Config)  
-**Tujuan**: Sistem pemantauan produksi konten real-time untuk **Ko Jeremy (Jeje)**, **Hildan**, **Helmy**, **Audrey**, **Dika**, dan **Jonathan**.
+**Tujuan**: Sistem pemantauan produksi konten real-time untuk **Ko Jeremy (Jeje)**, **Hildan**, **Helmy**, **Audrey**, dan **Dika** *(pengganti Jonathan yang sedang cuti)*.
 
 ---
 
 ## 🏗️ Arsitektur 4 Tab Utama
 
-1. **`📊 Dashboard`**: 5 KPI Scorecards (termasuk **Konten Telat**), filter Bulan/Tahun & selector Minggu, Pacing Talent (Helmy, Audrey, Dika, Jonathan), Distribusi Brand, Antrean Review otomatis, dan Daftar Konten Telat.
+1. **`📊 Dashboard`**: 5 KPI Scorecards (termasuk **Konten Telat**), filter Bulan/Tahun & selector Minggu, Pacing Talent aktif (Helmy, Audrey, Dika — Jonathan cuti target 0), Distribusi Brand, Antrean Review otomatis, dan Daftar Konten Telat.
 2. **`📅 Kalender Visual`**: Grid bulanan Senin–Minggu dengan dropdown Bulan (`C2`) & Tahun (`E2`) yang auto-refresh saat diubah, penanda `📍 HARI INI`, highlight akhir pekan, dan batas 4 kartu per tanggal (`+N lainnya`).
 3. **`📝 Database Konten`**: Master data 11 kolom (`ID`, `Tanggal Tayang`, `Hari`, `Brand`, `PIC & Role`, `Topik & Hook`, `Link Naskah`, `Link Draft Preview`, `Status`, `Catatan Review`, `Update Terakhir`) dengan validasi 1.000 baris, auto-filter, banded rows, dan highlight merah otomatis untuk konten **TELAT**.
 4. **`⚙️ Config`**: Pusat pengaturan repo GitHub, daftar PIC & target mingguan, brand, status, dan penerima email ringkasan harian (bisa diubah tanpa menyentuh kode).

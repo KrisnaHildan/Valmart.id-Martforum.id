@@ -88,9 +88,9 @@ const APP_CONSTANTS = {
     EMAIL_RECIPIENTS: "",
     PICS: [
       { name: "Helmy (Video)", role: "Video Valmart", target: 4 },
-      { name: "Audrey (VO)", role: "VO Martforum", target: 3 },
-      { name: "Dika (Editor & Desain)", role: "Editor & Desain", target: 2 },
-      { name: "Jonathan (Editor & Desain)", role: "Editor & Desain", target: 2 }
+      { name: "Audrey (VO)", role: "VO Martforum (Ad Interim)", target: 3 },
+      { name: "Dika (Editor & Desain)", role: "Editor & Desain (Pengganti Jonathan)", target: 2 },
+      { name: "Jonathan (Editor & Desain)", role: "Cuti s/d Akhir Des (Digantikan Dika)", target: 0 }
     ],
     BRANDS: ["Valmart", "Martforum"],
     STATUSES: [
@@ -253,7 +253,12 @@ function getAppConfig() {
     scheduleFile: APP_CONSTANTS.DEFAULTS.SCHEDULE_FILE,
     emailEnabled: APP_CONSTANTS.DEFAULTS.EMAIL_ENABLED === "ON",
     emailRecipients: [],
-    pics: APP_CONSTANTS.DEFAULTS.PICS.slice(),
+    pics: APP_CONSTANTS.DEFAULTS.PICS.map((p, idx) => ({
+      name: p.name,
+      role: p.role,
+      target: p.target,
+      row: 7 + idx
+    })),
     brands: APP_CONSTANTS.DEFAULTS.BRANDS.slice(),
     statuses: APP_CONSTANTS.DEFAULTS.STATUSES.slice()
   };
@@ -286,7 +291,8 @@ function getAppConfig() {
     parsedPics.push({
       name: name,
       role: role,
-      target: isNaN(targetNum) || targetNum < 0 ? 0 : targetNum
+      target: isNaN(targetNum) || targetNum < 0 ? 0 : targetNum,
+      row: 7 + i
     });
   }
   if (parsedPics.length > 0) config.pics = parsedPics;

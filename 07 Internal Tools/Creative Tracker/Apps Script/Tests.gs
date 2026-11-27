@@ -45,6 +45,19 @@ function testRunAll() {
     fId
   );
 
+  const hlId = makeHyperlinkFormula("https://example.com/a", "⚠️ Link 404 (Cek Repo)", true);
+  assert("Hyperlink Locale ID: pakai titik koma dan ekstrak label benar",
+    hlId === '=HYPERLINK("https://example.com/a"; "⚠️ Link 404 (Cek Repo)")' &&
+    extractLabelFromCell("", hlId) === "⚠️ Link 404 (Cek Repo)",
+    hlId
+  );
+
+  const jonathanCfg = APP_CONSTANTS.DEFAULTS.PICS.find(p => p.name.includes("Jonathan"));
+  const dikaCfg = APP_CONSTANTS.DEFAULTS.PICS.find(p => p.name.includes("Dika"));
+  assert("Config PIC: Jonathan cuti (target 0) & Dika aktif menggantikan (target > 0)",
+    jonathanCfg && jonathanCfg.target === 0 && dikaCfg && dikaCfg.target > 0
+  );
+
   // 3. Test URL Builder & encodeURI untuk Title Case + spasi
   const dummyCfg = {
     repoOwner: "KrisnaHildan",
@@ -55,9 +68,24 @@ function testRunAll() {
     pics: APP_CONSTANTS.DEFAULTS.PICS
   };
   const builtUrl = buildGithubBlobUrl(dummyCfg, "November 2026/Week 4 (23 - 30 Nov 2026)/Brief Valmart Helmy.md");
-  assert("URL Builder: spasi ter-encode dan nama file Title Case benar",
-    builtUrl.includes("Brief%20Valmart%20Helmy.md") && !builtUrl.includes("BRIEF_VALMART"),
+  const winBackslashUrl = buildGithubBlobUrl(dummyCfg, "November 2026\\Week 4 (23 - 30 Nov 2026)\\Brief Valmart Helmy.md");
+  assert("URL Builder: spasi ter-encode, backslash dinormalisasi, dan nama file Title Case benar",
+    builtUrl.includes("Brief%20Valmart%20Helmy.md") && !builtUrl.includes("BRIEF_VALMART") && winBackslashUrl === builtUrl,
     builtUrl
+  );
+
+  // 3b. Test Parser toleran terhadap formatting markdown (`code`, **bold**) & backslash
+  const formattedMd = [
+    "| ID | Tanggal | Brand | PIC | Topik & Hook | File Naskah |",
+    "| :--- | :--- | :--- | :--- | :--- | :--- |",
+    "| `VAL-20261201-01` | **2026-12-01** | **Valmart** | `Helmy` | Tes Format | `Desember 2026\\Week 1\\Brief.md` |"
+  ].join("\n");
+  const parsedFormatted = parseMarkdownSchedule(formattedMd);
+  assert("Parser Markdown: strip backtick/bold dan normalisasi backslash",
+    parsedFormatted.rows.length === 1 &&
+    parsedFormatted.rows[0].id === "VAL-20261201-01" &&
+    parsedFormatted.rows[0].tanggal === "2026-12-01" &&
+    parsedFormatted.rows[0].fileNaskah === "Desember 2026/Week 1/Brief.md"
   );
 
   // 4. Test Render Kalender: bulan 28/30/31 hari & bulan mulai hari Minggu (Nov 2026)
@@ -90,7 +118,12 @@ function testRunAll() {
     tempSheet.getRange(5, APP_CONSTANTS.DB_COLS.STATUS).setValue("🟠 In Review");
     tempSheet.getRange(5, APP_CONSTANTS.DB_COLS.NOTES).setValue("Sudah oke, tinggal ACC");
 
-    // Sync kedua dengan judul topik diupdate di GitHub
+    // Simulasi kondisi link 404 pada Sync #1 lalu pulih di Sync #2 tanpa ubah URL maupun kolom lain
+    const row2Url = buildGithubBlobUrl(dummyCfg, parsed.rows[1].fileNaskah);
+    const brokenFormula = makeHyperlinkFormula(row2Url, "⚠️ Link 404 (Cek Repo)", isIndonesianLocale(ss));
+    tempSheet.getRange(6, APP_CONSTANTS.DB_COLS.SCRIPT_LINK).setFormula(brokenFormula);
+
+    // Sync kedua dengan judul topik #1 diupdate & link #2 pulih
     const updatedRows = JSON.parse(JSON.stringify(parsed.rows));
     updatedRows[0].topik = "Mid-Month ACE Bounty (Revisi Judul)";
     const res2 = upsertScheduleToDatabase(tempSheet, updatedRows, dummyCfg, { checkLinks: false });
@@ -99,12 +132,14 @@ function testRunAll() {
     const savedDraft = tempSheet.getRange(5, APP_CONSTANTS.DB_COLS.DRAFT_LINK).getValue();
     const savedNotes = tempSheet.getRange(5, APP_CONSTANTS.DB_COLS.NOTES).getValue();
     const savedTopic = tempSheet.getRange(5, APP_CONSTANTS.DB_COLS.TOPIC).getValue();
+    const recoveredLabel = tempSheet.getRange(6, APP_CONSTANTS.DB_COLS.SCRIPT_LINK).getValue();
 
-    assert("Sync #2: tidak ada duplikat (1 update, 1 unchanged)", res2.added === 0 && res2.updated === 1 && res2.unchanged === 1);
+    assert("Sync #2: tidak ada duplikat (0 add, 2 update)", res2.added === 0 && res2.updated === 2 && res2.unchanged === 0);
     assert("Sync #2: Status tim tetap utuh", savedStatus === "🟠 In Review", savedStatus);
     assert("Sync #2: Link Draft tim tetap utuh", savedDraft === "https://drive.google.com/draft-helmy", savedDraft);
     assert("Sync #2: Catatan Review tim tetap utuh", savedNotes === "Sudah oke, tinggal ACC", savedNotes);
     assert("Sync #2: Topik dari GitHub terupdate", savedTopic === "Mid-Month ACE Bounty (Revisi Judul)", savedTopic);
+    assert("Sync #2: Label Link 404 pulih ke Buka Naskah", recoveredLabel === "📖 Buka Naskah", recoveredLabel);
   } finally {
     ss.deleteSheet(tempSheet);
   }

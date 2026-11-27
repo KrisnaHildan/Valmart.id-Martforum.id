@@ -306,7 +306,7 @@ function applyDatabaseValidationsAndRules(sheet) {
 
   // Highlight merah untuk baris TELAT (Tanggal < TODAY() & Tanggal tidak kosong & Status <> Published)
   const isIndo = isIndonesianLocale();
-  const rowHighlightRange = sheet.getRange(startRow, APP_CONSTANTS.DB_COLS.DATE, maxRows, 9); // C..K
+  const rowHighlightRange = sheet.getRange(startRow, APP_CONSTANTS.DB_COLS.DATE, maxRows, 10); // C..L
   rules.push(
     SpreadsheetApp.newConditionalFormatRule()
       .whenFormulaSatisfied(localizeFormula(`=AND($C${startRow}<>"", $C${startRow}<TODAY(), $J${startRow}<>"🟣 Published")`, isIndo))

@@ -41,12 +41,13 @@ function onEdit(e) {
       sheet.getRange(startRow, APP_CONSTANTS.DB_COLS.DAY, numRows, 1).setValues(dayOut);
     }
 
-    // Jika Status (Col J) atau Catatan (Col K) diedit -> isi Update Terakhir (Col L)
-    const editedStatusOrNotes =
+    // Jika Link Draft (Col I), Status (Col J), atau Catatan (Col K) diedit -> isi Update Terakhir (Col L)
+    const editedTeamCols =
+      (startCol <= APP_CONSTANTS.DB_COLS.DRAFT_LINK && endCol >= APP_CONSTANTS.DB_COLS.DRAFT_LINK) ||
       (startCol <= APP_CONSTANTS.DB_COLS.STATUS && endCol >= APP_CONSTANTS.DB_COLS.STATUS) ||
       (startCol <= APP_CONSTANTS.DB_COLS.NOTES && endCol >= APP_CONSTANTS.DB_COLS.NOTES);
 
-    if (editedStatusOrNotes) {
+    if (editedTeamCols) {
       const now = new Date();
       const stamps = Array.from({ length: numRows }, () => [now]);
       sheet.getRange(startRow, APP_CONSTANTS.DB_COLS.UPDATED_AT, numRows, 1)
@@ -92,7 +93,7 @@ function scheduledDailyEmailDigest() {
 
   const now = new Date();
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  const tomorrow = new Date(today.getTime() + 86400000);
+  const tomorrow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
 
   const reviewItems = [];
   const lateItems = [];
