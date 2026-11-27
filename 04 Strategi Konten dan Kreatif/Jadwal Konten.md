@@ -102,19 +102,19 @@
 | VAL-20261203-01 | 2026-12-03 | Valmart | Helmy (Video) | Video #3: Edukasi Koleksi Aman Tangan Pertama (Anti Drama Lobi) | Desember 2026/Week 1 (1 - 6 Des 2026)/Brief Valmart Helmy.md |
 | MART-20261204-02 | 2026-12-04 | Martforum | Audrey (VO) | VO #2: Horor Daily Shop Jam 2 Pagi vs Sistem QRIS 3 Detik | Desember 2026/Week 1 (1 - 6 Des 2026)/Brief Martforum Dika dan Audrey.md |
 | VAL-20261205-01 | 2026-12-05 | Valmart | Helmy (Video) | Video #4: Showcase Koleksi Weekend (Snowfall 2.0) + Ajakan Live Sabtu | Desember 2026/Week 1 (1 - 6 Des 2026)/Brief Valmart Helmy.md |
-| MART-20261207-01 | 2026-12-07 | Martforum | Dika (Editor & Desain) | Poster Teaser H-5 Harbolnas 12.12 (Feed & Story) | Desember 2026/Week 2 (7 - 13 Des 2026)/Brief Martforum Dika dan Audrey.md |
-| MART-20261207-02 | 2026-12-07 | Martforum | Audrey (VO) | VO #3: Prediksi Jadwal Night Market Desember & Daftar Skin Incaran | Desember 2026/Week 2 (7 - 13 Des 2026)/Brief Martforum Dika dan Audrey.md |
-| VAL-20261208-01 | 2026-12-08 | Valmart | Helmy (Video) | Video #5: Meme Pemburu Tanggal Kembar 12.12 di Discord | Desember 2026/Week 2 (7 - 13 Des 2026)/Brief Valmart Helmy.md |
+| MART-20261207-01 | 2026-12-07 | Martforum | Dika (Editor & Desain) | Poster Keunggulan Layanan Otomatis 24 Jam martforum.id (Feed & Story) | Desember 2026/Week 2 (7 - 13 Des 2026)/Brief Martforum Dika dan Audrey.md |
+| MART-20261207-02 | 2026-12-07 | Martforum | Audrey (VO) | VO #3: Debat Skin Daily Shop (Kuronami vs Reaver vs Prime) | Desember 2026/Week 2 (7 - 13 Des 2026)/Brief Martforum Dika dan Audrey.md |
+| VAL-20261208-01 | 2026-12-08 | Valmart | Helmy (Video) | Video #5: Meme Temen Discord Yang Selalu Minta Drop Skin Buy Phase | Desember 2026/Week 2 (7 - 13 Des 2026)/Brief Valmart Helmy.md |
 | MART-20261209-01 | 2026-12-09 | Martforum | Audrey (VO) | VO #4: Edukasi Keamanan — Kenapa Isi Saldo Resmi Cukup Pakai Riot ID | Desember 2026/Week 2 (7 - 13 Des 2026)/Brief Martforum Dika dan Audrey.md |
 | VAL-20261209-02 | 2026-12-09 | Valmart | Helmy (Video) | Video #6: Smart Gamer — Tes Feeling Skin Dulu Sebelum Menyesal di Toko | Desember 2026/Week 2 (7 - 13 Des 2026)/Brief Valmart Helmy.md |
-| VAL-20261210-01 | 2026-12-10 | Valmart | Helmy (Video) | Video #7: Skit Nyeleneh "Polisi Skin" Interogasi Persiapan 12.12 | Desember 2026/Week 2 (7 - 13 Des 2026)/Brief Valmart Helmy.md |
-| MART-20261211-01 | 2026-12-11 | Martforum | Dika (Editor & Desain) | Poster Resmi Launching 12.12 Year-End Rush (Feed & Story) | Desember 2026/Week 2 (7 - 13 Des 2026)/Brief Martforum Dika dan Audrey.md |
-| MART-20261211-02 | 2026-12-11 | Martforum | Audrey (VO) | VO #5: Countdown H-1 12.12 — Siapkan Amunisi Sebelum Weekend | Desember 2026/Week 2 (7 - 13 Des 2026)/Brief Martforum Dika dan Audrey.md |
-| VAL-20261212-01 | 2026-12-12 | Valmart | Helmy (Video) | Video #8: 12.12 Special — Mabar Malam Minggu + Live Demo Finisher | Desember 2026/Week 2 (7 - 13 Des 2026)/Brief Valmart Helmy.md |
-| MART-20261214-01 | 2026-12-14 | Martforum | Audrey (VO) | VO #6: Meme Ekspektasi vs Realita Buka Kartu Night Market | Desember 2026/Week 3 (14 - 20 Des 2026)/Brief Martforum Dika dan Audrey.md |
-| VAL-20261215-01 | 2026-12-15 | Valmart | Helmy (Video) | Video #9: Meme Night Market Zonk? Tetap Bisa Nyicipin Kuronami | Desember 2026/Week 3 (14 - 20 Des 2026)/Brief Valmart Helmy.md |
-| MART-20261216-01 | 2026-12-16 | Martforum | Audrey (VO) | VO #7: Trik Hitung Pecahan VP Paling Hemat Tebus Night Market | Desember 2026/Week 3 (14 - 20 Des 2026)/Brief Martforum Dika dan Audrey.md |
-| VAL-20261216-02 | 2026-12-16 | Valmart | Helmy (Video) | Video #10: Skit Nyeleneh "Dukun Pembaca Aura Kartu Night Market" | Desember 2026/Week 3 (14 - 20 Des 2026)/Brief Valmart Helmy.md |
+| VAL-20261210-01 | 2026-12-10 | Valmart | Helmy (Video) | Video #7: Skit Nyeleneh "Polisi Skin" Interogasi Inventori Sultan | Desember 2026/Week 2 (7 - 13 Des 2026)/Brief Valmart Helmy.md |
+| MART-20261211-01 | 2026-12-11 | Martforum | Dika (Editor & Desain) | Poster Katalog Multi-Game Weekend martforum.id (Feed & Story) | Desember 2026/Week 2 (7 - 13 Des 2026)/Brief Martforum Dika dan Audrey.md |
+| MART-20261211-02 | 2026-12-11 | Martforum | Audrey (VO) | VO #5: Persiapan Mabar Akhir Pekan (Valorant VP & WDP MLBB) | Desember 2026/Week 2 (7 - 13 Des 2026)/Brief Martforum Dika dan Audrey.md |
+| VAL-20261212-01 | 2026-12-12 | Valmart | Helmy (Video) | Video #8: Montase 5 Finisher Favorit + Live Demo Mabar Malam Minggu | Desember 2026/Week 2 (7 - 13 Des 2026)/Brief Valmart Helmy.md |
+| MART-20261214-01 | 2026-12-14 | Martforum | Audrey (VO) | VO #6: Meme Ekspektasi vs Realita Buka Daily Shop Tiap Pagi | Desember 2026/Week 3 (14 - 20 Des 2026)/Brief Martforum Dika dan Audrey.md |
+| VAL-20261215-01 | 2026-12-15 | Valmart | Helmy (Video) | Video #9: Meme Daily Shop Zonk? Tetap Bisa Nyicipin Kuronami | Desember 2026/Week 3 (14 - 20 Des 2026)/Brief Valmart Helmy.md |
+| MART-20261216-01 | 2026-12-16 | Martforum | Audrey (VO) | VO #7: Trik Pilih Pecahan VP yang Pas Buat Skin Daily Shop | Desember 2026/Week 3 (14 - 20 Des 2026)/Brief Martforum Dika dan Audrey.md |
+| VAL-20261216-02 | 2026-12-16 | Valmart | Helmy (Video) | Video #10: Skit Nyeleneh "Dukun Pembaca Aura Daily Shop" | Desember 2026/Week 3 (14 - 20 Des 2026)/Brief Valmart Helmy.md |
 | VAL-20261217-01 | 2026-12-17 | Valmart | Helmy (Video) | Video #11: Edukasi Pensiun Mabar — Lepas Koleksi Aman Tanpa Drama | Desember 2026/Week 3 (14 - 20 Des 2026)/Brief Valmart Helmy.md |
 | MART-20261218-01 | 2026-12-18 | Martforum | Audrey (VO) | VO #8: Meme Kelakuan Anak Discord Awal Liburan (Sat-Set QRIS) | Desember 2026/Week 3 (14 - 20 Des 2026)/Brief Martforum Dika dan Audrey.md |
 | VAL-20261219-01 | 2026-12-19 | Valmart | Helmy (Video) | Video #12: POV Liburan Sekolah — Begadang Push Rank + Live TikTok | Desember 2026/Week 3 (14 - 20 Des 2026)/Brief Valmart Helmy.md |

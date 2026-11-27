@@ -8,8 +8,8 @@ Folder ini berisi rancangan program promosi, event komunitas, turnamen, dan kamp
 
 ## 📁 Arsip Folder Bulanan
 
-* 🗓️ **[November 2026/](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/README.md)**
-  * **Event 1 (Paid)**: **[Valmart Streamer Affiliate Sprint](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/Event Affiliate Sprint.md)** (Budget Rp 500k, min. 15 pesanan sah).
-  * **Event 2 (Paid)**: **[Valmart Sultan Showmatch](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/Event Sultan Showmatch.md)** (Juara 1 Rp 250k, live di akun streamer masing-masing, diskon 1% dirahasiakan).
-  * **Event 3 (UGC)**: **[Valmart ACE Bounty](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/Program Ace Bounty.md)** (Tanpa sewa akun, konten ter-kece berhadiah Rp 200k cash).
-  * **Event 4 (Flash Sale)**: **[Mega Sale 11.11](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/05%20Event%20dan%20Campaign/November%202026/Event Mega Sale 1111.md)** (Valmart Flash Rent Rp 11k & Martforum 125 VP Rp 11k).
+* 🗓️ **[November 2026/](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/05%20Event%20dan%20Campaign/November%202026/README.md)**
+  * **Event 1 (Paid)**: **[Valmart Streamer Affiliate Sprint](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/05%20Event%20dan%20Campaign/November%202026/Event%20Affiliate%20Sprint.md)** (Budget Rp 500k, min. 15 pesanan sah).
+  * **Event 2 (Paid)**: **[Valmart Sultan Showmatch](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/05%20Event%20dan%20Campaign/November%202026/Event%20Sultan%20Showmatch.md)** (Juara 1 Rp 250k, live di akun streamer masing-masing, diskon 1% dirahasiakan).
+  * **Event 3 (UGC)**: **[Valmart ACE Bounty](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/05%20Event%20dan%20Campaign/November%202026/Program%20Ace%20Bounty.md)** (Tanpa sewa akun, konten ter-kece berhadiah Rp 200k cash).
+  * **Event 4 (Flash Sale)**: **[Mega Sale 11.11](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/05%20Event%20dan%20Campaign/November%202026/Event%20Mega%20Sale%201111.md)** (Valmart Flash Rent Rp 11k & Martforum 125 VP Rp 11k).

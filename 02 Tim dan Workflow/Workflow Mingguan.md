@@ -71,7 +71,7 @@ flowchart TD
 
 ---
 
-## 3. Jadwal Prime Time Posting (Khusus Audiens Gamer)
+## 4. Jadwal Prime Time Posting (Khusus Audiens Gamer)
 
 Berdasarkan kebiasaan gamer bermain Valorant dan game kompetitif di Indonesia:
 

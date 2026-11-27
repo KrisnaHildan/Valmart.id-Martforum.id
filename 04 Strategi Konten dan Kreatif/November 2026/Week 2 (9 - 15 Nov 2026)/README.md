@@ -28,5 +28,5 @@
 ---
 
 ## 📂 Link File Brief Lengkap Minggu 2
-* 🎬 **[Brief Valmart Helmy.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%202%20(9%20-%2015%20Nov%202026)/Brief Valmart Helmy.md)** — Naskah rinci Helmy (Video 5 s/d 8).
-* 🎙️ **[Brief Martforum Jonathan.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%202%20(9%20-%2015%20Nov%202026)/Brief Martforum Jonathan.md)** — Naskah rinci Jonathan (VO 4 s/d 6 & Deliverables Desain Grafis).
+* 🎬 **[Brief Valmart Helmy.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%202%20(9%20-%2015%20Nov%202026)/Brief%20Valmart%20Helmy.md)** — Naskah rinci Helmy (Video 5 s/d 8).
+* 🎙️ **[Brief Martforum Jonathan.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%202%20(9%20-%2015%20Nov%202026)/Brief%20Martforum%20Jonathan.md)** — Naskah rinci Jonathan (VO 4 s/d 6 & Deliverables Desain Grafis).

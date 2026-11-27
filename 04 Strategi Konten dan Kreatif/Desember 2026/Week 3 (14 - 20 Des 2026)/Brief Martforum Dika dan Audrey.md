@@ -1,5 +1,5 @@
 # Brief Konten Voice Over (VO) & Desain — Martforum
-## Week 3: 14 – 20 Desember 2026 (Night Market & Awal Liburan)
+## Week 3: 14 – 20 Desember 2026 (Daily Shop & Awal Liburan)
 
 **Target Akun**: `@martforum.id` (Instagram & TikTok)  
 **Talent VO**: **Audrey**  
@@ -8,41 +8,41 @@
 
 ---
 
-### 🎙️ Konten VO 6 — Senin, 14 Des 2026 [🃏 MEME: EKSPEKTASI VS REALITA NIGHT MARKET]
+### 🎙️ Konten VO 6 — Senin, 14 Des 2026 [🃏 MEME: EKSPEKTASI VS REALITA DAILY SHOP]
 * **Talent VO**: **Audrey** | **Editor**: **Dika**
 * **Format**: Reaksi Komedi Komunitas Valorant.
 * **Durasi**: 22 – 26 detik.
-* **Angle**: Membahas momen ikonik *Night Market* di mana harapan tinggi langsung hancur melihat kartu yang keluar, atau justru hoki banget dapat skin idaman dan bingung butuh VP cepat.
+* **Angle**: Momen klasik cek *Daily Shop* tiap pagi: harapan tinggi dapet Vandal incaran langsung runtuh lihat isi toko, atau pas beneran hoki nongol skin idaman dan butuh VP cepat sebelum reset.
 * **Visual (Arahan Edit Dika)**:
-  * 0–6s: Layar *Night Market* penuh animasi berkilau (ekspektasi: Vandal Reaver, Prime, Gaia diskon 45%).
-  * 6–15s: Realita: Kartu terbuka semua isinya senjata yang gak pernah dipakai + diskon kecil.
-  * 15–24s: Transisi ke opsi kalau beneran hoki dapat skin bagus: langsung cek `martforum.id`.
+  * 0–6s: Layar *Daily Shop* penuh efek berkilau (ekspektasi: Vandal Kuronami, Reaver, Prime).
+  * 6–15s: Realita: Isi toko penuh senjata yang jarang dipakai.
+  * 15–24s: Transisi ke opsi kalau beneran hoki nongol skin impian: langsung cek `martforum.id`.
 * **Text on Screen (TOS)**:
-  * "Ekspektasi buka Night Market: Kuronami/Reaver diskon 49% ✨"
-  * "Realita: Bucky sama Judge diskon 12% 💀"
+  * "Ekspektasi buka Daily Shop pagi ini: Kuronami / Reaver ✨"
+  * "Realita: Senjata yang gak pernah disentuh 💀"
 * **Naskah Voice Over (Audrey)**:
-  > *"Ada dua tipe orang pas buka Night Market: tipe pertama yang kartunya langsung keluar skin impian diskon hampir setengah harga, dan tipe kedua yang isinya cuma bikin pengen uninstall game! Nah buat kalian yang masuk tipe pertama dan lagi hoki banget hari ini, jangan kelamaan mikir keburu lupa—langsung aja isi amunisi VP-nya di Martforum. Cukup Riot ID, bayar pakai QRIS, tiga detik langsung masuk!"*
+  > *"Ada dua tipe orang pas buka Daily Shop tiap pagi: tipe pertama yang langsung disambut skin impian sebelum berangkat aktivitas, dan tipe kedua yang isinya cuma bikin pengen tutup game lagi! Nah, buat kalian yang masuk tipe pertama dan lagi hoki hari ini, jangan kelamaan mikir keburu reset. Langsung aja isi amunisi VP di Martforum, cukup Riot ID, bayar via QRIS atau VA bank, dan sistem otomatis langsung memproses dua puluh empat jam!"*
 * **Sound / SFX**: Sound *fanfare* mewah $\rightarrow$ *Record scratch* $\rightarrow$ Lo-fi upbeat.
-* **Caption**: *"Kalian masuk tipe pertama yang hoki atau tipe kedua yang langsung pengen tutup game nih? 😭 Spill di komen!"*
+* **Caption**: *"Kalian masuk tipe pertama yang hoki atau tipe kedua yang langsung pengen tutup game nih? 😭 Spill isi Daily Shop hari ini di komen!"*
 
 ---
 
-### 🎙️ Konten VO 7 — Rabu, 16 Des 2026 [🧮 EDUKASI: TRIK HITUNG PECAHAN VP HEMAT]
+### 🎙️ Konten VO 7 — Rabu, 16 Des 2026 [🧮 EDUKASI: TRIK PILIH PECAHAN VP HEMAT]
 * **Talent VO**: **Audrey** | **Editor**: **Dika**
 * **Format**: Tips Hemat & Edukatif (*High Save Rate*).
 * **Durasi**: 24 – 30 detik.
-* **Angle**: Saat *Night Market* atau beli *Battlepass*, pemain sering asal beli pecahan besar padahal kalau dikombinasikan (misal 475 VP + 1.000 VP), sisa saldonya pas dan lebih hemat uang jajan.
+* **Angle**: Saat beli skin di *Daily Shop* (misal skin tier Deluxe `1.275 VP` atau Premium `1.775 VP` / Exclusive `2.175 VP`), pemain sering asal klik paket besar (`2.050 VP` atau `3.650 VP`), padahal di `martforum.id` tersedia pecahan antara yang lebih pas (**`475 VP`**, **`950 VP`**, **`1.000 VP`**, **`1.475 VP`**, **`2.050 VP`**, **`2.525 VP`**, **`3.050 VP`**) supaya sisa saldonya tidak mubazir.
 * **Visual (Arahan Edit Dika)**:
-  * 0–6s: Contoh harga skin diskon *Night Market* (misal 1.150 VP atau 1.260 VP).
-  * 6–16s: Animasi kalkulasi sederhana: kombinasi pecahan pas biar gak kebanyakan sisa VP nganggur.
-  * 16–26s: Screencast memilih nominal pas di `martforum.id` dengan harga kompetitif & QRIS cepat.
+  * 0–6s: Contoh harga skin di *Daily Shop* (misal tier Deluxe 1.275 VP, Premium 1.775 VP, atau Exclusive 2.175 VP).
+  * 6–16s: Sorot pilihan pecahan antara di layar `martforum.id` (misal **`950 VP`**, **`1.475 VP`**, atau **`2.525 VP`**) biar tidak perlu beli kelebihan.
+  * 16–26s: Screencast memilih nominal pas di `martforum.id` dengan harga promo & pembayaran QRIS otomatis.
 * **Text on Screen (TOS)**:
-  * "Jangan asal klik nominal pas tebus Night Market! 🧮"
-  * "Atur kombinasi pecahan biar budget liburan gak jebol"
+  * "Jangan asal klik nominal pas beli skin di Daily Shop! 🧮"
+  * "Pilih pecahan pas (475 / 950 / 1.000 / 1.475 / 2.525 VP) biar hemat"
 * **Naskah Voice Over (Audrey)**:
-  > *"Kalau dapet diskon Night Market di angka tanggung kayak seribu dua ratusan VP, jangan langsung kalap beli paket paling gede ya bro! Coba cek dulu sisa VP di akun kalian, terus hitung kombinasi pecahan yang paling pas biar gak ada duit yang mubazir. Di Martforum pilihannya lengkap dari pecahan kecil sampai besar, harganya juga ramah kantong pelajar. Tinggal masukin Riot ID, scan QRIS, beres dalam hitungan detik!"*
+  > *"Kalau skin incaran di Daily Shop harganya seribu dua ratusan atau dua ribu seratusan VP, jangan langsung kalap beli paket gede tiga ribuan VP ya bro! Cek dulu sisa saldo di akun kalian, terus pilih pecahan antara yang paling pas biar gak ada duit mubazir. Di Martforum pilihannya lengkap banget, dari empat ratus tujuh lima, sembilan ratus lima puluh, seribu, seribu empat ratus tujuh lima, sampai dua ribu lima ratus dua lima VP. Tinggal masukin Riot ID, bayar via QRIS, langsung beres!"*
 * **Sound / SFX**: Suara mesin hitung / *ding* ide $\rightarrow$ Beat lo-fi cerdas.
-* **Caption**: *"Simpan video ini biar nanti gak bingung ngitung pecahan pas mau tebus diskon toko! 💡 Cek daftar nominal lengkap di profil @martforum.id."*
+* **Caption**: *"Simpan video ini biar gak bingung milih pecahan VP pas beli skin di Daily Shop! 💡 Cek daftar nominal lengkapnya di profil @martforum.id."*
 
 ---
 

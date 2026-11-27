@@ -74,7 +74,7 @@ Kemitraan **PFL x Martforum.id** memadukan pilar *official branding*, interaksi 
 
 ---
 
-## 🎨 RANCANGAN KONTEN KHUSUS COLLAB (PENDEKATAN SOFTSALILING & AWARENESS)
+## 🎨 RANCANGAN KONTEN KHUSUS COLLAB (PENDEKATAN SOFTSELLING & AWARENESS)
 
 Sesuai arahan strategi, aset konten resmi peluncuran collab **PFL x Martforum.id** dirancang dengan pendekatan **softselling** murni. Fokusnya adalah:
 1. Membangun kedekatan emosional antara **kultur futsal** dan **kultur nongkrong/gaming anak muda**.
@@ -82,7 +82,7 @@ Sesuai arahan strategi, aset konten resmi peluncuran collab **PFL x Martforum.id
 
 ---
 
-### 🖼️ ASET 1: POSTER RESMI COLLAB (SOFTSALILING & BRAND AWARENESS)
+### 🖼️ ASET 1: POSTER RESMI COLLAB (SOFTSELLING & BRAND AWARENESS)
 
 #### 1. Konsep & Filosofi Visual
 * **Tema**: *"Dua Lapangan, Satu Semangat Juara"*  
@@ -136,7 +136,7 @@ Sesuai arahan strategi, aset konten resmi peluncuran collab **PFL x Martforum.id
 
 ---
 
-### 🎬 ASET 2: VIDEO REELS / TIKTOK KHUSUS COLLAB (SOFTSALILING LIFESTYLE)
+### 🎬 ASET 2: VIDEO REELS / TIKTOK KHUSUS COLLAB (SOFTSELLING LIFESTYLE)
 
 #### 1. Parameter Video
 * **Format**: Video Vertikal 9:16 (Instagram Reels & TikTok).

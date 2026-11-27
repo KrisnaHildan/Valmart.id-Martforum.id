@@ -13,33 +13,42 @@ Workspace strategi digital marketing untuk dua brand di bawah supervisi Ko Jerem
 
 ```
 ├── 01 Informasi Project/
-│   ├── README.md                       # Overview brand, fokus produk, & strategi
-│   └── Brand DNA dan Guideline.md      # Identitas resmi, target market, tone of voice & IG guidelines
+│   ├── README.md                          # Overview brand, fokus produk, & strategi
+│   ├── Product Knowledge Resmi.md         # Acuan wajib katalog VP, game, jam layanan, & SOP web asli
+│   ├── Brand DNA dan Guideline.md         # Identitas resmi, target market, tone of voice & IG guidelines
+│   └── Audit Web dan Sosmed November 2026.md # Audit website & media sosial + aturan anti-takedown
 ├── 02 Tim dan Workflow/
-│   ├── README.md                       # Peta navigasi tim & ringkasan operasional
-│   ├── Struktur dan Peran.md           # Deskripsi peran 5 anggota & Matriks RACI
-│   └── Workflow Mingguan.md            # Siklus mingguan, agenda harian, & jadwal post mingguan
+│   ├── README.md                          # Peta navigasi tim & ringkasan operasional
+│   ├── Struktur dan Peran.md              # Deskripsi peran anggota tim & Matriks RACI
+│   └── Workflow Mingguan.md               # Siklus mingguan, agenda harian, & jadwal post mingguan
 ├── 03 Riset Kompetitor/
-│   ├── Daftar Kompetitor.md            # Database & mapping 7 kompetitor utama
-│   ├── Scraping Sosmed Kompetitor.md   # Hasil audit & scraping channel medsos kompetitor
-│   └── Insight dan Implementasi.md     # Rekomendasi aksi strategis, hook konten, & sinergi cross-funnel
+│   ├── Daftar Kompetitor.md               # Database & mapping kompetitor utama
+│   ├── Scraping Sosmed Kompetitor.md      # Hasil audit & scraping channel medsos kompetitor
+│   └── Insight dan Implementasi.md        # Rekomendasi aksi strategis, hook konten, & sinergi cross-funnel
 ├── 04 Strategi Konten dan Kreatif/
-│   ├── README.md                       # Peta modul konten & arsip sprint bulanan
-│   ├── Referensi Konten Nyeleneh.md    # Playbook konten komedi unhinged tapi jualan
-│   └── Oktober 2026/
-│       ├── README.md                   # Jadwal posting harian 20-31 Oktober 2026
-│       ├── Brief Konten Giveaway.md    # Brief KOL Widipu Giveaway
-│       ├── Brief Valmart Helmy.md      # 8 Brief video singkat Valmart (Helmy)
-│       └── Brief Martforum Jonathan.md # 5 Brief naskah Voice Over Martforum (Jonathan)
-└── 05 Event dan Campaign/
-    ├── README.md                       # Peta navigasi event & program promosi
-    └── EVENT_STREAMER_NOVEMBER_2026.md # 3 Opsi event streamer November (Paid Rp 500rb & Free)
+│   ├── README.md                          # Peta modul konten & arsip sprint bulanan
+│   ├── Jadwal Konten.md                   # Master sumber sinkronisasi otomatis ke Creative Tracker
+│   ├── Referensi Konten Nyeleneh.md       # Playbook konten komedi unhinged tapi jualan
+│   ├── Oktober 2026/                      # Kickoff Sprint 20-31 Okt + Flash Giveaway Widipu
+│   ├── November 2026/                     # Sprint 4 minggu (11.11, Ace Bounty, Sultan Showmatch)
+│   └── Desember 2026/                     # Sprint 5 minggu (Protokol Anti-Suspend, 12.12, Night Market)
+├── 05 Event dan Campaign/
+│   ├── README.md                          # Peta navigasi event & program promosi
+│   └── November 2026/                     # Affiliate Sprint, Sultan Showmatch, Ace Bounty, Mega Sale 11.11
+├── 06 Sponsorship/
+│   ├── README.md                          # Master hub sponsorship & aktivasi komunitas
+│   ├── Martforum x COPA.md                # Rencana sponsorship COPA PPI Tiongkok
+│   ├── Martforum x PFL.md                 # Blueprint kemitraan Pro Futsal League (PFL)
+│   └── Script Video Sponsorship PFL.md    # Script produksi video PFL dari footage mentahan
+└── 07 Internal Tools/
+    └── Creative Tracker/                  # Sistem Google Sheets + Apps Script sinkronisasi GitHub
 ```
 
 ---
 
 ## 🎯 Fokus & Rencana Strategis
-- **Pintu Masuk Terendah (Hook TikTok)**: Memaksimalkan fitur sewa akun Valorant di Valmart sebagai konten hook POV & flex skin sultan (harga termurah mulai Rp 5.000 / goceng).
-- **Pemisahan Akun Traffic vs Katalog**: Menjaga akun media sosial tetap aman dari risiko shadowban/report ToS dengan melempar display katalog ke web.
+- **Pintu Masuk Terendah (Hook TikTok)**: Memaksimalkan fitur sewa akun Valorant di Valmart (durasi fleksibel mulai **3 jam** hingga harian, operasional sewa `08.00–01.00 WIB` & jual-beli 24 jam via WA resmi) sebagai konten hook POV & flex skin sultan.
+- **Pemisahan Akun Traffic vs Katalog**: Menjaga akun media sosial tetap aman dari risiko shadowban/report ToS dengan melempar display katalog ke website (`valmart.id` & `martforum.id`).
 - **Trust & Edukasi Anti-HB**: Edukasi perbedaan First Mail vs suntikan untuk membangun reputasi aman.
-- **Sinergi Cross-Selling**: Sinergi ekosistem antara sewa akun Valmart dengan top up VP di Martforum.
+- **Sinergi Cross-Selling**: Sinergi ekosistem antara layanan akun Valmart dengan top up otomatis 24 jam di Martforum (pecahan VP resmi `475 VP` s.d. `13.050 VP`, MLBB/WDP, Free Fire, dll.).
+- **Acuan Wajib Produk**: Seluruh konten & promo wajib mengacu pada [Product Knowledge Resmi.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/01%20Informasi%20Project/Product%20Knowledge%20Resmi.md).

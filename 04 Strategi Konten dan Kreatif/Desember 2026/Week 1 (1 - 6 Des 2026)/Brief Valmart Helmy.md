@@ -79,6 +79,6 @@
   * "Malam minggu di rumah aja? Mabar bareng mimin yuk! ❄️"
   * "Request skin favorit lu pas Live malam ini jam 20.00 WIB!"
 * **Audio / Script (Helmy)**:
-  > *"Malam minggu gak ke mana-mana? Gas mabar bareng gua nanti malam di Live jam delapan! Buat kalian yang penasaran sama suara dan efek finisher Snowfall dua titik nol atau Kuronami, nanti langsung request aja di kolom chat live. Yang paling aktif mabar bareng, bakal ada kejutan spesial buat nemenin push rank kalian!"*
+  > *"Malam minggu gak ke mana-mana? Gas mabar bareng gua nanti malam di Live jam delapan! Buat kalian yang penasaran sama efek salju Snowfall dua titik nol atau suara finisher Kuronami, langsung request aja di kolom chat live. Nanti kita tes satu-satu sambil push rank bareng!"*
 * **Sound / SFX**: Beat Phonk / Future Bass yang sinkron dengan animasi *inspect* senjata.
 * **Caption**: *"Absen dulu yang malam minggu ini standby di depan monitor 👀 Nanti malam kita tes semua skin request-an kalian pas Live!"*

@@ -31,7 +31,7 @@
 * **Meme Angle**: Tanggal 25 dompet tinggal recehan sisa kembalian indomaret, tapi pas mabar di Discord gengsi tetap tinggi karena bisa nenteng skin sultan hasil sewa di Valmart.
 * **Visual**:
   * 0–5s: Helmy buka dompet kusam: ada uang kertas dua puluh ribu lecek sama bon minimarket.
-  * 5–15s: Helmy buka `valmart.id`, sewa akun rental 24 jam seharga goceng (Rp 5.000).
+  * 5–15s: Helmy buka `valmart.id`, pilih akun dari katalog sewa (durasi fleksibel mulai **3 jam** hingga harian, paket hemat mulai Rp 5.000).
   * 15–24s: Masuk ke lobi Discord, temen-temennya pada heboh: *"Wedeh Helmy tanggal tua tetep nenteng Champions 2024!"*. Helmy senyum bangga sambil minum air putih.
 * **Text on Screen (TOS)**:
   * "Kondisi dompet: Tinggal 20 ribu lecek 💀"
@@ -69,12 +69,12 @@
 * **Visual**:
   * 0–6s: Layar inventory akun Valmart: Berderet Vandal Kuronami, Phantom Recon, Melee Karambit Champions, Araxys, Glitchpop.
   * 6–16s: Helmy inspect skin satu per satu dengan transisi renyah dan suara finisher yang memuaskan telinga.
-  * 16–24s: Tunjukkan katalog website `valmart.id`: Akun-akun ini berstatus ready dan bisa disewa kapan saja oleh publik mulai goceng (Rp 5.000).
+  * 16–24s: Tunjukkan katalog website `valmart.id`: Akun-akun ini berstatus ready dan bisa disewa fleksibel mulai durasi 3 jam (paket hemat mulai Rp 5.000).
 * **Text on Screen (TOS)**:
   * "Katalog Akun Sultan Weekend Ready Sewa! 🔥"
-  * "Mulai Rp 5.000 (goceng) langsung gas mabar di valmart.id"
+  * "Sewa mulai 3 jam di valmart.id (Operasional 08.00–01.00 WIB)"
 * **Audio / Script (Helmy)**:
-  > *"Malam minggu udah di depan mata, lobi mabar lu udah siap belum? Buat kalian yang bosen mabar pake skin standar, nih deretan akun Sultan Valmart yang siap nemenin malam minggu kalian! Ada Kuronami full varian, Karambit Champions, sampai skin Arcane langka yang udah gak bisa dibeli lagi. Semuanya berstatus ready dan bisa lu sewa otomatis via QRIS mulai modal goceng lima ribu rupiah doang. Langsung amankan akun impian lu sebelum keduluan orang lain di link bio sekarang!"*
+  > *"Malam minggu udah di depan mata, lobi mabar lu udah siap belum? Buat kalian yang bosen mabar pake skin standar, nih deretan akun Sultan Valmart yang siap nemenin malam minggu kalian! Ada Kuronami full varian, Karambit Champions, sampai skin Arcane langka yang udah gak bisa dibeli lagi. Semuanya berstatus ready di katalog valmart.id dengan durasi fleksibel mulai tiga jam, dan prosesnya sat-set lewat WhatsApp resmi admin. Langsung amankan slot akun impian lu sebelum keduluan orang lain di link bio sekarang!"*
 * **Sound / SFX**: Suara inspect senjata beruntun renyah $\rightarrow$ Upbeat future bass enerjik.
 * **Caption**: *"Sambut malam minggu dengan skin paling wangi di lobi! Booking akun impian lu di link bio sekarang!"*
 

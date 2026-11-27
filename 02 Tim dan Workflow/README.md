@@ -10,7 +10,7 @@ Selamat datang di modul dokumentasi tim dan alur kerja untuk ekosistem **Valmart
 
 ## 📁 Daftar Dokumen dalam Folder Ini
 
-1. **[Struktur dan Peran.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/02%20Tim%20dan%20Workflow/Struktur dan Peran.md)**
+1. **[Struktur dan Peran.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/02%20Tim%20dan%20Workflow/Struktur%20dan%20Peran.md)**
    * Profil dan ruang lingkup tugas 5 anggota tim:
      * **Jeremy**: Owner (All-Role & Decision Maker)
      * **Hildan**: Digital Marketing Coordinator
@@ -19,7 +19,7 @@ Selamat datang di modul dokumentasi tim dan alur kerja untuk ekosistem **Valmart
      * **Audrey**: KOL Manager & Event Manager (Scrims/Turnamen)
    * Matriks RACI (Responsible, Accountable, Consulted, Informed).
 
-2. **[Workflow Mingguan.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/02%20Tim%20dan%20Workflow/Workflow Mingguan.md)**
+2. **[Workflow Mingguan.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/02%20Tim%20dan%20Workflow/Workflow%20Mingguan.md)**
    * Siklus mingguan & pembagian jadwal harian:
      * Jadwal post Valmart (Helmy: 4x seminggu).
      * Jadwal post Martforum (Jonathan: 3x VO seminggu).

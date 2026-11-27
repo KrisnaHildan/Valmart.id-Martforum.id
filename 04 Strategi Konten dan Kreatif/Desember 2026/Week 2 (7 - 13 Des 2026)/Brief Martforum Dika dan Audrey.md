@@ -1,5 +1,5 @@
 # Brief Konten Voice Over (VO) & Desain — Martforum
-## Week 2: 7 – 13 Desember 2026 (Pekan Harbolnas 12.12)
+## Week 2: 7 – 13 Desember 2026 (Pekan Edukasi & Multi-Game Rush)
 
 **Target Akun**: `@martforum.id` (Instagram & TikTok)  
 **Talent VO**: **Audrey**  
@@ -10,42 +10,42 @@
 
 ## 🎨 Bagian 1: Deliverables Desain Grafis (Dika Moklet)
 
-### 1. 📢 POSTER TEASER H-5 HARBOLNAS 12.12 [Senin, 7 Des 2026]
+### 1. 📢 POSTER KEUNGGULAN LAYANAN OTOMATIS `martforum.id` [Senin, 7 Des 2026]
 * **Format**: 1080 x 1350 px (Feed IG/Carousel TikTok) & 1080 x 1920 px (Story).
-* **Aturan Aman**: Fokus ke promo *top-up resmi otomatis 24 jam* (Martforum) + branding visual tanggal kembar `12.12` yang bersih tanpa teks "jual akun".
+* **Aturan Aman**: Fokus ke keunggulan nyata layanan top-up resmi otomatis 24 jam di `martforum.id` tanpa klaim diskon fiktif.
 * **Isi Konten**:
-  1. **Headline**: *"SIAP-SIAP 12.12 MABAR RUSH!"*
-  2. **Subheadline**: *"Tanggal kembar + menjelang Night Market? Waktunya isi amunisi game lebih hemat."*
-  3. **Poin Utama**: *"Otomatis 24 Jam via QRIS • Cukup Riot ID Tanpa Password • 100% Legal"*.
-  4. **CTA**: *"Pantau terus @martforum.id & martforum.id"*.
+  1. **Headline**: *"TOP UP GAME OTOMATIS 24 JAM, TANPA NUNGGU ADMIN!"*
+  2. **Subheadline**: *"Main makin lancar dengan proses instan via QRIS, Virtual Account Bank, & E-Wallet."*
+  3. **Poin Utama**: *"Cukup Riot ID / User ID Tanpa Password • Proses Otomatis • 100% Legal"*.
+  4. **CTA**: *"Cek katalog lengkapnya di martforum.id"*.
 
-### 2. 🔥 POSTER RESMI LAUNCHING 12.12 [Jumat, 11 Des 2026 — Untuk Tayang H-1/Hari-H]
+### 2. 🎮 POSTER KATALOG MULTI-GAME WEEKEND `martforum.id` [Jumat, 11 Des 2026]
 * **Format**: 1080 x 1350 px (Feed) & 1080 x 1920 px (Story).
 * **Isi Konten**:
-  1. **Headline**: *"12.12 YEAR-END RUSH DIMULAI!"*
-  2. **Highlight Produk**: Pecahan populer **475 VP / 1.000+ VP / 2.000+ VP** serta **Weekly Diamond Pass (MLBB)** untuk persiapan libur akhir pekan.
-  3. **Badge Keamanan**: *"Resmi & Aman • Proses 3 Detik"*.
+  1. **Headline**: *"SIAPKAN AMUNISI MABAR AKHIR PEKAN!"*
+  2. **Highlight Produk**: Pecahan VP resmi di `martforum.id` (**475 VP / 1.000 VP / 2.050 VP / 2.525 VP**) serta **Weekly Diamond Pass (1x-5x WDP) & Diamond MLBB**, **Free Fire**, dan **PUBG Mobile**.
+  3. **Badge Keamanan**: *"Resmi & Aman • QRIS, VA Bank (BCA/Mandiri/BNI/BRI/Permata), & E-Wallet"*.
 
 ---
 
 ## 🎙️ Bagian 2: Naskah Voice Over (VO) Martforum — Audrey
 
-### 🎙️ Konten VO 3 — Senin, 7 Des 2026 [🌙 PREDIKSI NIGHT MARKET DESEMBER 2026]
+### 🎙️ Konten VO 3 — Senin, 7 Des 2026 [🔥 DEBAT SKIN DAILY SHOP: KURONAMI VS REAVER VS PRIME]
 * **Talent VO**: **Audrey** | **Editor**: **Dika**
-* **Format**: Berita & Prediksi Komunitas Valorant.
+* **Format**: Diskusi & Polling Komunitas Valorant.
 * **Durasi**: 24 – 30 detik.
-* **Angle**: Mengingat pola historis Riot Games, *Night Market* akhir tahun biasanya buka pertengahan Desember hingga awal Januari. Saatnya tanya audiens skin apa yang paling mereka incar!
+* **Angle**: Tiga skin Vandal paling sering diburu pemain saat muncul di Daily Shop: Kuronami, Reaver, dan Prime. Mana yang paling wajib langsung diamankan begitu nongol di toko harian?
 * **Visual (Arahan Edit Dika)**:
-  * 0–6s: Animasi kartu *Night Market* tertutup yang bercahaya misterius.
-  * 6–16s: Deretan skin *Night Market* favorit komunitas (Reaver, Prime, Gaia, Oni, Ion) lengkap dengan catatan syarat tier yang masuk.
-  * 16–26s: Penutup santai tampilan web `martforum.id` sebagai opsi isi VP cepat saat diskon muncul.
+  * 0–6s: Tampilan Daily Shop Valorant saat muncul Vandal Kuronami, Reaver, dan Prime.
+  * 6–16s: Cuplikan singkat suara tembakan dan animasi reload ketiganya secara bergantian.
+  * 16–26s: Tampilan halaman Valorant di `martforum.id` (input Riot ID + pilihan `1.000 VP`, `2.050 VP`, `2.525 VP`).
 * **Text on Screen (TOS)**:
-  * "Siap-siap! Night Market Desember bentar lagi buka? 👀"
-  * "3 Skin yang paling sering diburu pas kartu diskon keluar:"
+  * "Kalau 3 skin ini barengan nongol di Daily Shop, ambil yang mana? 👀"
+  * "Kuronami vs Reaver vs Prime!"
 * **Naskah Voice Over (Audrey)**:
-  > *"Kalau ngelihat pola tahun-tahun sebelumnya, Night Market edisi akhir tahun biasanya gak lama lagi bakal nongol di pertengahan Desember sampai awal Januari! Pertanyaannya, kartu kalian nanti bakal wangi atau malah dapet Smite Knife lagi? Mumpung belum buka, mending kalian siapin dulu target skin tier Premium kayak Gaia, Reaver, atau Oni. Nanti pas kartunya kebuka dan lagi hoki, isi amunisinya gak usah ribet—cukup masukin Riot ID di Martforum, scan QRIS, detik itu juga langsung masuk!"*
-* **Sound / SFX**: Suara efek misteri *shuffle* kartu $\rightarrow$ SFX *sparkle* $\rightarrow$ Lo-fi hiphop.
-* **Caption**: *"Coba tebak, Night Market Desember nanti kalian bakal dapat skin impian atau ampas lagi? 😭 Manifesting di kolom komentar!"*
+  > *"Kalau suatu pagi kalian buka Daily Shop Valorant terus langsung disambut Vandal Kuronami, Reaver, atau Prime, kalian bakal pilih yang mana? Kuronami unggul di animasi dan suara petir yang modern, Reaver punya lonceng finisher klasik yang bikin pede, sedangkan Prime tetap jadi favorit karena tembakannya bersih. Biar pas skin incaran muncul kalian gak ketinggalan timer reset toko, isi VP-nya langsung di Martforum. Cukup masukin Riot ID tanpa password, pilih metode bayar QRIS atau VA bank, dan sistem otomatis langsung jalan dua puluh empat jam!"*
+* **Sound / SFX**: Sound buka kartu toko $\rightarrow$ SFX tembakan Vandal $\rightarrow$ Lo-fi hiphop.
+* **Caption**: *"Tim Kuronami, Reaver, atau Prime nih kalau lagi nunggu Daily Shop? Tulis pilihan kalian di komentar!"*
 
 ---
 
@@ -62,25 +62,25 @@
   * "Masih dimintain password pas isi VP? Mending skip! 🛑"
   * "Di Martforum: Cukup Riot ID + Tagline, 100% Aman!"
 * **Naskah Voice Over (Audrey)**:
-  > *"Buat kalian yang baru main Valorant, ingat satu aturan paling dasar ini: kalau ada tempat isi saldo game yang minta email sama password akun kalian, mending langsung mundur pelan-pelan! Sistem jalur resmi sekarang udah serba praktis—di Martforum, kalian cukup masukin Riot ID plus Tagline aja, gak perlu login sama sekali. Selain datanya tetap aman, prosesnya juga otomatis dalam hitungan detik pakai QRIS. Hemat, cepat, dan bikin tidur nyenyak!"*
+  > *"Buat kalian yang baru main Valorant, ingat satu aturan paling dasar ini: kalau ada tempat isi saldo game yang minta email sama password akun kalian, mending langsung mundur pelan-pelan! Sistem jalur resmi sekarang udah serba praktis. Di Martforum, kalian cukup masukin Riot ID plus Tagline aja, gak perlu login sama sekali. Selain datanya tetap aman, prosesnya juga otomatis dua puluh empat jam pakai QRIS. Hemat, cepat, dan bikin tidur nyenyak!"*
 * **Sound / SFX**: Sound error *buzzer* $\rightarrow$ Sound *chime* aman $\rightarrow$ Upbeat clean.
 * **Caption**: *"Jangan pernah sembarangan kasih login akun ke siapa pun! Pastikan selalu pakai jalur resmi via Riot ID di @martforum.id 🔒"*
 
 ---
 
-### 🎙️ Konten VO 5 — Jumat, 11 Des 2026 [⚡ H-1 12.12: SIAPKAN AMUNISI SEBELUM WEEKEND]
+### 🎙️ Konten VO 5 — Jumat, 11 Des 2026 [⚡ WEEKEND MULTI-GAME: VALORANT VP & WDP MLBB]
 * **Talent VO**: **Audrey** | **Editor**: **Dika**
-* **Format**: Countdown Event 12.12 + FOMO Ringan.
+* **Format**: Edukasi Layanan Multi-Game Jelang Akhir Pekan.
 * **Durasi**: 20 – 25 detik.
-* **Angle**: Mengingatkan promo tanggal kembar 12.12 yang siap menemani mabar akhir pekan (bukan hanya Valorant, tapi juga MLBB & game lain).
+* **Angle**: Menjelang akhir pekan, pemain bukan cuma butuh VP Valorant untuk Battlepass atau Daily Shop, tapi juga Weekly Diamond Pass (WDP) Mobile Legends, Diamond Free Fire, atau UC PUBG Mobile.
 * **Visual (Arahan Edit Dika)**:
-  * 0–5s: Kalender digital bergeser ke angka `12.12` dengan animasi neon.
-  * 5–15s: Montase cepat lobi Valorant + MLBB (tunjukkan bahwa kedua game didukung).
-  * 15–23s: Tampilan halaman utama `martforum.id` dengan metode bayar QRIS instan.
+  * 0–5s: Tampilan halaman utama `martforum.id` dengan deretan ikon game populer (Valorant, MLBB, Free Fire, PUBG Mobile).
+  * 5–15s: Sorot menu Mobile Legends (opsi **Weekly Diamond Pass 1x-5x** & Diamond reguler) serta halaman Valorant (**475 / 1.000 / 2.050 / 2.525 VP**).
+  * 15–23s: Pilihan metode bayar QRIS, Virtual Account bank, & e-wallet di `martforum.id`.
 * **Text on Screen (TOS)**:
-  * "Besok udah 12.12 & malam minggu! 🔥"
-  * "Cek penawaran spesial 12.12 di martforum.id"
+  * "Besok udah malam minggu! Amunisi mabar udah siap? 🎮"
+  * "Valorant, MLBB (WDP), Free Fire, PUBG: otomatis 24 jam di martforum.id"
 * **Naskah Voice Over (Audrey)**:
-  > *"Besok udah tanggal dua belas bulan dua belas, dan pas banget jatuhnya di hari Sabtu malam minggu! Buat yang lagi ngincer skin di Daily Shop Valorant atau mau ngamanin Weekly Diamond Pass buat mabar Mobile Legends bareng temen, jangan sampai kelewatan momen tanggal kembar di Martforum. Prosesnya otomatis dua puluh empat jam pakai QRIS, gak perlu nunggu admin bales. Cek aja langsung detail promonya di profil!"*
-* **Sound / SFX**: Sound hitung mundur $\rightarrow$ Bass drop $\rightarrow$ Beat enerjik.
-* **Caption**: *"12.12 ketemu malam minggu = combo mabar terbaik! ⚡ Cek detail promo tanggal kembar langsung di profil @martforum.id."*
+  > *"Besok udah masuk akhir pekan, lobi mabar pasti mulai ramai dari sore sampai malam! Buat yang lagi ngincer skin di Daily Shop Valorant atau mau ngamanin Weekly Diamond Pass buat mabar Mobile Legends bareng temen, semua lengkap di Martforum. Ada juga Free Fire sampai PUBG Mobile dengan pilihan bayar QRIS, virtual account bank, sampai e-wallet. Prosesnya otomatis dua puluh empat jam, tinggal cek aja katalog lengkapnya di profil!"*
+* **Sound / SFX**: Sound klik game $\rightarrow$ SFX *ding* sukses $\rightarrow$ Beat enerjik.
+* **Caption**: *"Dari Valorant sampai Weekly Diamond Pass MLBB, semua siap nemenin mabar malam minggu kalian di martforum.id!"*

@@ -20,8 +20,8 @@
 
 Mengingat maraknya akun terkena *suspend* dan *takedown* di akhir November akibat filter AI moderasi (*Frauds & Scams* / *Inauthentic Commercial Activity*) serta kebijakan ToS Riot Games, **seluruh naskah Desember 2026 dirombak total dengan 4 aturan ketat**:
 
-1. **Rasio Konten Aman (70% Hiburan/Meme/News — 30% Soft-Sell)**:
-   - Mayoritas video tampil murni sebagai konten kreator gaming (meme mabar, update **Agent Hush**, bundle **Snowfall 2.0**, drama **Night Market**, tips gameplay).
+1. **Rasio Konten Aman (70% Hiburan/Meme/News, 30% Soft-Sell)**:
+   - Mayoritas video tampil murni sebagai konten kreator gaming (meme mabar, update **Agent Hush**, bundle **Snowfall 2.0**, drama **Daily Shop**, tips gameplay).
    - Brand hadir lewat watermark halus, obrolan natural, atau *pinned comment*, bukan brosur jualan agresif.
 2. **Blokir Kata Pemicu Ban (Di Audio, Text on Screen, & Caption)**:
    - ❌ **DILARANG**: *"jual akun"*, *"beli akun"*, *"sewa akun"*, *"akun second"*, *"hackback / HB"*, *"cair 15 menit"*, *"uang kembali 100%"*, *"carding/hack"*, serta penulisan nominal uang vulgar (*"Rp 5.000"*, *"Rp 200.000"*) di TOS 3 detik pertama.
@@ -38,8 +38,8 @@ Mengingat maraknya akun terkena *suspend* dan *takedown* di akhir November akiba
 | Minggu | Periode | Tema Utama & Momentum | Valmart (Helmy: Sel, Rab, Kam, Sab) | Martforum (Dika & Audrey: Sen, Rab, Jum*) |
 | :--- | :--- | :--- | :---: | :---: |
 | **Week 1** | 1 – 6 Des | **Reset Awal Bulan & Update Snowfall 2.0 / Agent Hush** | 4 Video (1, 2, 3, 5 Des) | 2 VO (2, 4 Des) |
-| **Week 2** | 7 – 13 Des | **Harbolnas 12.12 & Antisipasi Night Market** | 4 Video (8, 9, 10, 12 Des) | 3 VO + 2 Poster 12.12 (7, 9, 11 Des) |
-| **Week 3** | 14 – 20 Des | **Night Market Hype & Awal Liburan Sekolah** | 4 Video (15, 16, 17, 19 Des) | 3 VO (14, 16, 18 Des) |
+| **Week 2** | 7 – 13 Des | **Edukasi Keamanan, Pecahan VP Resmi, & Multi-Game Rush** | 4 Video (8, 9, 10, 12 Des) | 3 VO + 2 Poster (7, 9, 11 Des) |
+| **Week 3** | 14 – 20 Des | **Drama Daily Shop, Trik Pecahan VP, & Awal Liburan Sekolah** | 4 Video (15, 16, 17, 19 Des) | 3 VO (14, 16, 18 Des) |
 | **Week 4** | 21 – 27 Des | **Libur Natal & Pergeseran Jadwal Dika (Skip 24–27 Des)** | 4 Video (22, 23, 24, 26 Des) | 3 VO + 1 Poster *(21, **22**, 23 Des)* |
 | **Week 5** | 28 – 31 Des | **Payday Akhir Tahun & Closing 2026** | 3 Video (29, 30, 31 Des) | 2 VO + 1 Poster (28, 30 Des) |
 

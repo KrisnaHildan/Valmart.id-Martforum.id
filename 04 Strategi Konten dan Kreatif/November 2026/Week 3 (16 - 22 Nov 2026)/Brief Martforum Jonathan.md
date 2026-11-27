@@ -24,10 +24,10 @@
      * Subheadline: *"Gak pake ribet, 1 menit langsung bisa login. Ini cara sewanya 👇"*.
      * Visual: Tampilan Vandal Kuronami & pisau Champions glowing dengan stiker neon *"TERMURAH SE-INDONESIA"*.
   2. **Slide 2 (Step-by-Step Cepat)**:
-     * Step 1: Buka `valmart.id` & pilih akun impian lu di katalog ready.
-     * Step 2: Upload foto kartu identitas (KTP/Kartu Pelajar) buat verifikasi data aman.
-     * Step 3: Scan QRIS otomatis (Hitungan detik pembayaran terverifikasi).
-     * Step 4: ID & Password otomatis muncul di layar + dikirim ke WA/Email.
+     * Step 1: Buka `valmart.id` & pilih akun serta durasi sewa (mulai **3 jam** hingga 24 jam) di katalog ready.
+     * Step 2: Klik lanjut ke WhatsApp resmi admin (`chat-only`, jam operasional sewa **08.00–01.00 WIB**) & unggah foto identitas (KTP/data diri) untuk verifikasi aman.
+     * Step 3: Selesaikan pembayaran (QRIS / transfer bank / e-wallet).
+     * Step 4: Akun langsung aktif dikirim oleh admin dan siap dipakai mabar!
   3. **Slide 3 (Trust Badges & CTA)**:
      * Keunggulan: *Garansi 100% Anti-HB • Akun Aman Tanpa Cheat • CS Siaga 24 Jam*.
      * CTA: *"Sewa akun sultan lu sekarang di valmart.id (Link di bio)"*.

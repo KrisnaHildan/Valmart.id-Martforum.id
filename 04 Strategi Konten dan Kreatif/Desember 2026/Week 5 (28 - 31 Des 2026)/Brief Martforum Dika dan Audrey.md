@@ -26,16 +26,16 @@
 * **Talent VO**: **Audrey** | **Editor**: **Dika**
 * **Format**: Promo Payday Akhir Bulan (Soft-Sell Elegan).
 * **Durasi**: 20 – 25 detik.
-* **Angle**: Gaji / uang saku akhir tahun sudah cair. Jangan biarkan sisa *Night Market* atau *Daily Shop* akhir Desember lewat begitu saja sebelum berganti tahun!
+* **Angle**: Gaji atau uang saku akhir tahun sudah cair. Jangan biarkan skin incaran di *Daily Shop* akhir Desember lewat begitu saja sebelum berganti tahun.
 * **Visual (Arahan Edit Dika)**:
   * 0–6s: Ilustrasi notifikasi transfer akhir bulan masuk di HP.
-  * 6–15s: Tampilan *Daily Shop* / *Night Market* hari-hari terakhir Desember yang masih aktif.
-  * 15–23s: Proses cepat di `martforum.id` via QRIS 3 detik.
+  * 6–15s: Tampilan *Daily Shop* Valorant hari-hari terakhir Desember yang lagi aktif.
+  * 15–23s: Proses cepat di `martforum.id` via QRIS otomatis.
 * **Text on Screen (TOS)**:
   * "Gajian akhir tahun udah mendarat? 💸"
   * "Jangan biarin skin incaran lewat gitu aja sebelum 2027!"
 * **Naskah Voice Over (Audrey)**:
-  > *"Notifikasi gajian penutup tahun udah masuk ke rekening? Mumpung sisa hari di dua ribu dua puluh enam tinggal hitungan jari, jangan biarin skin incaran di Daily Shop atau Night Market keburu lewat! Langsung aja isi amunisi VP atau diamond game favorit kalian di Martforum. Prosesnya otomatis tiga detik via QRIS tanpa perlu login password, aman seratus persen buat nutup tahun dengan gaya!"*
+  > *"Notifikasi gajian penutup tahun udah masuk ke rekening? Mumpung sisa hari di dua ribu dua puluh enam tinggal hitungan jari, jangan biarin skin incaran di Daily Shop keburu lewat! Langsung aja isi amunisi VP atau diamond game favorit kalian di Martforum. Prosesnya otomatis dua puluh empat jam via QRIS tanpa perlu login password, aman buat nutup tahun dengan gaya!"*
 * **Sound / SFX**: Suara notifikasi m-Banking $\rightarrow$ SFX *kaching* halus $\rightarrow$ Upbeat future bass.
 * **Caption**: *"Reward diri sendiri di akhir tahun dengan skin incaran yang udah ditunggu-tunggu! ⚡ Langsung gas di martforum.id."*
 
@@ -54,6 +54,6 @@
   * "Kilas Balik 2026: Skin paling worth it tahun ini versi kalian apa? 🏆"
   * "Terima kasih sudah mempercayakan kebutuhan gaming di Martforum.id!"
 * **Naskah Voice Over (Audrey)**:
-  > *"Sebelum kita pindah ke tahun dua ribu dua puluh tujuh, menurut kalian skin atau update paling keren sepanjang tahun ini jatuh ke siapa? Apakah Kuronami, koleksi Champions, atau Agent Hush kemarin? Apapun pilihan kalian, terima kasih banyak udah nemenin perjalanan Martforum sepanjang dua ribu dua puluh enam. Tahun depan kita bakal hadir lebih cepat, lebih lengkap, dan lebih seru lagi buat seluruh gamer Indonesia!"*
+  > *"Sebelum kita pindah ke tahun dua ribu dua puluh tujuh, menurut kalian skin atau update paling keren sepanjang tahun ini jatuh ke siapa? Apakah Kuronami, bundle musim dingin Snowfall dua titik nol, atau Agent Hush kemarin? Apapun pilihan kalian, terima kasih banyak udah nemenin perjalanan Martforum sepanjang dua ribu dua puluh enam. Tahun depan kita siap hadir lebih lengkap dan lebih seru lagi buat seluruh gamer Indonesia!"*
 * **Sound / SFX**: Beat lo-fi nostalgik hangat.
 * **Caption**: *"Tulis 1 skin terbaik 2026 versi kalian di kolom komentar! 🏆 Sampai jumpa di petualangan gaming tahun 2027 bareng @martforum.id!"*

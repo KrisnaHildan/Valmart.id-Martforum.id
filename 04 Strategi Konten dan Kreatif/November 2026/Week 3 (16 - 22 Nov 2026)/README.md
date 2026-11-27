@@ -29,5 +29,5 @@
 ---
 
 ## 📂 Link File Brief Lengkap Minggu 3
-* 🎬 **[Brief Valmart Helmy.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/Brief Valmart Helmy.md)** — Naskah rinci Helmy (Video 9 s/d 12 + Reminder Ace Bounty).
-* 🎙️ **[Brief Martforum Jonathan.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/Brief Martforum Jonathan.md)** — Naskah rinci VO Martforum (VO 7 s/d 9 - Audrey & Dika) & Desain Infografis Sewa Goceng.
+* 🎬 **[Brief Valmart Helmy.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/Brief%20Valmart%20Helmy.md)** — Naskah rinci Helmy (Video 9 s/d 12 + Reminder Ace Bounty).
+* 🎙️ **[Brief Martforum Jonathan.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/Brief%20Martforum%20Jonathan.md)** — Naskah rinci VO Martforum (VO 7 s/d 9 - Audrey & Dika) & Desain Infografis Sewa Goceng.

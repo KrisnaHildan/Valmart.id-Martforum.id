@@ -17,9 +17,9 @@
 * **Isi Konten & Komposisi Visual**:
   1. **Headline**: *"PAYDAY FLASH SALE: AMANKAN VP AMUNISI GAME LU!"*.
   2. **Subheadline**: *"Gajian udah cair, jangan biarin skin impian cuma ngendap di Daily Shop"*.
-  3. **Pecahan VP Unggulan**:
-     * 1.120 VP (Cocok buat Battlepass / Skin Tier Menengah) $\rightarrow$ Promo Rate Termurah.
-     * 2.400 VP (Cocok buat Bundle / Melee Impian).
+  3. **Pecahan VP Unggulan (Sesuai Katalog Resmi `martforum.id`)**:
+     * **1.000 VP** (Rp 106.387 promo — cocok buat Battlepass atau tambahan saldo skin).
+     * **2.525 VP** (Rp 268.711 promo — cocok buat skin tier Premium/Exclusive atau kebutuhan VP lebih besar).
   4. **Trust & Speed Elements**:
      * Badge neon: *"Scan QRIS 3 Detik Otomatis"* • *"100% Legal & Aman Tanpa Password"*.
   5. **Call to Action**: *"Top up sat-set sekarang di martforum.id (Link di bio)"*.

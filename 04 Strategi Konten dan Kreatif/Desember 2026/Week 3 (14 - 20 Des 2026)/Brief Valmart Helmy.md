@@ -1,5 +1,5 @@
 # Brief Konten Video Valmart — Helmy
-## Week 3: 14 – 20 Desember 2026 (Night Market & Liburan Sekolah)
+## Week 3: 14 – 20 Desember 2026 (Daily Shop Zonk & Awal Liburan Sekolah)
 
 **Target Akun**: `@valmart.id` (TikTok) & `@valomart._id` (Instagram Reels)  
 **Talent / Editor**: Helmy  
@@ -11,39 +11,39 @@
 
 ---
 
-### 🎬 Video 9 — Selasa, 15 Des 2026 [🃏 MEME: NIGHT MARKET ZONK VS SOLUSI MABAR]
+### 🎬 Video 9 — Selasa, 15 Des 2026 [🃏 MEME: DAILY SHOP ZONK VS SOLUSI MABAR]
 * **Format**: POV Reaksi Komedi.
 * **Durasi**: 20 – 25 detik.
-* **Angle**: Penuh semangat buka kartu *Night Market*, eh isinya skin polos semua tanpa efek (*Smite, Convex, Galleria*). Untung masih bisa nyicipin skin bagus buat mabar tanpa harus nunggu toko reset.
+* **Angle**: Penuh semangat bangun pagi cek rotasi *Daily Shop*, eh isinya skin polos semua tanpa efek (*Smite, Convex, Galleria*). Untung masih bisa nyicipin skin bagus buat mabar tanpa harus nunggu toko hoki.
 * **Visual**:
-  * 0–5s: Helmy berdoa khusyuk sebelum klik kartu *Night Market* satu per satu.
-  * 5–14s: Kartu terbuka semua: isinya skin ampas semua. Helmy langsung tatap kamera dengan ekspresi kosong (*thousand yard stare*).
-  * 14–22s: Transisi ke gameplay Helmy pegang Kuronami/Champions di match: *"Kartu boleh ampas, lobi tetap berkelas"*.
+  * 0–5s: Helmy berdoa khusyuk sebelum membuka halaman *Daily Shop* di lobi Valorant.
+  * 5–14s: Toko terbuka: isinya skin tanpa animasi semua. Helmy langsung tatap kamera dengan ekspresi kosong (*thousand yard stare*).
+  * 14–22s: Transisi ke gameplay Helmy pegang Kuronami/Champions di match: *"Toko boleh ampas, lobi tetap berkelas"*.
 * **Text on Screen (TOS)**:
-  * "Udah nunggu berbulan-bulan, isi Night Market kayak gini semua... 💀"
+  * "Tiap pagi berharap Vandal Kuronami, yang nongol di Daily Shop malah begini... 💀"
   * "Tenang, tetap bisa nyicipin Kuronami pas mabar kok ✨"
 * **Audio / Script (Helmy)**:
-  > *"Udah berharap dapet Reaver atau Prime diskon besar di Night Market, eh pas dibuka malah dikasih koleksi museum semua! Tapi gak usah sedih berlarut-larut bro. Lu tetep bisa ngerasain sensasi main pakai Kuronami, Champions, sampai Arcane bareng temen tongkrongan cuma modal seharga es teh. Gak perlu nunggu toko hoki!"*
+  > *"Udah berharap banget bangun pagi disambut Kuronami atau Reaver di Daily Shop, eh pas dibuka malah dikasih koleksi museum semua! Tapi gak usah sedih berlarut-larut bro. Lu tetep bisa ngerasain sensasi main pakai Kuronami, Champions, sampai Arcane bareng temen tongkrongan cuma modal seharga es teh. Gak perlu nunggu toko hoki!"*
 * **Sound / SFX**: Sound drum tegang $\rightarrow$ Suara jangkrik / *sad violin* $\rightarrow$ Beat phonk masuk saat gameplay Kuronami.
-* **Caption**: *"Coba spill isi Night Market lu di kolom komentar, bagusan punya lu atau punya mimin yang lebih ampas? 😭"*
+* **Caption**: *"Coba spill isi Daily Shop lu hari ini di kolom komentar, bagusan punya lu atau punya mimin yang lebih ampas? 😭"*
 
 ---
 
-### 🎬 Video 10 — Rabu, 16 Des 2026 [🔮 NYELENEH: RITUAL DUKUN NIGHT MARKET WANGI]
-* **Format**: Komedi Absurd (*Unhinged*) — 100% Hiburan + Watermark Brand.
+### 🎬 Video 10 — Rabu, 16 Des 2026 [🔮 NYELENEH: DUKUN PEMBACA AURA DAILY SHOP]
+* **Format**: Komedi Absurd (*Unhinged*), 100% Hiburan + Watermark Brand.
 * **Durasi**: 22 – 28 detik.
-* **Angle**: Skit konyol "jasa baca aura kartu Night Market" biar keluarnya skin bagus (tanpa menyuruh penonton transaksi apa pun di dalam video — murni viralitas & share ke Discord!).
+* **Angle**: Skit konyol "jasa baca aura Daily Shop" biar skin incaran keluar di reset berikutnya (murni hiburan & share ke Discord, tanpa janji promo fiktif).
 * **Visual**:
-  * 0–5s: Helmy pakai kacamata hitam di ruangan remang, pegang kartu remi/UNO seolah-olah kartu *Night Market*.
-  * 5–16s: Helmy baca "ramalan" dengan suara berat serius: *"Aura mouse lu terlalu kering... gua ramal kartu Night Market lu keluarnya Nebula Judge diskon dua belas persen!"*.
+  * 0–5s: Helmy pakai kacamata hitam di ruangan remang, menatap layar monitor seolah membaca aura akun.
+  * 5–16s: Helmy baca "ramalan" dengan suara berat serius: *"Aura mouse lu terlalu kering... gua ramal Daily Shop lu besok isinya Smite Knife sama Galleria lagi!"*.
   * 16–25s: Helmy ketawa jahil: *"Kalau ramalan gua bener, langsung cek profil kita buat obat sakit hatinya!"*.
 * **Text on Screen (TOS)**:
-  * "Dukun spesialis baca aura Night Market lu 🔮"
-  * "Yang keluarnya ampas, langsung ngumpul di komen!"
+  * "Dukun spesialis baca aura Daily Shop lu 🔮"
+  * "Yang tokonya sering ampas, langsung ngumpul di komen!"
 * **Audio / Script (Helmy)**:
-  > *"Sini gua baca aura kartu Night Market kalian! Dari gaya pegang mouse lu yang sering panik pas clutch, gua ramal enam kartu lu isinya gak jauh dari skin polos tanpa efek dan diskon pelit! Gak usah nangis di pojokan, kalau beneran zonk, tinggal mampir ke profil Valmart aja buat nyari hiburan skin sultan!"*
+  > *"Sini gua baca aura Daily Shop kalian! Dari cara pegang mouse lu yang sering panik pas clutch, gua ramal rotasi toko besok isinya gak jauh dari skin polos tanpa efek! Gak usah nangis di pojokan, kalau beneran zonk, tinggal mampir ke profil Valmart aja buat nyari hiburan skin sultan!"*
 * **Sound / SFX**: Musik mistis komedi $\rightarrow$ SFX *vine boom* $\rightarrow$ Ketawa pelan.
-* **Caption**: *"Ramalan mimin bener gak nih? 🤣 Tag temen lu yang paling apes tiap buka Night Market!"*
+* **Caption**: *"Ramalan mimin bener gak nih? 🤣 Tag temen lu yang paling apes tiap cek Daily Shop!"*
 
 ---
 

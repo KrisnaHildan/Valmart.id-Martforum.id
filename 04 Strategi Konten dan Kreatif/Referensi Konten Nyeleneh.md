@@ -44,8 +44,8 @@
 ### 2. Ide Valmart: "Diinterogasi Polisi Valorant"
 * **Babak 1 (Nyeleneh)**: Lampu meja disorot ke muka Helmy di ruangan gelap, tangan diborgol (pake kabel headset).
 * **Babak 2 (Ekskalasi)**: Lawan main berseragam detektif ngebrak meja: *"Ngaku kamu! Kemarin rank kamu Iron 1, kenapa semalem bisa nenteng Kuronami sama Champions?! Kamu dapet duit haram dari mana?!"*
-* **Babak 3 (Pivot Jualan)**: Helmy santai nahan tawa: *"Bang, santai bang... gua gak korupsi. Gua cuma sewa akun sultan di valmart.id cuma 15 ribu semalam! Daftarnya juga legal cukup pake KTP sama nama sekolah doang!"*
-* **Babak 4 (CTA Jualan)**: Detektifnya langsung luluh: *"Oh... ada paket 15 ribu? Beliin gua juga dong buat mabar nanti malem."* Helmy: *"Klik link bio kalau mau bebas dari interogasi!"*
+* **Babak 3 (Pivot Jualan)**: Helmy santai nahan tawa: *"Bang, santai bang... gua gak korupsi. Gua cuma sewa akun sultan di valmart.id! Durasi sewanya fleksibel mulai 3 jam, verifikasi identitasnya juga gampang cukup KTP dan data diri lewat admin resmi!"*
+* **Babak 4 (CTA Jualan)**: Detektifnya langsung luluh: *"Oh... ada sewa mulai 3 jam? Gas cariin gua juga dong buat mabar nanti malem."* Helmy: *"Cek katalog di bio kalau mau bebas dari interogasi!"*
 
 ---
 
@@ -61,4 +61,4 @@
 - [ ] Akting deadpan (muka datar / serius pas ngomong hal konyol) jauh lebih lucu dibanding berusaha sok lucu yang dibuat-buat.
 - [ ] Sound effect timing harus presisi (SFX vine boom, ding, slap, bruh sound effect).
 - [ ] Nama brand & web (`valmart.id` / `martforum.id`) harus terlihat jelas di layar saat pivot terjadi.
-- [ ] Pastikan CTA menyebutkan USP utama (Sewa murah modal ceban, daftar gampang cuma KTP/sekolah, garansi HB 100%, QRIS detik).
+- [ ] Pastikan CTA menyebutkan USP yang tepat sesuai brand (Valmart: katalog di `valmart.id`, sewa fleksibel mulai 3 jam pukul 08.00–01.00 WIB, transaksi aman via WhatsApp resmi, garansi 100% anti-HB; Martforum: proses otomatis 24 jam via QRIS cukup Riot ID tanpa password).

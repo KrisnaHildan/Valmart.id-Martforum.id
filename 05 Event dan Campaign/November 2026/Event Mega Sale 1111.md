@@ -5,6 +5,9 @@
 **Tim Kreatif**: Jonathan (Desain & VO) & Helmy (Video Kreator)  
 **Sifat Campaign**: 🏷️ **FLASH SALE HARBOLNAS TANGGAL KEMBAR**  
 
+> [!NOTE]
+> **Catatan Koreksi Product Knowledge (28 Nov 2026):** Dokumen ini adalah arsip event November 11.11. Per katalog live `martforum.id`, **pecahan `125 VP` tidak tersedia** (pecahan VP Valorant resmi dimulai dari `475 VP`, `950 VP`, `1.000 VP`, `1.475 VP`, `2.050 VP`, `2.525 VP`, dst.). Untuk campaign berikutnya (misal 12.12), wajib merujuk ke [Product Knowledge Resmi.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/01%20Informasi%20Project/Product%20Knowledge%20Resmi.md).
+
 ---
 
 ## 📌 1. Skema Penawaran Resmi 11.11 (Dual-Brand Synergy)

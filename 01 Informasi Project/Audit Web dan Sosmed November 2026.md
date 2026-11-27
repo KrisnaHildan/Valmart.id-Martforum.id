@@ -39,8 +39,8 @@ Audit ini disusun menindaklanjuti arahan Ko Jeremy untuk mengevaluasi seluruh ti
 
 #### 2. Visual Headline & Hero Section Baru
 * Pasang headline besar di Hero Section:
-  > **"Nenteng Skin Sultan Gak Harus Boncos! Sewa Akun Valorant Resmi Mulai Rp 5.000 / Hari"**
-* Sub-headline: *"Garansi Anti-HB 100% Uang Kembali • Pendaftaran 1 Menit Tanpa Ribet • Otomatis QRIS 24 Jam"*.
+  > **"Nenteng Skin Sultan Gak Harus Boncos! Sewa Akun Valorant Resmi Mulai 3 Jam — Paket Hemat Mulai Goceng"**
+* Sub-headline: *"Garansi Anti-HB 100% Uang Kembali • Verifikasi Simpel via WhatsApp Resmi • Sewa 08.00–01.00 WIB & Jual-Beli 24 Jam"*.
 * Tampilkan badge neon menyala: **`HARGA TERMURAH SE-INDONESIA: MULAI GOCENG!`**.
 
 ---

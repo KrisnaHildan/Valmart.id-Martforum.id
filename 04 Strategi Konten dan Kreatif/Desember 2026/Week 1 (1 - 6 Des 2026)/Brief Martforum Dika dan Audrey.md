@@ -17,18 +17,18 @@
 * **Talent VO**: **Audrey** | **Editor**: **Dika**
 * **Format**: Voice Over Informasional & Diskusi Komunitas.
 * **Durasi**: 24 – 30 detik.
-* **Angle**: Membahas bundle musim dingin **Snowfall 2.0** (5.100 VP) dan *Agent Mastery* Hush — cocok atau tidak dibeli awal bulan, atau mending simpan amunisi buat *Night Market* Desember?
+* **Angle**: Membahas bundle musim dingin **Snowfall 2.0** (5.100 VP, tier Deluxe tanpa finisher). Lebih baik langsung ambil bundle lengkapnya, atau simpan VP buat skin ber-finisher di Daily Shop?
 * **Visual (Arahan Edit Dika)**:
-  * 0–6s: Cuplikan animasi skin *Snowfall 2.0* (efek salju & finisher).
-  * 6–16s: Perbandingan visual: *Snowfall 2.0* (5.100 VP) vs gambar siluet misteri *Night Market* Desember.
-  * 16–26s: Rekaman layar singkat `martforum.id` (input Riot ID + scan QRIS) sebagai pelengkap diskusi.
+  * 0–6s: Cuplikan animasi skin *Snowfall 2.0* (efek salju & animasi *inspect* musim dingin, catatan: tier Deluxe tanpa finisher).
+  * 6–16s: Perbandingan visual: *Snowfall 2.0* (5.100 VP) vs skin ber-finisher di Daily Shop (Kuronami / Reaver / Araxys).
+  * 16–26s: Rekaman layar singkat `martforum.id` (input Riot ID + pilih pecahan resmi `1.000 VP` / `2.050 VP` / `5.350 VP` + QRIS) sebagai pelengkap diskusi.
 * **Text on Screen (TOS)**:
-  * "Snowfall 2.0 (5.100 VP): Layak beli atau tahan buat Night Market? ❄️"
-  * "Tim nunggu diskon vs Tim langsung sikat?"
+  * "Snowfall 2.0 (5.100 VP): Langsung ambil atau tahan buat Daily Shop? ❄️"
+  * "Tim koleksi tema salju vs Tim wajib finisher?"
 * **Naskah Voice Over (Audrey)**:
-  > *"Masuk bulan Desember, tim kalian tim yang langsung sikat bundle Snowfall dua titik nol, atau tim yang sabar nahan amunisi buat nungguin Night Market buka? Kalau dihitung-hitung, lima ribu seratus VP buat tema musim dingin ini lumayan unik, tapi inget bro, biasanya pertengahan Desember kartu diskon Night Market suka nongol tiba-tiba! Nah, mau lu ambil sekarang atau nanti pas diskon turun, pastiin isi amunisinya yang aman, cepat, dan cukup pakai Riot ID tanpa login password di Martforum. Kalian tim tahan atau tim gass?"*
+  > *"Masuk bulan Desember, kalian tim yang langsung bungkus bundle Snowfall dua titik nol, atau tim yang nahan VP buat nunggu skin finisher di Daily Shop? Dengan harga lima ribu seratus VP, tema diorama saljunya memang unik, apalagi buat yang suka koleksi musiman. Bedanya, karena tier Deluxe, bundle ini fokus di model senjata dan animasi inspect tanpa finisher. Mau bungkus bundle atau incar skin Daily Shop, isi VP di Martforum cukup pakai Riot ID tanpa password dan langsung diproses otomatis. Kalian tim tahan atau tim gass?"*
 * **Sound / SFX**: Sound lonceng musim dingin tipis $\rightarrow$ SFX *swoosh* transisi $\rightarrow$ Lo-fi upbeat.
-* **Caption**: *"Tim sikat Snowfall 2.0 atau tim sabar nunggu Night Market Desember? ❄️ Tulis pilihan kalian di bawah! Info lengkap ada di profil @martforum.id."*
+* **Caption**: *"Tim bungkus Snowfall 2.0 atau tim nunggu skin finisher di Daily Shop? ❄️ Tulis pilihan kalian di bawah! Info lengkap ada di profil @martforum.id."*
 
 ---
 

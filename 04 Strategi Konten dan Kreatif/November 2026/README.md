@@ -32,7 +32,7 @@ Sesuai arahan meeting terbaru, seluruh materi promosi event besar **wajib disiap
 
 Seluruh kalender dan naskah brief telah dikelompokkan ke dalam folder mingguan masing-masing (7 konten per minggu: 4 Valmart + 3 Martforum):
 
-### 1. 🚀 [Week 1 (2 – 8 Nov 2026)](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%201%20(2%20-%208%20Nov%202026)/README.md)
+### 1. 🚀 [Week 1 (2 – 8 Nov 2026)](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%201%20(2%20-%208%20Nov%202026)/README.md)
 * **Fokus**: Kickoff Sprint November, Momen Awal Bulan (Gajian/Uang Saku), & Launching ACE Bounty Uang Tunai.
 * **Meme Terpilih (3 dari 7 Konten = 42.8%)**: 
   - Martforum (Senin): *Meme Kutukan Daily Store (Ekspektasi Kuronami vs Realita Smite Knife)*.
@@ -42,13 +42,13 @@ Seluruh kalender dan naskah brief telah dikelompokkan ke dalam folder mingguan m
   - 🎨 *Poster Launching Ace Bounty Hadiah Tunai* (Jonathan - Senin, 2 Nov).
   - 🎨 *Poster Teaser H-7 Flash Rent 11.11* (Jonathan - Rabu, 4 Nov).
 * **Dokumen Rinci**:
-  - 📋 [Master Jadwal Week 1](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%201%20(2%20-%208%20Nov%202026)/README.md)
-  - 🎬 [Brief Helmy Week 1](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%201%20(2%20-%208%20Nov%202026)/Brief Valmart Helmy.md)
-  - 🎙️ [Brief Jonathan Week 1](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%201%20(2%20-%208%20Nov%202026)/Brief Martforum Jonathan.md)
+  - 📋 [Master Jadwal Week 1](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%201%20(2%20-%208%20Nov%202026)/README.md)
+  - 🎬 [Brief Helmy Week 1](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%201%20(2%20-%208%20Nov%202026)/Brief%20Valmart%20Helmy.md)
+  - 🎙️ [Brief Jonathan Week 1](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%201%20(2%20-%208%20Nov%202026)/Brief%20Martforum%20Jonathan.md)
 
 ---
 
-### 2. 🛡️ [Week 2 (9 – 15 Nov 2026)](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%202%20(9%20-%2015%20Nov%202026)/README.md)
+### 2. 🛡️ [Week 2 (9 – 15 Nov 2026)](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%202%20(9%20-%2015%20Nov%202026)/README.md)
 * **Fokus**: Mega Sale 11.11 (Valmart Flash Rent Rp 11k & Martforum Tebus 125 VP Rp 11k), Cashout, & Teaser H-14 Sultan Showmatch.
 * **Meme Terpilih (3 dari 7 Konten = 42.8%)**:
   - Valmart (Kamis): *Meme Spectate Temen 1v1 Overtime Peluru Sisa 22 Malah Reload*.
@@ -58,13 +58,13 @@ Seluruh kalender dan naskah brief telah dikelompokkan ke dalam folder mingguan m
   - 🎨 *Hero Banner Web & Poster 11.11 Valmart & Martforum* (Jonathan - 9 & 11 Nov).
   - 📢 *POSTER TEASER H-14 SULTAN SHOWMATCH* (Jonathan - Sabtu, 14 Nov).
 * **Dokumen Rinci**:
-  - 📋 [Master Jadwal Week 2](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%202%20(9%20-%2015%20Nov%202026)/README.md)
-  - 🎬 [Brief Helmy Week 2](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%202%20(9%20-%2015%20Nov%202026)/Brief Valmart Helmy.md)
-  - 🎙️ [Brief Jonathan Week 2](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%202%20(9%20-%2015%20Nov%202026)/Brief Martforum Jonathan.md)
+  - 📋 [Master Jadwal Week 2](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%202%20(9%20-%2015%20Nov%202026)/README.md)
+  - 🎬 [Brief Helmy Week 2](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%202%20(9%20-%2015%20Nov%202026)/Brief%20Valmart%20Helmy.md)
+  - 🎙️ [Brief Jonathan Week 2](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%202%20(9%20-%2015%20Nov%202026)/Brief%20Martforum%20Jonathan.md)
 
 ---
 
-### 3. 🔥 [Week 3 (16 – 22 Nov 2026)](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/README.md)
+### 3. 🔥 [Week 3 (16 – 22 Nov 2026)](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/README.md)
 * **Fokus**: Build-Up Event Sultan Showmatch, Poster Roster H-7, & Sinergi Valmart x Martforum.
 * **Meme Terpilih (3 dari 7 Konten = 42.8%)**:
   - Valmart (Selasa): *Meme Simulasi 10 Omen Berantem di Smoke B-Site Ascent (Chaos Match)*.
@@ -74,13 +74,13 @@ Seluruh kalender dan naskah brief telah dikelompokkan ke dalam folder mingguan m
   - 📋 *POSTER OFFICIAL H-7 TOURNAMENT BRACKET & ROSTER KAPTEN* (Jonathan - Sabtu, 21 Nov).
   - 🎬 *Video Reaksi Submission ACE Bounty Paruh Bulan* (Helmy - Senin, 16 Nov).
 * **Dokumen Rinci**:
-  - 📋 [Master Jadwal Week 3](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/README.md)
-  - 🎬 [Brief Helmy Week 3](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/Brief Valmart Helmy.md)
-  - 🎙️ [Brief Jonathan Week 3](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/Brief Martforum Jonathan.md)
+  - 📋 [Master Jadwal Week 3](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/README.md)
+  - 🎬 [Brief Helmy Week 3](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/Brief%20Valmart%20Helmy.md)
+  - 🎙️ [Brief Jonathan Week 3](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%203%20(16%20-%2022%20Nov%202026)/Brief%20Martforum%20Jonathan.md)
 
 ---
 
-### 4. 🏆 [Week 4 (23 – 30 Nov 2026)](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%204%20(23%20-%2030%20Nov%202026)/README.md)
+### 4. 🏆 [Week 4 (23 – 30 Nov 2026)](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%204%20(23%20-%2030%20Nov%202026)/README.md)
 * **Fokus**: MAIN EVENT Sultan Showmatch (Multi-Stream di Channel Kreator), Sesi Clipping TikTok Masif, & Penutupan Sprint.
 * **Meme Terpilih (3 dari 7 Konten = 42.8%)**:
   - Valmart (Selasa): *Meme Kehancuran Match 10 Reyna (Rebutan Soul Orb & Hujan Leer)*.
@@ -91,6 +91,6 @@ Seluruh kalender dan naskah brief telah dikelompokkan ke dalam folder mingguan m
   - 🎮 *Multi-Channel Live Stream di Akun Streamer Masing-Masing* (Sabtu & Minggu, 28–29 Nov).
   - 🥇 *POSTER REKAP PEMENANG TOTAL (Showmatch, Affiliate, Ace Bounty)* (Jonathan - Senin, 30 Nov).
 * **Dokumen Rinci**:
-  - 📋 [Master Jadwal Week 4](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%204%20(23%20-%2030%20Nov%202026)/README.md)
-  - 🎬 [Brief Helmy Week 4](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%204%20(23%20-%2030%20Nov%202026)/Brief Valmart Helmy.md)
-  - 🎙️ [Brief Jonathan Week 4](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%204%20(23%20-%2030%20Nov%202026)/Brief Martforum Jonathan.md)
+  - 📋 [Master Jadwal Week 4](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%204%20(23%20-%2030%20Nov%202026)/README.md)
+  - 🎬 [Brief Helmy Week 4](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%204%20(23%20-%2030%20Nov%202026)/Brief%20Valmart%20Helmy.md)
+  - 🎙️ [Brief Jonathan Week 4](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/November%202026/Week%204%20(23%20-%2030%20Nov%202026)/Brief%20Martforum%20Jonathan.md)

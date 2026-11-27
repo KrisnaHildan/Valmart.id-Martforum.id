@@ -60,7 +60,7 @@
   * "Tanggal merah bukan halangan buat mabar! 🎄"
   * "Sistem Martforum tetap jalan otomatis 24 jam nonstop"
 * **Naskah Voice Over (Audrey)**:
-  > *"Masuk libur panjang akhir tahun, biasanya banyak admin toko manual yang slow respon karena lagi liburan! Tapi tenang, sistem otomatis Martforum tetap jalan dua puluh empat jam nonstop selama tanggal merah. Mau isi VP Valorant buat tebus Night Market, atau mau borong Weekly Diamond Pass Mobile Legends buat mabar bareng sepupu di rumah, tinggal masukin ID dan bayar via QRIS—langsung masuk detik itu juga!"*
+  > *"Masuk libur panjang akhir tahun, biasanya banyak admin toko manual yang slow respon karena lagi liburan! Tapi tenang, sistem otomatis Martforum tetap jalan dua puluh empat jam nonstop selama tanggal merah. Mau isi VP Valorant buat tebus skin di Daily Shop, atau borong Weekly Diamond Pass Mobile Legends buat mabar bareng sepupu di rumah, tinggal masukin ID dan bayar via QRIS. Langsung masuk detik itu juga!"*
 * **Sound / SFX**: Lonceng liburan tipis $\rightarrow$ Sound *ding* transaksi sukses $\rightarrow$ Beat ceria.
 * **Caption**: *"Libur panjang admin lain pada off, Martforum tetep buka otomatis 24 jam! ⚡ Cek pilihan game favorit lu di profil @martforum.id."*
 

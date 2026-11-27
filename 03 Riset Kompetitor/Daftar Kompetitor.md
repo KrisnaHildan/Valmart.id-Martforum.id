@@ -31,7 +31,7 @@ Untuk setiap kompetitor di atas, data yang dipantau secara berkala meliputi:
 2. **Katalog & Strategi Harga**:
    - Rentang harga akun per rank & tier skin (termasuk bundle terbaru **Snowfall 2.0**, Kuronami, Champions, Arcane).
    - Skema tarif sewa akun (per 12 jam, 24 jam, atau paket liburan akhir tahun).
-   - Margin top up VP jelang **Night Market Desember 2026** (pecahan populer: 1.120 VP, 1.650 VP, 2.400 VP).
+   - Margin top up VP jelang **Night Market Desember 2026** (pecahan resmi aktif di Martforum: `475 VP`, `950 VP`, `1.000 VP`, `1.475 VP`, `2.050 VP`, `2.525 VP`).
 3. **Mekanisme Trust & Transaksi**:
    - Metode serah terima (First Mail / data tangan pertama, jaminan anti-HB 100%).
    - Channel konversi (checkout otomatis QRIS 24 jam vs direct admin manual).

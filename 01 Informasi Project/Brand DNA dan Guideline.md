@@ -3,6 +3,9 @@
 
 Dokumen ini merupakan panduan resmi identitas brand (*Brand DNA*), gaya komunikasi, aturan konten media sosial, serta batasan kreatif untuk **Valmart** dan **Martforum** di bawah supervisi Ko Jeremy.
 
+> [!IMPORTANT]
+> Sebelum membuat brief, poster, atau naskah video baru, **wajib cross-check** seluruh nominal produk, durasi, jam operasional, dan alur checkout ke [Product Knowledge Resmi.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/01%20Informasi%20Project/Product%20Knowledge%20Resmi.md).
+
 ---
 
 # 1. VALMART (`valmart.id`)
@@ -20,7 +23,7 @@ Valmart adalah brand yang berfokus pada **jual-beli dan penyewaan (rental) akun 
 * **Vibes:** Seru, santai, kompetitif, dan penuh kultur gaming.
 * **Humor & Meme:** Aktif menyisipkan meme tren terkini di komunitas gaming/TikTok/X.
 * **Sentuhan Shitpost / Jomok:** Diperbolehkan menggunakan sedikit sentuhan humor *jomok* / meme absurd Gen Z yang sedang tren, dengan catatan **tetap berkelas, tidak menjurus ke pornografi/pelecehan vulgar, dan tidak merusak reputasi brand**.
-* **Formula "Nyeleneh Tapi Tetep Jualan" (Unhinged Selling)**: Menggunakan hook/skit komedi absurd di awal untuk membunuh resistensi iklan, lalu pivot mulus ke jualan produk (detail playbook & bank ide: [Referensi Konten Nyeleneh.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Ko%20Jeremy/04%20Strategi%20Konten%20dan%20Kreatif/Referensi Konten Nyeleneh.md)).
+* **Formula "Nyeleneh Tapi Tetep Jualan" (Unhinged Selling)**: Menggunakan hook/skit komedi absurd di awal untuk membunuh resistensi iklan, lalu pivot mulus ke jualan produk (detail playbook & bank ide: [Referensi Konten Nyeleneh.md](file:///d:/ANTIGRAVITY/Hildan/All%20Projects/Valmart%20x%20Martforum/04%20Strategi%20Konten%20dan%20Kreatif/Referensi%20Konten%20Nyeleneh.md)).
 * **Bahasa Percakapan:** Menggunakan bahasa tongkrongan Valorant asli (*whiff, bot frag, gendong gebetan, modal ceban, tilt, NT, nenteng Kuronami, dll.*). Hindari sapaan kaku seperti *"Halo sobat gamers"*.
 
 ### D. Target Market
@@ -35,10 +38,10 @@ Valmart adalah brand yang berfokus pada **jual-beli dan penyewaan (rental) akun 
 * **Customer Pain Points:** Takut tertipu, takut akun kena *Hackback (HB)* / ditarik pemilik lama, dan malas dengan birokrasi pendaftaran yang ribet.
 
 ### F. Unique Selling Point (USP) Resmi
-1. **Sewa Akun dan Jubel dengan Harga Termurah:** Akses skin tier tinggi mulai modal Rp 5.000 (goceng) saja!
-2. **Sistem Pendaftaran Lebih Mudah:** Cukup unggah KTP, lalu isi nama sekolah (pelajar) atau alamat kantor (pekerja) tanpa verifikasi berbelit-belit.
-3. **Sistem Pembelian 24 Jam Tanpa Admin:** Transaksi otomatis di website `valmart.id`, bayar QRIS langsung dapat akun detik itu juga tanpa perlu nunggu admin WA bangun.
-4. **Garansi HB Uang Kembali 100%:** Jaminan perlindungan total; jika akun terbukti kena hackback, uang customer dikembalikan utuh 100%.
+1. **Sewa Akun Fleksibel Mulai 3 Jam:** Akses koleksi skin tier tinggi dengan pilihan durasi **3 jam, 6 jam, 12 jam, hingga 24 jam (1 hari)** — harga menyesuaikan tier & katalog di `valmart.id` (opsi termurah mulai **Rp 5.000 / goceng**).
+2. **Verifikasi Simpel & Aman:** Pendaftaran sewa cukup unggah foto identitas (KTP) dan data diri untuk keamanan transaksi, dipandu admin resmi tanpa birokrasi berbelit.
+3. **Layanan Cepat via Katalog Web & WhatsApp Resmi:** Katalog lengkap tersedia di `valmart.id`, dilanjutkan proses order cepat via **WhatsApp resmi admin (*chat-only*)** — layanan sewa beroperasi pukul **08.00 – 01.00 WIB**, sedangkan jual-beli aktif **24 jam** dengan dukungan QRIS, transfer bank, & e-wallet.
+4. **Garansi HB Uang Kembali 100%:** Jaminan perlindungan total; jika akun terbukti bermasalah/kena hackback, uang customer dijamin kembali 100%.
 
 ### G. Sumber Referensi & Kurasi Konten
 * Riset tren harian diambil dari **X (Twitter)** skena Valorant, bocoran akun/skin (**leaks**), drama komunitas Discord, serta turnamen VCT terkini.
@@ -88,9 +91,9 @@ Martforum adalah platform digital gaming yang berfokus pada layanan top-up game 
   * *Solusi Martforum:* Garansi uang kembali 100% jika pesanan gagal diproses sistem.
 
 ### G. Unique Selling Point (USP) Resmi
-1. **UI Mudah Digunakan dan Simpel:** Tampilan website bersih, ringan, dan langsung bisa order dalam 3 langkah tanpa pusing.
-2. **Harga Jauh Lebih Murah:** Penawaran rate harga kompetitif dibanding platform top-up konvensional lainnya.
-3. **Sistem Proses Instan:** Pembayaran QRIS otomatis diverifikasi detik itu juga tanpa perlu konfirmasi manual chat admin.
+1. **UI Mudah Digunakan dan Simpel:** Tampilan website `martforum.id` bersih, ringan, dan cukup input **Riot ID + Tagline** (tanpa password) + nomor WhatsApp aktif.
+2. **Harga Kompetitif & Pecahan Resmi Lengkap:** Diskon promo aktif di website dengan pilihan pecahan VP Valorant resmi (**475, 950, 1.000, 1.475, 2.050, 2.525, 3.050, 3.650, 5.350, 7.300, 11.000, dan 13.050 VP**), MLBB (Diamond & 1x–5x WDP), Free Fire, PUBG Mobile, Genshin Impact, Honor of Kings, CODM, voucher, dan pulsa.
+3. **Sistem Proses Instan 24 Jam:** Pembayaran otomatis via **QRIS**, **Virtual Account Bank** (BCA, Mandiri, BNI, BRI, Permata), **E-Wallet** (GoPay, OVO, DANA, LinkAja), serta Saldo Martforum tanpa menunggu admin manual.
 
 ### H. Instagram Guideline (`@martforum.id`)
 
