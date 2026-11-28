@@ -64,7 +64,11 @@ function onEdit(e) {
         return [dt ? getIndonesianDayName(dt) : ""];
       });
       if (needDateWrite) {
+        const flt = sheet.getFilter();
+        const hadDateCrit = flt ? Boolean(flt.getColumnFilterCriteria(APP_CONSTANTS.DB_COLS.DATE)) : false;
+        if (hadDateCrit) flt.removeColumnFilterCriteria(APP_CONSTANTS.DB_COLS.DATE);
         dateRange.setValues(normDatesOut).setNumberFormat("yyyy-mm-dd");
+        if (hadDateCrit) applyDatabaseMonthYearFilter(sheet);
       }
       sheet.getRange(effStartRow, APP_CONSTANTS.DB_COLS.DAY, effNumRows, 1).setValues(dayOut);
     }

@@ -552,8 +552,30 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
     return ta - tb;
   });
 
+  // Simpan kriteria AutoFilter yang aktif lalu lepas sementara sebelum menulis Date via setValues
+  // (Google Sheets API bisa mengosongkan cell Date jika baris sedang tersembunyi oleh AutoFilter)
+  const existingFilterBeforeCap = dbSheet.getFilter();
+  const savedFilterCriteria = [];
+  if (existingFilterBeforeCap) {
+    const fStartCol = existingFilterBeforeCap.getRange().getColumn();
+    const fEndCol = existingFilterBeforeCap.getRange().getLastColumn();
+    for (let fc = fStartCol; fc <= fEndCol; fc++) {
+      const crit = existingFilterBeforeCap.getColumnFilterCriteria(fc);
+      if (crit) {
+        savedFilterCriteria.push({ col: fc, criteria: crit });
+      }
+    }
+  }
+
   if (typeof ensureDatabaseCapacityIfNeeded === "function") {
     ensureDatabaseCapacityIfNeeded(dbSheet, outputRows.length);
+  }
+
+  const activeFilter = dbSheet.getFilter();
+  if (activeFilter && savedFilterCriteria.length > 0) {
+    for (let i = 0; i < savedFilterCriteria.length; i++) {
+      activeFilter.removeColumnFilterCriteria(savedFilterCriteria[i].col);
+    }
   }
 
   if (outputRows.length > 0) {
@@ -564,6 +586,16 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
   }
   if (numExisting > outputRows.length) {
     dbSheet.getRange(startRow + outputRows.length, APP_CONSTANTS.DB_COLS.ID, numExisting - outputRows.length, 11).clearContent();
+  }
+  SpreadsheetApp.flush();
+
+  const filterAfterWrite = dbSheet.getFilter();
+  if (filterAfterWrite && savedFilterCriteria.length > 0) {
+    for (let i = 0; i < savedFilterCriteria.length; i++) {
+      const entry = savedFilterCriteria[i];
+      if (!opts.skipFilterRefresh && entry.col === APP_CONSTANTS.DB_COLS.DATE) continue;
+      filterAfterWrite.setColumnFilterCriteria(entry.col, entry.criteria);
+    }
   }
 
   if (!opts.skipFilterRefresh && typeof applyDatabaseMonthYearFilter === "function") {
