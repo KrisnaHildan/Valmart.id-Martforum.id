@@ -130,7 +130,7 @@ function syncFromGithub(filterMonth, filterYear) {
       `• Baris baru: ${summary.added}\n` +
       `• Diupdate: ${summary.updated}\n` +
       `• Tidak berubah: ${summary.unchanged}\n` +
-      `• Tidak ada di GitHub: ${summary.missing}\n` +
+      `• Dihapus (tidak ada di GitHub): ${summary.deleted}\n` +
       (summary.linkWarnings > 0 ? `• ⚠️ Peringatan link 404: ${summary.linkWarnings} baris\n` : "") +
       (summary.rateLimitWarnings > 0 ? `• ⏳ Cek link dilewati (rate limit GitHub): ${summary.rateLimitWarnings} baris\n` : "") +
       (parseResult.warnings.length > 0 ? `\nCatatan parser: ${parseResult.warnings.length} baris dilewati karena format tidak valid.` : "");
@@ -524,24 +524,28 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
     }
   }
 
-  // Tandai baris yang hilang dari sumber GitHub (tanpa menghapus)
+  // Hapus baris yang tidak ada di sumber GitHub (strict mirror, sesuai filter periode jika ada)
+  const filteredOutputRows = [];
   for (let i = 0; i < outputRows.length; i++) {
     const rowId = String(outputRows[i][0] || "").trim();
-    if (!rowId || seenIds[rowId]) continue;
+    if (!rowId) continue;
+    if (seenIds[rowId]) {
+      filteredOutputRows.push(outputRows[i]);
+      continue;
+    }
 
     if (opts.filterMonth && opts.filterYear) {
       const rDate = parseDateSafe(outputRows[i][1]);
       if (!rDate || (rDate.getMonth() + 1) !== opts.filterMonth || rDate.getFullYear() !== opts.filterYear) {
+        filteredOutputRows.push(outputRows[i]);
         continue;
       }
     }
 
-    const curNote = String(outputRows[i][9] || "").trim();
-    if (!curNote.includes(missingTag)) {
-      outputRows[i][9] = curNote ? `${missingTag} ${curNote}` : missingTag;
-    }
     missing++;
   }
+  outputRows.length = 0;
+  Array.prototype.push.apply(outputRows, filteredOutputRows);
 
   // Urutkan kronologis berdasarkan Tanggal Tayang (stable sort menjaga urutan pada tanggal yang sama)
   outputRows.sort((a, b) => {
@@ -602,5 +606,5 @@ function upsertScheduleToDatabase(dbSheet, parsedRows, config, options) {
     applyDatabaseMonthYearFilter(dbSheet);
   }
 
-  return { added, updated, unchanged, missing, linkWarnings, rateLimitWarnings };
+  return { added, updated, unchanged, missing, deleted: missing, linkWarnings, rateLimitWarnings };
 }

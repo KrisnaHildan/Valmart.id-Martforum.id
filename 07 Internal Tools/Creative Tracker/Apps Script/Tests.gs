@@ -156,26 +156,26 @@ function testRunAll() {
     const c6RawBeforeSync2 = tempSheet.getRange(startRow, APP_CONSTANTS.DB_COLS.DATE).getValue();
     const diagC6 = `type=${typeof c6RawBeforeSync2}, proto=${Object.prototype.toString.call(c6RawBeforeSync2)}, parsed=${formatDateIso(parseDateSafe(c6RawBeforeSync2))}, str=${String(c6RawBeforeSync2)}`;
 
-    // Sync kedua (tanpa VAL-20261102-01 supaya teruji flag missing, topik rowMid berubah, link MART pulih)
+    // Sync kedua (tanpa VAL-20261102-01 supaya teruji hapus otomatis, topik VAL-20261116-01 berubah, link MART pulih)
     const updatedRows = JSON.parse(JSON.stringify(parsed.rows));
     updatedRows[0].topik = "Mid-Month ACE Bounty (Revisi Judul)";
     const res2 = upsertScheduleToDatabase(tempSheet, updatedRows, dummyCfg, { checkLinks: false, skipFilterRefresh: true });
 
-    const savedStatus = tempSheet.getRange(rowMid, APP_CONSTANTS.DB_COLS.STATUS).getValue();
-    const savedDraft = tempSheet.getRange(rowMid, APP_CONSTANTS.DB_COLS.DRAFT_LINK).getValue();
-    const savedNotes = tempSheet.getRange(rowMid, APP_CONSTANTS.DB_COLS.NOTES).getValue();
-    const savedTopic = tempSheet.getRange(rowMid, APP_CONSTANTS.DB_COLS.TOPIC).getValue();
-    const recoveredLabel = tempSheet.getRange(rowMart, APP_CONSTANTS.DB_COLS.SCRIPT_LINK).getValue();
-    const recoveredNote = tempSheet.getRange(rowMart, APP_CONSTANTS.DB_COLS.NOTES).getValue();
-    const missingFlagged = tempSheet.getRange(startRow, APP_CONSTANTS.DB_COLS.NOTES).getValue();
+    const savedStatus = tempSheet.getRange(startRow, APP_CONSTANTS.DB_COLS.STATUS).getValue();
+    const savedDraft = tempSheet.getRange(startRow, APP_CONSTANTS.DB_COLS.DRAFT_LINK).getValue();
+    const savedNotes = tempSheet.getRange(startRow, APP_CONSTANTS.DB_COLS.NOTES).getValue();
+    const savedTopic = tempSheet.getRange(startRow, APP_CONSTANTS.DB_COLS.TOPIC).getValue();
+    const recoveredLabel = tempSheet.getRange(startRow + 1, APP_CONSTANTS.DB_COLS.SCRIPT_LINK).getValue();
+    const recoveredNote = tempSheet.getRange(startRow + 1, APP_CONSTANTS.DB_COLS.NOTES).getValue();
+    const clearedTrailingId = tempSheet.getRange(startRow + 2, APP_CONSTANTS.DB_COLS.ID).getValue();
 
-    assert("Sync #2: tidak ada duplikat (0 add, 2 update, 1 missing)", res2.added === 0 && res2.updated === 2 && res2.missing === 1, diagC6);
+    assert("Sync #2: tidak ada duplikat (0 add, 2 update, 1 deleted)", res2.added === 0 && res2.updated === 2 && res2.deleted === 1, diagC6);
     assert("Sync #2: Status tim tetap utuh", savedStatus === "🟠 In Review", `${savedStatus} | ${diagC6}`);
     assert("Sync #2: Link Draft tim tetap utuh", savedDraft === "https://drive.google.com/draft-helmy", `${savedDraft} | ${diagC6}`);
     assert("Sync #2: Catatan Review tim tetap utuh", savedNotes === "Sudah oke, tinggal ACC", `${savedNotes} | ${diagC6}`);
     assert("Sync #2: Topik dari GitHub terupdate", savedTopic === "Mid-Month ACE Bounty (Revisi Judul)", `${savedTopic} | ${diagC6}`);
     assert("Sync #2: Label Link 404 pulih & tag missing dibersihkan", recoveredLabel === "📖 Buka Naskah" && recoveredNote === "Catatan lama", `${recoveredNote} | ${diagC6}`);
-    assert("Sync #2: Baris hilang dari GitHub diberi tanda non-destruktif", String(missingFlagged).includes("[Tidak ada di GitHub]"), `${missingFlagged} | ${diagC6}`);
+    assert("Sync #2: Baris hilang dari GitHub otomatis dihapus", clearedTrailingId === "", `${clearedTrailingId} | ${diagC6}`);
 
     // Uji Filter Bulan/Tahun Database Konten
     tempSheet.getRange("D4").setValue(11);
