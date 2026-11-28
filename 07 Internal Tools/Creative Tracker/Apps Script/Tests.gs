@@ -224,3 +224,46 @@ function testRunAll() {
   showAlertSafe("🧪 Hasil testRunAll()", summary + "\n\nCek Execution Log untuk detail tiap kasus uji.");
   return { total: results.length, passed, failed, results };
 }
+
+/**
+ * Helper diagnostik sementara untuk melacak penulisan tanggal ke sheet pada Apps Script live.
+ */
+function diagSyncBug() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const name = "__DIAG_TMP__";
+  let s = ss.getSheetByName(name);
+  if (s) ss.deleteSheet(s);
+  s = ss.insertSheet(name);
+  try {
+    formatDatabaseSheet(s, true);
+    const dummyCfg = {
+      repoOwner: "KrisnaHildan",
+      repoName: "Valmart-x-Martforum",
+      branch: "main",
+      basePath: "04 Strategi Konten dan Kreatif",
+      brands: APP_CONSTANTS.DEFAULTS.BRANDS,
+      pics: APP_CONSTANTS.DEFAULTS.PICS
+    };
+    const rows = [
+      { id: "A1", tanggal: "2026-11-16", brand: "Valmart", pic: "Helmy", topik: "T1", fileNaskah: "f.md" },
+      { id: "A2", tanggal: "2026-11-02", brand: "Valmart", pic: "Helmy", topik: "T2", fileNaskah: "f.md" }
+    ];
+    upsertScheduleToDatabase(s, rows, dummyCfg, { checkLinks: false, skipFilterRefresh: true });
+    SpreadsheetApp.flush();
+    Logger.log("1.WITH_FILTER_DV=" + JSON.stringify(s.getRange(6, 2, 2, 4).getValues()));
+    Logger.log("1b.DISPLAY=" + JSON.stringify(s.getRange(6, 2, 2, 4).getDisplayValues()));
+    Logger.log("1c.B6:L7=" + JSON.stringify(s.getRange(6, 2, 2, 11).getValues()));
+
+    s.getRange("C6:C10").clearDataValidations();
+    upsertScheduleToDatabase(s, rows, dummyCfg, { checkLinks: false, skipFilterRefresh: true });
+    SpreadsheetApp.flush();
+    Logger.log("2.NO_DV_WITH_FILTER=" + JSON.stringify(s.getRange(6, 2, 2, 4).getValues()));
+
+    if (s.getFilter()) s.getFilter().removeColumnFilterCriteria(3);
+    upsertScheduleToDatabase(s, rows, dummyCfg, { checkLinks: false, skipFilterRefresh: true });
+    SpreadsheetApp.flush();
+    Logger.log("3.NO_DV_NO_FILTER=" + JSON.stringify(s.getRange(6, 2, 2, 4).getValues()));
+  } finally {
+    ss.deleteSheet(s);
+  }
+}
