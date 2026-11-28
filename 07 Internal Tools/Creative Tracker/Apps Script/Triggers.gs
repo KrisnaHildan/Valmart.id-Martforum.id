@@ -55,7 +55,7 @@ function onEdit(e) {
       const dayOut = dateVals.map(r => {
         const dt = parseDateSafe(r[0]);
         if (dt) editedDates.push(dt);
-        if (dt && !(r[0] instanceof Date)) {
+        if (dt && !isDateObject(r[0])) {
           needDateWrite = true;
           normDatesOut.push([dt]);
         } else {

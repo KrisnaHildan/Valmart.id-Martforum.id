@@ -11,11 +11,22 @@ const INDONESIAN_MONTHS = [
 ];
 
 /**
+ * Mengecek apakah nilai merupakan objek Date valid (tahan cross-realm V8 Apps Script).
+ */
+function isDateObject(val) {
+  if (!val || typeof val !== "object") return false;
+  const isDt = (val instanceof Date) ||
+    (Object.prototype.toString.call(val) === "[object Date]") ||
+    (typeof val.getFullYear === "function" && typeof val.getMonth === "function" && typeof val.getDate === "function");
+  return isDt && typeof val.getTime === "function" && !isNaN(val.getTime());
+}
+
+/**
  * Mengubah nilai sel atau string tanggal (yyyy-mm-dd) menjadi objek Date lokal (jam 00:00:00).
  */
 function parseDateSafe(val) {
   if (!val) return null;
-  if (val instanceof Date && !isNaN(val.getTime())) {
+  if (isDateObject(val)) {
     return new Date(val.getFullYear(), val.getMonth(), val.getDate());
   }
   const str = String(val).trim();
@@ -45,6 +56,14 @@ function parseDateSafe(val) {
     }
   }
 
+  // Format Date.toString() (contoh: "Mon Nov 02 2026 ...")
+  if (/^[A-Za-z]{3}\s+[A-Za-z]{3}\s+\d{1,2}\s+\d{4}/.test(str)) {
+    const parsed = new Date(str);
+    if (!isNaN(parsed.getTime())) {
+      return new Date(parsed.getFullYear(), parsed.getMonth(), parsed.getDate());
+    }
+  }
+
   return null;
 }
 
@@ -52,7 +71,7 @@ function parseDateSafe(val) {
  * Format Date menjadi string yyyy-mm-dd.
  */
 function formatDateIso(date) {
-  if (!date || isNaN(date.getTime())) return "";
+  if (!isDateObject(date)) return "";
   const y = date.getFullYear();
   const m = String(date.getMonth() + 1).padStart(2, "0");
   const d = String(date.getDate()).padStart(2, "0");
@@ -63,7 +82,7 @@ function formatDateIso(date) {
  * Mengembalikan nama hari bahasa Indonesia dari Date.
  */
 function getIndonesianDayName(date) {
-  if (!date || isNaN(date.getTime())) return "";
+  if (!isDateObject(date)) return "";
   return INDONESIAN_DAYS[date.getDay()];
 }
 

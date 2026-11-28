@@ -153,6 +153,9 @@ function testRunAll() {
     tempSheet.getRange(rowMart, APP_CONSTANTS.DB_COLS.SCRIPT_LINK).setFormula(brokenFormula);
     tempSheet.getRange(rowMart, APP_CONSTANTS.DB_COLS.NOTES).setValue("[Tidak ada di GitHub] Catatan lama");
 
+    const c6RawBeforeSync2 = tempSheet.getRange(startRow, APP_CONSTANTS.DB_COLS.DATE).getValue();
+    const diagC6 = `type=${typeof c6RawBeforeSync2}, proto=${Object.prototype.toString.call(c6RawBeforeSync2)}, parsed=${formatDateIso(parseDateSafe(c6RawBeforeSync2))}, str=${String(c6RawBeforeSync2)}`;
+
     // Sync kedua (tanpa VAL-20261102-01 supaya teruji flag missing, topik rowMid berubah, link MART pulih)
     const updatedRows = JSON.parse(JSON.stringify(parsed.rows));
     updatedRows[0].topik = "Mid-Month ACE Bounty (Revisi Judul)";
@@ -166,13 +169,13 @@ function testRunAll() {
     const recoveredNote = tempSheet.getRange(rowMart, APP_CONSTANTS.DB_COLS.NOTES).getValue();
     const missingFlagged = tempSheet.getRange(startRow, APP_CONSTANTS.DB_COLS.NOTES).getValue();
 
-    assert("Sync #2: tidak ada duplikat (0 add, 2 update, 1 missing)", res2.added === 0 && res2.updated === 2 && res2.missing === 1);
-    assert("Sync #2: Status tim tetap utuh", savedStatus === "🟠 In Review", savedStatus);
-    assert("Sync #2: Link Draft tim tetap utuh", savedDraft === "https://drive.google.com/draft-helmy", savedDraft);
-    assert("Sync #2: Catatan Review tim tetap utuh", savedNotes === "Sudah oke, tinggal ACC", savedNotes);
-    assert("Sync #2: Topik dari GitHub terupdate", savedTopic === "Mid-Month ACE Bounty (Revisi Judul)", savedTopic);
-    assert("Sync #2: Label Link 404 pulih & tag missing dibersihkan", recoveredLabel === "📖 Buka Naskah" && recoveredNote === "Catatan lama", recoveredNote);
-    assert("Sync #2: Baris hilang dari GitHub diberi tanda non-destruktif", String(missingFlagged).includes("[Tidak ada di GitHub]"), missingFlagged);
+    assert("Sync #2: tidak ada duplikat (0 add, 2 update, 1 missing)", res2.added === 0 && res2.updated === 2 && res2.missing === 1, diagC6);
+    assert("Sync #2: Status tim tetap utuh", savedStatus === "🟠 In Review", `${savedStatus} | ${diagC6}`);
+    assert("Sync #2: Link Draft tim tetap utuh", savedDraft === "https://drive.google.com/draft-helmy", `${savedDraft} | ${diagC6}`);
+    assert("Sync #2: Catatan Review tim tetap utuh", savedNotes === "Sudah oke, tinggal ACC", `${savedNotes} | ${diagC6}`);
+    assert("Sync #2: Topik dari GitHub terupdate", savedTopic === "Mid-Month ACE Bounty (Revisi Judul)", `${savedTopic} | ${diagC6}`);
+    assert("Sync #2: Label Link 404 pulih & tag missing dibersihkan", recoveredLabel === "📖 Buka Naskah" && recoveredNote === "Catatan lama", `${recoveredNote} | ${diagC6}`);
+    assert("Sync #2: Baris hilang dari GitHub diberi tanda non-destruktif", String(missingFlagged).includes("[Tidak ada di GitHub]"), `${missingFlagged} | ${diagC6}`);
 
     // Uji Filter Bulan/Tahun Database Konten
     tempSheet.getRange("D4").setValue(11);

@@ -38,9 +38,10 @@ function renderDashboard() {
   sheet.showColumns(1, 14);
   sheet.hideColumns(15, 12);
 
-  // Lepas proteksi & conditional formatting lama sebelum clear, lalu pasang lagi di akhir
+  // Lepas proteksi, merge lama, & conditional formatting sebelum clear, lalu pasang lagi di akhir
   sheet.getProtections(SpreadsheetApp.ProtectionType.SHEET).forEach(p => p.remove());
   sheet.clearConditionalFormatRules();
+  sheet.getRange(1, 1, Math.max(sheet.getMaxRows(), 50), Math.max(sheet.getMaxColumns(), 26)).breakApart();
   sheet.clear();
   sheet.setTabColor("#10B981");
 
